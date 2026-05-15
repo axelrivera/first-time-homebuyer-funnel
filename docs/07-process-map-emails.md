@@ -1,8 +1,10 @@
 # 07 - LM2 The Process Map: Email Sequence
 
-Same email rules as LM1: real from-address, no no-reply, replies answered within 24 hours. Curly braces are merge tags.
+Same email rules as LM1: real from-address, no no-reply, replies answered within 24 hours. All sending happens in **Pipedrive Campaigns**, triggered by **Pipedrive Workflow Automations** that fire off the custom fields Make.com sets on the contact (see `05-process-map-spec.md`). Curly braces are Pipedrive merge fields.
 
 LM2's nurture is **shorter and more targeted** than LM1's. The reader has already opted into LM1 (in most cases, Tier B), already gotten useful content, and is now consuming the deepest free asset in the funnel. The job of these emails is to make the BSS feel like the obvious next step *only when they're ready for it*.
+
+**Build this as one Pipedrive Campaign:** `LM2 - Roadmap`. Three nurture emails on the cadence below, plus Email 0 as the transactional. The campaign is the same for both `source` values because, per the spec, the roadmap content level-sets all readers.
 
 ---
 
@@ -11,7 +13,7 @@ LM2's nurture is **shorter and more targeted** than LM1's. The reader has alread
 **Trigger:** Immediately on form submit, both `lm1_tier_b` and `standalone` sources.
 **Goal:** Deliver the PDF and the web link. Set expectations for follow-up.
 
-**Subject:** Your 9-Step Orlando Home Roadmap (PDF + link inside)
+**Subject:** Your 9-Step Orlando Home Roadmap (link + PDF inside)
 **Preview text:** The full roadmap, plus where to start reading depending on where you are.
 
 ```
@@ -20,7 +22,8 @@ Hey {{first_name}},
 Here's the 9-Step First Home Roadmap as promised.
 
   → Read it on the web: {{roadmap_view_link}}
-  → PDF attached to this email (download for offline reading)
+  → Download the PDF (for offline reading or printing):
+    {{roadmap_pdf_link}}
 
 If you took the Readiness Scorecard and landed in the 90-Day
 Sprint tier, **start at Step 4** (lender pre-approval). That's
@@ -178,20 +181,27 @@ After N3, the contact moves to the **monthly market-update list** (same as Tier 
 
 ## Tier B contacts: avoiding the email storm
 
-Anyone arriving at LM2 via `source = lm1_tier_b` is already in the **LM1 Tier B sequence**. Without careful Make.com routing, they'll get hammered with two parallel sequences.
+Anyone arriving at LM2 via `source = lm1_tier_b` is already enrolled in the **LM1 Tier B campaign** in Pipedrive. Without careful routing, they'll get hammered with two parallel sequences.
 
-The rule: **the moment Make.com receives an LM2 opt-in with `source = lm1_tier_b`, pause the LM1 Tier B sequence and start the LM2 nurture instead.**
+The rule: **the moment Make.com flips `received_lm2 = true` on a contact who has `lm1_tier = NINETY_DAY`, unenroll them from the LM1 Tier B campaign and enroll them in the LM2 campaign.**
 
-Operationally in Make.com:
+Split of responsibilities:
 
-1. Webhook receives `magnet: "lm2"`, `source: "lm1_tier_b"`
-2. Look up the contact by email
-3. Set a tag: `received_lm2 = true`
-4. Cancel any scheduled future emails in the LM1 Tier B sequence
-5. Enroll the contact in LM2 Email 0 immediately
-6. Schedule LM2 N1, N2, N3 on the cadence above
+**Make.com (on `magnet: "lm2"` + `source: "lm1_tier_b"`):**
 
-A contact who never opts into LM2 stays in the LM1 Tier B sequence and finishes it normally.
+1. Webhook receives the payload
+2. Write the Google Sheet audit row
+3. Look up the Pipedrive Person by email
+4. Update the Person: `received_lm2 = true`, `lm2_received_at = now`, language toggle if changed
+5. Return `200`
+
+**Pipedrive Workflow Automation (on `received_lm2` flipped to `true`):**
+
+1. Unenroll the contact from the `LM1 - Tier B` campaign (cancels all scheduled future emails for that contact in that campaign)
+2. Enroll the contact in the `LM2 - Roadmap` campaign starting at Email 0
+3. The campaign's built-in scheduling drips N1, N2, N3 on Day 3, Day 7, Day 14
+
+A contact who never opts into LM2 stays in the LM1 Tier B campaign and finishes it normally; no automation fires.
 
 ---
 
@@ -214,10 +224,10 @@ The BSS gets pitched in the monthly email **once per quarter** (in March, June, 
 
 ## A note on Spanish-language follow-ups
 
-When a contact selects `preferred_language: "es"` on the LM2 opt-in (or replies "español" to any prior email), the following must happen:
+When a contact selects `preferred_language: "es"` on the LM2 opt-in (or replies "español" to any prior email and the agent updates the field), the following must happen, all configured on the Pipedrive side:
 
-1. All future emails to that contact are sent in Spanish
-2. The LM2 PDF attachment is the Spanish version
+1. All future Pipedrive Campaigns sends to that contact are the Spanish-language variant of each campaign
+2. The PDF link merge field (`{{roadmap_pdf_link}}`) resolves to `/assets/orlando-9-step-roadmap-es.pdf`
 3. The `/orlando-homebuying-roadmap/view` link delivered in emails uses `/orlando-homebuying-roadmap/view/es`
 4. The BSS booking link is configured for a Spanish-language session
 

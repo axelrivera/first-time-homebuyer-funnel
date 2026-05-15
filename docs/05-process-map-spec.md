@@ -19,8 +19,10 @@ LM2 has exactly two entry routes. **Do not add more.** Fragmenting LM2 into a ge
 
 | # | Entry point | Behavior |
 |---|---|---|
-| 1 | **From LM1 Tier B result page CTA** | Prospect's email is already on file. Opt-in form is **prefilled** with first name + email; they submit with one click. Payload includes a `source: "lm1_tier_b"` flag for analytics. |
+| 1 | **From LM1 Tier B result page CTA** | The Tier B result page already has the visitor's first name and email in its URL query params (`?n=…&t=B&s=…`). The CTA is a link to `/orlando-homebuying-roadmap/get?n=Maria&e=maria%40example.com&src=lm1_tier_b` — the LM2 opt-in form reads those params and pre-fills the fields. No storage; the URL is the carrier. Payload includes `source: "lm1_tier_b"`. |
 | 2 | **Standalone landing page** at `/orlando-homebuying-roadmap` | For prospects who came from a piece of content specifically about *the process* (e.g., an Instagram reel walking through one step). Standard opt-in: name + email + ZIP. |
+
+Pre-filling from URL params is a non-trustworthy hint, not authentication. Make.com still treats the incoming LM2 webhook as the source of truth and looks the contact up in Pipedrive by email.
 
 LM2 is **not** linked from:
 
@@ -36,16 +38,18 @@ LM2 is **not** linked from:
 [Entry: Tier B result CTA  OR  /orlando-homebuying-roadmap landing]
                  │
                  ▼
-[Opt-in form: prefilled (Tier B) or fresh (standalone)]
+[Opt-in form: prefilled from URL params (Tier B) or fresh (standalone)]
+                 │  (on submit: POST to the same Make.com webhook with magnet:"lm2";
+                 │   redirect immediately to the rendered roadmap)
+                 ▼
+[Inline rendered roadmap (long-form web page) at /orlando-homebuying-roadmap/view]
                  │
                  ▼
-[Inline confirmation page: roadmap rendered as a web page]
+[Make.com → Pipedrive Person update → Pipedrive Workflow Automation
+ → Pipedrive Campaigns: transactional email with PDF download link]
                  │
                  ▼
-[Email follow-up with PDF copy attached]
-                 │
-                 ▼
-[3-email nurture sequence ending in BSS pitch]
+[3-email nurture sequence ending in BSS pitch (Pipedrive Campaigns)]
 ```
 
 ---
@@ -54,10 +58,11 @@ LM2 is **not** linked from:
 
 | Route | Screen | Notes |
 |---|---|---|
-| `/orlando-homebuying-roadmap` | Standalone landing page | Entry point #2. Single hero, single CTA. |
-| `/orlando-homebuying-roadmap/get` | Opt-in form | Name + email + ZIP + language toggle. Prefilled when source = `lm1_tier_b`. |
-| `/orlando-homebuying-roadmap/view` | Inline rendered roadmap | The full 9-step content, rendered as a long-form page. Anchor links per step. |
+| `/orlando-homebuying-roadmap` | Standalone landing page | Entry point #2. Single hero, single CTA. Static. |
+| `/orlando-homebuying-roadmap/get` | Opt-in form | Name + email + ZIP + language toggle. Reads `?n=`, `?e=`, `?src=` from the URL to pre-fill (when coming from the Tier B result page). Vanilla JS handles form submission via `fetch` to the Make.com webhook, then redirects. |
+| `/orlando-homebuying-roadmap/view` | Inline rendered roadmap | The full 9-step content, rendered as a long-form page. Anchor links per step. Reachable directly without opting in (the roadmap *is* the lead magnet; the opt-in is what enrolls them in the nurture, not what gates the read). |
 | `/orlando-homebuying-roadmap/view/es` | Spanish version | Phase 3 deliverable. Same layout, translated content. |
+| `/assets/orlando-9-step-roadmap.pdf` | Static PDF | Hosted on the Astro site. Linked from the LM2 transactional email. Updates are a redeploy. Spanish version at `/assets/orlando-9-step-roadmap-es.pdf` in Phase 3. |
 
 ---
 
@@ -101,7 +106,7 @@ Fields:
 | `language` | Yes (radio) | English / Español. Defaults to English. |
 | `consent` | Yes (checkbox) | "I'm ok with {{agent}} emailing me the roadmap and occasional follow-ups." |
 
-The form posts to the **same Make.com webhook** as LM1, with a distinguishing `magnet: "lm2"` field. This keeps the Make.com scenario routing logic in one place.
+The form `fetch`-POSTs to the **same Make.com webhook URL** as LM1, with a distinguishing `magnet: "lm2"` field. This keeps the Make.com scenario routing logic in one place. The page redirects to `/orlando-homebuying-roadmap/view` immediately without awaiting the response (same fire-and-forget pattern as LM1).
 
 ---
 
@@ -126,13 +131,23 @@ The form posts to the **same Make.com webhook** as LM1, with a distinguishing `m
 
 When `source = "lm1_tier_b"`, Make.com is expected to:
 
-1. Skip creating a new contact (one already exists from LM1)
-2. Tag the existing contact with `received_lm2 = true`
-3. Send the LM2 transactional email immediately
-4. Pause the LM1 Tier B nurture sequence (no email storm from both)
-5. Enroll the contact in the LM2 nurture sequence starting at email 1
+1. Write a Google Sheet audit row.
+2. Look up the contact in Pipedrive by email (one already exists from LM1; if for some reason it doesn't, fall through to the standalone path).
+3. Update the existing Pipedrive Person: set `received_lm2 = true`, `lm2_received_at = now`, `preferred_language` if changed.
+4. Return `200`.
 
-When `source = "standalone"`, Make.com creates a new contact and enrolls them in the LM2 nurture sequence with no LM1 pre-context.
+A Pipedrive Workflow Automation watches for `received_lm2` flipping to `true` and:
+
+1. Unenrolls the contact from the LM1 Tier B campaign (the "pause/no-double-storm" rule).
+2. Enrolls them in the LM2 transactional + nurture campaign starting at email 0.
+
+When `source = "standalone"`, Make.com:
+
+1. Writes the Google Sheet audit row.
+2. Looks up the contact in Pipedrive by email.
+   - Not found: create a new Person with `received_lm2 = true`, `lm2_received_at = now`, `preferred_language`, and an `lm2_source = "standalone"` tag.
+   - Found (rare; usually means a previous LM1 contact who skipped Tier B): update the existing Person with the same flags.
+3. A Pipedrive Workflow Automation matched on the standalone path enrolls them in the LM2 transactional + nurture campaign with no LM1 pre-context.
 
 ---
 
@@ -187,17 +202,22 @@ The roadmap renders as a long-form web page. It is the *same content* as the PDF
 
 ---
 
-## Email-attached PDF version
+## PDF version (download link, not attachment)
 
-A PDF of the same content is attached to the delivery email. Two production options; pick one in Phase 2:
+The LM2 transactional email links to a **statically hosted PDF** on the Astro site:
 
-**Option A: Static PDF (preferred for Phase 2 MVP)**
-The agent designs one English PDF and one Spanish PDF in Canva or similar. Make.com attaches the matching language file. Pro: simple, beautiful. Con: updates require redesign.
+- English: `/assets/orlando-9-step-roadmap.pdf`
+- Spanish (Phase 3): `/assets/orlando-9-step-roadmap-es.pdf`
 
-**Option B: Generated PDF via Make.com / Cloud Run**
-Make.com calls a PDF generation service (e.g., PDFShift, DocRaptor, or a self-hosted Puppeteer instance) that renders the web view as a PDF. Pro: single source of truth. Con: more moving parts, ongoing cost.
+The agent designs each PDF in Canva (or similar) and drops it into the Astro repo's `/public/assets/` directory. Updates are a redeploy.
 
-**Recommendation:** Ship with Option A. Move to Option B only if the content starts updating monthly.
+Why a download link, not an email attachment:
+
+- Pipedrive Campaigns is the sender, not Make.com. Attaching a dynamic, language-conditional file from Pipedrive Campaigns is awkward; linking to a stable URL is one line of merge-tag-free HTML.
+- Static hosting on the Astro site is free (it's part of the existing deploy), the file is CDN-fast for the reader, and the link can be re-shared (the agent will hear "can you send me that PDF again?" — a URL is the answer).
+- The transactional email and the inline `/view` page share the same source of truth: whatever's in `/public/assets/` at the most recent deploy.
+
+If PDF *generation* (from the live web view) ever becomes worth it, that would be a Phase 4+ optimization. Not now.
 
 ---
 
@@ -219,14 +239,15 @@ Make.com calls a PDF generation service (e.g., PDFShift, DocRaptor, or a self-ho
 LM2 ships when all of the following are true:
 
 - [ ] `/orlando-homebuying-roadmap` standalone landing page is live
-- [ ] `/orlando-homebuying-roadmap/get` opt-in form posts to Make.com webhook with correct payload (both source types tested)
+- [ ] `/orlando-homebuying-roadmap/get` opt-in form posts to the Make.com webhook with the correct payload for both source types (`lm1_tier_b` with URL-prefill, and `standalone`)
 - [ ] `/orlando-homebuying-roadmap/view` renders all 9 steps + 3 mistakes + gotchas + cheat sheet
-- [ ] Tier B result page CTA now links to the prefilled opt-in
-- [ ] Make.com handles the "existing LM1 contact" routing correctly (no double-enrollment)
-- [ ] Make.com pauses LM1 Tier B sequence when LM2 is received
-- [ ] LM2 transactional email delivers within 60 seconds with PDF attached (English version live; Spanish toggle disabled until Phase 3)
-- [ ] All 3 LM2 nurture emails are scheduled and rendering correctly
-- [ ] Print stylesheet produces a usable printout
+- [ ] Tier B result page CTA links to `/orlando-homebuying-roadmap/get` with `?n=&e=&src=lm1_tier_b` URL params
+- [ ] `/assets/orlando-9-step-roadmap.pdf` is in the repo and reachable at the public URL after deploy
+- [ ] Make.com correctly handles the "existing LM1 contact" path (Pipedrive lookup by email, update not create)
+- [ ] Pipedrive Workflow Automation unenrolls the contact from LM1 Tier B and enrolls them in LM2 when `received_lm2` flips to `true`
+- [ ] LM2 transactional email delivers within 60 seconds of submit, with a working PDF download link (English version live; Spanish toggle disabled until Phase 3)
+- [ ] All 3 LM2 nurture emails are scheduled in Pipedrive Campaigns and rendering correctly
+- [ ] Print stylesheet produces a usable printout of `/view`
 - [ ] Mobile accordion works on iOS Safari and Android Chrome
-- [ ] Analytics events fire on every step
+- [ ] Analytics events fire on every step (client-side, not via Make.com)
 - [ ] Agent has reviewed the rendered roadmap end-to-end on mobile and desktop

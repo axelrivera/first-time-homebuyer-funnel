@@ -1,6 +1,6 @@
 # 04 - LM1 Readiness Filter: Email Sequence
 
-Every email here is final copy. Drop into the email provider as-is. Curly braces `{{like_this}}` are merge tags Make.com will fill in.
+Every email here is final copy. Drop into Pipedrive Campaigns as-is. Curly braces `{{like_this}}` are Pipedrive merge fields that resolve against the Person record Make.com has just written.
 
 The agent's email voice = the same as the result-page voice: direct, useful, no sales-y wind-up. Short subject lines. No exclamation points unless genuinely warranted.
 
@@ -10,8 +10,13 @@ The agent's email voice = the same as the result-page voice: direct, useful, no 
 
 - **From name:** `{{agent_first_name}} from Orlando Homes` (or whatever the agent's working brand name is, locked in Phase 1)
 - **From email:** A real address the agent monitors. Replies are responded to within 24 hours. *No no-reply addresses.*
-- **Sending tool:** TBD (deferred; see `08-implementation-roadmap.md`). Whatever it is, must support: tagged segmentation by tier, scheduled drip, and the ability to move someone between sequences when they re-take the quiz.
-- **Tier reassignment rule:** If a contact retakes the scorecard and lands in a new tier, they exit their current sequence and enter the new one at email 1. Make.com handles this routing on every webhook hit.
+- **Sending tool:** **Pipedrive Campaigns** (the Campaigns addon on Pipedrive). All transactional + nurture email lives here as named campaigns; **Pipedrive Workflow Automations** enroll, unenroll, and pause contacts based on custom-field values (`lm1_tier`, `received_lm1`, `received_lm2`, `preferred_language`, etc.).
+- **Make.com's role:** Receive the webhook, write the Google Sheet audit row, and create/update the Pipedrive Person with the right field values. Make.com does **not** send a single email itself — Pipedrive owns email entirely. This is the boundary; keep it clean.
+- **Merge tags:** `{{like_this}}` in this doc maps to Pipedrive Campaigns merge fields. The agent will need to wire each one (`first_name`, `tier_label`, `display_score`, `result_page_link`, `book_bss_link`, `lm2_optin_link`, `retake_link`, `agent_first_name`, `agent_license_no`, `brokerage`) to the corresponding Pipedrive Person/Deal field before scheduling each campaign.
+- **Tier reassignment rule:** If a contact retakes the scorecard and lands in a new tier, Make.com updates `lm1_tier` and sets `lm1_retaken_at` on the existing Pipedrive Person. A Pipedrive Workflow Automation listens for `lm1_tier` changes and:
+  1. Unenrolls the contact from the campaign matching their old tier
+  2. Enrolls them in the campaign matching the new tier, starting at email 1
+- **Per-tier campaigns to build:** one Pipedrive Campaign per sequence below (`LM1 - Tier A`, `LM1 - Tier B`, `LM1 - Tier C`). Each transactional email (Email 0) is its own one-shot campaign or a Workflow-Automation-triggered template send; the agent can pick whichever Pipedrive Campaigns surface makes that easiest in practice.
 
 ---
 
@@ -554,8 +559,8 @@ After topic 10, loop back to topic 1 with refreshed examples and market data.
 
 ## Unsubscribe / preference handling
 
-Every email has the standard unsubscribe footer. Additionally:
+Every email has the standard Pipedrive Campaigns unsubscribe footer (required for CAN-SPAM compliance and provided by the Pipedrive Campaigns template). Additionally:
 
 > *Don't want these every other week? Reply "monthly" and I'll switch you to once a month. Reply "stop" and I'll take you off entirely.*
 
-Both options are honored manually for the first 6 months (Make.com webhook routes the reply to the agent's email), then automated once volume justifies it.
+The standard unsubscribe link removes them from all Pipedrive Campaigns. The "monthly" reply is handled manually by the agent (move the contact's `nurture_cadence` field to `monthly`; a Pipedrive Workflow Automation routes them to the slower cadence). The "stop" reply triggers the standard unsubscribe in Pipedrive. Both work without code on the static site.

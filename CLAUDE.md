@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository status
 
-**Docs-only right now.** No code, no build tooling, no tests. The only contents are specs in [docs/](docs/) that define a two-step lead-generation funnel for a newly licensed Orlando real estate agent targeting first-time buyers. When code lands, it will be an **Astro** site that posts to a **Make.com** webhook (no custom backend) — that stack assumption is baked into every spec.
+**Docs-only right now.** No code, no build tooling, no tests. The only contents are specs in [docs/](docs/) that define a two-step lead-generation funnel for a newly licensed Orlando real estate agent targeting first-time buyers. When code lands, it will be an **Astro + Tailwind CSS** static site (vanilla JavaScript, no backend, no cookies, no environment variables) that POSTs to a **Make.com** webhook, which creates a Person/Lead in **Pipedrive**; **Pipedrive Campaigns** (with Workflow Automations) owns transactional and nurture email. That stack assumption is baked into every spec.
 
 ## What this funnel is
 
@@ -20,7 +20,7 @@ Tiers (used interchangeably with internal names in code):
 
 ## Document map and precedence
 
-Read [docs/README.md](docs/README.md) first. Files are numbered for read order. The precedence rule when files seem to disagree:
+Read [README.md](README.md) first. Files are numbered for read order. The precedence rule when files seem to disagree:
 
 - **Product specs** ([02-readiness-filter-spec.md](docs/02-readiness-filter-spec.md), [05-process-map-spec.md](docs/05-process-map-spec.md)) win for **behavior** — routes, scoring, payloads, overrides.
 - **Content drafts** ([03-readiness-filter-content.md](docs/03-readiness-filter-content.md), [06-process-map-content.md](docs/06-process-map-content.md)) win for **copy**.
@@ -29,18 +29,32 @@ Read [docs/README.md](docs/README.md) first. Files are numbered for read order. 
 
 ## Architecture you need in your head before editing
 
-The funnel has **one webhook**. Both LM1 and LM2 forms POST the same Make.com endpoint, distinguished by a `magnet` field (`"lm1"` or `"lm2"`). Make.com owns: contact storage, email sending, PDF attachment, sequence enrollment/pausing, and the Google Sheet fallback log. The Astro app owns: rendering, scoring, signed result tokens, and analytics events.
+```
+[Astro static site] ──POST──▶ [Make.com webhook] ──▶ [Pipedrive Person/Lead]
+       │                              │                         │
+       │                              ├─▶ [Google Sheet log]    └─▶ [Pipedrive Workflow
+       │                                                              Automation]
+       │                                                                  │
+       └─renders result inline from query params               [Pipedrive Campaigns]
+                                                              (transactional + nurture)
+```
 
-Two non-obvious cross-magnet rules Make.com must enforce — easy to miss when editing either spec in isolation:
+The funnel has **one webhook**. Both LM1 and LM2 forms POST the same Make.com endpoint, distinguished by a `magnet` field (`"lm1"` or `"lm2"`). The boundary of responsibilities is strict:
 
-1. When `source = "lm1_tier_b"` arrives on the LM2 webhook, **pause** the existing LM1 Tier B nurture so the contact does not get a double email storm.
-2. Tier C contacts are **never** pitched the BSS from any sequence; their CTA is education + bi-weekly nurture indefinitely.
+- **Astro site (vanilla JS only)** owns: rendering all pages, running the scoring engine client-side, building the result-page URL with plain query params, firing analytics events directly from the browser, and POSTing the form payload to Make.com. There is no backend, no cookies, no `LocalStorage`/`SessionStorage` reliance for cross-page resumption, and no environment variables: the Make.com webhook URL, Pipedrive isn't called directly, and any analytics key are baked into the build.
+- **Make.com** owns: receiving the webhook, writing a Google Sheet fallback row, and creating or updating a Pipedrive Person/Lead with the tier, score, magnet, source, and answer fields. Make.com does **not** send email and does **not** route nurture sequences.
+- **Pipedrive (with the Campaigns addon)** owns: contact storage, email sending (transactional + nurture), sequence enrollment, sequence pausing/unenrolling, and the email-side conditional logic. All sequence routing is implemented as **Pipedrive Workflow Automations** that trigger off custom fields/labels Make.com sets on the contact (e.g., `lm1_tier`, `received_lm2`, `preferred_language`).
 
-The result page (`/readiness/result`) is **fully static**, driven by a short-lived HMAC-signed token in the query string (`{n, t, s, exp}`). No DB lookup. This keeps Make.com out of the render path and lets the page survive without a backend.
+Two non-obvious cross-magnet rules — easy to miss when editing either spec in isolation. Make.com sets the field; Pipedrive Workflow Automations enforce the behavior:
+
+1. When `source = "lm1_tier_b"` arrives on the LM2 webhook, Make.com sets `received_lm2 = true` on the existing Pipedrive contact. A Pipedrive automation then **unenrolls** them from the LM1 Tier B campaign and enrolls them in the LM2 campaign, so the contact does not get a double email storm.
+2. Tier C contacts are **never** pitched the BSS from any sequence; their CTA is education + bi-weekly nurture indefinitely. Encode this as a hard branch in the Pipedrive automation, not as something the email copy has to remember.
+
+The result page (`/orlando-homebuying-readiness-quiz/result`) is **fully static**, driven by **plain query params** (`?n=Maria&t=B&s=68`). No HMAC, no signed token, no env vars (the site has none). The data the page renders is the visitor's own self-reported answers, so tampering with the URL only changes what *they* see on *their* screen; Pipedrive holds the authoritative record from the Make.com webhook. This keeps Make.com out of the render path and lets the page work as a pure static asset.
 
 ## Configuration principle (load-bearing)
 
-Any value flagged "calibrate against real data" in the specs — tier thresholds, per-question point values, override actions, token expiry, copy strings — **must live in a single config module** (the specs suggest `src/config/readiness.ts` or a JSON variant). Inline-hardcoding any of these will require a refactor in Phase 4 when thresholds get tuned against real submission distributions. See the "Configuration" section of [02-readiness-filter-spec.md](docs/02-readiness-filter-spec.md) for the full list.
+Any value flagged "calibrate against real data" in the specs — tier thresholds, per-question point values, override actions, copy strings — **must live in a single config module** (the specs suggest `src/config/readiness.ts` or a JSON variant). Inline-hardcoding any of these will require a refactor in Phase 4 when thresholds get tuned against real submission distributions. See the "Configuration" section of [02-readiness-filter-spec.md](docs/02-readiness-filter-spec.md) for the full list.
 
 Structural constants (e.g., "there are 10 questions") may be inline. The test: if the spec has a "this is our current guess" comment next to a value, it belongs in config.
 
@@ -111,11 +125,12 @@ Strict Hormozi-rules (*$100M Offers* / *$100M Leads*). These bind **both** code/
 
 ## What is intentionally out of scope
 
-- Backend/data-model code (Make.com is the backend)
+- Backend/data-model code (Make.com + Pipedrive are the backend)
+- Cookies, `LocalStorage`/`SessionStorage` for cross-page state, environment variables, or any frontend framework beyond Astro + vanilla JS
 - Self-hosted CRM, custom calendar tool, buyer portal, or native mobile apps
 - Spanish translation drafts (deferred to Phase 3; flagged in the roadmap but not authored)
 - The BSS offer doc itself (next deliverable after this funnel ships)
 
 ## Build / test commands
 
-None yet — there is no Astro project scaffolded. When Phase 1 starts (see [08-implementation-roadmap.md](docs/08-implementation-roadmap.md)), the expected commands will be standard Astro (`npm run dev`, `npm run build`, plus a unit-test runner for the scoring engine). Update this section once `package.json` exists.
+None yet — there is no Astro project scaffolded. When Phase 1 starts (see [08-implementation-roadmap.md](docs/08-implementation-roadmap.md)), the expected commands will be standard Astro (`npm run dev`, `npm run build`, plus a unit-test runner for the scoring engine). Tailwind is integrated via the Astro Tailwind integration; no PostCSS config of our own. Update this section once `package.json` exists.

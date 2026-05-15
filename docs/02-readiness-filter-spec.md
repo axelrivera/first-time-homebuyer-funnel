@@ -19,37 +19,41 @@ This wording is locked. Don't paraphrase it on landing pages, ads, or DMs. Copy/
 [Landing page]
       │
       ▼
-[Q1 → Q10  (one question per screen, with progress bar)]
-      │
-      ▼
-[Email-capture gate: name + email + ZIP (Orlando area filter)]
-      │
+[Quiz page: Q1 → Q10 + email gate, all in one route, in-memory state]
+      │  (on final submit: POST to Make.com webhook in the background,
+      │   compute tier/score client-side, build result URL)
       ▼
 [Inline result page: tier + score + 2 mistakes + market snapshot + CTA]
-      │
+      │  (driven by plain query params: ?n=Maria&t=B&s=68)
       ▼
-[Email follow-up sequence kicks off based on tier]
+[Make.com → Pipedrive Person → Pipedrive Workflow Automation
+ → Pipedrive Campaigns transactional + nurture]
 ```
 
 ### Why email is captured AFTER the questions
 
 Hormozi's effort/sacrifice principle: gates are friction. Putting the email last makes the questions feel like the value and the email feel like a small payment for the result they *already earned*. The result page renders inline anyway, so the email gate is for the **emailed copy + nurture**, not for unlocking the result.
 
-If a prospect bounces at the email gate, the form session is saved client-side and resumed on return. The agent does not see incomplete submissions.
+### What happens if the user bounces before the email gate
+
+Nothing is persisted. There is **no** cookie, `LocalStorage`, or `SessionStorage` resume — the site is cookie-free and storage-free by design. If the user closes the tab or reloads, they start the quiz over. The agent does not see incomplete submissions, ever.
+
+If this turns out to hurt completion meaningfully in Phase 4, the iteration is to **shorten the quiz**, not to add storage. Storage adds compliance surface area we don't want.
 
 ---
 
 ## Routes & screens
 
-All routes are under the agent's primary domain. Astro pages.
+All routes are under the agent's primary domain. Static Astro pages with vanilla JS for the interactive bits.
 
 | Route | Screen | Notes |
 |---|---|---|
-| `/orlando-homebuying-readiness-quiz` | Landing page | Promo + start button. The hero CTA is the only thing on the page. |
-| `/orlando-homebuying-readiness-quiz/start` | Question screens (Q1–Q10) | Single-page Astro island. Progress bar. Back button on every question. No "save & exit". It's 7 minutes. |
-| `/orlando-homebuying-readiness-quiz/contact` | Email-capture gate | Name (first), email, ZIP code. Optional: phone (not required). |
-| `/orlando-homebuying-readiness-quiz/result` | Inline result page | Tier, score, market snapshot, 2 mistakes, CTA. Render driven by query params from the form submit response. See "Result rendering" below. |
-| `/orlando-homebuying-readiness-quiz/result/preview` | Static preview (admin) | Lets the agent see all three tier pages without taking the quiz. Behind a basic-auth gate or unguessable URL. |
+| `/orlando-homebuying-readiness-quiz` | Landing page | Promo + start button. The hero CTA is the only thing on the page. Fully static, no JS required to render. |
+| `/orlando-homebuying-readiness-quiz/start` | Quiz page | **One** Astro page that contains all 10 questions + the email gate. State is held in vanilla JS in memory; question switching is DOM show/hide, not page navigation. Progress bar, back button per question, no "save & exit." |
+| `/orlando-homebuying-readiness-quiz/result` | Inline result page | Tier, score, market snapshot, 2 mistakes, CTA. Renders from plain query params (`?n=…&t=…&s=…`). See "Result rendering" below. Fully static; works with JS disabled (the params drive a server-rendered `if/else` in the `.astro` file). |
+| `/orlando-homebuying-readiness-quiz/result?preview=A` (or `B`, `C`) | Preview mode | Same result page; the `preview` query param renders the named tier with stub data so the agent can review copy. No auth gate (the URL is publicly reachable but unlisted). Acceptable: nothing sensitive is gated. |
+
+The previous `/start`-then-`/contact` two-route flow is intentionally collapsed into one page. Without storage, separate routes would lose state between Q10 and the email gate. One page, one in-memory state machine.
 
 ---
 
@@ -267,23 +271,25 @@ Concretely, when building the scoring engine and result page, centralize the fol
 | `overrides.exploringTimeline.action` | cap at C | Could relax to "cap at B" if exploring buyers convert better than expected |
 | `overrides.highDTI.action` | cap at B | Same logic |
 | `overrides.betweenJobs.action` | cap at C | Same logic |
-| `resultToken.expiryDays` | 30 | Operational tweak; may go up or down based on email re-engagement patterns |
 | `marketSnapshot` data | See `data/market-snapshot.json` | Already external; updates monthly |
 | `marketSnapshot.anchorPrice` | $475,000 | The dollar figure used in the "What $X actually buys" framing on the result page. Should track the realistic FTHB budget in Orlando; calibrate against real submission income data in Phase 4. Lives in the same snapshot config as the per-area data. |
 | Tier-result copy strings | See `03-readiness-filter-content.md` | Should live in i18n-ready locale files, not inline JSX/Astro |
 
 **Rule of thumb when building:** if a value has a "this is our current guess" comment next to it, it belongs in config. If it's a structural constant (e.g., the number of questions), inline is fine.
 
-This also applies to LM2 (see `05-process-map-spec.md`): token expiry, default language, and the "pause LM1 Tier B sequence on LM2 opt-in" behavior should all be config-driven, not hardcoded.
+**Note on the Make.com webhook URL.** The URL itself is baked into the build (the site has no env vars). Treat it as semi-public. It is OK for it to be visible in the page source; Make.com webhooks are designed to be receivers. If abuse becomes an issue, rotate the webhook URL and add a shared-token field to the payload that Make.com verifies before processing; that token also gets rebaked at build time. Do **not** introduce env vars, secrets management, or a backend to "protect" this URL — those are the wrong solution for the threat model.
+
+This also applies to LM2 (see `05-process-map-spec.md`): default language and the "pause LM1 Tier B sequence on LM2 opt-in" behavior (implemented as a Pipedrive Workflow Automation) should both be configurable at the automation layer, not hardcoded in the static site.
 
 ---
 
 ## Form payload sent to Make.com
 
-The Astro form posts a single JSON payload to the Make.com webhook on the final email-capture step. Make.com handles email delivery, CRM logging, and any PDF generation.
+The Astro page POSTs a single JSON payload to the Make.com webhook (via `fetch`) once the user completes the email gate. The scoring engine runs in the browser before the POST, so `scoring` is computed client-side and included in the payload — Make.com trusts it. The `magnet: "lm1"` discriminator is required so the one shared webhook can fan out to the LM1 or LM2 scenario branch.
 
 ```json
 {
+  "magnet": "lm1",
   "submitted_at": "2026-05-14T18:32:11Z",
   "contact": {
     "first_name": "Maria",
@@ -318,7 +324,17 @@ The Astro form posts a single JSON payload to the Make.com webhook on the final 
 }
 ```
 
-Each `answers.qN_*` field uses a stable enum key (not the human-readable label) so Make.com routing is reliable when copy gets edited later.
+Each `answers.qN_*` field uses a stable enum key (not the human-readable label) so the Make.com → Pipedrive mapping is reliable when copy gets edited later. The same enum keys are written to Pipedrive custom fields so Pipedrive Workflow Automations can route off them without re-parsing labels.
+
+### What Make.com does with this payload
+
+1. Write one row to the Google Sheet audit log (raw payload + timestamp). This is the fallback if Pipedrive errors.
+2. Look up the contact in Pipedrive by email.
+   - If not found: create a new Person with the contact + answer fields + `lm1_tier`, `lm1_display_score`, `received_lm1 = true`, `preferred_language`.
+   - If found: update the existing Person with the new tier/score (retake handling) and set `lm1_retaken_at`.
+3. Return `200` to the browser as fast as possible. The browser will have already redirected to the result page; the webhook response is fire-and-forget from the client's perspective.
+
+Email sending and sequence enrollment are **not** Make.com's job. The moment Make.com sets the Pipedrive fields, a Pipedrive Workflow Automation matches on `received_lm1 = true` + `lm1_tier = NINETY_DAY` (etc.) and starts the corresponding Pipedrive Campaign sequence.
 
 ### Stable enum keys (locked; don't rename)
 
@@ -339,15 +355,28 @@ Each `answers.qN_*` field uses a stable enum key (not the human-readable label) 
 
 ## Result rendering
 
-When the form submission succeeds, the user is redirected to `/orlando-homebuying-readiness-quiz/result?token=...`. The token is a short-lived signed value that encodes `tier` + `display_score` + `first_name`. The page is fully static, with no DB lookup. This keeps Make.com out of the render path.
+When the user submits the email gate, the quiz JS does two things in parallel:
 
-Token payload (HMAC-signed with a shared secret in the Astro env):
+1. Fires the Make.com `fetch` with the full payload (above). Does **not** await it.
+2. Immediately redirects to `/orlando-homebuying-readiness-quiz/result?n=Maria&t=B&s=68`.
 
-```
-{ "n": "Maria", "t": "NINETY_DAY", "s": 68, "exp": 1747244400 }
-```
+The result page reads three query params:
 
-Token expires in 30 days. After expiry, the page falls back to a generic "your result has been emailed to you" view.
+| Param | Meaning | Allowed values |
+|---|---|---|
+| `n` | First name (URL-encoded) | Any string; trimmed and HTML-escaped on render. Empty → render as "you" in copy. |
+| `t` | Tier letter | `A`, `B`, `C`. Anything else → fall back to a generic "your result has been emailed to you" view. |
+| `s` | Display score (0–100) | Integer 0–100. Anything else → tier-without-number view. |
+
+**No HMAC, no signed token, no expiry.** The site has no environment variables, so there is no secret to sign with, and there is nothing on the page worth protecting:
+
+- The data is the user's own self-reported answers.
+- Pipedrive has the authoritative record (from the Make.com webhook).
+- A user can tamper with their URL to display a different tier; nothing they can do with that affects the agent's CRM, the email sequence they're enrolled in, or which CTA gets the most warm lead. (If a tampered Tier-A page link were shared and someone booked the BSS, the agent qualifies in conversation; no harm done.)
+
+The result page **never** trusts the URL for anything beyond rendering. No conditional that affects state (e.g., a "this person is Tier A, send them this thing") may key off the query params. State lives in Pipedrive.
+
+The previous expiry-window scheme is gone — there is no concept of "result token expired" anymore. The result page works forever from a valid `?n=…&t=…&s=…` URL. The user receives the same URL in their transactional email from Pipedrive Campaigns; both reach the same static page.
 
 ### What the result page contains, in order
 
@@ -366,15 +395,15 @@ Token expires in 30 days. After expiry, the page falls back to a generic "your r
 
 ## Analytics events to fire
 
-Minimum viable event list. Provider TBD, but emit these from the Astro client and forward via Make.com:
+Minimum viable event list. Emit these **directly from the browser** to the analytics provider's client script (Plausible, PostHog, or whatever Phase 0 lands on). Do **not** relay through Make.com — events should keep working even if the webhook is down.
 
 | Event | When |
 |---|---|
 | `readiness_landing_view` | Landing page load |
 | `readiness_quiz_start` | User clicks "Start" |
-| `readiness_question_answered` | Each Q (props: q_id, answer_key) |
-| `readiness_email_gate_view` | Email gate loads |
-| `readiness_email_gate_submit` | Email gate POST succeeds |
+| `readiness_question_answered` | Each Q advances (props: q_id, answer_key) |
+| `readiness_email_gate_shown` | Email gate becomes visible in the quiz page |
+| `readiness_email_gate_submit` | Email gate `fetch` POST initiated (don't wait for the response) |
 | `readiness_result_view` | Result page loads (props: tier, score) |
 | `readiness_cta_click` | CTA on result page clicked (props: tier, cta_target) |
 
@@ -407,14 +436,16 @@ Non-negotiables (apply on every device, mobile-first):
 LM1 ships when **all** of the following are true:
 
 - [ ] Landing page is live at `/orlando-homebuying-readiness-quiz` and indexable
-- [ ] All 10 question screens render correctly on iOS Safari and Android Chrome (primary surface; QA gate)
+- [ ] All 10 questions render correctly on iOS Safari and Android Chrome (primary surface; QA gate). Question switching is in-page, no full page navigations.
 - [ ] Desktop smoke check: no broken layouts and all interactions functional on a current-version desktop browser (not a polish gate)
 - [ ] Scoring engine produces correct tier + score for the 6 canonical test cases (see `08-implementation-roadmap.md`)
 - [ ] All 4 tier overrides fire correctly
-- [ ] Form posts to Make.com webhook with the full payload above
-- [ ] Make.com delivers the tier-specific transactional email within 60 seconds of submit
-- [ ] Result page renders tier A, B, and C correctly from a valid signed token
-- [ ] Expired/invalid tokens fall back gracefully
-- [ ] Analytics events fire on every step
-- [ ] Agent has previewed all three tier result pages via `/orlando-homebuying-readiness-quiz/result/preview`
+- [ ] Form `fetch` POSTs to the Make.com webhook with the full payload above. Network failure on the POST does **not** block the redirect to the result page (the user has already earned the result).
+- [ ] Make.com creates/updates a Pipedrive Person with `lm1_tier`, `lm1_display_score`, `received_lm1 = true`, and the answer fields
+- [ ] Pipedrive Workflow Automation fires the tier-specific Pipedrive Campaign transactional email within 60 seconds of submit, for all 3 tiers
+- [ ] Google Sheet audit row is written for every submission
+- [ ] Result page renders all 3 tiers correctly from `?n=&t=A&s=…` / `?t=B` / `?t=C`
+- [ ] Malformed query params fall back gracefully to the generic "your result has been emailed to you" view
+- [ ] `?preview=A|B|C` renders the right tier with stub data
+- [ ] Analytics events fire on every step from the client, not via Make.com
 - [ ] Agent has taken the quiz themselves and confirmed copy/voice feels like theirs
