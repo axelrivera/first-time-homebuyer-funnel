@@ -1,4 +1,3 @@
-# 01. Strategy & Funnel Overview
 
 ## The problem this funnel solves
 
@@ -65,7 +64,7 @@ The funnel does not ask everyone to book a call. It segments by readiness and of
 | **Dream Outcome** | "Walk into the Orlando home-buying process knowing more than most buyers who've done this before." |
 | **Perceived Likelihood** | Named, specific gotchas along the I-4 corridor (HOA timelines, roof inspection in rainy season, Seminole vs. Orange school-zone resale math, the Sanford-to-Downtown commute-and-price trade-off). Hyper-local proof of expertise. |
 | **Time Delay** | Delivered immediately. Readable in 15–20 minutes. |
-| **Effort & Sacrifice** | Visual map, not a wall of text. Bilingual option for the Spanish-speaking segment. |
+| **Effort & Sacrifice** | Visual map, not a wall of text. Anchor link per step so the reader can re-enter the document at the exact step they're on, without re-reading what they already know. |
 
 ---
 

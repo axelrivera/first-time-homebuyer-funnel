@@ -1,4 +1,3 @@
-# 08. Implementation Roadmap
 
 Phased build plan for shipping the two-step funnel. Designed for one builder (the agent, who is also an iOS developer with Ruby/Rails backend chops) working in evening/weekend windows.
 
@@ -13,10 +12,10 @@ The principle: **ship Phase 1 fast and start collecting real submissions. Iterat
 | **0. Foundations** | Domain, hosting, Astro + Tailwind scaffold, Make.com webhook, Pipedrive + Campaigns addon, calendar, analytics | Week 1 | The stack is locked (Pipedrive + Make.com + Astro + Tailwind); Phase 0 is wiring, not deciding. |
 | **1. LM1 MVP** | Readiness Filter landing → quiz → result page → transactional email via Pipedrive | Weeks 2–4 | This is the whole top of the funnel. Nothing else matters until this works. |
 | **2. LM1 Nurture + LM2 MVP** | Tier-specific Pipedrive Campaigns live; LM2 standalone landing + delivery | Weeks 5–7 | Now we can capture and nurture across the full segmentation |
-| **3. Spanish + Polish** | Spanish content for LM1 & LM2, monthly market-update list, analytics dashboards | Weeks 8–10 | Bilingual edge + operational rhythm |
+| **3. Polish** | Monthly market-update list, analytics dashboards | Weeks 8–9 | Operational rhythm + measurement |
 | **4. Iterate** | Continuous A/B testing of question wording, tier thresholds, CTAs | Ongoing | Real data > assumptions |
 
-Total time to a fully-shipped funnel: roughly **10 weeks** at evening/weekend pace.
+Total time to a fully-shipped funnel: roughly **9 weeks** at evening/weekend pace.
 
 ---
 
@@ -40,10 +39,10 @@ By end of week:
 | Frontend framework | **Astro** + **Tailwind CSS** | Vanilla JS in islands where interactivity is needed (quiz, opt-in forms). No React/Vue/Svelte. |
 | Hosting | **Vercel** (recommended; Netlify or Cloudflare Pages also fine) | Pick whichever has the cleanest preview-deploy story for the agent. Static-only site, so any of them work. |
 | Form handler | **Make.com** webhook (one webhook URL, baked into the build) | LM1 + LM2 both POST here, distinguished by `magnet`. No env vars; the URL is in the bundle. |
-| CRM | **Pipedrive** | Person records hold contact info + custom fields (`lm1_tier`, `lm1_display_score`, `received_lm1`, `received_lm2`, `preferred_language`, etc.). |
+| CRM | **Pipedrive** | Person records hold contact info + custom fields (`fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_received_lm1`, `fthb_received_lm2`, etc.). |
 | Email sending | **Pipedrive Campaigns** addon | All transactional + nurture lives in named Pipedrive Campaigns. Workflow Automations enroll/unenroll based on field changes. |
 | Routing logic | **Pipedrive Workflow Automations** | Tier → campaign mapping, LM2-pauses-Tier-B, retake handling. **Not** in Make.com. |
-| PDF for LM2 | Static file in `public/assets/` | English now, Spanish in Phase 3. Linked from the LM2 transactional email. |
+| PDF for LM2 | Static file in `public/assets/` | Linked from the LM2 transactional email. Updates are a redeploy. |
 | Calendar | **Cal.com** (open source, self-hostable) | Calendly works equally well; just a URL. |
 | Analytics | **Plausible** or **PostHog** | Plausible if you want minimal; PostHog if you want funnel analysis from day one. Script tag in `BaseLayout.astro`. |
 
@@ -53,7 +52,7 @@ By end of week:
 - [ ] Astro + Tailwind repo created on GitHub, deployed to host, auto-deploy on `main`
 - [ ] Make.com scenario exists with a webhook URL; logs incoming payload, writes a row to a Google Sheet, returns `200`
 - [ ] Pipedrive account has the Campaigns addon active and sender authentication (SPF + DKIM) set on the agent's domain
-- [ ] Pipedrive custom fields created on the Person object: `lm1_tier` (enum), `lm1_display_score` (number), `lm1_retaken_at` (date), `received_lm1` (bool), `received_lm2` (bool), `lm2_received_at` (date), `lm2_source` (enum: `lm1_tier_b` / `standalone`), `preferred_language` (enum: `en` / `es`), one per-answer field (`q1_credit_range` ... `q10_lender`) as enums
+- [ ] Pipedrive custom fields created on the Person object: `fthb_lm1_tier` (enum), `fthb_lm1_display_score` (number), `fthb_lm1_retaken_at` (date), `fthb_received_lm1` (bool), `fthb_received_lm2` (bool), `fthb_lm2_received_at` (date), `fthb_lm2_source` (enum: `fthb_lm1_tier_b` / `fthb_lm2_standalone`), one per-answer field (`fthb_q1_credit_range` ... `fthb_q10_lender`) as enums. Make.com maps the unprefixed JSON keys under `payload.answers.*` to the prefixed Pipedrive field names; the JSON payload itself doesn't carry the prefix because the keys are already scoped by the `magnet` discriminator.
 - [ ] Calendar tool has a 30-minute BSS slot type configured; link is in hand for use as `{{book_bss_link}}`
 - [ ] Analytics script is in the Astro base layout
 
@@ -70,8 +69,8 @@ Ship the Readiness Filter end-to-end: landing page, 10-question quiz, email gate
 - [ ] Build `/orlando-homebuying-readiness-quiz` landing page from `02-readiness-filter-spec.md` copy (static Astro page, Tailwind classes)
 - [ ] Build `/orlando-homebuying-readiness-quiz/start` as **one** Astro page with a vanilla-JS state machine that holds all 10 questions + the email gate; question switching is DOM show/hide, not page navigation; state is in-memory only (no `LocalStorage`, no cookies)
 - [ ] Create `src/config/readiness.ts` (or `.json`) and put all tweakable parameters there (thresholds, point values, override actions). See "Configuration" section in `02-readiness-filter-spec.md` for the full list.
-- [ ] Implement the scoring engine as a TypeScript pure function (testable, no UI deps) that reads config rather than hardcoded values
-- [ ] Write unit tests for scoring: at least 1 case per tier + 1 case per override (6 canonical cases below)
+- [ ] Implement the scoring engine as a TypeScript pure function (no UI deps) that reads config rather than hardcoded values
+- [ ] Walk the 6 canonical scoring examples (below) through the engine by hand and confirm each lands in the expected tier
 
 ### Week 3. Result page + Make.com → Pipedrive integration
 
@@ -80,10 +79,10 @@ Ship the Readiness Filter end-to-end: landing page, 10-question quiz, email gate
 - [ ] Set up Make.com scenario:
   - Webhook trigger receives the form payload
   - Writes one row to a Google Sheet (cheap, queryable backup; also the failure-recovery audit)
-  - Looks up the Person in Pipedrive by email; creates or updates with `lm1_tier`, `lm1_display_score`, `received_lm1`, the answer fields, `preferred_language`, and `lm1_retaken_at` if applicable
+  - Looks up the Person in Pipedrive by email; creates or updates with `fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_received_lm1`, the answer fields, and `fthb_lm1_retaken_at` if applicable
   - Returns `200`
 - [ ] Build the three transactional Pipedrive Campaigns (one per tier) from `04-readiness-filter-emails.md` (Email 0 only this week; the nurture chain comes in Phase 2)
-- [ ] Build the Pipedrive Workflow Automation: `received_lm1 = true` → branch on `lm1_tier` → enroll in the matching transactional campaign
+- [ ] Build the Pipedrive Workflow Automation: `fthb_received_lm1 = true` → branch on `fthb_lm1_tier` → enroll in the matching transactional campaign
 
 ### Week 4. Polish and ship
 
@@ -92,11 +91,11 @@ Ship the Readiness Filter end-to-end: landing page, 10-question quiz, email gate
 - [ ] Mobile QA across iOS Safari, Android Chrome, desktop Safari, Chrome, Firefox
 - [ ] Accessibility QA (keyboard nav, screen reader, color contrast)
 - [ ] Agent takes the quiz themselves end-to-end and approves voice/copy
-- [ ] Test all 4 tier overrides with real submissions
+- [ ] Verify all 4 tier overrides fire correctly on real submissions
 - [ ] Set up scheduled task: monthly market snapshot update reminder
 - [ ] **LAUNCH:** Update the `/orlando-homebuying-readiness-quiz` URL in the agent's Instagram bio, Facebook bio, email signature
 
-### Canonical test cases for scoring
+### Canonical scoring examples
 
 | # | Scenario | Expected tier | Expected behavior |
 |---|---|---|---|
@@ -111,7 +110,7 @@ Ship the Readiness Filter end-to-end: landing page, 10-question quiz, email gate
 
 The full LM1 launch DoD lives in `02-readiness-filter-spec.md`. Re-checked here for prominence:
 
-- All 6 canonical test cases produce the expected tier and score
+- All 6 canonical scoring examples produce the expected tier and score
 - A friend can take the quiz on their phone and receive the right transactional email from Pipedrive Campaigns within 60 seconds
 - The agent has personally tested submitting all 3 tier-result scenarios end-to-end (Astro → Make.com → Pipedrive → Pipedrive Campaigns)
 
@@ -125,10 +124,10 @@ Two parallel workstreams: build out the LM1 email nurture sequences for all 3 ti
 
 ### Week 5. LM1 nurture campaigns
 
-- [ ] Set up `LM1 - Tier A` campaign in Pipedrive Campaigns (5 emails from `04-readiness-filter-emails.md`)
-- [ ] Set up `LM1 - Tier B` campaign (6 emails)
-- [ ] Set up `LM1 - Tier C` campaign (welcome + bi-weekly rotation of 10 topics)
-- [ ] Build the Pipedrive Workflow Automation: on `received_lm1 = true`, branch on `lm1_tier` and enroll in the matching campaign at email 1; on `lm1_tier` change (retake), unenroll from the old tier campaign and enroll in the new one
+- [ ] Set up `FTHB LM1 - Tier A` campaign in Pipedrive Campaigns (5 emails from `04-readiness-filter-emails.md`)
+- [ ] Set up `FTHB LM1 - Tier B` campaign (6 emails)
+- [ ] Set up `FTHB LM1 - Tier C` campaign (welcome + bi-weekly rotation of 10 topics)
+- [ ] Build the Pipedrive Workflow Automation: on `fthb_received_lm1 = true`, branch on `fthb_lm1_tier` and enroll in the matching campaign at email 1; on `fthb_lm1_tier` change (retake), unenroll from the old tier campaign and enroll in the new one
 - [ ] Test enrollment: submit one fake response per tier, confirm the right campaign fires
 - [ ] Set the BSS calendar link on Tier A emails to use UTM tracking so we can measure conversion
 
@@ -138,19 +137,18 @@ Two parallel workstreams: build out the LM1 email nurture sequences for all 3 ti
 - [ ] Build `/orlando-homebuying-roadmap/get` opt-in form (read `?n=`, `?e=`, `?src=` URL params for pre-fill)
 - [ ] Build `/orlando-homebuying-roadmap/view` rendered roadmap from `06-process-map-content.md`
 - [ ] Design and produce the static English PDF version (Canva); drop it at `public/assets/orlando-9-step-roadmap.pdf`
-- [ ] Wire Make.com to handle `magnet: "lm2"` payloads: look up the Pipedrive Person, set `received_lm2`, `lm2_received_at`, `lm2_source`, `preferred_language`
-- [ ] Build the Pipedrive Workflow Automation: on `received_lm2 = true` for a contact with `lm1_tier = NINETY_DAY`, unenroll from `LM1 - Tier B` and enroll in `LM2 - Roadmap`
-- [ ] Build the `LM2 - Roadmap` transactional email (Email 0 in `07-process-map-emails.md`) — links to the rendered roadmap and to the static PDF; no email attachment
+- [ ] Wire Make.com to handle `magnet: "fthb_lm2"` payloads: look up the Pipedrive Person, set `fthb_received_lm2`, `fthb_lm2_received_at`, `fthb_lm2_source`
+- [ ] Build the Pipedrive Workflow Automation: on `fthb_received_lm2 = true` for a contact with `fthb_lm1_tier = NINETY_DAY`, unenroll from `FTHB LM1 - Tier B` and enroll in `FTHB LM2 - Roadmap`
+- [ ] Build the `FTHB LM2 - Roadmap` transactional email (Email 0 in `07-process-map-emails.md`) — links to the rendered roadmap and to the static PDF; no email attachment
 
-### Week 7. LM2 nurture + integration testing
+### Week 7. LM2 nurture + end-to-end checks
 
-- [ ] Add the 3 nurture emails (N1, N2, N3) to the `LM2 - Roadmap` campaign on the cadence in `07-process-map-emails.md`
-- [ ] Update the Tier B result page CTA to link to `/orlando-homebuying-roadmap/get?n=…&e=…&src=lm1_tier_b`
+- [ ] Add the 3 nurture emails (N1, N2, N3) to the `FTHB LM2 - Roadmap` campaign on the cadence in `07-process-map-emails.md`
+- [ ] Update the Tier B result page CTA to link to `/orlando-homebuying-roadmap/get?n=…&e=…&src=fthb_lm1_tier_b`
 - [ ] Update Tier A result CTA copy to mention "if you want the roadmap too, it's here"
-- [ ] End-to-end integration test:
+- [ ] End-to-end smoke check:
   - Submit LM1 as Tier B → receive Tier B Email 0 → click CTA → opt into LM2 → receive LM2 transactional → confirm in Pipedrive that the contact is no longer scheduled for any remaining LM1 Tier B emails
   - Submit LM2 as standalone → receive LM2 transactional → confirm new Pipedrive Person is tagged correctly
-- [ ] Monitor inbox for any reply that says "español". Manually update `preferred_language` and respond per Phase 3 plan
 
 ### Definition of Done for Phase 2
 
@@ -163,30 +161,20 @@ Two parallel workstreams: build out the LM1 email nurture sequences for all 3 ti
 
 ---
 
-## Phase 3. Spanish + Polish (Weeks 8–10)
+## Phase 3. Polish (Weeks 8–9)
 
 ### Scope
 
-Add the bilingual edge that is the agent's specific competitive advantage in the Orlando market. Plus operational polish.
+Operational rhythm and measurement. The two pieces that make the funnel keep working without the agent having to think about it: the monthly nurture list (so graduates from every sequence stay warm) and the funnel-metrics dashboard (so Phase 4 iteration has signal to work from).
 
-### Week 8. Spanish content
+### Week 8. Monthly market-update list
 
-- [ ] Translate all LM1 quiz screens, result page tier content (Tier A / B / C), and market snapshot (professional translation, not just Google Translate)
-- [ ] Translate all LM2 roadmap content
-- [ ] Translate all transactional emails and nurture emails (build the Spanish-variant Pipedrive Campaigns alongside the English ones)
-- [ ] Produce the Spanish PDF version of the roadmap; drop at `public/assets/orlando-9-step-roadmap-es.pdf`
-- [ ] Add a language toggle on the LM1 landing page (English / Español); the toggle reads/writes a `lang` URL param, not a cookie
-- [ ] Add `/orlando-homebuying-readiness-quiz/start?lang=es`, `/orlando-homebuying-readiness-quiz/result?lang=es&…`, `/orlando-homebuying-roadmap/view/es`
-- [ ] Update Pipedrive Workflow Automations: branch on `preferred_language` so Spanish contacts go into the Spanish-variant campaigns
-
-### Week 9. Monthly market-update list
-
-- [ ] Set up the long-term `Monthly Market Update` campaign in Pipedrive Campaigns
-- [ ] Build a Pipedrive Workflow Automation: when a contact finishes any of the per-tier or LM2 campaigns, enroll them in `Monthly Market Update`
+- [ ] Set up the long-term `FTHB Monthly Market Update` campaign in Pipedrive Campaigns
+- [ ] Build a Pipedrive Workflow Automation: when a contact finishes any of the per-tier or LM2 campaigns, enroll them in `FTHB Monthly Market Update`
 - [ ] Draft the first 3 monthly emails (so the agent isn't writing them under deadline)
 - [ ] Set a scheduled task reminder for the 1st of each month to write the next one
 
-### Week 10. Analytics + iteration setup
+### Week 9. Analytics + iteration setup
 
 - [ ] Build a simple dashboard (or Google Sheet) tracking:
   - Daily LM1 starts vs. completes
@@ -199,9 +187,9 @@ Add the bilingual edge that is the agent's specific competitive advantage in the
 
 ### Definition of Done for Phase 3
 
-- A Spanish-only speaker can complete the entire LM1 + LM2 flow without ever seeing English
 - The agent receives a weekly funnel-metrics email
-- The monthly market-update list has 3 emails pre-drafted
+- The monthly market-update list has 3 emails pre-drafted and the first one scheduled to send
+- Every graduating contact from LM1 Tier A/B/C and LM2 nurture lands in the monthly list automatically
 
 ---
 
@@ -237,7 +225,6 @@ Each test runs for a minimum of 50 completed submissions per arm before calling 
 |---|---|
 | Make.com hits its operations limit on a free plan | Upgrade to the Pro plan when volume approaches the free-tier ceiling. Forecast around 5–10 ops per submission (webhook → sheet → Pipedrive lookup → Pipedrive update). |
 | Pipedrive Campaigns flags the agent's domain for low engagement | Warm up the sending domain by sending the first 50 emails to a list of friends/family who will open. After that, organic volume protects reputation. Make sure SPF/DKIM/DMARC are set on the agent's domain. |
-| Translation quality is poor and burns Spanish-speaking trust | Pay for a professional translator who is native to Florida Latino markets (Cuban or Puerto Rican Spanish, not Castilian). Have one Spanish-speaking client review before launch. |
 | Agent runs out of evening hours to ship | Phases 1, 2, 3 can each slip by 2 weeks without breaking the funnel. Don't shortcut quality on the questions, scoring logic, or result-page copy; those are the asset. |
 | Make.com webhook fails silently and submissions get lost | Make.com writes a Google Sheet audit row *before* the Pipedrive call. If Pipedrive errors, the row is still there and the agent can manually recover the contact within 24 hours. |
 | Make.com webhook URL gets scraped from the static bundle and spammed | Add a shared-token field to the payload (also baked into the build) that Make.com verifies before processing. Rotate by redeploying. **Do not** introduce env vars or a backend to "hide" the URL — the threat model doesn't justify it. |

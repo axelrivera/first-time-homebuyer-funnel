@@ -1,16 +1,15 @@
-# 07 - LM2 The Process Map: Email Sequence
 
 Same email rules as LM1: real from-address, no no-reply, replies answered within 24 hours. All sending happens in **Pipedrive Campaigns**, triggered by **Pipedrive Workflow Automations** that fire off the custom fields Make.com sets on the contact (see `05-process-map-spec.md`). Curly braces are Pipedrive merge fields.
 
 LM2's nurture is **shorter and more targeted** than LM1's. The reader has already opted into LM1 (in most cases, Tier B), already gotten useful content, and is now consuming the deepest free asset in the funnel. The job of these emails is to make the BSS feel like the obvious next step *only when they're ready for it*.
 
-**Build this as one Pipedrive Campaign:** `LM2 - Roadmap`. Three nurture emails on the cadence below, plus Email 0 as the transactional. The campaign is the same for both `source` values because, per the spec, the roadmap content level-sets all readers.
+**Build this as one Pipedrive Campaign:** `FTHB LM2 - Roadmap`. Three nurture emails on the cadence below, plus Email 0 as the transactional. The campaign is the same for both `source` values because, per the spec, the roadmap content level-sets all readers.
 
 ---
 
 ## Email 0 (LM2): Transactional delivery
 
-**Trigger:** Immediately on form submit, both `lm1_tier_b` and `standalone` sources.
+**Trigger:** Immediately on form submit, both `fthb_lm1_tier_b` and `fthb_lm2_standalone` sources.
 **Goal:** Deliver the PDF and the web link. Set expectations for follow-up.
 
 **Subject:** Your 9-Step Orlando Home Roadmap (link + PDF inside)
@@ -21,9 +20,9 @@ Hey {{first_name}},
 
 Here's the 9-Step First Home Roadmap as promised.
 
-  → Read it on the web: {{roadmap_view_link}}
+  → Read it on the web: {{fthb_roadmap_view_link}}
   → Download the PDF (for offline reading or printing):
-    {{roadmap_pdf_link}}
+    {{fthb_roadmap_pdf_link}}
 
 If you took the Readiness Scorecard and landed in the 90-Day
 Sprint tier, **start at Step 4** (lender pre-approval). That's
@@ -44,8 +43,9 @@ Two notes before you dive in:
 Talk soon,
 {{agent_first_name}}
 
-P.S. The Spanish version is available. Reply with "español"
-and I'll send it.
+P.S. The roadmap link is a shareable URL. If you know someone
+in Orlando who's a few steps behind you on this, send it. I'd
+rather they get the map than figure it out the expensive way.
 ```
 
 ---
@@ -54,7 +54,7 @@ and I'll send it.
 
 Cadence: Email 1 on Day 3 (gives the reader time to consume). Then Day 7. Then Day 14.
 
-The sequence is the same regardless of source (`lm1_tier_b` or `standalone`); the roadmap content level-sets all readers.
+The sequence is the same regardless of source (`fthb_lm1_tier_b` or `fthb_lm2_standalone`); the roadmap content level-sets all readers.
 
 ### Email N1 - Day 3
 
@@ -158,7 +158,7 @@ If you're ready to talk through your specific situation
 what the **Buyer Strategy Session** is for:
 
   → 30 minutes. Free. No pitch.
-  → Zoom or in person. Bilingual.
+  → Zoom or in person.
   → Book it here: {{book_bss_link}}
 
 The strategy session is most useful when you're somewhere
@@ -181,24 +181,24 @@ After N3, the contact moves to the **monthly market-update list** (same as Tier 
 
 ## Tier B contacts: avoiding the email storm
 
-Anyone arriving at LM2 via `source = lm1_tier_b` is already enrolled in the **LM1 Tier B campaign** in Pipedrive. Without careful routing, they'll get hammered with two parallel sequences.
+Anyone arriving at LM2 via `source = fthb_lm1_tier_b` is already enrolled in the **LM1 Tier B campaign** in Pipedrive. Without careful routing, they'll get hammered with two parallel sequences.
 
-The rule: **the moment Make.com flips `received_lm2 = true` on a contact who has `lm1_tier = NINETY_DAY`, unenroll them from the LM1 Tier B campaign and enroll them in the LM2 campaign.**
+The rule: **the moment Make.com flips `fthb_received_lm2 = true` on a contact who has `fthb_lm1_tier = NINETY_DAY`, unenroll them from the LM1 Tier B campaign and enroll them in the LM2 campaign.**
 
 Split of responsibilities:
 
-**Make.com (on `magnet: "lm2"` + `source: "lm1_tier_b"`):**
+**Make.com (on `magnet: "fthb_lm2"` + `source: "fthb_lm1_tier_b"`):**
 
 1. Webhook receives the payload
 2. Write the Google Sheet audit row
 3. Look up the Pipedrive Person by email
-4. Update the Person: `received_lm2 = true`, `lm2_received_at = now`, language toggle if changed
+4. Update the Person: `fthb_received_lm2 = true`, `fthb_lm2_received_at = now`, language toggle if changed
 5. Return `200`
 
-**Pipedrive Workflow Automation (on `received_lm2` flipped to `true`):**
+**Pipedrive Workflow Automation (on `fthb_received_lm2` flipped to `true`):**
 
-1. Unenroll the contact from the `LM1 - Tier B` campaign (cancels all scheduled future emails for that contact in that campaign)
-2. Enroll the contact in the `LM2 - Roadmap` campaign starting at Email 0
+1. Unenroll the contact from the `FTHB LM1 - Tier B` campaign (cancels all scheduled future emails for that contact in that campaign)
+2. Enroll the contact in the `FTHB LM2 - Roadmap` campaign starting at Email 0
 3. The campaign's built-in scheduling drips N1, N2, N3 on Day 3, Day 7, Day 14
 
 A contact who never opts into LM2 stays in the LM1 Tier B campaign and finishes it normally; no automation fires.
@@ -219,16 +219,3 @@ Each monthly email includes:
   - "Replying to this email is the fastest way to get a question answered."
 
 The BSS gets pitched in the monthly email **once per quarter** (in March, June, September, and December), and only as a "P.S. If you want to talk this quarter, here's the link."
-
----
-
-## A note on Spanish-language follow-ups
-
-When a contact selects `preferred_language: "es"` on the LM2 opt-in (or replies "español" to any prior email and the agent updates the field), the following must happen, all configured on the Pipedrive side:
-
-1. All future Pipedrive Campaigns sends to that contact are the Spanish-language variant of each campaign
-2. The PDF link merge field (`{{roadmap_pdf_link}}`) resolves to `/assets/orlando-9-step-roadmap-es.pdf`
-3. The `/orlando-homebuying-roadmap/view` link delivered in emails uses `/orlando-homebuying-roadmap/view/es`
-4. The BSS booking link is configured for a Spanish-language session
-
-Until the Spanish translations ship (Phase 3; see implementation roadmap), the "español" reply gets a manual response from the agent acknowledging the request and noting that the full Spanish version is coming soon, with an offer to do the BSS in Spanish in the meantime.

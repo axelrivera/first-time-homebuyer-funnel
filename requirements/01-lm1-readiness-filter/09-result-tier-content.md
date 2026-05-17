@@ -1,10 +1,32 @@
-# 03 - LM1 Readiness Filter: Content Drafts
 
-This is the copy that ships on the result pages. Anything inside a block quote is final copy. Drop it into the page. Anything outside the block quote is instruction to the developer or the agent.
+Fill in the three tier branches on the result page with the locked copy below. Each tier has: header + score badge, tier explanation paragraph, the "2 mistakes" section, and a tier-specific CTA.
 
-The agent's voice: direct, educational, never salesy. First-person ("I"). No real estate-agent clichés ("Now is a great time to buy!", "Let's find your dream home together!"). When in doubt, sound like someone explaining this to a younger sibling.
+## Prereqs
+
+- [01-08 Result page shell + preview mode](./08-result-page-shell.md)
+
+## Goal
+
+The three `TierAContent`, `TierBContent`, `TierCContent` components (or branches inline in `result.astro`) render the locked copy below. Each tier ends with the right CTA, going to the right URL.
+
+## Files to create / modify
+
+```
+src/components/result/TierAContent.astro
+src/components/result/TierBContent.astro
+src/components/result/TierCContent.astro
+src/components/result/ResultFooter.astro
+src/config/links.ts                                          (BSS booking URL constant)
+src/pages/orlando-homebuying-readiness-quiz/result.astro     (swap stubs for real components)
+```
+
+## Voice anchor (applies to all three tiers)
+
+The agent's voice: direct, educational, never salesy. First-person ("I"). No real-estate-agent clichés ("Now is a great time to buy!", "Let's find your dream home together!"). When in doubt, sound like someone explaining this to a younger sibling.
 
 > **Voice anchor:** "Here's exactly what's standing between you and your first home, and what to do about it." Not: "Let's go on a journey together."
+
+Block-quoted text below is **final copy — ship verbatim**. `{{display_score}}` is interpolated from the URL.
 
 ---
 
@@ -30,7 +52,7 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 > **Mistake #2: Bringing a 2022 offer to a 2026 market.**
 > The Orlando market you read about online is not the market you're buying in. Days on market are longer, price reductions are routine, and a buyer with real pre-approval and cash for closing has leverage back. Tier A buyers carry over an instinct from the last cycle: waive inspection, skip the appraisal contingency, write at or over list "to look serious." In this market, that instinct hands the seller free upside you didn't have to give. The right move is to keep all three contingencies (inspection, financing, appraisal). The inspection period is the broadest of the three: it's your unilateral window to walk for almost any reason and keep your deposit. Appraisal and financing are narrower triggers. Then start at or below list depending on days-on-market, and ask the seller for a closing-cost concession or rate buydown. If the seller says no, you still have the deal. You'll have spent zero negotiating leverage on a market that no longer demands it.
 
-### CTA
+### CTA (Tier A)
 
 > ## What's next
 > You're ready. The next step is a 30-minute Buyer Strategy Session with me: free, no pitch. We'll go through your exact pre-approval, your two target neighborhoods, and the 3 offer mechanics that win in this market right now.
@@ -38,6 +60,8 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 > [ Book the Buyer Strategy Session → ]
 >
 > *30 minutes. Zoom or in person.*
+
+**Tier A CTA target:** the BSS booking URL. Define it once as `BSS_BOOKING_URL` in `src/config/links.ts`. Fire `fthb_readiness_cta_click` with `{ tier: 'A', cta_target: 'bss' }` on `pointerdown`.
 
 ---
 
@@ -63,7 +87,7 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 > **Mistake #2: Dismissing new construction on list price alone.**
 > The 2026 Orlando new-construction math has flipped. Builders are sitting on inventory and competing hard, which means lower mortgage rates and stacked incentives on new builds. It's common right now to see builder-subsidized rates dip below 6% while resale rates sit above 6%, with closing-cost concessions and finish packages layered on top. Run the numbers: a $340K new build at 5.49% (5% down, 30-year fixed) runs about $1,830/month in principal and interest. A $310K resale at 6.99% with the same down payment runs about $1,955/month. The list price is $30K higher; the P&I is $125/month *lower*. Taxes, HOA, and insurance often run higher on new construction, so the all-in picture can narrow or reverse that gap. The point is that the comparison is no longer obvious. Most Tier B buyers never run it. They shop resale because new construction "feels expensive," or because they absorbed prior-cycle advice warning them off builder lenders. The right move is to run the full monthly comparison (P&I + taxes + insurance + HOA) on a real new build alongside a real resale you'd actually consider, and to ask whether any advertised rate is permanent or a temporary buydown that resets in year 2 or 3. Pick the lane after the math, not before it.
 
-### CTA
+### CTA (Tier B)
 
 > ## What's next
 > You've got a 90-day game plan ahead of you. Don't fly blind. Grab my **9-Step First Home Roadmap**: it's the exact step-by-step process you'll go through over the next 90 days, including the 3 places first-time buyers in this tier lose money and the Orlando-specific gotchas no out-of-state YouTube video will warn you about.
@@ -73,6 +97,8 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 > *Free. Delivered to your inbox in 60 seconds.*
 >
 > *After you've gone through the roadmap, if you want me to walk it with you, there's a free 30-minute Buyer Strategy Session linked at the end.*
+
+**Tier B CTA target:** `/orlando-homebuying-roadmap/get?n={n}&src=fthb_lm1_tier_b`, where `{n}` is the URL-encoded first name from the result-page URL. **Do NOT include the email** in this URL — emails in shareable URLs leak PII; the opt-in form re-asks anyway. (LM2 task 03's opt-in form reads `?e=` and pre-fills if present, so the flow stays forward-compatible — just don't put it in the result-page URL now.) Fire `fthb_readiness_cta_click` with `{ tier: 'B', cta_target: 'fthb_lm2' }` on `pointerdown`.
 
 ---
 
@@ -98,7 +124,7 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 > **Mistake #2: Saving for the down payment in a checking account.**
 > Money sitting in a checking account earns nothing and gets spent. If you're 6–12 months out from a purchase, every dollar of your home fund should be in a high-yield savings account (currently around 4%+ in 2026 in most online banks). Over 12 months on a $15,000 fund, that's an extra $600+ for closing costs. For doing nothing. Bonus: a separate, named account ("Orlando Home Fund") makes it psychologically harder to dip into.
 
-### CTA
+### CTA (Tier C)
 
 > ## What's next
 > No call. No pitch. Not yet.
@@ -109,47 +135,49 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 >
 > *If you'd rather not get the emails, the unsubscribe link is at the bottom of every one. No hard feelings.*
 
----
-
-## The Orlando Market Snapshot (embedded on every tier's result page)
-
-This is the 1-page reality anchor. It appears on every result page, between the mistakes and the CTA. It is the same on all three tiers.
-
-> ## What $475K actually buys along the I-4 corridor right now
->
-> *Updated {{snapshot_month}}. Pulled from current MLS data, not Zillow's automated estimates. All areas are along the I-4 corridor between Sanford and Downtown Orlando.*
->
-> | Area | County | Median price (FTHB range) | Avg. days on market | What $475K gets you |
-> |---|---|---|---|---|
-> | **Sanford** | Seminole | ${{san_median}} | {{san_dom}} | {{san_anchor_description}} |
-> | **Lake Mary** | Seminole | ${{lm_median}} | {{lm_dom}} | {{lm_anchor_description}} |
-> | **Altamonte Springs** | Seminole | ${{alt_median}} | {{alt_dom}} | {{alt_anchor_description}} |
-> | **Winter Springs** | Seminole | ${{ws_median}} | {{ws_dom}} | {{ws_anchor_description}} |
-> | **Maitland / Winter Park** | Orange | ${{wp_median}} | {{wp_dom}} | {{wp_anchor_description}} |
-> | **College Park** | Orange | ${{cp_median}} | {{cp_dom}} | {{cp_anchor_description}} |
-> | **Apopka (corridor side)** | Orange | ${{apk_median}} | {{apk_dom}} | {{apk_anchor_description}} |
->
-> ### Three things this table doesn't tell you (and I will)
->
-> 1. **Seminole County still has the strongest school-zoning resale floor** in the metro. Even older homes in Winter Springs hold value because of zone demand. Orange-side corridor homes (College Park, Winter Park) hold on **walkability and proximity-to-Downtown** instead — different driver, similar resilience.
-> 2. **Sanford is the value play on the north end** of the corridor, but the trade-off is a 35–45 minute commute to Downtown. **Apopka's corridor side is the value play on the west**, with a shorter Downtown commute but fewer top-tier school zones.
-> 3. **Anything listed under $325K on the corridor right now is almost always an HOA condo, a townhome, a manufactured home, or a single-family home with a non-obvious issue.** None of those are inherently wrong, but none are a typical first-home SFH purchase. Always ask what's underneath the headline price before getting attached.
-
-### Snapshot data update process (operational note for the agent)
-
-The market snapshot table is **dynamic data** but updates infrequently. The agent updates it **once per calendar month** by:
-
-1. Pulling current median list price + average DOM from MLS for each named corridor area (Seminole side: Sanford, Lake Mary, Altamonte Springs, Winter Springs; Orange side: Maitland/Winter Park, College Park, corridor-side Apopka)
-2. Browsing 3 active listings in each area within $20K of the anchor price (currently $475K; see `marketSnapshot.anchorPrice` in config) to write the "what you get" description. Bias the listing selection toward **single-family homes first, townhomes second, condos only when SFH/townhome inventory is genuinely thin** at the anchor price in that area. The snapshot exists to set expectations for SFH/townhome buyers, who are the funnel's primary audience.
-3. Updating the values in `data/market-snapshot.json` (see implementation roadmap)
-4. Updating `snapshot_month` to the new month name
-
-A reminder for this monthly update should be set as a scheduled task once the funnel ships.
+**Tier C CTA target:** no CTA-out. It's a status message confirming Pipedrive enrolled them in bi-weekly nurture. The Hormozi rule for this tier is hard: **never pitch the BSS to Tier C**. If `fthb_readiness_cta_click` fires (it shouldn't really have anything clickable that counts as a CTA), pass `{ tier: 'C', cta_target: 'none' }`.
 
 ---
 
-## Copy that needs to live on every result page (boilerplate footer)
+## Boilerplate footer (`<ResultFooter />`, used on every tier)
 
 > *This scorecard is built by [Agent Name], a licensed REALTOR® in Florida. It's free, no information is sold or shared, and no agent contact happens unless you book the Buyer Strategy Session yourself. Have a question? Reply to any of my emails; I read them all.*
 >
 > *[License #] | [Brokerage]*
+
+Replace `[Agent Name]`, `[License #]`, `[Brokerage]` with the agent's real values when wiring this up — the agent will supply them. Keep them as a small `src/config/agent.ts` if there's risk of them changing.
+
+---
+
+## Implementation notes
+
+- **Score badge** uses the value passed from the URL. Style it visibly (large, color-coded by tier: A = green, B = amber, C = blue — but never color-only; pair with the tier name + a small icon).
+- **CTA click tracking.** Each CTA fires `fthb_readiness_cta_click` with `{ tier, cta_target: 'bss' | 'fthb_lm2' | 'none' }` on `pointerdown` or `click`. `pointerdown` is more reliable in mobile browsers because navigation can cancel `click` handlers.
+- **Validate numbers in copy.** Tier B Mistake #2 includes specific numbers (`$340K new build at 5.49%`, `$310K resale at 6.99%`, `$1,830`, `$1,955`, `$125/month lower`). Copy them verbatim. **Don't regenerate the math.** If a number changes later, edit this task file first, then propagate to the component.
+- **Tier A CTA link constant.** `BSS_BOOKING_URL` lives in `src/config/links.ts` so the next phase can swap the booking URL without touching every component. The Tier A `<a href="...">` reads from this constant.
+
+## Things NOT to do
+
+- Don't paraphrase any block-quoted copy above. It passed the Hormozi tests in earlier review.
+- Don't pitch the BSS on Tier C. Hard rule.
+- Don't put the Tier B email into the result-page URL. Emails in shareable URLs leak PII; the LM2 opt-in form re-asks anyway.
+- Don't soften the "2 mistakes" copy. The diagnostic edge is the value proposition.
+- Don't use the word "corridor" in non-locked copy. Don't say bare "Downtown" — always "Downtown Orlando."
+
+## Definition of Done
+
+- [ ] All three tiers render the locked copy verbatim (block-by-block diff against this file)
+- [ ] Score badge shows the value from the URL on every tier
+- [ ] Tier A CTA links to `BSS_BOOKING_URL` from `src/config/links.ts`
+- [ ] Tier B CTA links to `/orlando-homebuying-roadmap/get?n={n}&src=fthb_lm1_tier_b` (URL-encoded name; no email)
+- [ ] Tier C has no CTA-out; it shows the confirmation copy
+- [ ] `fthb_readiness_cta_click` fires on Tier A and Tier B CTAs with the right `cta_target` prop
+- [ ] `<ResultFooter />` (license #, brokerage, "reply to my emails" note) appears on every tier
+- [ ] `?preview=A`, `?preview=B`, `?preview=C` show the real content with stub names/scores
+
+## Verification
+
+Take the quiz three times with answer sets that produce A, B, and C. Confirm:
+- Tier A page → BSS booking link works
+- Tier B page → LM2 opt-in URL has `n=` and `src=fthb_lm1_tier_b` set correctly, no `e=`
+- Tier C page → no CTA-out; the nurture confirmation reads correctly

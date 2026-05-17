@@ -1,4 +1,3 @@
-# 02 - LM1 Readiness Filter: Product Spec
 
 This is the build spec for the scorecard funnel. Everything a developer needs to ship LM1 lives here: routes, screens, copy, the exact 10 questions, the scoring math, the tier thresholds, the form payload, and the result-page logic.
 
@@ -70,7 +69,7 @@ Layout: above-the-fold = single hero, single CTA. Below-the-fold = social proof 
 >
 > [ Start the 7-minute scorecard ]
 >
-> *Free. Built by a licensed Orlando agent. Bilingual support available.*
+> *Free. Built by a licensed Orlando agent.*
 
 ### Sub-hero. "What you'll get" (3-bullet, not a wall)
 
@@ -83,7 +82,6 @@ Layout: above-the-fold = single hero, single CTA. Below-the-fold = social proof 
 - *Will you pull my credit?* No. You self-report a range. We can't see anything.
 - *Is this an ad to get me on the phone?* No. The result is yours. If you want to talk, there's a free strategy session at the end. Only if you want it.
 - *Why 10 questions?* That's the minimum to give you a real answer. Anything less is a brochure.
-- *Hablas español?* Sí, el resultado completo está disponible en español. *(Phase 3; link disabled until translation ships.)*
 
 ---
 
@@ -285,18 +283,17 @@ This also applies to LM2 (see `05-process-map-spec.md`): default language and th
 
 ## Form payload sent to Make.com
 
-The Astro page POSTs a single JSON payload to the Make.com webhook (via `fetch`) once the user completes the email gate. The scoring engine runs in the browser before the POST, so `scoring` is computed client-side and included in the payload — Make.com trusts it. The `magnet: "lm1"` discriminator is required so the one shared webhook can fan out to the LM1 or LM2 scenario branch.
+The Astro page POSTs a single JSON payload to the Make.com webhook (via `fetch`) once the user completes the email gate. The scoring engine runs in the browser before the POST, so `scoring` is computed client-side and included in the payload — Make.com trusts it. The `magnet: "fthb_lm1"` discriminator is required so the one shared webhook can fan out to the LM1 or LM2 scenario branch.
 
 ```json
 {
-  "magnet": "lm1",
+  "magnet": "fthb_lm1",
   "submitted_at": "2026-05-14T18:32:11Z",
   "contact": {
     "first_name": "Maria",
     "email": "maria@example.com",
     "zip": "32708",
-    "phone": null,
-    "preferred_language": "en"
+    "phone": null
   },
   "answers": {
     "q1_credit_range": "680_739",
@@ -324,17 +321,17 @@ The Astro page POSTs a single JSON payload to the Make.com webhook (via `fetch`)
 }
 ```
 
-Each `answers.qN_*` field uses a stable enum key (not the human-readable label) so the Make.com → Pipedrive mapping is reliable when copy gets edited later. The same enum keys are written to Pipedrive custom fields so Pipedrive Workflow Automations can route off them without re-parsing labels.
+Each `answers.qN_*` field uses a stable enum key (not the human-readable label) so the Make.com → Pipedrive mapping is reliable when copy gets edited later. The same enum *values* are written to Pipedrive custom fields, **with the field name prefixed** per the funnel namespace convention: `payload.answers.q1_credit_range` maps to Pipedrive field `fthb_q1_credit_range`, and so on through `fthb_q10_lender`. Pipedrive Workflow Automations route off those prefixed field names without re-parsing labels.
 
 ### What Make.com does with this payload
 
 1. Write one row to the Google Sheet audit log (raw payload + timestamp). This is the fallback if Pipedrive errors.
 2. Look up the contact in Pipedrive by email.
-   - If not found: create a new Person with the contact + answer fields + `lm1_tier`, `lm1_display_score`, `received_lm1 = true`, `preferred_language`.
-   - If found: update the existing Person with the new tier/score (retake handling) and set `lm1_retaken_at`.
+   - If not found: create a new Person with the contact + answer fields + `fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_received_lm1 = true`.
+   - If found: update the existing Person with the new tier/score (retake handling) and set `fthb_lm1_retaken_at`.
 3. Return `200` to the browser as fast as possible. The browser will have already redirected to the result page; the webhook response is fire-and-forget from the client's perspective.
 
-Email sending and sequence enrollment are **not** Make.com's job. The moment Make.com sets the Pipedrive fields, a Pipedrive Workflow Automation matches on `received_lm1 = true` + `lm1_tier = NINETY_DAY` (etc.) and starts the corresponding Pipedrive Campaign sequence.
+Email sending and sequence enrollment are **not** Make.com's job. The moment Make.com sets the Pipedrive fields, a Pipedrive Workflow Automation matches on `fthb_received_lm1 = true` + `fthb_lm1_tier = NINETY_DAY` (etc.) and starts the corresponding Pipedrive Campaign sequence.
 
 ### Stable enum keys (locked; don't rename)
 
@@ -399,13 +396,13 @@ Minimum viable event list. Emit these **directly from the browser** to the analy
 
 | Event | When |
 |---|---|
-| `readiness_landing_view` | Landing page load |
-| `readiness_quiz_start` | User clicks "Start" |
-| `readiness_question_answered` | Each Q advances (props: q_id, answer_key) |
-| `readiness_email_gate_shown` | Email gate becomes visible in the quiz page |
-| `readiness_email_gate_submit` | Email gate `fetch` POST initiated (don't wait for the response) |
-| `readiness_result_view` | Result page loads (props: tier, score) |
-| `readiness_cta_click` | CTA on result page clicked (props: tier, cta_target) |
+| `fthb_readiness_landing_view` | Landing page load |
+| `fthb_readiness_quiz_start` | User clicks "Start" |
+| `fthb_readiness_question_answered` | Each Q advances (props: q_id, answer_key) |
+| `fthb_readiness_email_gate_shown` | Email gate becomes visible in the quiz page |
+| `fthb_readiness_email_gate_submit` | Email gate `fetch` POST initiated (don't wait for the response) |
+| `fthb_readiness_result_view` | Result page loads (props: tier, score) |
+| `fthb_readiness_cta_click` | CTA on result page clicked (props: tier, cta_target) |
 
 ---
 
@@ -438,10 +435,10 @@ LM1 ships when **all** of the following are true:
 - [ ] Landing page is live at `/orlando-homebuying-readiness-quiz` and indexable
 - [ ] All 10 questions render correctly on iOS Safari and Android Chrome (primary surface; QA gate). Question switching is in-page, no full page navigations.
 - [ ] Desktop smoke check: no broken layouts and all interactions functional on a current-version desktop browser (not a polish gate)
-- [ ] Scoring engine produces correct tier + score for the 6 canonical test cases (see `08-implementation-roadmap.md`)
+- [ ] Scoring engine produces correct tier + score for the 6 canonical scoring examples (see `08-implementation-roadmap.md`)
 - [ ] All 4 tier overrides fire correctly
 - [ ] Form `fetch` POSTs to the Make.com webhook with the full payload above. Network failure on the POST does **not** block the redirect to the result page (the user has already earned the result).
-- [ ] Make.com creates/updates a Pipedrive Person with `lm1_tier`, `lm1_display_score`, `received_lm1 = true`, and the answer fields
+- [ ] Make.com creates/updates a Pipedrive Person with `fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_received_lm1 = true`, and the answer fields
 - [ ] Pipedrive Workflow Automation fires the tier-specific Pipedrive Campaign transactional email within 60 seconds of submit, for all 3 tiers
 - [ ] Google Sheet audit row is written for every submission
 - [ ] Result page renders all 3 tiers correctly from `?n=&t=A&s=…` / `?t=B` / `?t=C`

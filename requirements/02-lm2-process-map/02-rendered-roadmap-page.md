@@ -1,8 +1,40 @@
-# 06 - LM2 The Process Map: Content Drafts
 
-This is the final copy for the 9-Step Roadmap. Block-quoted text is what ships; outside-the-quote is instruction.
+The long-form 9-step content as a single web page: visual diagram at top, then nine step sections, then the three money-loss mistakes, the Orlando-specific gotchas, the pre-approval cheat sheet, and the BSS CTA at the bottom. Mobile accordion. Print stylesheet. This is the most content-heavy build in the funnel.
 
-The roadmap is dense. That's the point. Most first-time buyer guides are vague. This one is named, specific, and Orlando-flavored on every step.
+## Prereqs
+
+- [02-01 LM2 landing page](./01-landing-page.md)
+
+## Goal
+
+`/orlando-homebuying-roadmap/view.astro` renders the full roadmap content as one long-form, mobile-first page. The 9 step sections are accordion-collapsed on phone widths and expanded on desktop. Print stylesheet produces a usable hard-copy version. The roadmap is open access — **do NOT gate it behind the opt-in**; the opt-in enrolls them in nurture, not the read.
+
+## Files to create
+
+```
+src/pages/orlando-homebuying-roadmap/view.astro
+src/components/roadmap/RoadmapDiagram.astro     (the SVG diagram at the top)
+src/components/roadmap/StepSection.astro         (one component used 9 times)
+src/components/roadmap/MoneyLossSection.astro    (the 3 money-loss callouts)
+src/components/roadmap/GotchasSection.astro      (Orlando-specific gotchas)
+src/components/roadmap/PreApprovalCheatSheet.astro
+src/styles/print.css                              (print-only overrides)
+```
+
+(Adapt paths to host site conventions per `EXISTING-SITE-NOTES.md`.)
+
+## Page structure (in order)
+
+1. Intro section (locked copy below)
+2. Visual roadmap diagram (9 numbered nodes; clickable anchors to step sections)
+3. Step 1 through Step 9 sections (each with the five sub-blocks below)
+4. "The 3 Places First-Time Buyers in Orlando Lose Money"
+5. "Orlando-Specific Gotchas"
+6. "The Pre-Approval Cheat Sheet"
+7. Final BSS CTA
+8. Footer (license, brokerage)
+
+All block-quoted text below is **final copy — ship verbatim**.
 
 ---
 
@@ -25,11 +57,11 @@ The roadmap is dense. That's the point. Most first-time buyer guides are vague. 
 
 ---
 
-## Visual roadmap diagram (text spec for the developer)
+## Visual roadmap diagram
 
-Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is a numbered node with a one-line label. Clicking a node anchors to the detailed section below.
+Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is a numbered node with a one-line label. Clicking a node anchors to the matching step section (`#step-1` through `#step-9`).
 
-| # | Short label (for diagram) |
+| # | Short label (on diagram) |
 |---|---|
 | 1 | Check Your Credit |
 | 2 | Calculate What You Can Actually Afford |
@@ -41,9 +73,13 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 | 8 | Inspection, Appraisal, and Final Underwriting |
 | 9 | Close Day |
 
+**Implementation:** inline SVG. Each node is a clickable `<a href="#step-N">` anchor with `<text>` inside. Real `<a>` elements (not `<g>` with click handlers) so it stays keyboard-accessible. Vertical on mobile, horizontal on desktop — either via CSS media queries inside the SVG or two SVG variants toggled with responsive classes.
+
 ---
 
 ## Step 1. Check Your Credit
+
+Anchor: `id="step-1"`.
 
 > ## Step 1. Check Your Credit
 >
@@ -65,6 +101,8 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 ---
 
 ## Step 2. Calculate What You Can Actually Afford
+
+Anchor: `id="step-2"`.
 
 > ## Step 2. Calculate What You Can Actually Afford
 >
@@ -88,6 +126,8 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 ---
 
 ## Step 3. Build the Down Payment + Closing + Reserve
+
+Anchor: `id="step-3"`.
 
 > ## Step 3. Build the Down Payment + Closing + Reserve
 >
@@ -118,6 +158,8 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 
 ## Step 4. Choose a Lender and Get Pre-Approved
 
+Anchor: `id="step-4"`.
+
 > ## Step 4. Choose a Lender and Get Pre-Approved
 >
 > **What you do:**
@@ -140,6 +182,8 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 ---
 
 ## Step 5. Pick Your Target Areas
+
+Anchor: `id="step-5"`.
 
 > ## Step 5. Pick Your Target Areas
 >
@@ -182,6 +226,8 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 
 ## Step 6. Choose Your Agent and Tour Homes
 
+Anchor: `id="step-6"`.
+
 > ## Step 6. Choose Your Agent and Tour Homes
 >
 > **What you do:**
@@ -209,19 +255,13 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 > **Orlando note:**
 > If you're touring in **rainy season (June–October)**, look closely at: roof age (Florida roofs typically have 15–20 year insurance-rated lifespans), drainage around the foundation, and any soft spots in ceilings near roof valleys. Rainy season tours are *better* than dry-season tours. Water problems are easier to spot.
 
-**Prep note (for the agent, not shipped): what good answers to the three interview questions look like.**
-
-Prospects will read these questions, then test them on you in the BSS call. Have a ready, specific answer for each. The common thread: every good answer walks the listener through a *process*. A vague answer ("I just know the market") is the no.
-
-**"How do you evaluate whether a specific neighborhood is appreciating, flat, or declining?"** Walk through a process, not a feeling. Pull the last 12 to 24 months of sales for the specific neighborhood (not the city). Look at four trend lines: median price per square foot, days on market, list-to-sale price ratio, and months of inventory. Cross-check against the broader Orlando metro so the listener hears the difference between "appreciating with the metro" and "appreciating against a flat metro." For school-zone-sensitive buyers, mention whether zone boundaries have moved or are in play. Name one leading indicator you watch (rising price reductions, new-listing surges).
-
-**"How do you handle a competitive offer without waiving inspection?"** Reframe the question. The goal isn't to win by giving up protection. Never waive inspection (roof, AC, and polybutylene math is too brutal). Instead, shrink the contingency: 5 to 7 day inspection window instead of 10, plus a credit threshold clause ("we'll only ask for credits or repairs above $2,500") so the seller knows you won't nitpick. For homes over 15 years old, recommend a $400 pre-inspection before submitting the offer. Pair with non-price strengths: clean pre-approval, flexible closing date, larger earnest money.
-
-**"How do you decide whether the builder's preferred lender beats an outside lender?"** Reject "one always wins." Run both side by side. Ask each for a full Loan Estimate in writing within 24 hours. Compare rate, total fees, and monthly payment. Then ask explicitly whether the builder's advertised rate is permanent or a temporary buydown. If it's a buydown, get the effective rate for year 1, year 2, year 3, and year 4+, run the post-reset payment, and confirm whether the builder's closing-cost credit holds if the buyer goes outside their lender. Pick the deal that wins year 4, not year 1.
+**Do NOT render the "Prep note (for the agent, not shipped)" block on this page.** It's documentation for the agent's own BSS preparation, not for the prospect.
 
 ---
 
 ## Step 7. Write the Offer and Negotiate
+
+Anchor: `id="step-7"`.
 
 > ## Step 7. Write the Offer and Negotiate
 >
@@ -262,6 +302,8 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ## Step 8. Inspection, Appraisal, and Final Underwriting
 
+Anchor: `id="step-8"`.
+
 > ## Step 8. Inspection, Appraisal, and Final Underwriting
 >
 > **What you do:**
@@ -290,6 +332,8 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ## Step 9. Close Day
 
+Anchor: `id="step-9"`.
+
 > ## Step 9. Close Day
 >
 > **What you do:**
@@ -315,7 +359,9 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ---
 
-## The 3 Places First-Time Buyers Lose Money
+## The 3 Places First-Time Buyers in Orlando Lose Money
+
+Render this section below Step 9, before the gotchas.
 
 > ## The 3 Places First-Time Buyers in Orlando Lose Money
 >
@@ -351,6 +397,8 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ## Orlando-Specific Gotchas
 
+Render below the money-loss section.
+
 > ## Orlando-Specific Gotchas
 >
 > ### HOA disclosure timeline
@@ -385,6 +433,8 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ## The Pre-Approval Cheat Sheet
 
+Render below the gotchas section.
+
 > ## The Pre-Approval Cheat Sheet
 >
 > Before you call a lender, gather these. Having them ready cuts your pre-approval timeline in half and signals you're a serious applicant.
@@ -412,7 +462,7 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ---
 
-## Final CTA (bottom of the roadmap page)
+## Final BSS CTA (bottom of the roadmap page)
 
 > ## When you want me to walk this with you
 >
@@ -437,3 +487,53 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 >
 > *Built by [Agent Name], licensed REALTOR® in Florida.*
 > *[License #] | [Brokerage]*
+
+**CTA URL:** the same `BSS_BOOKING_URL` constant Tier A uses (from `src/config/links.ts`). Fire `fthb_roadmap_bss_cta_click` on `pointerdown`.
+
+---
+
+## Implementation notes
+
+### Step section component (`StepSection.astro`)
+
+Props: `{ step: number, anchorId: string, title: string }`. Slots: default content. On phone widths, render as a `<details>` accordion (the step heading + "What you do" stays visible; rest hides until tap-to-expand). On desktop (≥ 768px), all sections expanded by default — simplest path is `<details open>` everywhere on desktop via CSS (`@media (min-width: 768px) details { /* always open */ }`) or render `<details open>` server-side based on a viewport hint.
+
+### Analytics
+
+- Fire `fthb_roadmap_view_view` on page load.
+- Fire `fthb_roadmap_step_expand` when any step accordion is opened. Listen for `toggle` events on each `<details>` element. Props: `{ step_number: 1 | 2 | ... | 9 }`.
+- Fire `fthb_roadmap_bss_cta_click` on the final CTA's `pointerdown`. No props.
+
+### Print stylesheet (`src/styles/print.css`)
+
+- Force all `<details>` to render expanded (`details { open: true }` or `summary + * { display: block !important }`).
+- Hide nav, the BSS CTA button (the user is reading on paper; can't click), and any "share this" UI if you added it.
+- Set a sensible printed font size; force black-on-white.
+- Page-break-after the visual diagram and major section headings to keep print pagination clean.
+
+## Things NOT to do
+
+- Don't gate the content behind the opt-in. The roadmap *is* the lead magnet; the opt-in enrolls them in nurture, not the read.
+- Don't shorten or paraphrase the content above. The density is the value.
+- Don't render the Step 6 "Prep note (for the agent, not shipped)" section.
+- Don't add a "share this" button. The URL is already shareable.
+- Don't use the word "corridor" in copy beyond the diagram label / hero phrasing. Always say "Downtown Orlando," not bare "Downtown."
+
+## Definition of Done
+
+- [ ] Page renders all 9 step sections + 3 money-loss callouts + 4 gotchas blocks + pre-approval cheat sheet + final CTA in the order above
+- [ ] Mobile (375px) shows steps as `<details>` accordions; tap-to-expand works
+- [ ] Desktop (≥ 768px) shows all sections expanded
+- [ ] Diagram at top is clickable; each node anchors to the matching step section (`#step-1` through `#step-9`)
+- [ ] Print preview in Chrome (Cmd+P) produces a usable doc (no clipped content, no buttons, all step sections rendered)
+- [ ] BSS CTA at bottom links to `BSS_BOOKING_URL` from `src/config/links.ts`
+- [ ] `fthb_roadmap_view_view`, `fthb_roadmap_step_expand`, `fthb_roadmap_bss_cta_click` analytics events fire correctly
+
+## Verification
+
+```
+http://localhost:4321/orlando-homebuying-roadmap/view
+```
+
+- Tab through the page from top to bottom with keyboard — the SVG anchors should be focusable, each accordion should be openable with Enter/Space.
+- Cmd+P → "Save as PDF" — open the PDF, confirm every section is present and readable.

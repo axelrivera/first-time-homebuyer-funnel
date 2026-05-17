@@ -1,4 +1,3 @@
-# 04 - LM1 Readiness Filter: Email Sequence
 
 Every email here is final copy. Drop into Pipedrive Campaigns as-is. Curly braces `{{like_this}}` are Pipedrive merge fields that resolve against the Person record Make.com has just written.
 
@@ -10,13 +9,13 @@ The agent's email voice = the same as the result-page voice: direct, useful, no 
 
 - **From name:** `{{agent_first_name}} from Orlando Homes` (or whatever the agent's working brand name is, locked in Phase 1)
 - **From email:** A real address the agent monitors. Replies are responded to within 24 hours. *No no-reply addresses.*
-- **Sending tool:** **Pipedrive Campaigns** (the Campaigns addon on Pipedrive). All transactional + nurture email lives here as named campaigns; **Pipedrive Workflow Automations** enroll, unenroll, and pause contacts based on custom-field values (`lm1_tier`, `received_lm1`, `received_lm2`, `preferred_language`, etc.).
+- **Sending tool:** **Pipedrive Campaigns** (the Campaigns addon on Pipedrive). All transactional + nurture email lives here as named campaigns; **Pipedrive Workflow Automations** enroll, unenroll, and pause contacts based on custom-field values (`fthb_lm1_tier`, `fthb_received_lm1`, `fthb_received_lm2`, etc.).
 - **Make.com's role:** Receive the webhook, write the Google Sheet audit row, and create/update the Pipedrive Person with the right field values. Make.com does **not** send a single email itself — Pipedrive owns email entirely. This is the boundary; keep it clean.
-- **Merge tags:** `{{like_this}}` in this doc maps to Pipedrive Campaigns merge fields. The agent will need to wire each one (`first_name`, `tier_label`, `display_score`, `result_page_link`, `book_bss_link`, `lm2_optin_link`, `retake_link`, `agent_first_name`, `agent_license_no`, `brokerage`) to the corresponding Pipedrive Person/Deal field before scheduling each campaign.
-- **Tier reassignment rule:** If a contact retakes the scorecard and lands in a new tier, Make.com updates `lm1_tier` and sets `lm1_retaken_at` on the existing Pipedrive Person. A Pipedrive Workflow Automation listens for `lm1_tier` changes and:
+- **Merge tags:** `{{like_this}}` in this doc maps to Pipedrive Campaigns merge fields. The agent will need to wire each one (`first_name`, `tier_label`, `display_score`, `fthb_result_page_link`, `book_bss_link`, `fthb_lm2_optin_link`, `fthb_retake_link`, `agent_first_name`, `agent_license_no`, `brokerage`) to the corresponding Pipedrive Person/Deal field before scheduling each campaign.
+- **Tier reassignment rule:** If a contact retakes the scorecard and lands in a new tier, Make.com updates `fthb_lm1_tier` and sets `fthb_lm1_retaken_at` on the existing Pipedrive Person. A Pipedrive Workflow Automation listens for `fthb_lm1_tier` changes and:
   1. Unenrolls the contact from the campaign matching their old tier
   2. Enrolls them in the campaign matching the new tier, starting at email 1
-- **Per-tier campaigns to build:** one Pipedrive Campaign per sequence below (`LM1 - Tier A`, `LM1 - Tier B`, `LM1 - Tier C`). Each transactional email (Email 0) is its own one-shot campaign or a Workflow-Automation-triggered template send; the agent can pick whichever Pipedrive Campaigns surface makes that easiest in practice.
+- **Per-tier campaigns to build:** one Pipedrive Campaign per sequence below (`FTHB LM1 - Tier A`, `FTHB LM1 - Tier B`, `FTHB LM1 - Tier C`). Each transactional email (Email 0) is its own one-shot campaign or a Workflow-Automation-triggered template send; the agent can pick whichever Pipedrive Campaigns surface makes that easiest in practice.
 
 ---
 
@@ -37,7 +36,7 @@ Here's the full result with your tier explanation, the 2 mistakes
 buyers in your tier most often make, and a 1-page Orlando market
 snapshot:
 
-    {{result_page_link}}
+    {{fthb_result_page_link}}
 
 The result page also has your specific next step at the bottom.
 
@@ -55,8 +54,9 @@ Talk soon,
 {{agent_first_name}}
 {{agent_license_no}} | {{brokerage}}
 
-P.S. Want this in Spanish? Reply with the word "español" and I'll
-send the Spanish version.
+P.S. Bookmark the result-page link. Nothing on it expires. The
+2-mistakes section gets a lot more useful the day before you
+actually talk to a lender, so come back to it then.
 ```
 
 ---
@@ -232,8 +232,10 @@ hard feelings, no awkwardness. Just reply.
 
 - {{agent_first_name}}
 
-P.S. The Spanish version of the result page and these emails is
-available on request. Reply with "español" and I'll send it.
+P.S. If a friend in Orlando is at the same stage you are, the
+scorecard link is open: {{fthb_readiness_quiz_link}}. No referral
+fee, no tracking. I'd just rather more first-time buyers know
+where they actually stand before they start shopping.
 ```
 
 After A5, the contact moves to the **monthly market-update list** (same as the Tier C long-term nurture; see below).
@@ -258,7 +260,7 @@ are the whole game.
 On the result page, your "what's next" was to grab my 9-Step
 First Home Roadmap. If you didn't snag it yet, here it is:
 
-    {{lm2_optin_link}}
+    {{fthb_lm2_optin_link}}
 
 It's the exact step-by-step process between "I think I'm ready"
 and keys in your hand in Orlando. Every step shows what you do,
@@ -310,7 +312,7 @@ The full sequence (with the lender shortlist, the documents to
 gather, and the question to ask every lender to vet them) is in
 the roadmap:
 
-    {{lm2_optin_link}}
+    {{fthb_lm2_optin_link}}
 
 - {{agent_first_name}}
 ```
@@ -360,7 +362,7 @@ How to handle it:
 Step 4 (Lender Selection) in the roadmap walks through both the
 new-construction and resale paths:
 
-    {{lm2_optin_link}}
+    {{fthb_lm2_optin_link}}
 
 - {{agent_first_name}}
 ```
@@ -472,7 +474,7 @@ When you cross into the 90-Day Sprint tier (which usually means
 your credit, savings, and timeline all line up), I'll let you
 know. You can retake the scorecard anytime to check:
 
-    {{retake_link}}
+    {{fthb_retake_link}}
 
 First real email comes in about 2 weeks.
 
