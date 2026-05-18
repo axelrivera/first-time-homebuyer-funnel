@@ -2,7 +2,7 @@
 id: LM2-E0
 funnel: fthb
 magnet: lm2
-campaign: FTHB LM2 - Roadmap
+campaign: FTHB 9-Step Roadmap - Delivery (Email 0)
 day: 0
 trigger: Immediately on form submit (both `fthb_lm1_tier_b` and `fthb_lm2_standalone` sources)
 goal: Deliver the PDF + web link; set expectations for follow-up

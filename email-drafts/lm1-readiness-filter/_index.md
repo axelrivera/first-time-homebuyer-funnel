@@ -2,15 +2,15 @@
 
 **Source spec:** [docs/04-readiness-filter-emails.md](../../docs/04-readiness-filter-emails.md)
 
-LM1 has **four Pipedrive campaigns** plus the shared monthly market update:
+LM1 is delivered as **one Pipedrive campaign per email** (each email is a standalone campaign in Pipedrive). Names follow the convention `FTHB Readiness Quiz - {Segment} Day {N}`, with `(Email 0)` reserved for the transactional. The shared monthly market update is a single recurring campaign.
 
-| Campaign | Tier | Emails | Cadence | Goal |
-|---|---|---|---|---|
-| FTHB LM1 - Transactional (Email 0) | all | 1 | within 60s of submit | deliver result link |
-| FTHB LM1 - Tier A | A (READY_NOW) | 5 | Day 0, 2, 5, 9, 14 | book BSS |
-| FTHB LM1 - Tier B | B (NINETY_DAY) | 6 | Day 0, 2, 4, 7, 12, 21 | get them into LM2, then BSS |
-| FTHB LM1 - Tier C | C (FOUNDATION) | C0, C1, C2, then C3+ rotating | Day 0, then bi-weekly indefinite | stay useful, no BSS pitch |
-| FTHB Monthly Market Update | graduates of all 3 tiers + LM2 N3 | 1/mo | monthly | long-tail nurture |
+| Segment | Tier | Per-email campaigns | Goal |
+|---|---|---|---|
+| Result Delivery | all | `FTHB Readiness Quiz - Result Delivery (Email 0)` | deliver result link within 60s of submit |
+| Ready Now | A (READY_NOW) | `FTHB Readiness Quiz - Ready Now Day {0, 2, 5, 9, 14}` | book BSS |
+| 90-Day Sprint | B (NINETY_DAY) | `FTHB Readiness Quiz - 90-Day Sprint Day {0, 2, 4, 7, 12, 21}` | get them into LM2, then BSS |
+| Foundation Phase | C (FOUNDATION) | `FTHB Readiness Quiz - Foundation Phase Day {0, 14, 28}`, then `... Day 42+ (rotating)` bi-weekly indefinite | stay useful, no BSS pitch |
+| Monthly Market Update | graduates of all 3 tiers + LM2 N3 | `FTHB Monthly Market Update` (1/mo) | long-tail nurture |
 
 ## File layout
 
@@ -43,8 +43,8 @@ lm1-readiness-filter/
 ## Load-bearing rules from CLAUDE.md
 
 - **Tier C never gets a BSS pitch**, ever, from any sequence. Hard branch in Pipedrive Workflow Automations.
-- **Tier reassignment on retake** — if `fthb_lm1_tier` changes, automation unenrolls from old-tier campaign and enrolls in new-tier campaign starting at email 1.
-- **Tier B who opts into LM2** — when `fthb_received_lm2 = true` flips on a `NINETY_DAY` contact, Pipedrive unenrolls from `FTHB LM1 - Tier B` and enrolls in `FTHB LM2 - Roadmap`. Prevents the email storm. See `../lm2-process-map/_index.md` for the matching rule.
+- **Tier reassignment on retake** — if `fthb_lm1_tier` changes, automation unenrolls the contact from every remaining per-day campaign in the old tier and enrolls them in the new tier starting at Day 0.
+- **Tier B who opts into LM2** — when `fthb_received_lm2 = true` flips on a `NINETY_DAY` contact, Pipedrive unenrolls them from every remaining `FTHB Readiness Quiz - 90-Day Sprint Day {N}` campaign and enrolls them in `FTHB 9-Step Roadmap - Delivery (Email 0)` plus the `FTHB 9-Step Roadmap - Nurture Day {3, 7, 14}` series. Prevents the email storm. See `../lm2-process-map/_index.md` for the matching rule.
 
 ## Locked language
 

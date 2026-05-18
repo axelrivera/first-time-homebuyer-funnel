@@ -86,18 +86,9 @@ where deals fall apart the most. Not because of the market,
 but because of avoidable mistakes the buyer makes (new credit,
 large deposits, job changes).
 
-The Buyer Strategy Session I offer is built for exactly this
-window. We go through:
-
-- Your pre-approval (is it actually strong enough to win in your
-  target neighborhoods, or just "good enough"?)
-- 2–3 target areas and what's actually available right now
-- The 3 offer mechanics that consistently win along the I-4
-  corridor (Sanford to Downtown, both Seminole and Orange side)
-  without overpaying
-
-30 minutes. Free. Zoom or in person. No pitch. If we're a fit,
-great; if not, you keep the action plan.
+If you want to talk through where you are and what to focus on
+in your specific window, that's what the 30-minute call is for.
+Free, video call.
 
     {{book_bss_link}}
 

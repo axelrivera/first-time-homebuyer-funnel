@@ -3,12 +3,12 @@ id: LM1-A1
 funnel: fthb
 magnet: lm1
 tier: A (READY_NOW)
-campaign: FTHB LM1 - Tier A
+campaign: FTHB Readiness Quiz - Ready Now Day 0
 day: 0
 trigger: ~10 minutes after transactional
 goal: Frame "Ready Now" + introduce BSS
 subject: One thing about your "Ready Now" score
-status: DRAFT          # DRAFT | REVIEWING | POLISHED | SHIPPED
+status: DRAFT # DRAFT | REVIEWING | POLISHED | SHIPPED
 last_edited: 2026-05-17
 source_doc: docs/04-readiness-filter-emails.md
 ---
@@ -33,18 +33,9 @@ where deals fall apart the most. Not because of the market,
 but because of avoidable mistakes the buyer makes (new credit,
 large deposits, job changes).
 
-The Buyer Strategy Session I offer is built for exactly this
-window. We go through:
-
-- Your pre-approval (is it actually strong enough to win in your
-  target neighborhoods, or just "good enough"?)
-- 2–3 target areas and what's actually available right now
-- The 3 offer mechanics that consistently win along the I-4
-  corridor (Sanford to Downtown, both Seminole and Orange side)
-  without overpaying
-
-30 minutes. Free. Zoom or in person. No pitch. If we're a fit,
-great; if not, you keep the action plan.
+If you want to talk through where you are and what to focus on
+in your specific window, that's what the 30-minute call is for.
+Free, video call.
 
     {{book_bss_link}}
 
@@ -52,12 +43,14 @@ great; if not, you keep the action plan.
 ```
 
 ## Polish notes
+
 <!-- Capture edits, alternates, decisions here. -->
 
 - [ ] Test: would a Ready Now prospect feel stupid to say no?
 - [ ] Confirm corridor geography line still reads as authoritative, not generic
 
 ## Merge fields used
+
 - `{{first_name}}`
 - `{{book_bss_link}}`
 - `{{agent_first_name}}`

@@ -3,7 +3,7 @@ id: LM1-B2
 funnel: fthb
 magnet: lm1
 tier: B (NINETY_DAY)
-campaign: FTHB LM1 - Tier B
+campaign: FTHB Readiness Quiz - 90-Day Sprint Day 2
 day: 2
 trigger: 2 days after B1
 goal: Block the open-house-before-pre-approval trap; push LM2

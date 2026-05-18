@@ -1,15 +1,15 @@
-# LM2 — *The 9-Step First Home Roadmap* (email campaign)
+# LM2 — *The 9-Step First Home Roadmap* (email campaigns)
 
 **Source spec:** [docs/07-process-map-emails.md](../../docs/07-process-map-emails.md)
 
-LM2 is a **single Pipedrive campaign** — `FTHB LM2 - Roadmap` — used for both `source` values (`fthb_lm1_tier_b` and `fthb_lm2_standalone`) because the roadmap content level-sets all readers.
+LM2 is delivered as **one Pipedrive campaign per email** (4 campaigns total). Every contact gets the same sequence regardless of `source` (`fthb_lm1_tier_b` and `fthb_lm2_standalone`) because the roadmap content level-sets all readers.
 
-| Email | Day | Subject | Status target |
-|---|---|---|---|
-| 0 (transactional) | 0 | Your 9-Step Orlando Home Roadmap (link + PDF inside) | POLISHED before launch |
-| N1 | 3 | Which step did you start on? | POLISHED before launch |
-| N2 | 7 | The Step 3 → Step 4 jump | POLISHED before launch |
-| N3 | 14 | When the roadmap turns into a conversation | POLISHED before launch |
+| Email | Day | Campaign | Subject | Status target |
+|---|---|---|---|---|
+| 0 (transactional) | 0 | `FTHB 9-Step Roadmap - Delivery (Email 0)` | Your 9-Step Orlando Home Roadmap (link + PDF inside) | POLISHED before launch |
+| N1 | 3 | `FTHB 9-Step Roadmap - Nurture Day 3` | Which step did you start on? | POLISHED before launch |
+| N2 | 7 | `FTHB 9-Step Roadmap - Nurture Day 7` | The Step 3 → Step 4 jump | POLISHED before launch |
+| N3 | 14 | `FTHB 9-Step Roadmap - Nurture Day 14` | When the roadmap turns into a conversation | POLISHED before launch |
 
 ## File layout
 
@@ -25,7 +25,7 @@ lm2-process-map/
 
 ## Tier B email-storm rule (load-bearing)
 
-Anyone arriving at LM2 via `source = fthb_lm1_tier_b` is **already enrolled** in `FTHB LM1 - Tier B`. Without careful routing they will get two parallel sequences.
+Anyone arriving at LM2 via `source = fthb_lm1_tier_b` is **already enrolled** in the `FTHB Readiness Quiz - 90-Day Sprint Day {N}` campaigns. Without careful routing they will get two parallel sequences.
 
 The rule, split across Make.com and Pipedrive Workflow Automations:
 
@@ -39,11 +39,11 @@ The rule, split across Make.com and Pipedrive Workflow Automations:
 
 **Pipedrive Workflow Automation (on `fthb_received_lm2` flipped to `true`):**
 
-1. Unenroll the contact from `FTHB LM1 - Tier B` (cancels all scheduled future emails).
-2. Enroll the contact in `FTHB LM2 - Roadmap` starting at Email 0.
-3. Campaign scheduling drips N1, N2, N3 on Day 3, 7, 14.
+1. Unenroll the contact from every remaining `FTHB Readiness Quiz - 90-Day Sprint Day {N}` campaign (cancels all scheduled future Sprint emails).
+2. Enroll the contact in `FTHB 9-Step Roadmap - Delivery (Email 0)` immediately.
+3. Schedule enrollment in `FTHB 9-Step Roadmap - Nurture Day 3`, `... Day 7`, and `... Day 14` at the matching offsets.
 
-A contact who never opts into LM2 stays in `FTHB LM1 - Tier B` and finishes it normally. No automation fires.
+A contact who never opts into LM2 stays in the 90-Day Sprint campaigns and finishes them normally. No automation fires.
 
 ## Post-sequence routing
 

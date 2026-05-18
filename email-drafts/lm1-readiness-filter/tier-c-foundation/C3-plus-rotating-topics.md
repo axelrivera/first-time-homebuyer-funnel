@@ -3,7 +3,7 @@ id: LM1-C3-PLUS
 funnel: fthb
 magnet: lm1
 tier: C (FOUNDATION)
-campaign: FTHB LM1 - Tier C
+campaign: FTHB Readiness Quiz - Foundation Phase Day 42+ (rotating)
 day: 42+
 cadence: bi-weekly, indefinite (loop topic list after #10)
 goal: Stay useful, no pitch, build credibility over months

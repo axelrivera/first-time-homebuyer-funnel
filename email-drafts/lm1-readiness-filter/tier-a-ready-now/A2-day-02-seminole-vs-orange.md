@@ -3,7 +3,7 @@ id: LM1-A2
 funnel: fthb
 magnet: lm1
 tier: A (READY_NOW)
-campaign: FTHB LM1 - Tier A
+campaign: FTHB Readiness Quiz - Ready Now Day 2
 day: 2
 trigger: 2 days after A1
 goal: Demonstrate local-data fluency + push BSS

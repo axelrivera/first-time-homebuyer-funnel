@@ -3,7 +3,7 @@ id: LM1-B4
 funnel: fthb
 magnet: lm1
 tier: B (NINETY_DAY)
-campaign: FTHB LM1 - Tier B
+campaign: FTHB Readiness Quiz - 90-Day Sprint Day 7
 day: 7
 trigger: 7 days after B1
 goal: Get a 1-character reply; turn it into a real conversation

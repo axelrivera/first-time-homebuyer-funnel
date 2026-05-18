@@ -33,11 +33,11 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 ### CTA
 
 > ## What's next
-> You're ready. The next step is a 30-minute Buyer Strategy Session with me: free, no pitch. We'll go through your exact pre-approval, your two target neighborhoods, and the 3 offer mechanics that win in this market right now.
+> You're ready. Let's talk through your specific situation and figure out the right next step.
 >
-> [ Book the Buyer Strategy Session → ]
+> [ Book a 30-Minute Call with {{agent_first_name}} → ]
 >
-> *30 minutes. Zoom or in person.*
+> *30 minutes. Free. Video call.*
 
 ---
 

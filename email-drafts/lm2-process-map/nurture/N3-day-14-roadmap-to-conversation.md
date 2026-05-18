@@ -2,7 +2,7 @@
 id: LM2-N3
 funnel: fthb
 magnet: lm2
-campaign: FTHB LM2 - Roadmap
+campaign: FTHB 9-Step Roadmap - Nurture Day 14
 day: 14
 trigger: 14 days after transactional
 goal: Soft pitch BSS for those who are Step 4–6; sign off otherwise

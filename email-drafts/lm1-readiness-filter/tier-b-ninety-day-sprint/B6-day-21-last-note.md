@@ -3,7 +3,7 @@ id: LM1-B6
 funnel: fthb
 magnet: lm1
 tier: B (NINETY_DAY)
-campaign: FTHB LM1 - Tier B
+campaign: FTHB Readiness Quiz - 90-Day Sprint Day 21
 day: 21
 trigger: 21 days after B1
 goal: Soft sign-off; hand off to monthly market update
@@ -11,7 +11,7 @@ subject: "Last note (then I back off)"
 status: DRAFT
 last_edited: 2026-05-17
 source_doc: docs/04-readiness-filter-emails.md
-post_sequence_routing: After B6 → monthly market-update list (unless `fthb_received_lm2 = true`, in which case Pipedrive Workflow Automation already unenrolled them and routed to FTHB LM2 - Roadmap)
+post_sequence_routing: After B6 → monthly market-update list (unless `fthb_received_lm2 = true`, in which case Pipedrive Workflow Automation already unenrolled them from the remaining 90-Day Sprint campaigns and routed them into the 9-Step Roadmap Delivery + Nurture series)
 ---
 
 # B6 — Day 21

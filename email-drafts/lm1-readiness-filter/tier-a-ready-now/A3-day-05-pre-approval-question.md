@@ -3,7 +3,7 @@ id: LM1-A3
 funnel: fthb
 magnet: lm1
 tier: A (READY_NOW)
-campaign: FTHB LM1 - Tier A
+campaign: FTHB Readiness Quiz - Ready Now Day 5
 day: 5
 trigger: 5 days after A1
 goal: Triage their letter; create a low-friction reply hook

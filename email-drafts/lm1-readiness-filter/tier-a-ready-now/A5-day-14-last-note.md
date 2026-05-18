@@ -3,7 +3,7 @@ id: LM1-A5
 funnel: fthb
 magnet: lm1
 tier: A (READY_NOW)
-campaign: FTHB LM1 - Tier A
+campaign: FTHB Readiness Quiz - Ready Now Day 14
 day: 14
 trigger: 14 days after A1
 goal: Soft sign-off, keep door open, referral hook (P.S.)

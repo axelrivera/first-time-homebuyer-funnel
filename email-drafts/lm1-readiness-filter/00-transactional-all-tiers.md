@@ -3,7 +3,7 @@ id: LM1-E0
 funnel: fthb
 magnet: lm1
 tier: all
-campaign: FTHB LM1 - Transactional (Email 0)
+campaign: FTHB Readiness Quiz - Result Delivery (Email 0)
 day: 0
 trigger: Immediately on form submit (within 60 seconds)
 goal: Confirm receipt, deliver the result link, set the tone

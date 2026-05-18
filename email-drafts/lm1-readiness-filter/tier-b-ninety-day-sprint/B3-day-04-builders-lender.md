@@ -3,7 +3,7 @@ id: LM1-B3
 funnel: fthb
 magnet: lm1
 tier: B (NINETY_DAY)
-campaign: FTHB LM1 - Tier B
+campaign: FTHB Readiness Quiz - 90-Day Sprint Day 4
 day: 4
 trigger: 4 days after B1
 goal: Teach the builder-lender math for new construction along the I-4 corridor

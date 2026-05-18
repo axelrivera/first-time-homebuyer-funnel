@@ -3,7 +3,7 @@ id: LM1-B5
 funnel: fthb
 magnet: lm1
 tier: B (NINETY_DAY)
-campaign: FTHB LM1 - Tier B
+campaign: FTHB Readiness Quiz - 90-Day Sprint Day 12
 day: 12
 trigger: 12 days after B1
 goal: Self-qualify into BSS; let unready buyers self-disqualify gracefully

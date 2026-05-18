@@ -2,7 +2,7 @@
 id: LM2-N1
 funnel: fthb
 magnet: lm2
-campaign: FTHB LM2 - Roadmap
+campaign: FTHB 9-Step Roadmap - Nurture Day 3
 day: 3
 trigger: 3 days after transactional
 goal: Re-engage; get the reader to self-identify their starting step

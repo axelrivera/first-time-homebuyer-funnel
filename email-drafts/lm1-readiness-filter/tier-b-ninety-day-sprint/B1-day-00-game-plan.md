@@ -3,7 +3,7 @@ id: LM1-B1
 funnel: fthb
 magnet: lm1
 tier: B (NINETY_DAY)
-campaign: FTHB LM1 - Tier B
+campaign: FTHB Readiness Quiz - 90-Day Sprint Day 0
 day: 0
 trigger: ~10 minutes after transactional
 goal: Deliver/re-deliver LM2 (the 9-Step Roadmap)

@@ -3,7 +3,7 @@ id: LM1-C0
 funnel: fthb
 magnet: lm1
 tier: C (FOUNDATION)
-campaign: FTHB LM1 - Tier C
+campaign: FTHB Readiness Quiz - Foundation Phase Day 0
 day: 0
 trigger: ~10 minutes after transactional
 goal: Reframe "Foundation Phase" as positive; set the cadence and retake hook

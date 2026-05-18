@@ -154,17 +154,16 @@ roadmap is everything I'd tell you in 30 minutes if you booked
 the strategy session anyway. Use it.
 
 If you're ready to talk through your specific situation
-(your scorecard tier, your numbers, your target areas), that's
-what the **Buyer Strategy Session** is for:
+(your scorecard tier, your numbers, your target areas), book
+a 30-minute call with me:
 
-  → 30 minutes. Free. No pitch.
-  → Zoom or in person.
+  → 30 minutes. Free. Video call.
   → Book it here: {{book_bss_link}}
 
-The strategy session is most useful when you're somewhere
-between Step 4 and Step 6 on the roadmap. If you're earlier
-than that, do the work first; the call will be a much better
-use of both of our time when you have a lender letter in hand.
+The call is most useful when you're somewhere between Step 4
+and Step 6 on the roadmap. If you're earlier than that, do
+the work first; we'll cover more useful ground when you have
+a lender letter in hand.
 
 Either way: I'll stop emailing you about the roadmap after
 this. You'll get my monthly Orlando market update from here

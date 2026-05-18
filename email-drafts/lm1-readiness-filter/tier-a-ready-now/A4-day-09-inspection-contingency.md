@@ -3,7 +3,7 @@ id: LM1-A4
 funnel: fthb
 magnet: lm1
 tier: A (READY_NOW)
-campaign: FTHB LM1 - Tier A
+campaign: FTHB Readiness Quiz - Ready Now Day 9
 day: 9
 trigger: 9 days after A1
 goal: Teach a specific Florida contract mechanic + reinforce BSS value

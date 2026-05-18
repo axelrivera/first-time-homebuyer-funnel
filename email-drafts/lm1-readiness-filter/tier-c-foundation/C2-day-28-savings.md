@@ -3,7 +3,7 @@ id: LM1-C2
 funnel: fthb
 magnet: lm1
 tier: C (FOUNDATION)
-campaign: FTHB LM1 - Tier C
+campaign: FTHB Readiness Quiz - Foundation Phase Day 28
 day: 28
 trigger: 14 days after C1
 topic: Savings (foundation rotation #2)

@@ -2,7 +2,7 @@
 id: LM2-N2
 funnel: fthb
 magnet: lm2
-campaign: FTHB LM2 - Roadmap
+campaign: FTHB 9-Step Roadmap - Nurture Day 7
 day: 7
 trigger: 7 days after transactional
 goal: Unstick the Step 3 → Step 4 jump; offer lender referrals

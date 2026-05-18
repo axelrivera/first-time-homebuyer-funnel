@@ -418,20 +418,11 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 >
 > If you've read this and you're still 60–120 days out from buying, perfect. You have the map. Walk it. The whole roadmap is here when you need to reference any specific step.
 >
-> When you're ready for the conversation (usually around the time you finish Step 3 and you're heading into Step 4), that's when the **Buyer Strategy Session** is most useful.
+> When you're ready for the conversation (usually around the time you finish Step 3 and you're heading into Step 4), the 30-minute call is most useful. Let's talk through where you are on the roadmap, your specific numbers, your target areas, and what to focus on this week.
 >
-> The strategy session is 30 minutes. Free. No pitch. We go through:
+> [ Book a 30-Minute Call with {{agent_first_name}} → ]
 >
-> - Where you are on the roadmap right now and what to focus on this week
-> - Your specific numbers (no document review needed; we work from the scorecard)
-> - Your 2–3 target areas and what's actually available
-> - The 3 offer mechanics that win in this market without overpaying
->
-> If we're a fit, we'll talk about working together. If we're not, you keep the action plan and move on. Either way works.
->
-> [ Book the Buyer Strategy Session → ]
->
-> *30 minutes. Zoom or in person.*
+> *30 minutes. Free. Video call.*
 >
 > ---
 >
