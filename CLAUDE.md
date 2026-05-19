@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository status
 
-**Docs-only right now.** No code, no build tooling. The only contents are specs in [docs/](docs/) that define a two-step lead-generation funnel for a newly licensed Orlando real estate agent targeting first-time buyers. When code lands, it will be an **Astro + Tailwind CSS** static site (vanilla JavaScript, no backend, no cookies, no environment variables) that POSTs to a **Make.com** webhook, which creates a Person/Lead in **Pipedrive**; **Pipedrive Campaigns** (with Workflow Automations) owns transactional and nurture email. That stack assumption is baked into every spec.
+**Docs-only right now.** No code, no build tooling. The only contents are specs in [docs/](docs/) that define a two-step lead-generation funnel for a newly licensed Orlando real estate agent targeting first-time buyers. When code lands, it will be an **Astro + Tailwind CSS** static site (vanilla JavaScript, no backend, no cookies, no environment variables) that POSTs to a **Make.com** webhook. Make.com creates a Person in **Pipedrive** and enrolls them in the appropriate Pipedrive automation; transactional and nurture email are sent from four linear Pipedrive automations orchestrating single-email campaigns. That stack assumption is baked into every spec.
 
 ## What this funnel is
 
@@ -28,8 +28,9 @@ The source of truth for *what this funnel should do and say*. Files are numbered
 
 - **Product specs** ([02-readiness-filter-spec.md](docs/02-readiness-filter-spec.md), [05-process-map-spec.md](docs/05-process-map-spec.md)) win for **behavior** — routes, scoring, payloads, overrides.
 - **Content drafts** ([03-readiness-filter-content.md](docs/03-readiness-filter-content.md), [06-process-map-content.md](docs/06-process-map-content.md)) win for **copy**.
-- **Email files** ([04-readiness-filter-emails.md](docs/04-readiness-filter-emails.md), [07-process-map-emails.md](docs/07-process-map-emails.md)) own transactional + nurture sequences.
+- **Email files** ([04-readiness-filter-emails-v2.md](docs/04-readiness-filter-emails-v2.md), [07-process-map-emails-v2.md](docs/07-process-map-emails-v2.md)) own transactional + nurture sequences. The v1 files ([04-readiness-filter-emails.md](docs/04-readiness-filter-emails.md), [07-process-map-emails.md](docs/07-process-map-emails.md)) are retained for reference but were superseded by v2 to respect Pipedrive Campaigns' no-unenroll constraint — **always read v2 for current behavior**.
 - [08-implementation-roadmap.md](docs/08-implementation-roadmap.md) is the phased build plan and the source of canonical scoring examples.
+- [09-deal-pipeline-stages.md](docs/09-deal-pipeline-stages.md) defines the Pipedrive Deal pipeline stages (Quiz Taken, Received Roadmap, BSS Booked, Pre-Approved & Searching, Under Contract, Closing), their probability and rotting values, the forward-only stage-progression rule, and the Make.com stage-setting logic.
 
 ### [requirements/](requirements/) — build tasks (active during build, archival after)
 
@@ -57,26 +58,52 @@ Produced by [requirements/00-foundations/01-audit-existing-site.md](requirements
        │                              ├─▶ [Google Sheet log]    └─▶ [Pipedrive Workflow
        │                                                              Automation]
        │                                                                  │
-       └─renders result inline from query params               [Pipedrive Campaigns]
-                                                              (transactional + nurture)
+       └─renders result inline from query params               [4 Pipedrive automations]
+                                                              (Tier A/B/C + Roadmap, linear)
 ```
 
 The funnel has **one webhook**. Both LM1 and LM2 forms POST the same Make.com endpoint, distinguished by a `magnet` field (`"fthb_lm1"` or `"fthb_lm2"`). The boundary of responsibilities is strict:
 
 - **Astro site (vanilla JS only)** owns: rendering all pages, running the scoring engine client-side, building the result-page URL with plain query params, firing analytics events directly from the browser, and POSTing the form payload to Make.com. There is no backend, no cookies, no `LocalStorage`/`SessionStorage` reliance for cross-page resumption, and no environment variables: the Make.com webhook URL, Pipedrive isn't called directly, and any analytics key are baked into the build.
-- **Make.com** owns: receiving the webhook, writing a Google Sheet fallback row, and creating or updating a Pipedrive Person/Lead with the tier, score, magnet, source, and answer fields. Make.com does **not** send email and does **not** route nurture sequences.
-- **Pipedrive (with the Campaigns addon)** owns: contact storage, email sending (transactional + nurture), sequence enrollment, sequence pausing/unenrolling, and the email-side conditional logic. All sequence routing is implemented as **Pipedrive Workflow Automations** that trigger off custom fields/labels Make.com sets on the contact (e.g., `fthb_lm1_tier`, `fthb_received_lm2`).
+- **Make.com** owns: receiving the webhook, writing a Google Sheet fallback row, creating or updating the right Pipedrive entity (Person + Lead or Deal — see below), writing all funnel fields on that Lead or Deal, **and enrolling the contact in the right Pipedrive automation**. All routing logic in this funnel lives in Make.com; Pipedrive automations are pure linear sequences. Make.com does **not** send email itself.
+- **Pipedrive (with the Campaigns addon)** owns: contact storage and email sending. In Pipedrive terminology, a "campaign" is a single email template; an "automation" orchestrates a sequence of those campaigns. Iteration 1 of this funnel uses exactly **four linear automations**:
+  - `FTHB LM1 - Tier A` (5 emails / 14 days) — primary entity: **Deal**
+  - `FTHB LM1 - Tier B` (3 emails / 5 days) — primary entity: **Deal**
+  - `FTHB LM1 - Tier C` (9 emails / 8 weeks) — primary entity: **Lead**
+  - `FTHB LM2 - Roadmap` (4 emails / 14 days) — primary entity: **Deal**
+  Plus a one-step `Email 0 - LM1 Transactional` automation (fires on whichever entity Make.com just created or updated) and the manually-populated `FTHB Monthly Market Update` newsletter. **None of the automations branch on field state** — they are linear, beginning to end. Routing decisions (which automation to enroll a contact in) live in Make.com.
 
-Two non-obvious cross-magnet rules — easy to miss when editing either spec in isolation. Make.com sets the field; Pipedrive Workflow Automations enforce the behavior:
+### Person vs. Lead vs. Deal split (load-bearing)
 
-1. When `source = "fthb_lm1_tier_b"` arrives on the LM2 webhook, Make.com sets `fthb_received_lm2 = true` on the existing Pipedrive contact. A Pipedrive automation then **unenrolls** them from the FTHB LM1 Tier B campaign and enrolls them in the FTHB LM2 campaign, so the contact does not get a double email storm.
-2. Tier C contacts are **never** pitched the BSS from any sequence; their CTA is education + bi-weekly nurture indefinitely. Encode this as a hard branch in the Pipedrive automation, not as something the email copy has to remember.
+- **Person** record carries only identity fields: `name`, `email`, `phone`, `marketing_status` (CAN-SPAM consent). Nothing funnel-specific lives on the Person.
+- **All FTHB custom fields** (`fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_received_lm1`, `fthb_received_lm2`, `fthb_lm2_received_at`, `fthb_lm2_source`, `fthb_q1_credit_range` … `fthb_q10_lender`, etc.) are configured as custom fields on **both Lead and Deal** entity types — same field name, same type on both — so Make.com can copy them cleanly when a Lead is promoted to a Deal.
+- **Tier C contacts are Leads.** Tier A, Tier B, and Roadmap contacts are Deals. The entity type tracks contact "warmth": cold/educational = Lead, in-pipeline = Deal.
+- **Make.com routing decides Lead vs. Deal per webhook:**
+  - LM1 webhook with Tier A or Tier B → create/update Deal
+  - LM1 webhook with Tier C → create/update Lead
+  - LM2 webhook (any source) → create/update Deal
+- **Conflict-resolution rules** (Make.com applies before enrollment):
+  - Existing Deal + new Deal-worthy event → update the existing Deal (no duplicate)
+  - Existing Lead + new Deal-worthy event (e.g., Tier C → Tier B retake, or a Tier C Lead downloads LM2) → **convert the Lead to a Deal**, copy all custom fields, then update
+  - Existing Deal + new Lead-worthy event (e.g., Tier B → Tier C retake) → update tier field on the Deal but **stay a Deal** (never demote)
+  - No existing record → create per the entity rule above
+
+### Hard tooling constraints (load-bearing — designs that violate these will not run)
+
+- **No branching inside Pipedrive automations.** Pipedrive automations can technically branch, but iteration 1 deliberately doesn't. Every automation is a linear sequence of single-email campaigns. If routing logic is needed (which contact gets which automation, when to suppress an enrollment), it lives in Make.com config — not in a Pipedrive automation step. Do not propose mid-flow checks on `fthb_lm1_tier` or `fthb_received_lm2` inside Pipedrive.
+- **No programmatic unenrollment.** Once a contact is in a Pipedrive automation, it can only finish on its own schedule or be stopped manually by the agent from the contact record. Make.com / Pipedrive cannot unenroll a contact programmatically. Every automation must be safe to run to completion. Mid-flight switching does not exist as an option.
+- **BSS bookings are invisible to the funnel.** Buyer Strategy Sessions are booked in Google Calendar with no return path to Pipedrive. Any `bss_booked` field is manual-only; do not use it as automation input, enrollment gate, or branch condition. Tier A email content must therefore be safe to finish whether the contact has booked, attended, or never booked — no "did you forget to book?" emails.
+
+Two non-obvious cross-magnet rules — easy to miss when editing either spec in isolation:
+
+1. **Roadmap and Tier B run in parallel without coordination.** The `FTHB LM2 - Roadmap` automation enrolls any contact whose LM2 webhook fires, regardless of whether they're already in `FTHB LM1 - Tier B`. Both automations are short and finite (Tier B is 3 emails / 5 days; Roadmap is 4 emails / 14 days), so the overlap is bounded and acceptable. The agent can add a Make.com suppression to skip Roadmap enrollment for already-in-Tier-B contacts as a future tightening, but iteration 1 doesn't bother. See [docs/04-readiness-filter-emails-v2.md](docs/04-readiness-filter-emails-v2.md) and [docs/07-process-map-emails-v2.md](docs/07-process-map-emails-v2.md).
+2. Tier C contacts are **never** pitched the BSS from any sequence — Tier C automation doesn't pitch it, Tier C welcome doesn't pitch it. The only edge where a Tier C contact could see a BSS pitch is if Make.com enrolls them in the Roadmap automation (because they downloaded LM2 via the standalone landing page after taking the quiz). The mitigation is at the Make.com layer: configure the LM2 scenario to skip Roadmap enrollment when `fthb_lm1_tier = FOUNDATION`, if/when this case actually shows up in practice.
 
 The result page (`/orlando-homebuying-readiness-quiz/result`) is **fully static**, driven by **plain query params** (`?n=Maria&t=B&s=68`). No HMAC, no signed token, no env vars (the site has none). The data the page renders is the visitor's own self-reported answers, so tampering with the URL only changes what *they* see on *their* screen; Pipedrive holds the authoritative record from the Make.com webhook. This keeps Make.com out of the render path and lets the page work as a pure static asset.
 
 ## Funnel namespace convention (load-bearing)
 
-Every identifier that lives in a globally-shared system — Make.com webhook routing, Pipedrive custom fields, Pipedrive Campaign names, analytics events, the host site's TypeScript module exports — is prefixed with a **funnel slug** so a future second funnel (sellers, investors, relocation, etc.) cannot collide with this one.
+Every identifier that lives in a globally-shared system — Make.com webhook routing, Pipedrive custom fields, Pipedrive automation names, analytics events, the host site's TypeScript module exports — is prefixed with a **funnel slug** so a future second funnel (sellers, investors, relocation, etc.) cannot collide with this one.
 
 **Current funnel slug: `fthb`** (first-time homebuyer). The term already appears throughout the docs and content (`FTHB-range inventory`, `medianPriceFthb`); this just formalizes it as the cross-system namespace.
 
@@ -86,8 +113,8 @@ Every identifier that lives in a globally-shared system — Make.com webhook rou
 |---|---|
 | Payload `magnet` discriminator | `"fthb_lm1"`, `"fthb_lm2"` |
 | Payload `source` values | `"fthb_lm1_tier_b"`, `"fthb_lm2_standalone"` |
-| Pipedrive custom fields on Person | `fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_lm1_retaken_at`, `fthb_received_lm1`, `fthb_received_lm2`, `fthb_lm2_received_at`, `fthb_lm2_source`, `fthb_q1_credit_range` … `fthb_q10_lender` |
-| Pipedrive Campaign names | `FTHB LM1 - Tier A`, `FTHB LM1 - Tier B`, `FTHB LM1 - Tier C`, `FTHB LM2 - Roadmap`, `FTHB Monthly Market Update` |
+| Pipedrive custom fields on Lead + Deal (mirror schemas; **not** on Person) | `fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_lm1_retaken_at`, `fthb_received_lm1`, `fthb_received_lm2`, `fthb_lm2_received_at`, `fthb_lm2_source`, `fthb_q1_credit_range` … `fthb_q10_lender` |
+| Pipedrive automation names | `FTHB LM1 - Tier A`, `FTHB LM1 - Tier B`, `FTHB LM1 - Tier C`, `FTHB LM2 - Roadmap`, `Email 0 - LM1 Transactional` (one-step). All linear, no branching. Plus the manually-populated `FTHB Monthly Market Update` newsletter. |
 | Analytics event names | `fthb_readiness_landing_view`, `fthb_readiness_quiz_start`, `fthb_readiness_question_answered`, `fthb_readiness_email_gate_shown`, `fthb_readiness_email_gate_submit`, `fthb_readiness_result_view`, `fthb_readiness_cta_click`, `fthb_roadmap_landing_view`, `fthb_roadmap_optin_view`, `fthb_roadmap_optin_submit`, `fthb_roadmap_view_view`, `fthb_roadmap_step_expand`, `fthb_roadmap_bss_cta_click` |
 | URL query param **values** (not names) | `?src=fthb_lm1_tier_b` |
 | TypeScript types in the funnel module | `FthbLm1Payload`, `FthbLm2Payload`, `FthbWebhookPayload` |
