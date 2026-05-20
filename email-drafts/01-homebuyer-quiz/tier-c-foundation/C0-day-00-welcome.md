@@ -6,7 +6,7 @@
 
 Hey {{first_name}},
 
-Foundation Phase doesn't mean "no." It means "not yet, and here is what to do with the time."
+Foundation Phase doesn't mean "no." It means "not yet," and here is what to do with the time.
 
 You're on my Foundation list now. Here's what to expect:
 
@@ -18,4 +18,4 @@ When credit, savings, or debt moves meaningfully for you, reply and tell me wher
 
 First real email comes in next week.
 
-- Axel
+-- Axel

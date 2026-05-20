@@ -9,7 +9,8 @@ Hey {{first_name}},
 
 Here's the 9-Step First Home Roadmap as promised.
 
-→ Read it on the web: {{fthb_roadmap_view_link}}
+→ Read it on the web:
+{{fthb_roadmap_view_link}}
 
 → Download the PDF (for offline reading or printing):
 {{fthb_roadmap_pdf_link}}

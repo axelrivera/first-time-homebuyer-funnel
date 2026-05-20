@@ -18,6 +18,6 @@ If you decided this isn't your 90 days after all, that's totally fine. You have 
 
 Thanks for taking the readiness quiz. Best of luck out there.
 
-- Axel
+-- Axel
 
 P.S. If something specific comes up later, reply to any of these emails. It comes straight to me.

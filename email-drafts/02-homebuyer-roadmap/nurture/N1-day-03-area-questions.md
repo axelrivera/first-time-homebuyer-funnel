@@ -16,4 +16,4 @@ Three questions to ask yourself before you tour anything in Orlando. The roadmap
 
 If one of these is the question you're stuck on, reply with where you are and I'll send my quick version of how I'd think about it. No pressure on what you do with it.
 
-- Axel
+-- Axel

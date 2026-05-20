@@ -20,6 +20,6 @@ Or call/text (407) 227-3205 to set up an in-person meeting.
 
 Either way, thanks for taking the readiness quiz. Best of luck out there.
 
-- Axel
+-- Axel
 
 P.S. If something specific comes up later, reply to any of these emails. It comes straight to me.

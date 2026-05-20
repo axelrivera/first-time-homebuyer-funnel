@@ -6,7 +6,7 @@
 
 Hey {{first_name}},
 
-Quick follow-up on your readiness quiz result.
+Quick follow-up on your readiness score.
 
 "Ready Now" doesn't just mean you can technically qualify for a mortgage. It means the gap between you and keys is short enough that timing matters in a way it doesn't for other tiers.
 
@@ -32,4 +32,4 @@ Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up
 
 If we've already got a call on the calendar, bring any questions about your specific timeline and we'll dig in.
 
-- Axel
+-- Axel

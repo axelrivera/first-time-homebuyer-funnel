@@ -12,7 +12,7 @@ Almost always wrong.
 
 Here's what "ready for the call" actually means:
 
-1. You can name a rough budget range (within $100K is fine).
+1. You can name a rough budget range (within $50K is fine).
 2. You can name 1-3 Orlando areas you're curious about (even if you're not sure).
 3. You've talked to one lender, or you're willing to in the next 2 weeks.
 
@@ -23,7 +23,7 @@ That's the bar. You do not need:
 - A specific move-in date
 - A spreadsheet of your finances
 
-Those things help if you have them. They're not the price of admission.
+Those things help if you have them. They're not required.
 
 The call works because we figure out together what's actually in the way and what the next concrete move is. Wait until you have everything organized first and you lose 2 months you didn't need to lose.
 
@@ -35,4 +35,4 @@ Or call/text (407) 227-3205 to meet in person.
 
 30 minutes. Free. No commitment afterward.
 
-- Axel
+-- Axel

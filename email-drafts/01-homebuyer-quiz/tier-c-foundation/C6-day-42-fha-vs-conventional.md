@@ -31,9 +31,9 @@ On a Conventional loan, PMI is **cancelable** at 20% equity. Principal paydown a
 My rule of thumb:
 
 - 580–679 credit + 3.5% down → FHA, period.
-- 680–719 credit + 3% down  → Conventional 97, almost always.
-- 720+ credit + 5%+ down     → Conventional, every time.
+- 680–719 credit + 3% down → Conventional 97, almost always.
+- 720+ credit + 5%+ down → Conventional, every time.
 
 Edge cases (recent self-employment, gift funds, manual underwrites, non-traditional credit) shift the calculus. Those are conversations with a lender, not emails.
 
-- Axel
+-- Axel

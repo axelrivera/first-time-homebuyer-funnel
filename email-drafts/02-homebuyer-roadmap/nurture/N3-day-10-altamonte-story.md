@@ -20,4 +20,4 @@ That's the thing I now help buyers figure out on purpose: knowing what shapes yo
 
 If you've got an area on your shortlist (or one you've already dismissed), reply with the name. I'll send my honest read.
 
-- Axel
+-- Axel

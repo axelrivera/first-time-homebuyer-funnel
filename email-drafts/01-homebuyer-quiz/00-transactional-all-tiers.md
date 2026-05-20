@@ -26,7 +26,7 @@ Two things to know:
 
 Talk soon,
 
-- Axel
+-- Axel
 
 License #: SL3646115 | Brokered by LPT Realty, LLC
 

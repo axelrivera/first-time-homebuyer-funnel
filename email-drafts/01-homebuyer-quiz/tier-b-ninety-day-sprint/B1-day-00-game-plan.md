@@ -6,7 +6,7 @@
 
 Hey {{first_name}},
 
-Quick follow-up on your readiness quiz result.
+Quick follow-up on your readiness score result.
 
 "90-Day Sprint" doesn't mean you have to rush. It means the gap between where you are now and keys in your hand is short enough that the order of events starts to matter. Miss the order and 90 days turns into 180 every time.
 
@@ -28,6 +28,6 @@ The full version of that 90-day map is what I built into my roadmap. Nine steps,
 
 {{fthb_lm2_optin_link}}
 
-Twenty minutes with it and you'll know exactly which week you're on.
+Give it twenty minutes and you'll know exactly which week you're on.
 
-- Axel
+-- Axel

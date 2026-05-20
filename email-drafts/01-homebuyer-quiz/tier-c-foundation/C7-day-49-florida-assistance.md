@@ -6,7 +6,7 @@
 
 {{first_name}},
 
-The single most under-claimed money on the table for first-time buyers in Florida is **Florida Housing's** down-payment-assistance programs. Most Foundation Phase buyers I talk to have never heard of them.
+The single most under-claimed money on the table for first-time buyers in Florida is **Florida Housing's** down-payment-assistance programs. Most Foundation Phase buyers have never heard of them.
 
 The headline programs (current as of 2026; verify with a Florida-Housing-approved lender, the state updates these):
 
@@ -39,4 +39,4 @@ Your move this week: visit FloridaHousing.org, scan the program list, see whethe
 
 If you want a head start, reply with your occupation. I'll tell you whether Hometown Heroes is likely to land for you and point you toward a Florida-Housing-approved lender to start with.
 
-- Axel
+-- Axel
