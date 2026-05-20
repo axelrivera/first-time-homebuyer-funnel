@@ -29,7 +29,7 @@ The title and subhead are locked — do not paraphrase on landing pages, ads, or
 
 - A readiness tier. Ready Now, 90-Day Sprint, or Foundation Phase
 - The 2 specific mistakes buyers in your tier make most often (so you don't)
-- A 1-page Orlando market snapshot. What $475K actually buys along the I-4 corridor right now, with examples from Sanford and Lake Mary on the Seminole side and Winter Park and College Park on the Orange side
+- A 1-page Orlando market snapshot. What $500K actually buys across the metro right now, with named examples from Altamonte Springs and Sanford on the value end, Lake Mary and Oviedo at the anchor, Maitland on the downtown-adjacent side, and one stretch comparison in Lake Nona
 
 ### FAQ (below the fold)
 

@@ -115,32 +115,35 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 
 This is the 1-page reality anchor. It appears on every result page, between the mistakes and the CTA. It is the same on all three tiers.
 
-> ## What $475K actually buys along the I-4 corridor right now
+> ## What $500K actually buys across the Orlando metro right now
 >
-> *Updated {{snapshot_month}}. Pulled from current MLS data, not Zillow's automated estimates. All areas are along the I-4 corridor between Sanford and Downtown Orlando.*
+> *Updated {{snapshot_month}}. Pulled from current MLS data, not Zillow's automated estimates. Anchored in the northern half of the metro — Seminole County and north Orange County — with two deliberate outliers (Winter Garden on the west, Lake Nona in the southeast) so you can see the full picture of what your budget unlocks.*
 >
-> | Area | County | Median price (FTHB range) | Avg. days on market | What $475K gets you |
+> | Area | County | Median price (FTHB range) | Avg. days on market | What $500K gets you |
 > |---|---|---|---|---|
-> | **Sanford** | Seminole | ${{san_median}} | {{san_dom}} | {{san_anchor_description}} |
-> | **Lake Mary** | Seminole | ${{lm_median}} | {{lm_dom}} | {{lm_anchor_description}} |
 > | **Altamonte Springs** | Seminole | ${{alt_median}} | {{alt_dom}} | {{alt_anchor_description}} |
+> | **Apopka** | Orange | ${{apk_median}} | {{apk_dom}} | {{apk_anchor_description}} |
+> | **Sanford** | Seminole | ${{san_median}} | {{san_dom}} | {{san_anchor_description}} |
 > | **Winter Springs** | Seminole | ${{ws_median}} | {{ws_dom}} | {{ws_anchor_description}} |
-> | **Maitland / Winter Park** | Orange | ${{wp_median}} | {{wp_dom}} | {{wp_anchor_description}} |
-> | **College Park** | Orange | ${{cp_median}} | {{cp_dom}} | {{cp_anchor_description}} |
-> | **Apopka (corridor side)** | Orange | ${{apk_median}} | {{apk_dom}} | {{apk_anchor_description}} |
+> | **Longwood** | Seminole | ${{lwd_median}} | {{lwd_dom}} | {{lwd_anchor_description}} |
+> | **Lake Mary** | Seminole | ${{lm_median}} | {{lm_dom}} | {{lm_anchor_description}} |
+> | **Oviedo** | Seminole | ${{ovd_median}} | {{ovd_dom}} | {{ovd_anchor_description}} |
+> | **Maitland** | Orange | ${{mtd_median}} | {{mtd_dom}} | {{mtd_anchor_description}} |
+> | **Winter Garden** | Orange | ${{wg_median}} | {{wg_dom}} | {{wg_anchor_description}} |
+> | **Lake Nona** | Orange | ${{ln_median}} | {{ln_dom}} | {{ln_anchor_description}} |
 >
 > ### Three things this table doesn't tell you (and I will)
 >
-> 1. **Seminole County still has the strongest school-zoning resale floor** in the metro. Even older homes in Winter Springs hold value because of zone demand. Orange-side corridor homes (College Park, Winter Park) hold on **walkability and proximity-to-Downtown** instead — different driver, similar resilience.
-> 2. **Sanford is the value play on the north end** of the corridor, but the trade-off is a 35–45 minute commute to Downtown. **Apopka's corridor side is the value play on the west**, with a shorter Downtown commute but fewer top-tier school zones.
-> 3. **Anything listed under $325K on the corridor right now is almost always an HOA condo, a townhome, a manufactured home, or a single-family home with a non-obvious issue.** None of those are inherently wrong, but none are a typical first-home SFH purchase. Always ask what's underneath the headline price before getting attached.
+> 1. **Seminole County still has the strongest school-zoning resale floor** in the metro. Even older homes in Winter Springs and Longwood hold value because of zone demand. Orange-side homes (Maitland, Lake Nona) hold on **walkability, proximity to Downtown Orlando, and newer construction** instead — different drivers, similar resilience.
+> 2. **Sanford, Altamonte Springs, and Apopka are the value plays** — $500K buys the most home in this report up there, with the trade-off being a 35–45 minute commute to Downtown Orlando. **Lake Nona is the stretch zone** in the southeast — at $500K you're at the entry tier (townhomes and smaller detached homes); $575–600K opens up Laureate Park and the kind of new construction that's hard to find in older Seminole neighborhoods. **Winter Garden is the west-side outlier** — strong downtown of its own, growing fast, often overlooked by buyers who only know the I-4 spine. The median is luxury-skewed, but historic-core inventory still exists near the anchor.
+> 3. **Anything listed under $350K right now is almost always an HOA condo, a townhome, a manufactured home, or a single-family home with a non-obvious issue.** None of those are inherently wrong, but none are a typical first-home SFH purchase. Always ask what's underneath the headline price before getting attached.
 
 ### Snapshot data update process (operational note for the agent)
 
 The market snapshot table is **dynamic data** but updates infrequently. The agent updates it **once per calendar month** by:
 
-1. Pulling current median list price + average DOM from MLS for each named corridor area (Seminole side: Sanford, Lake Mary, Altamonte Springs, Winter Springs; Orange side: Maitland/Winter Park, College Park, corridor-side Apopka)
-2. Browsing 3 active listings in each area within $20K of the anchor price (currently $475K; see `marketSnapshot.anchorPrice` in config) to write the "what you get" description. Bias the listing selection toward **single-family homes first, townhomes second, condos only when SFH/townhome inventory is genuinely thin** at the anchor price in that area. The snapshot exists to set expectations for SFH/townhome buyers, who are the funnel's primary audience.
+1. Pulling current median list price + average DOM from MLS for each named area (Seminole side: Altamonte Springs, Sanford, Winter Springs, Longwood, Lake Mary, Oviedo; Orange side: Apopka, Maitland, Winter Garden, Lake Nona)
+2. Browsing 3 active listings in each area within $25K of the anchor price (currently $500K; see `marketSnapshot.anchorPrice` in config) to write the "what you get" description. For Lake Nona specifically, the median sits above the anchor — bias the example listings toward the entry tier ($475–510K) so the "what $500K gets you" copy stays honest, and include one $600K reference listing for the "stretch unlocks Laureate Park" framing. Bias the listing selection toward **single-family homes first, townhomes second, condos only when SFH/townhome inventory is genuinely thin** at the anchor price in that area. The snapshot exists to set expectations for SFH/townhome buyers, who are the funnel's primary audience.
 3. Updating the values in `data/market-snapshot.json` (see implementation roadmap)
 4. Updating `snapshot_month` to the new month name
 

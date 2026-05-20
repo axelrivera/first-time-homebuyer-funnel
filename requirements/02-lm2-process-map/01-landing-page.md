@@ -47,7 +47,7 @@ src/pages/orlando-homebuying-roadmap/index.astro
 
 - The 9 Steps from "Check Your Credit" to "Close Day": what *you* do, what *your agent* does, how long each takes
 - The 3 places first-time buyers in Orlando lose money (named, specific, avoidable)
-- Sanford to Downtown Orlando gotchas: HOA timelines, rainy-season inspection issues, Seminole-vs.-Orange school-zone resale math, the commute trade-off between Sanford and Downtown Orlando
+- Orlando-metro gotchas: HOA timelines, rainy-season inspection issues, Seminole-vs.-Orange school-zone resale math, the Sanford-to-Downtown-Orlando commute-and-price trade-off, the Lake Nona stretch math at $575–600K
 - The Pre-Approval Cheat Sheet: documents to gather + the one credit number that matters more than your score
 
 ### Sub-hero: Who it's for

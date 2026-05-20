@@ -168,8 +168,7 @@ Just one. You don't have to commit to anything. You just need
 a real data point about where you stand.
 
 If you want a referral to a lender I trust for first-time
-buyers in Orlando (including ones who work well with
-newer-to-the-US credit profiles), reply to this email and
+buyers in Orlando, reply to this email and
 I'll send you 2 or 3 names. No pressure on what you do with
 them.
 
@@ -229,12 +228,12 @@ The Roadmap automation runs in parallel with whichever Tier automation the conta
 
 Common parallel-run scenarios:
 
-| Path into Roadmap | Most likely state | Entity on entry | Parallel automation running |
-|---|---|---|---|
-| LM1 Tier B → downloaded LM2 | `fthb_lm1_tier = NINETY_DAY` | Existing Deal updated | Tier B Deal automation (3 emails / 5 days; ends quickly) |
-| LM2 standalone, no quiz history | `fthb_lm1_tier` unset | New Deal created | None |
-| LM2 standalone → later took quiz to Tier A | `fthb_lm1_tier = READY_NOW` | Same Deal updated | Tier A Deal automation (5 emails / 14 days) |
-| Tier C Lead → downloaded LM2 | `fthb_lm1_tier = FOUNDATION` | **Lead converted to Deal** | None on the new Deal (the Tier C automation enrollment was on the converted Lead) |
+| Path into Roadmap                          | Most likely state            | Entity on entry            | Parallel automation running                                                       |
+| ------------------------------------------ | ---------------------------- | -------------------------- | --------------------------------------------------------------------------------- |
+| LM1 Tier B → downloaded LM2                | `fthb_lm1_tier = NINETY_DAY` | Existing Deal updated      | Tier B Deal automation (3 emails / 5 days; ends quickly)                          |
+| LM2 standalone, no quiz history            | `fthb_lm1_tier` unset        | New Deal created           | None                                                                              |
+| LM2 standalone → later took quiz to Tier A | `fthb_lm1_tier = READY_NOW`  | Same Deal updated          | Tier A Deal automation (5 emails / 14 days)                                       |
+| Tier C Lead → downloaded LM2               | `fthb_lm1_tier = FOUNDATION` | **Lead converted to Deal** | None on the new Deal (the Tier C automation enrollment was on the converted Lead) |
 
 None of these scenarios require coordination between the automations. Each one runs its course. The agent reviews each contact at the end of whichever automation finishes last, and decides next steps (default: add to monthly newsletter).
 

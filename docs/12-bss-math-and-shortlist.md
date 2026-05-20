@@ -86,18 +86,18 @@ Mortgage insurance is shown on its own line, never bundled into P&I. If a prospe
 Annual tax = (assessed_value - homestead_exemption) * millage_rate
 ```
 
-Starting estimates by county along the Sanford to Downtown Orlando route:
+Starting estimates by county across the Orlando metro (the two counties the buyer-facing market report spans):
 
 | County | Millage estimate | Notes |
 |---|---|---|
-| Seminole | ~14.5 mills (1.45%) | Higher inside city limits (Sanford, Lake Mary). |
-| Orange | ~13.5 mills (1.35%) | Downtown Orlando city add-on. |
+| Seminole | ~14.5 mills (1.45%) | Higher inside city limits (Sanford, Lake Mary, Longwood, Winter Springs, Oviedo). |
+| Orange | ~13.5 mills (1.35%) | Downtown Orlando city add-on. Apopka, Maitland, Winter Garden, and Lake Nona each carry their own city/CDD adjustments — confirm per address. |
 
 Homestead exemption is $50,000 for primary residences. **Save Our Homes** caps annual assessed-value increases to 3% or CPI, whichever is lower, so the first-year tax bill on a just-purchased home can be meaningfully higher than what the seller paid the year before. Always quote the new-owner number, not the prior tax bill. The county property appraiser sites have tax estimator tools keyed to sale price; use them on the call when the price moves off the default.
 
 ### Florida homeowners insurance (HO3)
 
-Florida insurance is currently the second-largest source of payment surprise after mortgage insurance. As of 2026, in the Sanford to Downtown Orlando footprint, expect:
+Florida insurance is currently the second-largest source of payment surprise after mortgage insurance. As of 2026, across the Orlando-metro footprint the market report covers, expect:
 
 | Property profile | Annual HO3 estimate |
 |---|---|

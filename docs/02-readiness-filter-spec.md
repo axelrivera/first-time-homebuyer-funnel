@@ -1,4 +1,3 @@
-
 This is the build spec for the scorecard funnel. Everything a developer needs to ship LM1 lives here: routes, screens, copy, the exact 10 questions, the scoring math, the tier thresholds, the form payload, and the result-page logic.
 
 ---
@@ -6,7 +5,7 @@ This is the build spec for the scorecard funnel. Everything a developer needs to
 ## Public name (final)
 
 **The Orlando First-Time Buyer Readiness Score**
-*Subhead:* Know in 7 Minutes If You're 30, 90, or 180 Days Away From Your First Home.
+_Subhead:_ Know in 7 Minutes If You're 30, 90, or 180 Days Away From Your First Home.
 
 This wording is locked. Don't paraphrase it on landing pages, ads, or DMs. Copy/paste it.
 
@@ -31,7 +30,7 @@ This wording is locked. Don't paraphrase it on landing pages, ads, or DMs. Copy/
 
 ### Why email is captured AFTER the questions
 
-Hormozi's effort/sacrifice principle: gates are friction. Putting the email last makes the questions feel like the value and the email feel like a small payment for the result they *already earned*. The result page renders inline anyway, so the email gate is for the **emailed copy + nurture**, not for unlocking the result.
+Hormozi's effort/sacrifice principle: gates are friction. Putting the email last makes the questions feel like the value and the email feel like a small payment for the result they _already earned_. The result page renders inline anyway, so the email gate is for the **emailed copy + nurture**, not for unlocking the result.
 
 ### What happens if the user bounces before the email gate
 
@@ -45,12 +44,12 @@ If this turns out to hurt completion meaningfully in Phase 4, the iteration is t
 
 All routes are under the agent's primary domain. Static Astro pages with vanilla JS for the interactive bits.
 
-| Route | Screen | Notes |
-|---|---|---|
-| `/orlando-homebuying-readiness-quiz` | Landing page | Promo + start button. The hero CTA is the only thing on the page. Fully static, no JS required to render. |
-| `/orlando-homebuying-readiness-quiz/start` | Quiz page | **One** Astro page that contains all 10 questions + the email gate. State is held in vanilla JS in memory; question switching is DOM show/hide, not page navigation. Progress bar, back button per question, no "save & exit." |
-| `/orlando-homebuying-readiness-quiz/result` | Inline result page | Tier, score, market snapshot, 2 mistakes, CTA. Renders from plain query params (`?n=…&t=…&s=…`). See "Result rendering" below. Fully static; works with JS disabled (the params drive a server-rendered `if/else` in the `.astro` file). |
-| `/orlando-homebuying-readiness-quiz/result?preview=A` (or `B`, `C`) | Preview mode | Same result page; the `preview` query param renders the named tier with stub data so the agent can review copy. No auth gate (the URL is publicly reachable but unlisted). Acceptable: nothing sensitive is gated. |
+| Route                                                               | Screen             | Notes                                                                                                                                                                                                                                    |
+| ------------------------------------------------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/orlando-homebuying-readiness-quiz`                                | Landing page       | Promo + start button. The hero CTA is the only thing on the page. Fully static, no JS required to render.                                                                                                                                |
+| `/orlando-homebuying-readiness-quiz/start`                          | Quiz page          | **One** Astro page that contains all 10 questions + the email gate. State is held in vanilla JS in memory; question switching is DOM show/hide, not page navigation. Progress bar, back button per question, no "save & exit."           |
+| `/orlando-homebuying-readiness-quiz/result`                         | Inline result page | Tier, score, market snapshot, 2 mistakes, CTA. Renders from plain query params (`?n=…&t=…&s=…`). See "Result rendering" below. Fully static; works with JS disabled (the params drive a server-rendered `if/else` in the `.astro` file). |
+| `/orlando-homebuying-readiness-quiz/result?preview=A` (or `B`, `C`) | Preview mode       | Same result page; the `preview` query param renders the named tier with stub data so the agent can review copy. No auth gate (the URL is publicly reachable but unlisted). Acceptable: nothing sensitive is gated.                       |
 
 The previous `/start`-then-`/contact` two-route flow is intentionally collapsed into one page. Without storage, separate routes would lose state between Q10 and the email gate. One page, one in-memory state machine.
 
@@ -69,19 +68,19 @@ Layout: above-the-fold = single hero, single CTA. Below-the-fold = social proof 
 >
 > [ Start the 7-minute scorecard ]
 >
-> *Free. Built by a licensed Orlando agent.*
+> _Free. Built by a licensed Orlando agent._
 
 ### Sub-hero. "What you'll get" (3-bullet, not a wall)
 
 - A readiness tier. Ready Now, 90-Day Sprint, or Foundation Phase
 - The 2 specific mistakes buyers in your tier make most often (so you don't)
-- A 1-page Orlando market snapshot. What $475K actually buys along the I-4 corridor right now, with examples from Sanford and Lake Mary on the Seminole side and Winter Park and College Park on the Orange side
+- A 1-page Orlando market snapshot: what $500K buys right now, with real examples from Altamonte Springs and Sanford on the value end, Lake Mary and Oviedo at anchor, and Lake Nona as the stretch comparison.
 
 ### FAQ (below the fold)
 
-- *Will you pull my credit?* No. You self-report a range. We can't see anything.
-- *Is this an ad to get me on the phone?* No. The result is yours. If you want to talk, there's a free strategy session at the end. Only if you want it.
-- *Why 10 questions?* That's the minimum to give you a real answer. Anything less is a brochure.
+- _Will you pull my credit?_ No. You self-report a range. We can't see anything.
+- _Is this an ad to get me on the phone?_ No. The result is yours. If you want to talk, there's a free strategy session at the end. Only if you want it.
+- _Why 10 questions?_ That's the minimum to give you a real answer. Anything less is a brochure.
 
 ---
 
@@ -94,14 +93,14 @@ Each question is a single screen. Plain English. Single-select unless noted. Eve
 > **What's your best guess at your current credit score?**
 > If you're not sure, pick the range that feels right. We're not pulling anything.
 
-| Option | Points |
-|---|---|
-| 740 or higher | 10 |
-| 680 – 739 | 8 |
-| 620 – 679 | 5 |
-| 580 – 619 | 2 |
-| Below 580 | 0 |
-| I have no idea | 1 |
+| Option         | Points |
+| -------------- | ------ |
+| 740 or higher  | 10     |
+| 680 – 739      | 8      |
+| 620 – 679      | 5      |
+| 580 – 619      | 2      |
+| Below 580      | 0      |
+| I have no idea | 1      |
 
 **Disqualifier flag:** If "Below 580" OR "I have no idea" → set `credit_unknown_or_low = true`. This blocks Tier A regardless of total score (see "Tier overrides").
 
@@ -109,112 +108,112 @@ Each question is a single screen. Plain English. Single-select unless noted. Eve
 
 > **Have you looked at your credit report in the last 12 months?**
 
-| Option | Points |
-|---|---|
-| Yes, I've looked at the full report and I know what's on it | 5 |
-| I've seen a score (Credit Karma, my bank app, etc.) but not the full report | 3 |
-| No, I haven't checked | 1 |
-| I don't really know what a credit report is | 0 |
+| Option                                                                      | Points |
+| --------------------------------------------------------------------------- | ------ |
+| Yes, I've looked at the full report and I know what's on it                 | 5      |
+| I've seen a score (Credit Karma, my bank app, etc.) but not the full report | 3      |
+| No, I haven't checked                                                       | 1      |
+| I don't really know what a credit report is                                 | 0      |
 
 ### Q3. Savings available
 
 > **Roughly how much do you have saved that you could put toward buying a home?**
 > This includes down payment, closing costs, and your reserve. Not your 401k.
 
-| Option | Points |
-|---|---|
-| $40,000+ | 10 |
-| $20,000 – $39,999 | 8 |
-| $10,000 – $19,999 | 5 |
-| $3,000 – $9,999 | 3 |
-| Less than $3,000 | 1 |
-| Nothing saved yet | 0 |
+| Option            | Points |
+| ----------------- | ------ |
+| $40,000+          | 10     |
+| $20,000 – $39,999 | 8      |
+| $10,000 – $19,999 | 5      |
+| $3,000 – $9,999   | 3      |
+| Less than $3,000  | 1      |
+| Nothing saved yet | 0      |
 
 ### Q4. Savings rate
 
 > **How much are you adding to that savings each month right now?**
 
-| Option | Points |
-|---|---|
-| $1,000 or more per month | 8 |
-| $500 – $999 per month | 6 |
-| $200 – $499 per month | 4 |
-| Less than $200 per month | 2 |
-| Nothing right now | 0 |
-| I'm actually drawing down savings | 0 |
+| Option                            | Points |
+| --------------------------------- | ------ |
+| $1,000 or more per month          | 8      |
+| $500 – $999 per month             | 6      |
+| $200 – $499 per month             | 4      |
+| Less than $200 per month          | 2      |
+| Nothing right now                 | 0      |
+| I'm actually drawing down savings | 0      |
 
 ### Q5. Monthly debt load
 
 > **Other than rent, how much of your monthly income goes to debt payments? (car, student loans, credit card minimums)**
 
-| Option | Points |
-|---|---|
-| Nothing. I have no monthly debt payments | 10 |
-| Less than 10% of my take-home pay | 8 |
-| 10% – 25% of my take-home pay | 5 |
-| 25% – 40% of my take-home pay | 2 |
-| More than 40% | 0 |
-| I don't know. I'd have to add it up | 1 |
+| Option                                   | Points |
+| ---------------------------------------- | ------ |
+| Nothing. I have no monthly debt payments | 10     |
+| Less than 10% of my take-home pay        | 8      |
+| 10% – 25% of my take-home pay            | 5      |
+| 25% – 40% of my take-home pay            | 2      |
+| More than 40%                            | 0      |
+| I don't know. I'd have to add it up      | 1      |
 
 ### Q6. Revolving credit behavior
 
 > **Do you carry a credit card balance from month to month?**
 
-| Option | Points |
-|---|---|
-| Never. I pay the full balance every month | 8 |
-| Sometimes. Once or twice a year | 5 |
-| Often. Most months | 2 |
-| I'm behind on at least one card right now | 0 |
-| I don't use credit cards | 6 |
+| Option                                    | Points |
+| ----------------------------------------- | ------ |
+| Never. I pay the full balance every month | 8      |
+| Sometimes. Once or twice a year           | 5      |
+| Often. Most months                        | 2      |
+| I'm behind on at least one card right now | 0      |
+| I don't use credit cards                  | 6      |
 
 ### Q7. Employment tenure
 
 > **How long have you been at your current job (or current income source)?**
 
-| Option | Points |
-|---|---|
-| 2+ years | 10 |
-| 1 – 2 years | 7 |
-| 6 – 12 months | 4 |
-| Less than 6 months | 1 |
-| Between jobs right now | 0 |
+| Option                 | Points |
+| ---------------------- | ------ |
+| 2+ years               | 10     |
+| 1 – 2 years            | 7      |
+| 6 – 12 months          | 4      |
+| Less than 6 months     | 1      |
+| Between jobs right now | 0      |
 
 ### Q8. Income type
 
 > **How are you paid?**
 
-| Option | Points |
-|---|---|
-| W-2 employee, salary or hourly | 8 |
-| Mostly W-2, with some 1099/side income | 6 |
-| 1099 or self-employed, 2+ years of tax returns | 5 |
-| 1099 or self-employed, less than 2 years | 1 |
-| Other (commission-only, gig only, between jobs) | 1 |
+| Option                                          | Points |
+| ----------------------------------------------- | ------ |
+| W-2 employee, salary or hourly                  | 8      |
+| Mostly W-2, with some 1099/side income          | 6      |
+| 1099 or self-employed, 2+ years of tax returns  | 5      |
+| 1099 or self-employed, less than 2 years        | 1      |
+| Other (commission-only, gig only, between jobs) | 1      |
 
 ### Q9. Desired timeline
 
 > **When do you ideally want to be in your first Orlando home?**
 
-| Option | Points |
-|---|---|
-| Within the next 30 days | 10 |
-| 1 – 3 months from now | 9 |
-| 3 – 6 months from now | 7 |
-| 6 – 12 months from now | 4 |
-| 1 – 2 years from now | 2 |
-| Just exploring, no timeline | 0 |
+| Option                      | Points |
+| --------------------------- | ------ |
+| Within the next 30 days     | 10     |
+| 1 – 3 months from now       | 9      |
+| 3 – 6 months from now       | 7      |
+| 6 – 12 months from now      | 4      |
+| 1 – 2 years from now        | 2      |
+| Just exploring, no timeline | 0      |
 
 ### Q10. Pre-approval status
 
 > **Have you talked to a lender yet?**
 
-| Option | Points |
-|---|---|
-| Yes. I have a pre-approval letter in hand | 10 |
-| Yes. I've spoken with one but no letter yet | 7 |
-| No, but I have a lender in mind | 3 |
-| No, and I wouldn't know where to start | 0 |
+| Option                                      | Points |
+| ------------------------------------------- | ------ |
+| Yes. I have a pre-approval letter in hand   | 10     |
+| Yes. I've spoken with one but no letter yet | 7      |
+| No, but I have a lender in mind             | 3      |
+| No, and I wouldn't know where to start      | 0      |
 
 ---
 
@@ -235,11 +234,11 @@ Note: the per-question max values were chosen based on the relative weight each 
 
 ### Tier thresholds (on `display_score`)
 
-| Tier | Internal name | Range |
-|---|---|---|
-| A: Ready Now | `READY_NOW` | 75 – 100 |
-| B: 90-Day Sprint | `NINETY_DAY` | 45 – 74 |
-| C: Foundation Phase | `FOUNDATION` | 0 – 44 |
+| Tier                | Internal name | Range    |
+| ------------------- | ------------- | -------- |
+| A: Ready Now        | `READY_NOW`   | 75 – 100 |
+| B: 90-Day Sprint    | `NINETY_DAY`  | 45 – 74  |
+| C: Foundation Phase | `FOUNDATION`  | 0 – 44   |
 
 ### Tier overrides (hard rules, applied AFTER the threshold lookup)
 
@@ -260,18 +259,18 @@ Apply overrides in order. Once a tier has been demoted, do not re-promote it.
 
 Concretely, when building the scoring engine and result page, centralize the following in one config module (suggested: `src/config/readiness.ts` or a `readiness.config.json` imported by the scorer):
 
-| Parameter | Default | Why it's tweakable |
-|---|---|---|
-| `tierThresholds.READY_NOW.min` | 75 | Calibrate to actual submission distribution in Phase 4 |
-| `tierThresholds.NINETY_DAY.min` | 45 | Same. Likely to shift after first ~50 real submissions |
-| `pointValues.q1` through `pointValues.q10` | Per the question tables above | If a question's options need to be reweighted later |
-| `overrides.creditUnknownOrLow.action` | demote A → B | May want to widen to "demote A → C" if early data shows false positives |
-| `overrides.exploringTimeline.action` | cap at C | Could relax to "cap at B" if exploring buyers convert better than expected |
-| `overrides.highDTI.action` | cap at B | Same logic |
-| `overrides.betweenJobs.action` | cap at C | Same logic |
-| `marketSnapshot` data | See `data/market-snapshot.json` | Already external; updates monthly |
-| `marketSnapshot.anchorPrice` | $475,000 | The dollar figure used in the "What $X actually buys" framing on the result page. Should track the realistic FTHB budget in Orlando; calibrate against real submission income data in Phase 4. Lives in the same snapshot config as the per-area data. |
-| Tier-result copy strings | See `03-readiness-filter-content.md` | Should live in i18n-ready locale files, not inline JSX/Astro |
+| Parameter                                  | Default                              | Why it's tweakable                                                                                                                                                                                                                                     |
+| ------------------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `tierThresholds.READY_NOW.min`             | 75                                   | Calibrate to actual submission distribution in Phase 4                                                                                                                                                                                                 |
+| `tierThresholds.NINETY_DAY.min`            | 45                                   | Same. Likely to shift after first ~50 real submissions                                                                                                                                                                                                 |
+| `pointValues.q1` through `pointValues.q10` | Per the question tables above        | If a question's options need to be reweighted later                                                                                                                                                                                                    |
+| `overrides.creditUnknownOrLow.action`      | demote A → B                         | May want to widen to "demote A → C" if early data shows false positives                                                                                                                                                                                |
+| `overrides.exploringTimeline.action`       | cap at C                             | Could relax to "cap at B" if exploring buyers convert better than expected                                                                                                                                                                             |
+| `overrides.highDTI.action`                 | cap at B                             | Same logic                                                                                                                                                                                                                                             |
+| `overrides.betweenJobs.action`             | cap at C                             | Same logic                                                                                                                                                                                                                                             |
+| `marketSnapshot` data                      | See `data/market-snapshot.json`      | Already external; updates monthly                                                                                                                                                                                                                      |
+| `marketSnapshot.anchorPrice`               | $500,000                             | The dollar figure used in the "What $X actually buys" framing on the result page. Should track the realistic FTHB budget in Orlando; calibrate against real submission income data in Phase 4. Lives in the same snapshot config as the per-area data. |
+| Tier-result copy strings                   | See `03-readiness-filter-content.md` | Should live in i18n-ready locale files, not inline JSX/Astro                                                                                                                                                                                           |
 
 **Rule of thumb when building:** if a value has a "this is our current guess" comment next to it, it belongs in config. If it's a structural constant (e.g., the number of questions), inline is fine.
 
@@ -321,7 +320,7 @@ The Astro page POSTs a single JSON payload to the Make.com webhook (via `fetch`)
 }
 ```
 
-Each `answers.qN_*` field uses a stable enum key (not the human-readable label) so the Make.com → Pipedrive mapping is reliable when copy gets edited later. The same enum *values* are written to Pipedrive custom fields, **with the field name prefixed** per the funnel namespace convention: `payload.answers.q1_credit_range` maps to Pipedrive field `fthb_q1_credit_range`, and so on through `fthb_q10_lender`. Pipedrive Workflow Automations route off those prefixed field names without re-parsing labels.
+Each `answers.qN_*` field uses a stable enum key (not the human-readable label) so the Make.com → Pipedrive mapping is reliable when copy gets edited later. The same enum _values_ are written to Pipedrive custom fields, **with the field name prefixed** per the funnel namespace convention: `payload.answers.q1_credit_range` maps to Pipedrive field `fthb_q1_credit_range`, and so on through `fthb_q10_lender`. Pipedrive Workflow Automations route off those prefixed field names without re-parsing labels.
 
 ### What Make.com does with this payload
 
@@ -335,18 +334,18 @@ Email sending and sequence enrollment are **not** Make.com's job. The moment Mak
 
 ### Stable enum keys (locked; don't rename)
 
-| Question | Keys |
-|---|---|
-| q1_credit_range | `740_plus`, `680_739`, `620_679`, `580_619`, `below_580`, `unknown` |
-| q2_credit_awareness | `full_report`, `score_seen`, `not_checked`, `dont_know` |
-| q3_savings | `40k_plus`, `20k_40k`, `10k_20k`, `3k_10k`, `under_3k`, `none` |
-| q4_savings_rate | `1k_plus`, `500_999`, `200_499`, `under_200`, `none`, `drawing_down` |
-| q5_dti | `none`, `under_10`, `10_25`, `25_40`, `over_40`, `unknown` |
-| q6_revolving | `never`, `sometimes`, `often`, `behind`, `no_cards` |
-| q7_tenure | `2_plus_years`, `1_2_years`, `6_12_months`, `under_6_months`, `between_jobs` |
-| q8_income_type | `w2`, `w2_plus_1099`, `1099_2plus_years`, `1099_under_2`, `other` |
-| q9_timeline | `30_days`, `1_3_months`, `3_6_months`, `6_12_months`, `1_2_years`, `exploring` |
-| q10_lender | `preapproved`, `spoken_no_letter`, `lender_in_mind`, `no_idea` |
+| Question            | Keys                                                                           |
+| ------------------- | ------------------------------------------------------------------------------ |
+| q1_credit_range     | `740_plus`, `680_739`, `620_679`, `580_619`, `below_580`, `unknown`            |
+| q2_credit_awareness | `full_report`, `score_seen`, `not_checked`, `dont_know`                        |
+| q3_savings          | `40k_plus`, `20k_40k`, `10k_20k`, `3k_10k`, `under_3k`, `none`                 |
+| q4_savings_rate     | `1k_plus`, `500_999`, `200_499`, `under_200`, `none`, `drawing_down`           |
+| q5_dti              | `none`, `under_10`, `10_25`, `25_40`, `over_40`, `unknown`                     |
+| q6_revolving        | `never`, `sometimes`, `often`, `behind`, `no_cards`                            |
+| q7_tenure           | `2_plus_years`, `1_2_years`, `6_12_months`, `under_6_months`, `between_jobs`   |
+| q8_income_type      | `w2`, `w2_plus_1099`, `1099_2plus_years`, `1099_under_2`, `other`              |
+| q9_timeline         | `30_days`, `1_3_months`, `3_6_months`, `6_12_months`, `1_2_years`, `exploring` |
+| q10_lender          | `preapproved`, `spoken_no_letter`, `lender_in_mind`, `no_idea`                 |
 
 ---
 
@@ -359,11 +358,11 @@ When the user submits the email gate, the quiz JS does two things in parallel:
 
 The result page reads three query params:
 
-| Param | Meaning | Allowed values |
-|---|---|---|
-| `n` | First name (URL-encoded) | Any string; trimmed and HTML-escaped on render. Empty → render as "you" in copy. |
-| `t` | Tier letter | `A`, `B`, `C`. Anything else → fall back to a generic "your result has been emailed to you" view. |
-| `s` | Display score (0–100) | Integer 0–100. Anything else → tier-without-number view. |
+| Param | Meaning                  | Allowed values                                                                                    |
+| ----- | ------------------------ | ------------------------------------------------------------------------------------------------- |
+| `n`   | First name (URL-encoded) | Any string; trimmed and HTML-escaped on render. Empty → render as "you" in copy.                  |
+| `t`   | Tier letter              | `A`, `B`, `C`. Anything else → fall back to a generic "your result has been emailed to you" view. |
+| `s`   | Display score (0–100)    | Integer 0–100. Anything else → tier-without-number view.                                          |
 
 **No HMAC, no signed token, no expiry.** The site has no environment variables, so there is no secret to sign with, and there is nothing on the page worth protecting:
 
@@ -377,7 +376,7 @@ The previous expiry-window scheme is gone — there is no concept of "result tok
 
 ### What the result page contains, in order
 
-1. **Header**: *"Maria, you're in the 90-Day Sprint tier."* Tier name + score badge.
+1. **Header**: _"Maria, you're in the 90-Day Sprint tier."_ Tier name + score badge.
 2. **One-paragraph tier explanation** (from `03-readiness-filter-content.md`)
 3. **Your timeline**. A single visual: where you are on a 0/30/90/180-day axis, with a marker
 4. **The 2 mistakes you're most likely about to make** (tier-specific; content in `03-`)
@@ -386,7 +385,7 @@ The previous expiry-window scheme is gone — there is no concept of "result tok
    - Tier A → **Book a Buyer Strategy Session** (calendar embed)
    - Tier B → **Get the 9-Step First Home Roadmap** (LM2 opt-in, prefilled with email)
    - Tier C → **Get the Foundation Phase nurture sequence** (already enrolled via Make.com; this is a confirmation, not a new opt-in)
-7. **Email confirmation line**: *"We just emailed you a copy of this page. Check your spam if you don't see it in 2 minutes."*
+7. **Email confirmation line**: _"We just emailed you a copy of this page. Check your spam if you don't see it in 2 minutes."_
 
 ---
 
@@ -394,15 +393,15 @@ The previous expiry-window scheme is gone — there is no concept of "result tok
 
 Minimum viable event list. Emit these **directly from the browser** to the analytics provider's client script (Plausible, PostHog, or whatever Phase 0 lands on). Do **not** relay through Make.com — events should keep working even if the webhook is down.
 
-| Event | When |
-|---|---|
-| `fthb_readiness_landing_view` | Landing page load |
-| `fthb_readiness_quiz_start` | User clicks "Start" |
-| `fthb_readiness_question_answered` | Each Q advances (props: q_id, answer_key) |
-| `fthb_readiness_email_gate_shown` | Email gate becomes visible in the quiz page |
+| Event                              | When                                                            |
+| ---------------------------------- | --------------------------------------------------------------- |
+| `fthb_readiness_landing_view`      | Landing page load                                               |
+| `fthb_readiness_quiz_start`        | User clicks "Start"                                             |
+| `fthb_readiness_question_answered` | Each Q advances (props: q_id, answer_key)                       |
+| `fthb_readiness_email_gate_shown`  | Email gate becomes visible in the quiz page                     |
 | `fthb_readiness_email_gate_submit` | Email gate `fetch` POST initiated (don't wait for the response) |
-| `fthb_readiness_result_view` | Result page loads (props: tier, score) |
-| `fthb_readiness_cta_click` | CTA on result page clicked (props: tier, cta_target) |
+| `fthb_readiness_result_view`       | Result page loads (props: tier, score)                          |
+| `fthb_readiness_cta_click`         | CTA on result page clicked (props: tier, cta_target)            |
 
 ---
 

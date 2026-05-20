@@ -23,17 +23,17 @@ v2 redesigns around those constraints with five rules:
 
 Concrete differences from v1:
 
-| Surface | v1 | v2 |
-|---|---|---|
-| Pipedrive structure | Campaigns with workflow automations attempting mid-flight switching | **4 linear automations** orchestrating individual email campaigns; routing in Make.com |
-| Tier B automation | 6 emails over 21 days, pushes LM2 then BSS | **3 emails over 5 days**, single goal: download LM2 |
-| Tier A automation | 5 emails over 14 days, BSS is the dominant CTA | Same cadence, **content is safe-to-finish**: value-first, soft "if you haven't booked, link is here" CTAs |
-| Tier C automation | Bi-weekly, **indefinite** (rotating topics forever) | **9 emails over 8 weeks** (~2 months), weekly cadence, then ends |
-| Roadmap automation | Single Campaign with attempted cross-magnet unenrollment | **Linear automation** (4 emails / 14 days). See `07-process-map-emails-v2.md`. |
-| End-of-automation behavior | Auto-roll to monthly market update | **Manual review.** Each automation ends cleanly; agent decides per contact whether to add to the monthly newsletter, send a personal follow-up, or remove. |
-| Tier reassignment on retake | Pipedrive automation unenrolls old + enrolls new | **Parallel run, both finish.** New tier automation enrolls (via Make.com) on retake; old one keeps running to completion. No manual stop ops needed. |
-| `bss_booked` field | Used as automation gate | **Removed from automation**; optional manual reporting field only |
-| Cross-magnet handoff (LM1 Tier B → LM2) | "Automation unenrolls Tier B, enrolls LM2" | LM2 webhook just enrolls in the Roadmap automation. Tier B automation continues to its natural end (3 emails / 5 days — short enough that overlap is acceptable). |
+| Surface                                 | v1                                                                  | v2                                                                                                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pipedrive structure                     | Campaigns with workflow automations attempting mid-flight switching | **4 linear automations** orchestrating individual email campaigns; routing in Make.com                                                                            |
+| Tier B automation                       | 6 emails over 21 days, pushes LM2 then BSS                          | **3 emails over 5 days**, single goal: download LM2                                                                                                               |
+| Tier A automation                       | 5 emails over 14 days, BSS is the dominant CTA                      | Same cadence, **content is safe-to-finish**: value-first, soft "if you haven't booked, link is here" CTAs                                                         |
+| Tier C automation                       | Bi-weekly, **indefinite** (rotating topics forever)                 | **9 emails over 8 weeks** (~2 months), weekly cadence, then ends                                                                                                  |
+| Roadmap automation                      | Single Campaign with attempted cross-magnet unenrollment            | **Linear automation** (4 emails / 14 days). See `07-process-map-emails-v2.md`.                                                                                    |
+| End-of-automation behavior              | Auto-roll to monthly market update                                  | **Manual review.** Each automation ends cleanly; agent decides per contact whether to add to the monthly newsletter, send a personal follow-up, or remove.        |
+| Tier reassignment on retake             | Pipedrive automation unenrolls old + enrolls new                    | **Parallel run, both finish.** New tier automation enrolls (via Make.com) on retake; old one keeps running to completion. No manual stop ops needed.              |
+| `bss_booked` field                      | Used as automation gate                                             | **Removed from automation**; optional manual reporting field only                                                                                                 |
+| Cross-magnet handoff (LM1 Tier B → LM2) | "Automation unenrolls Tier B, enrolls LM2"                          | LM2 webhook just enrolls in the Roadmap automation. Tier B automation continues to its natural end (3 emails / 5 days — short enough that overlap is acceptable). |
 
 Email 0 transactional carries over unchanged.
 
@@ -42,7 +42,7 @@ Email 0 transactional carries over unchanged.
 ## Email infrastructure choices baked into this sequence
 
 - **From name:** `{{agent_first_name}} from Orlando Homes` (or whatever the agent's working brand name is, locked in Phase 1)
-- **From email:** A real address the agent monitors. Replies are responded to within 24 hours. *No no-reply addresses.*
+- **From email:** A real address the agent monitors. Replies are responded to within 24 hours. _No no-reply addresses._
 - **Pipedrive terminology** (matters for clarity): "campaign" = a single email template; "automation" = the orchestrating sequence of those campaigns.
 - **Sending tools:**
   - **Pipedrive automations** for the four tier/roadmap sequences. All linear.
@@ -163,17 +163,17 @@ Hey {{first_name}},
 
 You came back as {{tier_label}}, {{display_score}}/100.
 
-Here's the full result with your tier explanation, the 2 mistakes
-buyers in your tier most often make, and a 1-page Orlando market
-snapshot:
+Here's your tier guide as a PDF. It walks through your tier
+explanation, the 2 mistakes buyers in your tier most often
+make, and a 1-page Orlando market snapshot:
 
-    {{fthb_result_page_link}}
+    {{fthb_tier_pdf_link}}
 
-The result page also has your specific next step at the bottom.
+Your next step is on the last page.
 
 Two things to know:
 
-1. I read every reply. If anything in the result page raises a
+1. I read every reply. If anything in the guide raises a
    question (about your score, the market data, the next step,
    anything), just hit reply.
 
@@ -185,9 +185,9 @@ Talk soon,
 {{agent_first_name}}
 {{agent_license_no}} | {{brokerage}}
 
-P.S. Bookmark the result-page link. Nothing on it expires. The
-2-mistakes section gets a lot more useful the day before you
-actually talk to a lender, so come back to it then.
+P.S. Save the PDF or print it. The 2-mistakes section gets a
+lot more useful the day before you actually talk to a lender,
+so come back to it then.
 ```
 
 ---
@@ -254,15 +254,17 @@ Hey {{first_name}},
 Most "Ready Now" buyers in Orlando default to one of two
 paths:
 
-  Path 1: Buy on the Orange side (Maitland, Winter Park, College
-  Park, the I-4 side of Apopka) — closer to Downtown,
-  walkability or commute wins, but Orange school zoning is more
-  uneven block to block
+  Path 1: Buy on the Orange side (Apopka, Maitland) — Apopka
+  for new-construction value north of Downtown Orlando, Maitland
+  for walkability and proximity to Park Avenue at Winter Park
+  prices minus $100K, but Orange school zoning is more uneven
+  block to block
 
   Path 2: Push north on the Seminole side (Altamonte Springs,
-  Longwood, Lake Mary, Sanford) — tighter inventory in your
-  range, longer Downtown commute, but the strongest school-
-  zoning resale floor in the metro
+  Longwood, Lake Mary, Winter Springs, Oviedo, Sanford) —
+  tighter inventory in the at-anchor cities, longer Downtown
+  Orlando commute from Sanford, but the strongest school-zoning
+  resale floor in the metro
 
 There's a third path most people miss: the **Seminole/Orange
 border zone** — Casselberry and southern Altamonte Springs
@@ -271,6 +273,12 @@ Park (Orange). Specific blocks let you live within a 10-minute
 drive of both county school systems and choose your trade-off
 street by street, with meaningful price-per-square-foot
 differences between the two sides.
+
+If your budget can stretch to $575-600K, there's a fourth path
+worth a look: Lake Nona in the southeast. Newer construction,
+master-planned, totally different feel from anything on the
+north end. Not for everyone, but it should be on the table
+before you rule it out.
 
 If you've got a call on the calendar already, bring your top 3
 target areas (or just "I have no idea where to start") and we'll
@@ -301,7 +309,7 @@ These sound the same. They aren't.
     a competitive offer.
 
   - Pre-approval = they pulled credit, verified income, verified
-    assets, and ran it past an underwriter. Real.
+    assets, and ran it past an underwriter.
 
 If you have a letter, look at it now. If it doesn't say
 "pre-approved" (and most don't), that's the first thing to fix
@@ -312,7 +320,7 @@ letter and I'll tell you in 5 minutes — whether we've already
 got a call on the calendar or not. If we have, send it ahead
 and I'll have feedback ready when we meet.
 
-    Reply with the letter, or → {{book_bss_link}}
+Reply with the letter, or → {{book_bss_link}}
 
 - {{agent_first_name}}
 ```
@@ -513,7 +521,7 @@ After B3, the automation ends. The agent reviews the contact in Pipedrive and de
 **Primary entity:** Lead. Make.com creates a Lead on LM1 webhook when tier = FOUNDATION; the automation enrolls and operates on that Lead. If the Lead later downloads LM2 or retakes to a higher tier, Make.com converts it to a Deal (per the conflict rules) and this Tier C automation enrollment is left behind on the converted record.
 **Surface in Pipedrive:** a linear automation orchestrating 9 single-email campaigns. No branching, no checks.
 **Cadence:** Weekly. C0 (welcome) immediately, then 8 educational emails every 7 days. Total: **9 emails over 56 days (~2 months)**. After C8 (the wrap-up), the automation ends.
-**Goal:** Maximum-value compressed education for a Foundation-Phase buyer. Do not pitch the BSS. The bar for every email is *"is this concretely useful to someone 6–12 months out from buying in Orlando — and is it specific enough that they could act on it this week?"*
+**Goal:** Maximum-value compressed education for a Foundation-Phase buyer. Do not pitch the BSS. The bar for every email is _"is this concretely useful to someone 6–12 months out from buying in Orlando — and is it specific enough that they could act on it this week?"_
 **Design contract:** Finite. The agent reviews each contact at C8's end and decides what's next — typically adding to the `FTHB Monthly Market Update` to limit content management overhead.
 
 ### Email C0 — Day 0 (welcome)
@@ -597,8 +605,8 @@ recheck once a year. A few I won't endorse but you can compare
 yourself: Marcus, Ally, Wealthfront, Apple Savings. Look at the
 APY and the FDIC insurance limit; that's it.
 
-Bonus move: name the account "Orlando Home Fund." Sounds dumb.
-Works. It's measurably harder to pull money out of an account
+Bonus move: name the account "Orlando Home Fund." Sounds dumb,
+but it works. It's measurably harder to pull money out of an account
 with a goal name on it.
 
 - {{agent_first_name}}
@@ -629,8 +637,9 @@ Real minimums, by loan type:
   - USDA (some areas just outside the Orlando metro qualify):
     0% down.
 
-On a $325K home (a realistic FTHB-range price along the I-4
-corridor in Seminole County), the math breaks down like this:
+On a $325K home (a realistic below-anchor FTHB price in
+Seminole County — think Sanford, Longwood, or a smaller place
+in Winter Springs), the math breaks down like this:
 
   - 20% down  = $65,000
   - 3.5% down (FHA)            = $11,375
@@ -920,7 +929,7 @@ After C8, the campaign ends. The agent opens the contact in Pipedrive and decide
 **Enrollment:** Manual. The agent adds contacts at the end of their primary automation (Tier A, Tier B, Tier C, or Roadmap) as part of the end-of-automation review. No automated handoff enrolls anyone here.
 **Goal:** Stay relevant for contacts who finished a primary sequence without converting. Orlando-specific market data, no pitch, one CTA at the bottom ("if anything changed for you, reply or rerun the scorecard: {{fthb_retake_link}}").
 
-Topics rotate through: median price movement along the I-4 corridor (Sanford → Downtown), inventory by price band in the FTHB range, interest-rate context, one neighborhood deep-dive per month (rotating among Sanford, Lake Mary, Longwood, Altamonte Springs, Maitland, Winter Park, Downtown Orlando, Oviedo, Winter Springs, Casselberry, Apopka, Eatonville, College Park).
+Topics rotate through: median price movement across the Orlando metro (anchored in the north with Winter Garden and Lake Nona as outliers — the same 10 areas the market snapshot covers), inventory by price band in the FTHB range, interest-rate context, one neighborhood deep-dive per month (rotating among Altamonte Springs, Apopka, Sanford, Winter Springs, Longwood, Lake Mary, Oviedo, Maitland, Winter Garden, Lake Nona).
 
 Format and copy for monthly emails are not locked in this doc — they'll be drafted on a rolling basis during Phase 4 against real submission data.
 
@@ -930,7 +939,7 @@ Format and copy for monthly emails are not locked in this doc — they'll be dra
 
 Every email carries the standard Pipedrive unsubscribe footer (required for CAN-SPAM compliance and provided by the Pipedrive template). Additionally, Tier C emails carry this line near the bottom:
 
-> *Don't want these every week? Reply "monthly" and I'll switch you to once a month. Reply "stop" and I'll take you off entirely.*
+> _Don't want these every week? Reply "monthly" and I'll switch you to once a month. Reply "stop" and I'll take you off entirely._
 
 The standard unsubscribe link removes them from all Pipedrive automations + the newsletter. The "monthly" reply is handled manually by the agent (stop the current automation; add directly to the monthly newsletter). The "stop" reply triggers the standard unsubscribe in Pipedrive. Both work without code on the static site.
 

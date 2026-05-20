@@ -162,20 +162,25 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 > Falling in love with a *house* in a *neighborhood you haven't researched*. The house is a depreciating asset; the neighborhood is the appreciating one. Pick the neighborhood first, the house second.
 >
 > **Orlando note:**
-> Areas worth specific evaluation for first-time buyers in 2026, north to south from Sanford toward Downtown Orlando:
+> Areas worth specific evaluation for first-time buyers in 2026, anchored in the northern half of the metro with two deliberate outliers (Winter Garden on the west, Lake Nona in the southeast):
 >
-> *Seminole side:*
-> - **Sanford**: Best value plays in this stretch, but inventory varies block-by-block and the Downtown Orlando commute is real (35–45 min)
-> - **Lake Mary**: Strong school zones, newer housing stock, but FTHB-range inventory is tight
-> - **Altamonte Springs**: More inventory, slightly older housing stock, mixed HOA quality
-> - **Winter Springs**: Top-tier school zoning, well-maintained, but FTHB-range inventory is tight
+> *Seminole side (the value-to-anchor core):*
+> - **Altamonte Springs**: Well-below-anchor, mature suburb anchored by Cranes Roost Park. Mix of older SFH, condos, and townhomes; at $500K you have real room to negotiate
+> - **Sanford**: Strong value play. Inventory varies block-by-block and the Downtown Orlando commute is real (35–45 min), but $500K goes a long way here
+> - **Winter Springs**: Top-tier school zoning, well-maintained, often the more affordable alternative to Oviedo with similar zone quality
+> - **Longwood**: At-anchor, established, quiet, easy Sanford-to-Downtown-Orlando access — underrated by buyers who only know Lake Mary
+> - **Lake Mary**: At-anchor, polished suburban option, strong resale story, newer housing stock
+> - **Oviedo**: At-anchor, perennial top search, school-driven demand keeps inventory competitive
 >
-> *Orange side:*
-> - **Maitland / Winter Park**: Walkable, mature trees, premium per-square-foot pricing; at FTHB budgets, smaller older SFH and townhomes are the realistic targets, with condos as a fallback if those run dry
-> - **College Park**: Closest neighborhood to Downtown Orlando, character bungalows, fast appreciation, tight inventory
-> - **Apopka (east side)**: Value play on the west, newer builds, shorter Downtown Orlando commute than Sanford, but fewer top-tier school zones
+> *Orange side (north Orange + downtown-adjacent):*
+> - **Apopka**: Below-anchor north Orange option; lots of new construction, growing fast, shorter commute to Downtown Orlando than Sanford. School zones are more variable than Seminole
+> - **Maitland**: Winter Park's more affordable neighbor — same proximity to Park Avenue, same walkable feel, medians $100–150K lower. The right answer for buyers who want the Winter Park lifestyle without Winter Park pricing
 >
-> *Border zone:*
+> *Deliberate outliers:*
+> - **Winter Garden**: West-side outlier worth the look — strong downtown of its own, charming, growing fast, often overlooked by buyers who only know the I-4 spine
+> - **Lake Nona**: The stretch zone in the southeast. At $500K you're at the entry tier (townhomes and smaller detached homes); $575–600K opens up Laureate Park and the kind of new construction that's hard to find in older Seminole neighborhoods
+>
+> *Tactical border-zone trick (not in the headline market report, but worth knowing):*
 > - **Casselberry / Fern Park**: Sits right at the Seminole/Orange line; lets you weigh both county school systems within a 10-minute drive
 
 ---
@@ -240,7 +245,7 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 > Florida is a *caveat emptor* state with one major residential exception (the Johnson v. Davis duty): sellers must disclose known material defects that aren't readily observable. Three disclosures you should expect on most Orlando transactions:
 >
 > - **Seller's Property Disclosure** (Florida Realtors form). Covers known defects, prior repairs, systems ages, and neighborhood issues. Delivered with the listing in most cases. Look for what's *missing* as much as what's there; a blank section about prior water damage on a 25-year-old Florida home is a red flag, not a clean form.
-> - **Lead-Based Paint Disclosure** (federal, required for any home built before 1978). The seller must give you the pamphlet "Protect Your Family From Lead in Your Home" and disclose any known lead presence. You get a 10-day window for a lead inspection unless you waive it in writing. In Orlando, this mostly affects College Park bungalows, older Maitland and Winter Park houses, and Sanford historic-district homes. Most newer Orlando stock is unaffected.
+> - **Lead-Based Paint Disclosure** (federal, required for any home built before 1978). The seller must give you the pamphlet "Protect Your Family From Lead in Your Home" and disclose any known lead presence. You get a 10-day window for a lead inspection unless you waive it in writing. In Orlando, this mostly affects older Maitland houses, Sanford historic-district homes, and pockets of older stock in Altamonte Springs and Longwood. Most newer Orlando stock is unaffected.
 > - **Radon Gas Disclosure**. A required line on every Florida contract; not negotiable. Levels in central Florida are generally low but not zero. A radon test runs about $200 if you want a real number.
 >
 > **What your agent does:**
@@ -374,7 +379,7 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 > School zones affect resale value across the Orlando metro, but Seminole and Orange work differently:
 >
 > - **Seminole County has the strongest school-zoning resale floor in the metro.** Homes inside high-demand Seminole zones (Lake Mary, Winter Springs, certain Oviedo blocks, parts of Longwood) hold value through cycles in a way that comparable homes outside those zones do not. If you have school-age kids or might in 5 years, this is the cleanest resale insurance in the area.
-> - **Orange County's school zones in this area are more variable block-to-block.** Resale on the Orange side leans more on **proximity to Downtown Orlando, walkability, and neighborhood character** (College Park, Winter Park, parts of Maitland) than on the school zone alone. Two streets in the same Orange neighborhood can have meaningfully different zoning outcomes.
+> - **Orange County's school zones in this area are more variable block-to-block.** Resale on the Orange side leans more on **proximity to Downtown Orlando, walkability, and newer construction** (Maitland, Lake Nona, parts of Apopka) than on the school zone alone. Two streets in the same Orange neighborhood can have meaningfully different zoning outcomes.
 > - **Border-zone trick:** Streets in Casselberry, Fern Park, and southern Altamonte Springs sit right against the Orange line. You can sometimes get Seminole school zoning at Orange-side prices, or vice versa, but only on specific addresses. Confirm by address, not by neighborhood.
 >
 > If you don't have school-age kids, this still matters, because the buyer of your home in 7 years probably will.
