@@ -1,25 +1,33 @@
-# Email B1 — Day 0
+# Email B1 — Day 0 (sent ~10 minutes after transactional)
 
-**Subject:** Your 90-day game plan: the 9 steps
+**Subject:** What 90 days actually looks like
 
 ---
 
 Hey {{first_name}},
 
-You came back as 90-Day Sprint, which means the next 90 days are the whole game. Pre-approval, target areas, savings, and offer prep all happen in a specific order — miss the order and the 90 days becomes 180.
+Quick follow-up on your readiness quiz result.
 
-On the result page, your "what's next" was to grab my roadmap. If you didn't snag it there, here's the direct link:
+"90-Day Sprint" doesn't mean you have to rush. It means the gap between where you are now and keys in your hand is short enough that the order of events starts to matter. Miss the order and 90 days turns into 180 every time.
+
+Here's what the 90 days actually looks like when nothing goes sideways:
+
+1. **Weeks 1-2.** Lender call, documents pulled, full pre-approval letter in hand.
+2. **Weeks 3-6.** Targeted house tours in your real budget.
+3. **Weeks 6-8.** Offer accepted, contract signed, inspection period.
+4. **Weeks 8-13.** Appraisal, underwriting, closing.
+
+Two patterns show up in almost every "stuck at 180 days" story:
+
+- The buyer waited 4 weeks to call a lender, then lost 4 more weeks shopping above what they actually qualified for.
+- The buyer toured 12 houses online before talking to anyone, fell in love with one, and spent 2 months mourning when it sold to someone faster.
+
+If you start with the lender call this week, you can realistically be in a house roughly 90 days from now.
+
+The full version of that 90-day map is what I built into my roadmap. Nine steps, what you do, what your agent does, and how long each one actually takes:
 
 {{fthb_lm2_optin_link}}
 
-It's called **The 9-Step First Home Roadmap** — exactly what happens between "I think I'm ready" and keys in your hand in Orlando. Every step shows what you do, what your agent does, and how long it takes.
+Twenty minutes with it and you'll know exactly which week you're on.
 
-Three things I built into it you won't find in a generic buyer guide:
-
-- The 3 places first-time buyers in Orlando lose money (named, specific, avoidable)
-- HOA disclosure timelines and Florida rainy-season inspection timing (local stuff)
-- The one number on your credit report that affects your rate more than your score does
-
-Grab it. Spend 20 minutes with it. Then you'll know exactly which step you're on.
-
-- {{agent_first_name}}
+- Axel

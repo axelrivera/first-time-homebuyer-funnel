@@ -8,7 +8,7 @@
 
 The single most under-claimed money on the table for first-time buyers in Florida is **Florida Housing's** down-payment-assistance programs. Most Foundation Phase buyers I talk to have never heard of them.
 
-The headline programs (current as of 2026 — verify with a Florida-Housing-approved lender, the state updates these):
+The headline programs (current as of 2026; verify with a Florida-Housing-approved lender, the state updates these):
 
 1. **Florida Hometown Heroes Loan Program**
 
@@ -33,8 +33,10 @@ The catches:
 - Must use a Florida-Housing-approved lender. Not every lender qualifies, and the list changes.
 - Must complete an approved homebuyer education course (online, 4–8 hours, ~$75).
 - These are forgivable or repayable second mortgages, not grants. Read the terms.
-- Funding runs out periodically and reopens when the state refunds the program. If a lender says "Hometown Heroes is paused right now," that's normal — check back in 30–60 days.
+- Funding runs out periodically and reopens when the state refunds the program. If a lender says "Hometown Heroes is paused right now," that's normal. Check back in 30–60 days.
 
 Your move this week: visit FloridaHousing.org, scan the program list, see whether your occupation qualifies for Hometown Heroes, and bookmark the approved-lender finder. When you eventually have a real pre-approval conversation, ask the lender directly: "Are you Florida-Housing-approved, and do you know which program fits my situation?" If they hesitate or don't know, find a different lender.
 
-- {{agent_first_name}}
+If you want a head start, reply with your occupation. I'll tell you whether Hometown Heroes is likely to land for you and point you toward a Florida-Housing-approved lender to start with.
+
+- Axel

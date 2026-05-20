@@ -14,4 +14,4 @@ Rates move with the Fed, so shop around when you open one and recheck once a yea
 
 Bonus move: name the account "Orlando Home Fund." Sounds dumb, but it works. It's measurably harder to pull money out of an account with a goal name on it.
 
-- {{agent_first_name}}
+- Axel

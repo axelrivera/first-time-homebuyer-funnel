@@ -6,7 +6,7 @@
 
 Hey {{first_name}},
 
-If you haven't grabbed the roadmap yet, here's the single biggest mistake I see Sprint-tier buyers make:
+The single biggest mistake I see Sprint-tier buyers make:
 
 They start going to open houses before they have a pre-approval.
 
@@ -20,8 +20,8 @@ I get it. Open houses feel productive. They aren't, not in this tier. Here's wha
 
 The fix is to do those steps in the other order. Pre-approval first. Then walk through houses in your actual range. You will see houses you like, I promise.
 
-That's Step 3 in the roadmap. Steps 1-2 (credit prep and realistic budget) are what make Step 3 produce a number you can actually trust.
+If you do go to an open house this weekend, two things at the door. First, tell the agent you don't have a letter yet. Second, don't sign anything they put in front of you. Some will try to slide a Buyer Brokerage Agreement (BBA) across the table while you're admiring the kitchen island. That's not how you want to commit to working with an agent.
 
-{{fthb_lm2_optin_link}}
+- Axel
 
-- {{agent_first_name}}
+P.S. The roadmap walks the whole sequence (credit prep, lender call, targeted tours, offer mechanics) in the order they actually need to happen: {{fthb_lm2_optin_link}}

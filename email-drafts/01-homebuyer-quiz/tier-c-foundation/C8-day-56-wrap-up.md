@@ -8,24 +8,14 @@
 
 This is the last email in the Foundation series.
 
-Eight weeks ago you took the scorecard and landed in Foundation Phase, which meant the work for you was credit, savings, lender prep, and finding what Florida-specific money was on the table.
+Eight weeks ago you took the readiness quiz and landed in Foundation Phase, which meant the work for you was credit, savings, lender prep, and finding what Florida-specific money was on the table.
 
 You now have the playbook. The next move is yours.
 
-Three things worth doing this week:
+If credit, savings, or lender prep moved meaningfully over the last 8 weeks, you're probably crossing into 90-Day Sprint territory. The next thing to read is my 9-Step First Home Roadmap. It picks up where the Foundation series left off and walks you through the actual buying process from pre-approval to closing:
 
-1. Retake the scorecard. Two months of focused work moves most first-time buyers up a tier. Find out where you actually stand now:
+{{fthb_lm2_optin_link}}
 
-{{fthb_retake_link}}
+If you're not there yet, no worries. Foundation Phase is a real tier, not a euphemism for "not good enough." This series ends here, but my email stays open. Reply when something concrete changes (credit, savings, lender call, debt) and I'll tell you where you stand.
 
-2. If you've made enough progress to be inside 90 days, reply to this email and tell me. I'll personally walk you through what comes next.
-
-3. If you're not there yet, that's totally fine. Foundation Phase is a real tier, not a euphemism for "not good enough." Most great first-time-buyer stories start here.
-
-After this email, the auto-series ends. I'll review your contact in the next week and figure out what makes sense from here — most likely my monthly Orlando market update (one email a month, no pitch), but I'll think about it per person.
-
-If you'd rather skip whatever I have in mind, just reply "unsubscribe" and I'll take you off entirely.
-
-Either way: you have my email. Reply when something changes.
-
-- {{agent_first_name}}
+- Axel

@@ -26,7 +26,7 @@ The PMI difference is the big one in Florida.
 
 On a new FHA loan, the mortgage insurance is **permanent for the life of the loan**. The only way out is refinancing into a Conventional loan later.
 
-On a Conventional loan, PMI is **cancelable** at 20% equity. Orlando home prices have appreciated steadily for the last several years. If you put 5% down on a Conventional 97 loan in 2026 and prices appreciate even modestly for 3 years, you may be at or near 20% equity and able to drop PMI — saving $150–$280/month from that point on.
+On a Conventional loan, PMI is **cancelable** at 20% equity. Principal paydown and appreciation combine to get you there. Once you're at 20%, you drop PMI and save $150–$280/month from that point on.
 
 My rule of thumb:
 
@@ -36,4 +36,4 @@ My rule of thumb:
 
 Edge cases (recent self-employment, gift funds, manual underwrites, non-traditional credit) shift the calculus. Those are conversations with a lender, not emails.
 
-- {{agent_first_name}}
+- Axel

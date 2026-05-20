@@ -1,6 +1,6 @@
 # Email A5 — Day 14
 
-**Subject:** Wrapping the email series
+**Subject:** Last note from me
 
 ---
 
@@ -8,13 +8,18 @@ Hey {{first_name}},
 
 This is the last email in the Ready Now series.
 
-Two scenarios:
+If anything in the last two weeks made you think "I should probably talk to someone before I make a move on a house in Orlando," this is the moment to book the call. After this email, I'm out of your inbox.
 
-- We've already talked, or we have a call on the calendar. Great. You've got specific next steps from that conversation (or will). After this email, I'm moving you to the monthly market update — one email a month, Orlando-specific.
-- We haven't talked yet. Also fine. You have the result page, you have the action items from the last few emails, and you can absolutely do this on your own. You're also moving to the monthly market update. If you ever want to talk, the link is below — no awkwardness, no hard sell.
+The session is 30 minutes, free, no obligation. You leave with a clearer picture of where you stand and what to do next. If you'd rather not, no hard feelings. My hope is the last four emails gave you enough to move on your own.
+
+If you do want to talk, book a video call here:
 
 {{book_bss_link}}
 
-- {{agent_first_name}}
+Or call/text (407) 227-3205 to set up an in-person meeting.
 
-P.S. If a friend in Orlando is at the same stage you are, the scorecard link is open: {{fthb_readiness_quiz_link}}. No referral fee, no tracking. I'd just rather more first-time buyers know where they actually stand before they start shopping.
+Either way, thanks for taking the readiness quiz. Best of luck out there.
+
+- Axel
+
+P.S. If something specific comes up later, reply to any of these emails. It comes straight to me.

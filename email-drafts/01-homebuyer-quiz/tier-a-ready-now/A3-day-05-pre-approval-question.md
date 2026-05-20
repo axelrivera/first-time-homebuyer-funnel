@@ -17,8 +17,8 @@ These sound the same. They aren't.
 
 If you have a letter, look at it now. If it doesn't say "pre-approved" (and most don't), that's the first thing to fix before you make an offer on anything.
 
-If you're not sure, you can send me a redacted copy of your letter and I'll tell you in 5 minutes — whether we've already got a call on the calendar or not. If we have, send it ahead and I'll have feedback ready when we meet.
+If you're not sure, send me a redacted copy of your letter and I'll tell you in 5 minutes. PDF or photo, either is fine.
 
-Reply with the letter, or → {{book_bss_link}}
+Just reply to this email with the letter attached.
 
-- {{agent_first_name}}
+- Axel

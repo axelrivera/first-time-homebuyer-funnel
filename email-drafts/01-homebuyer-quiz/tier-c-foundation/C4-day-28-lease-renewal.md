@@ -19,7 +19,7 @@ In all three cases, a 12-month commitment costs you nothing you weren't going to
 Negotiate a 6- or 9-month renewal if:
 
 - You're 4–9 months from a real pre-approval timeline
-- Your landlord is willing (some are, especially when the rental market is soft — Orlando 2026 is mixed; ask)
+- Your landlord is willing (some are; the Orlando rental market is mixed in 2026, so ask)
 
 Go month-to-month if:
 
@@ -31,4 +31,4 @@ The trap to avoid: signing a 12-month renewal one month before you would have be
 
 Already mid-renewal? Most Florida leases have a buyout clause, usually 2 months' rent. Annoying but not blocking.
 
-- {{agent_first_name}}
+- Axel

@@ -14,10 +14,8 @@ You're on my Foundation list now. Here's what to expect:
 - 100% useful, 0% sales pitch
 - Topics: credit, savings, down payment math, DTI, FHA vs. conventional, Florida assistance money, lease timing, and how to know when you're ready
 
-When you cross into the 90-Day Sprint tier (which usually means your credit, savings, and timeline all line up), I'll let you know. You can retake the scorecard anytime to check:
-
-{{fthb_retake_link}}
+When credit, savings, or debt moves meaningfully for you, reply and tell me where you are. I'll let you know if you're crossing into 90-Day Sprint territory and what the next move is.
 
 First real email comes in next week.
 
-- {{agent_first_name}}
+- Axel

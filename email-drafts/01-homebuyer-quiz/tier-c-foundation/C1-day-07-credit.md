@@ -14,4 +14,6 @@ There are three credit-related things every Foundation Phase buyer should do thi
 
 That's it for this week.
 
-- {{agent_first_name}}
+If anything on your report surprises you and you want a second pair of eyes, reply with a redacted screenshot and I'll tell you what's worth fixing first.
+
+- Axel

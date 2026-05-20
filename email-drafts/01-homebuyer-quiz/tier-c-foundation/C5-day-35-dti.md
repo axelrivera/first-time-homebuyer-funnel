@@ -12,7 +12,7 @@ DTI is a percentage. The math:
 
 DTI = (all your monthly debt payments) ÷ (gross monthly income)
 
-"All monthly debt payments" includes minimum credit card payments, car loans, student loans, child support, and — most importantly — the proposed mortgage payment (P+I + property tax + insurance + HOA + PMI if any).
+"All monthly debt payments" includes minimum credit card payments, car loans, student loans, child support, and (most importantly) the proposed mortgage payment (principal + interest + property tax + insurance + HOA + PMI if any).
 
 Lenders draw two lines:
 
@@ -24,9 +24,19 @@ The number that matters most in Orlando 2026 is the back-end. Most first-time bu
 A 15-minute exercise this week:
 
 1. List every monthly debt payment (minimums, not balances) on one page.
-2. Add a placeholder mortgage payment of $2,500 (a rough 2026 estimate for a $300K FHA loan in Seminole County — P+I + taxes + insurance + MIP).
+2. Add a placeholder mortgage payment of $3,700 (a rough 2026 estimate for a $450K Seminole County home with 3.5% down on FHA: principal + interest + taxes + insurance + MIP).
 3. Divide the total by your gross monthly income.
 
-If that number is above 43%, your highest-leverage move is not saving more — it's paying off the debt with the smallest balance and highest minimum. One paid-off car loan can shift your DTI by 5–8 points, which can be the difference between qualifying for a starter home in Sanford and not.
+Targeting a different home price? Use one of these to adjust step 2 (2026 Orlando, FHA, 3.5% down, all-in):
 
-- {{agent_first_name}}
+- $350K home → $2,900/month
+- $400K home → $3,300/month
+- $450K home → $3,700/month
+- $500K home → $4,100/month
+- $600K home → $4,900/month
+
+Roughly +$400/month for each +$50K in home price.
+
+If that number is above 43%, your highest-leverage move is not saving more. It's paying off the debt with the smallest balance and highest minimum. One paid-off car loan can shift your DTI by 5–8 points, which can be the difference between qualifying for an Orlando home in your price band and not.
+
+- Axel
