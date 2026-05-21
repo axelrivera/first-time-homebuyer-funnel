@@ -22,7 +22,8 @@ preview: "The 30 days before closing are where deals fall apart. Don't be that b
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Quick follow-up on your readiness score.
 
@@ -51,3 +52,4 @@ Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up
 If we've already got a call on the calendar, bring any questions about your specific timeline and we'll dig in.
 
 -- Axel
+```

@@ -22,7 +22,8 @@ preview: "20 minutes with the roadmap and you'll know exactly which week you're 
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 This is the last email in the 90-Day Sprint series.
 
@@ -39,3 +40,4 @@ Thanks for taking the readiness quiz. Best of luck out there.
 -- Axel
 
 P.S. If something specific comes up later, reply to any of these emails. It comes straight to me.
+```

@@ -22,7 +22,8 @@ preview: "Most letters say one. Sellers know the difference."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 When someone in the "Ready Now" tier reaches out, the very first question I ask is:
 
@@ -40,3 +41,4 @@ If you're not sure, send me a redacted copy of your letter and I'll tell you in 
 Just reply to this email with the letter attached.
 
 -- Axel
+```

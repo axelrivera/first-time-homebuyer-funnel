@@ -22,7 +22,8 @@ preview: "FHA, Conventional 97, VA. Real Orlando minimums on a $450K home."
 
 ---
 
-{{first_name}},
+```
+*|FIRST_NAME|*,
 
 If "I need 20% down" is the number sitting in your head, swap it for the real one before you do anything else.
 
@@ -46,3 +47,4 @@ The $75,000+ gap between 20% and 3.5% is often the gap between "I'll be ready in
 For most buyers, the right move is not to save 20%. It is to put down the minimum, accept PMI for the few years it takes to build to 20% equity, and cancel PMI then. Two weeks from now I'll send you the FHA-vs-Conventional decision rules, including which kinds of PMI you can cancel and which you can't.
 
 -- Axel
+```

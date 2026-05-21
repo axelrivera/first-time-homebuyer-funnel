@@ -36,7 +36,7 @@ Send within 24 hours of the call. Plaintext. Short.
 **Body:**
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Thanks for the time today. Quick recap of where we landed:
 
@@ -53,11 +53,11 @@ whenever you want to revisit.
 
 ### Merge field guidance
 
-- **`{{one_line_recap}}`**: a single sentence in the agent's voice referencing something specific from the call. *"You're targeting March, cash is solid at the $30k range, and Sanford and Lake Mary are the two neighborhoods you're focused on."* Not a transcript; a confirmation that the agent listened.
+- **`{{one_line_recap}}`**: a single sentence in the agent's voice referencing something specific from the call. _"You're targeting March, cash is solid at the $30k range, and Sanford and Lake Mary are the two neighborhoods you're focused on."_ Not a transcript; a confirmation that the agent listened.
 - **`{{next_step_specific_to_this_prospect}}`**: one paragraph naming whatever the agent committed to or whatever the prospect committed to. Examples:
-  - *"I'll email {{lender_first_name}} at {{lender_company}} tomorrow with you cc'd. They'll reach out to schedule a 20-minute pre-approval call."*
-  - *"Let's revisit in 30 days once you've talked to your dad about the gift letter."*
-  - *"Nothing on my side. The ball's in your court whenever you're ready to move."*
+  - _"I'll email {{lender_first_name}} at {{lender_company}} tomorrow with you cc'd. They'll reach out to schedule a 20-minute pre-approval call."_
+  - _"Let's revisit in 30 days once you've talked to your dad about the gift letter."_
+  - _"Nothing on my side. The ball's in your court whenever you're ready to move."_
 
 ### What this email does not do
 

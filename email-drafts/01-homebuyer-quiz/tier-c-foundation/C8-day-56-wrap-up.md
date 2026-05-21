@@ -22,7 +22,8 @@ preview: "8 weeks of playbook. Your move from here."
 
 ---
 
-{{first_name}},
+```
+*|FIRST_NAME|*,
 
 This is the last email in the Foundation series.
 
@@ -37,3 +38,4 @@ If credit, savings, or lender prep moved meaningfully over the last 8 weeks, you
 If you're not there yet, no worries. Foundation Phase is a real tier, not a euphemism for "not good enough." This series ends here, but my email stays open. Reply when something concrete changes (credit, savings, lender call, debt) and I'll tell you where you stand.
 
 -- Axel
+```

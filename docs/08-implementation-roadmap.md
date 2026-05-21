@@ -1,4 +1,3 @@
-
 Phased build plan for shipping the two-step funnel. Designed for one builder (the agent, who is also an iOS developer with Ruby/Rails backend chops) working in evening/weekend windows.
 
 The principle: **ship Phase 1 fast and start collecting real submissions. Iterate on copy and tier logic against actual responses, not theories.**
@@ -7,13 +6,13 @@ The principle: **ship Phase 1 fast and start collecting real submissions. Iterat
 
 ## Phase summary
 
-| Phase | What ships | Calendar target | Why this phase, this scope |
-|---|---|---|---|
-| **0. Foundations** | Domain, hosting, Astro + Tailwind scaffold, Make.com webhook, Pipedrive + Campaigns addon, calendar, analytics | Week 1 | The stack is locked (Pipedrive + Make.com + Astro + Tailwind); Phase 0 is wiring, not deciding. |
-| **1. LM1 MVP** | Readiness Filter landing → quiz → result page → transactional email via Pipedrive | Weeks 2–4 | This is the whole top of the funnel. Nothing else matters until this works. |
-| **2. LM1 Nurture + LM2 MVP** | Tier-specific Pipedrive Campaigns live; LM2 standalone landing + delivery | Weeks 5–7 | Now we can capture and nurture across the full segmentation |
-| **3. Polish** | Monthly market-update list, analytics dashboards | Weeks 8–9 | Operational rhythm + measurement |
-| **4. Iterate** | Continuous A/B testing of question wording, tier thresholds, CTAs | Ongoing | Real data > assumptions |
+| Phase                        | What ships                                                                                                     | Calendar target | Why this phase, this scope                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------- | ----------------------------------------------------------------------------------------------- |
+| **0. Foundations**           | Domain, hosting, Astro + Tailwind scaffold, Make.com webhook, Pipedrive + Campaigns addon, calendar, analytics | Week 1          | The stack is locked (Pipedrive + Make.com + Astro + Tailwind); Phase 0 is wiring, not deciding. |
+| **1. LM1 MVP**               | Readiness Filter landing → quiz → result page → transactional email via Pipedrive                              | Weeks 2–4       | This is the whole top of the funnel. Nothing else matters until this works.                     |
+| **2. LM1 Nurture + LM2 MVP** | Tier-specific Pipedrive Campaigns live; LM2 standalone landing + delivery                                      | Weeks 5–7       | Now we can capture and nurture across the full segmentation                                     |
+| **3. Polish**                | Monthly market-update list, analytics dashboards                                                               | Weeks 8–9       | Operational rhythm + measurement                                                                |
+| **4. Iterate**               | Continuous A/B testing of question wording, tier thresholds, CTAs                                              | Ongoing         | Real data > assumptions                                                                         |
 
 Total time to a fully-shipped funnel: roughly **9 weeks** at evening/weekend pace.
 
@@ -34,17 +33,17 @@ By end of week:
 
 ### The stack is locked. Phase 0 is wiring, not picking.
 
-| Component | Choice | Notes |
-|---|---|---|
-| Frontend framework | **Astro** + **Tailwind CSS** | Vanilla JS in islands where interactivity is needed (quiz, opt-in forms). No React/Vue/Svelte. |
-| Hosting | **Vercel** (recommended; Netlify or Cloudflare Pages also fine) | Pick whichever has the cleanest preview-deploy story for the agent. Static-only site, so any of them work. |
-| Form handler | **Make.com** webhook (one webhook URL, baked into the build) | LM1 + LM2 both POST here, distinguished by `magnet`. No env vars; the URL is in the bundle. |
-| CRM | **Pipedrive** | Person records hold contact info + custom fields (`fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_received_lm1`, `fthb_received_lm2`, etc.). |
-| Email sending | **Pipedrive Campaigns** addon | All transactional + nurture lives in named Pipedrive Campaigns. Workflow Automations enroll/unenroll based on field changes. |
-| Routing logic | **Pipedrive Workflow Automations** | Tier → campaign mapping, LM2-pauses-Tier-B, retake handling. **Not** in Make.com. |
-| PDF for LM2 | Static file in `public/assets/` | Linked from the LM2 transactional email. Updates are a redeploy. |
-| Calendar | **Cal.com** (open source, self-hostable) | Calendly works equally well; just a URL. |
-| Analytics | **Plausible** or **PostHog** | Plausible if you want minimal; PostHog if you want funnel analysis from day one. Script tag in `BaseLayout.astro`. |
+| Component          | Choice                                                          | Notes                                                                                                                                         |
+| ------------------ | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Frontend framework | **Astro** + **Tailwind CSS**                                    | Vanilla JS in islands where interactivity is needed (quiz, opt-in forms). No React/Vue/Svelte.                                                |
+| Hosting            | **Vercel** (recommended; Netlify or Cloudflare Pages also fine) | Pick whichever has the cleanest preview-deploy story for the agent. Static-only site, so any of them work.                                    |
+| Form handler       | **Make.com** webhook (one webhook URL, baked into the build)    | LM1 + LM2 both POST here, distinguished by `magnet`. No env vars; the URL is in the bundle.                                                   |
+| CRM                | **Pipedrive**                                                   | Person records hold contact info + custom fields (`fthb_lm1_tier`, `fthb_lm1_display_score`, `fthb_received_lm1`, `fthb_received_lm2`, etc.). |
+| Email sending      | **Pipedrive Campaigns** addon                                   | All transactional + nurture lives in named Pipedrive Campaigns. Workflow Automations enroll/unenroll based on field changes.                  |
+| Routing logic      | **Pipedrive Workflow Automations**                              | Tier → campaign mapping, LM2-pauses-Tier-B, retake handling. **Not** in Make.com.                                                             |
+| PDF for LM2        | Static file in `public/assets/`                                 | Linked from the LM2 transactional email. Updates are a redeploy.                                                                              |
+| Calendar           | **Cal.com** (open source, self-hostable)                        | Calendly works equally well; just a URL.                                                                                                      |
+| Analytics          | **Plausible** or **PostHog**                                    | Plausible if you want minimal; PostHog if you want funnel analysis from day one. Script tag in `BaseLayout.astro`.                            |
 
 ### Deliverables checklist
 
@@ -97,14 +96,14 @@ Ship the Readiness Filter end-to-end: landing page, 10-question quiz, email gate
 
 ### Canonical scoring examples
 
-| # | Scenario | Expected tier | Expected behavior |
-|---|---|---|---|
-| 1 | All-high answers (740+, $40K saved, 2+ years W-2, 30-day timeline, pre-approved) | Tier A | Display score = 100 (raw 89/89) |
-| 2 | Mid-range across the board (680-739, $10–20K, 1-2 years W-2, 3-6 months, lender in mind) | Tier B | Display score in the 60–75 range |
-| 3 | Low everything, 1+ year timeline, no lender contact | Tier C | Display score below 30 |
-| 4 | High score except Q1 = `unknown` | Tier B | `credit_unknown_or_low` override demotes from A |
-| 5 | High score except Q9 = `exploring` | Tier C | Timeline override caps at C |
-| 6 | High score except Q7 = `between_jobs` | Tier C | Employment override caps at C |
+| #   | Scenario                                                                                 | Expected tier | Expected behavior                               |
+| --- | ---------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------- |
+| 1   | All-high answers (740+, $40K saved, 2+ years W-2, 30-day timeline, pre-approved)         | Tier A        | Display score = 100 (raw 89/89)                 |
+| 2   | Mid-range across the board (680-739, $10–20K, 1-2 years W-2, 3-6 months, lender in mind) | Tier B        | Display score in the 60–75 range                |
+| 3   | Low everything, 1+ year timeline, no lender contact                                      | Tier C        | Display score below 30                          |
+| 4   | High score except Q1 = `unknown`                                                         | Tier B        | `credit_unknown_or_low` override demotes from A |
+| 5   | High score except Q9 = `exploring`                                                       | Tier C        | Timeline override caps at C                     |
+| 6   | High score except Q7 = `between_jobs`                                                    | Tier C        | Employment override caps at C                   |
 
 ### Definition of Done for Phase 1
 
@@ -155,7 +154,7 @@ Two parallel workstreams: build out the LM1 email nurture sequences for all 3 ti
 - All 3 LM1 Pipedrive Campaigns send on schedule for fake submissions in each tier
 - LM2 opt-in works from both entry points and the right Pipedrive automation fires for each
 - A Tier B contact does not receive duplicate emails when they opt into LM2 (the LM1 Tier B campaign cleanly unenrolls them)
-- All Pipedrive Campaigns merge fields resolve correctly (no `{{first_name}}` showing up as literal text)
+- All Pipedrive Campaigns merge fields resolve correctly (no `*|FIRST_NAME|*` showing up as literal text)
 - Static PDF is downloadable from the link in the LM2 transactional
 - Agent has reviewed every email in every campaign via Pipedrive Campaigns' preview-send to their own inbox
 
@@ -221,14 +220,14 @@ Each test runs for a minimum of 50 completed submissions per arm before calling 
 
 ## Risks and mitigations
 
-| Risk | Mitigation |
-|---|---|
-| Make.com hits its operations limit on a free plan | Upgrade to the Pro plan when volume approaches the free-tier ceiling. Forecast around 5–10 ops per submission (webhook → sheet → Pipedrive lookup → Pipedrive update). |
-| Pipedrive Campaigns flags the agent's domain for low engagement | Warm up the sending domain by sending the first 50 emails to a list of friends/family who will open. After that, organic volume protects reputation. Make sure SPF/DKIM/DMARC are set on the agent's domain. |
-| Agent runs out of evening hours to ship | Phases 1, 2, 3 can each slip by 2 weeks without breaking the funnel. Don't shortcut quality on the questions, scoring logic, or result-page copy; those are the asset. |
-| Make.com webhook fails silently and submissions get lost | Make.com writes a Google Sheet audit row *before* the Pipedrive call. If Pipedrive errors, the row is still there and the agent can manually recover the contact within 24 hours. |
+| Risk                                                                 | Mitigation                                                                                                                                                                                                                               |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Make.com hits its operations limit on a free plan                    | Upgrade to the Pro plan when volume approaches the free-tier ceiling. Forecast around 5–10 ops per submission (webhook → sheet → Pipedrive lookup → Pipedrive update).                                                                   |
+| Pipedrive Campaigns flags the agent's domain for low engagement      | Warm up the sending domain by sending the first 50 emails to a list of friends/family who will open. After that, organic volume protects reputation. Make sure SPF/DKIM/DMARC are set on the agent's domain.                             |
+| Agent runs out of evening hours to ship                              | Phases 1, 2, 3 can each slip by 2 weeks without breaking the funnel. Don't shortcut quality on the questions, scoring logic, or result-page copy; those are the asset.                                                                   |
+| Make.com webhook fails silently and submissions get lost             | Make.com writes a Google Sheet audit row _before_ the Pipedrive call. If Pipedrive errors, the row is still there and the agent can manually recover the contact within 24 hours.                                                        |
 | Make.com webhook URL gets scraped from the static bundle and spammed | Add a shared-token field to the payload (also baked into the build) that Make.com verifies before processing. Rotate by redeploying. **Do not** introduce env vars or a backend to "hide" the URL — the threat model doesn't justify it. |
-| Result page query params are tampered with | Acceptable. The page renders from self-reported data; the authoritative record is in Pipedrive (from the webhook). No state on the static site keys off the result-page URL. |
+| Result page query params are tampered with                           | Acceptable. The page renders from self-reported data; the authoritative record is in Pipedrive (from the webhook). No state on the static site keys off the result-page URL.                                                             |
 
 ---
 
@@ -241,5 +240,5 @@ These came up during planning and were deferred. Documenting so they don't get r
 - Cookies, `LocalStorage`/`SessionStorage` cross-page state, or environment variables on the static site. These bring compliance and operational complexity that the funnel does not need.
 - A custom-built calendar tool. Cal.com or Calendly handles BSS booking. Building one is a distraction.
 - A buyer's portal where prospects can log in and "see their progress." This sounds great and adds nothing to conversion in Year 1.
-- Native iOS / Android apps. The funnel is web-only. The agent's iOS skills are *not* in scope for this project.
+- Native iOS / Android apps. The funnel is web-only. The agent's iOS skills are _not_ in scope for this project.
 - Anything paid (ads, lead lists, etc.). Hard rule from the project knowledge base.

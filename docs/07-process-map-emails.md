@@ -1,7 +1,6 @@
-
 Same email rules as LM1: real from-address, no no-reply, replies answered within 24 hours. All sending happens in **Pipedrive Campaigns**, triggered by **Pipedrive Workflow Automations** that fire off the custom fields Make.com sets on the contact (see `05-process-map-spec.md`). Curly braces are Pipedrive merge fields.
 
-LM2's nurture is **shorter and more targeted** than LM1's. The reader has already opted into LM1 (in most cases, Tier B), already gotten useful content, and is now consuming the deepest free asset in the funnel. The job of these emails is to make the BSS feel like the obvious next step *only when they're ready for it*.
+LM2's nurture is **shorter and more targeted** than LM1's. The reader has already opted into LM1 (in most cases, Tier B), already gotten useful content, and is now consuming the deepest free asset in the funnel. The job of these emails is to make the BSS feel like the obvious next step _only when they're ready for it_.
 
 **Build this as one Pipedrive Campaign:** `FTHB LM2 - Roadmap`. Three nurture emails on the cadence below, plus Email 0 as the transactional. The campaign is the same for both `source` values because, per the spec, the roadmap content level-sets all readers.
 
@@ -16,7 +15,7 @@ LM2's nurture is **shorter and more targeted** than LM1's. The reader has alread
 **Preview text:** The full roadmap, plus where to start reading depending on where you are.
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Here's the 9-Step First Home Roadmap as promised.
 
@@ -61,7 +60,7 @@ The sequence is the same regardless of source (`fthb_lm1_tier_b` or `fthb_lm2_st
 **Subject:** Which step did you start on?
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Quick check-in.
 
@@ -98,7 +97,7 @@ jump.
 **Subject:** The Step 3 → Step 4 jump
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Most first-time buyers spend longer on Step 3 (building the
 down payment + closing + reserve) than they need to, and
@@ -140,7 +139,7 @@ you 2 or 3 names. No pressure on what you do with them.
 **Subject:** When the roadmap turns into a conversation
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 This is my last note on the roadmap.
 

@@ -22,7 +22,8 @@ preview: "The inspection period isn't about the inspector. It's your escape hatc
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Quick one.
 
@@ -43,3 +44,4 @@ How to actually use your contingencies is one of the higher-leverage things we c
 Prefer to meet in person? Call or text (407) 227-3205.
 
 -- Axel
+```

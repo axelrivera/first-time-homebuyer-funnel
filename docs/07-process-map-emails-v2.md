@@ -61,7 +61,7 @@ The Roadmap automation sends these four emails in order. Day 0 immediately, then
 **Preview text:** The full roadmap, plus where to start reading depending on where you are.
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Here's the 9-Step First Home Roadmap as promised.
 
@@ -101,7 +101,7 @@ rather they get the map than figure it out the expensive way.
 **Subject:** Which step did you start on?
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Quick check-in.
 
@@ -138,7 +138,7 @@ jump.
 **Subject:** The Step 3 → Step 4 jump
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Most first-time buyers spend longer on Step 3 (building the
 down payment + closing + reserve) than they need to, and
@@ -180,7 +180,7 @@ them.
 **Subject:** When the roadmap turns into a conversation
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 This is the last email in the roadmap series.
 

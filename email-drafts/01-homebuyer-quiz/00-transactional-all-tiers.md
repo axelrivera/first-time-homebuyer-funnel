@@ -23,7 +23,8 @@ goal: "Confirm receipt, deliver the result link, set the tone."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 You came back as {{tier_label}}, {{display_score}}/100.
 
@@ -45,3 +46,4 @@ Talk soon,
 License #: SL3646115 | Brokered by LPT Realty, LLC
 
 P.S. Save the PDF or print it. The 2-mistakes section gets a lot more useful the day before you actually talk to a lender, so come back to it then.
+```

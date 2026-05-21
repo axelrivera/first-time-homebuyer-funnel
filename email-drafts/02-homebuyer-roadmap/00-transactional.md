@@ -22,7 +22,8 @@ goal: "Deliver the roadmap, set expectations for the follow-up series."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Here's the 9-Step First Home Roadmap as promised.
 
@@ -48,3 +49,4 @@ Talk soon,
 {{agent_first_name}}
 
 P.S. The roadmap link is a shareable URL. If you know someone in Orlando who's a few steps behind you on this, send it. I'd rather they get the map than figure it out the expensive way.
+```

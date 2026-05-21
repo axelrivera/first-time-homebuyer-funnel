@@ -159,7 +159,7 @@ Practical implications:
 **Preview text:** Score, timeline, and the 2 mistakes to avoid. All inside.
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 You came back as {{tier_label}}, {{display_score}}/100.
 
@@ -206,7 +206,7 @@ so come back to it then.
 **Subject:** One thing about your "Ready Now" score
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Quick follow-up on your scorecard result.
 
@@ -249,7 +249,7 @@ about your specific timeline and we'll dig in.
 **Subject:** Seminole County vs. Orange County: a 90-second read
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Most "Ready Now" buyers in Orlando default to one of two
 paths:
@@ -295,7 +295,7 @@ the link is here:
 **Subject:** The pre-approval question I always ask first
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 When someone in the "Ready Now" tier reaches out, the very first
 question I ask is:
@@ -330,7 +330,7 @@ Reply with the letter, or → {{book_bss_link}}
 **Subject:** The one contingency that does the heavy lifting
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Quick one.
 
@@ -370,7 +370,7 @@ not, the link is here:
 **Subject:** Wrapping the email series
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 This is the last email in the Ready Now series.
 
@@ -415,7 +415,7 @@ After A5, the campaign ends. The agent reviews the contact in Pipedrive and deci
 **Subject:** Your 90-day game plan: the 9 steps
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 You came back as 90-Day Sprint, which means the next 90 days
 are the whole game. Pre-approval, target areas, savings, and
@@ -453,7 +453,7 @@ which step you're on.
 **Subject:** The order matters more than most people think
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 If you haven't grabbed the roadmap yet, here's the single
 biggest mistake I see Sprint-tier buyers make:
@@ -489,7 +489,7 @@ can actually trust.
 **Subject:** Last note on the roadmap
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Closing out this short series.
 
@@ -529,7 +529,7 @@ After B3, the automation ends. The agent reviews the contact in Pipedrive and de
 **Subject:** What "Foundation Phase" actually means
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Foundation Phase doesn't mean "no." It means "not yet, and here
 is what to do with the time."
@@ -558,7 +558,7 @@ First real email comes in next week.
 **Subject:** The one place to actually pull your credit (and why)
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 There are three credit-related things every Foundation Phase
 buyer should do this month. They cost nothing and they take
@@ -589,7 +589,7 @@ That's it for this week.
 **Subject:** Where to actually park your home fund
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 If you're saving for a down payment, the worst place that money
 can be is in a regular checking account. Two reasons: it earns
@@ -617,7 +617,7 @@ with a goal name on it.
 **Subject:** Drop the 20% number from your head
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 If "I need 20% down" is the number sitting in your head, swap
 it for the real one before you do anything else.
@@ -663,7 +663,7 @@ can't.
 **Subject:** Before you sign that 12-month renewal
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 Most Foundation Phase buyers I talk to are renters. Sooner or
 later, your landlord asks: "Do you want to renew for 12
@@ -711,7 +711,7 @@ usually 2 months' rent. Annoying but not blocking.
 **Subject:** The number lenders actually care about
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 Most first-time buyers obsess over their credit score and
 ignore their debt-to-income ratio (DTI). Lenders do the
@@ -763,7 +763,7 @@ qualifying for a starter home in Sanford and not.
 **Subject:** FHA or Conventional? Two rules of thumb.
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 The biggest loan-choice decision most first-time buyers in
 Orlando face: FHA or Conventional? Both work. The trade-offs
@@ -816,7 +816,7 @@ Those are conversations with a lender, not emails.
 **Subject:** The Florida money most buyers never claim
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 The single most under-claimed money on the table for
 first-time buyers in Florida is **Florida Housing's**
@@ -878,7 +878,7 @@ hesitate or don't know, find a different lender.
 **Subject:** Closing out the Foundation series
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 This is the last email in the Foundation series.
 

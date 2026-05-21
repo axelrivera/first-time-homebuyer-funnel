@@ -22,7 +22,8 @@ preview: "Pre-approval first. Then you can fall in love with a house you can act
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 The single biggest mistake I see Sprint-tier buyers make:
 
@@ -45,3 +46,4 @@ If you do go to an open house this weekend, two things at the door. First, tell 
 P.S. The roadmap walks the whole sequence (credit prep, lender call, targeted tours, offer mechanics) in the order they actually need to happen.
 
 {{fthb_lm2_optin_link}}
+```

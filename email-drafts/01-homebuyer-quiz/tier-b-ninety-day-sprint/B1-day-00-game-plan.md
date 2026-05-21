@@ -22,7 +22,8 @@ preview: "Miss the order and 90 days becomes 180 every time."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Quick follow-up on your readiness score result.
 
@@ -49,3 +50,4 @@ The full version of that 90-day map is what I built into my roadmap. Nine steps,
 Give it twenty minutes and you'll know exactly which week you're on.
 
 -- Axel
+```

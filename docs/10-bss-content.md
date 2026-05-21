@@ -11,7 +11,7 @@ Status: **DRAFT**. The in-call structure is the load-bearing artifact in this do
 There is no BSS landing page. The booking surface is the agent's existing **Google Calendar appointment scheduling page**, using its standard UI. The agent does not customize copy on it beyond:
 
 - Appointment title: **Buyer Strategy Session (30 min)**
-- Description: *"A 30-minute video call to talk through your specific situation: timeline, cash, neighborhoods, lender questions. We'll figure out the right next step for you together."*
+- Description: _"A 30-minute video call to talk through your specific situation: timeline, cash, neighborhoods, lender questions. We'll figure out the right next step for you together."_
 
 Google Calendar handles the booking confirmation and the reminder email natively.
 
@@ -45,7 +45,7 @@ Agent reads back what they already know from LM1 (and LM2, if applicable) in one
 
 Sample frame (not a script; rephrase in voice):
 
-> *"Hey {{first_name}}, thanks for booking. From your scorecard I know you're targeting {{timeline}}, you came back as Tier {{tier_letter}}, and your cash is roughly in the {{cash_bucket}} range. What's changed since you took the quiz?"*
+> _"Hey *|FIRST_NAME|*, thanks for booking. From your scorecard I know you're targeting {{timeline}}, you came back as Tier {{tier_letter}}, and your cash is roughly in the {{cash_bucket}} range. What's changed since you took the quiz?"_
 
 The "what's changed" question is the most important sentence in this block. It surfaces anything that has moved (rate, job, partner conversation) without making the prospect re-explain their starting state.
 
@@ -66,7 +66,7 @@ The agent also answers the specific questions the prospect brought (most bring o
 
 The agent names three options and asks for a decision:
 
-> *"Three options for what happens next. Option 1: we sign the buyer brokerage agreement today and start the search. Option 2: I introduce you to a lender this week, you take a pre-approval call, and we talk again once you have a number. Option 3: we stay in touch through email, you keep getting the monthly market update, and we revisit in 30 to 60 days. Which one fits?"*
+> _"Three options for what happens next. Option 1: we sign the buyer brokerage agreement today and start the search. Option 2: I introduce you to a lender this week, you take a pre-approval call, and we talk again once you have a number. Option 3: we stay in touch through email, you keep getting the monthly market update, and we revisit in 30 to 60 days. Which one fits?"_
 
 The agent does not soften past the question. The 10 minutes here are for talking through the choice, not for filibustering.
 
@@ -74,7 +74,7 @@ After the answer, the agent records the outcome in Pipedrive within 1 hour of th
 
 End at 30 minutes. If the prospect wants more time:
 
-> *"We've got five more minutes. Want to keep going, or want me to send the rest in writing?"*
+> _"We've got five more minutes. Want to keep going, or want me to send the rest in writing?"_
 
 ---
 

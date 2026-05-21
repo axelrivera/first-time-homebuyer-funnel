@@ -22,7 +22,8 @@ preview: "8 short emails. 0% sales pitch. Here's what to expect."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Foundation Phase doesn't mean "no." It means "not yet," and here is what to do with the time.
 
@@ -37,3 +38,4 @@ When credit, savings, or debt moves meaningfully for you, reply and tell me wher
 First real email comes in next week.
 
 -- Axel
+```

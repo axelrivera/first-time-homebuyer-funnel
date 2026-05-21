@@ -21,7 +21,8 @@ preview: "How a cycling habit changed where I bought my first home."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Quick story about how I ended up in Altamonte Springs.
 
@@ -38,3 +39,4 @@ That's the thing I now help buyers figure out on purpose: knowing what shapes yo
 If you've got an area on your shortlist (or one you've already dismissed), reply with the name. I'll send my honest read.
 
 -- Axel
+```

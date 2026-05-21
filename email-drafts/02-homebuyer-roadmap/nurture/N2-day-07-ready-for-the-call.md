@@ -21,7 +21,8 @@ preview: "3 things you actually need. None of them are a pre-approval letter."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 The most common reason people give for not booking a Buyer Strategy Session: "I want to wait until I have my numbers together."
 
@@ -53,3 +54,4 @@ Or call/text (407) 227-3205 to meet in person.
 30 minutes. Free. No commitment afterward.
 
 -- Axel
+```

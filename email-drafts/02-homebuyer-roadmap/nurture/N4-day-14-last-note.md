@@ -21,7 +21,8 @@ preview: "30 minutes, video or in-person. Last chance to talk it through."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 This is the last email in the roadmap follow-up.
 
@@ -38,3 +39,4 @@ If you'd rather not, no hard feelings. You have the roadmap and the action items
 If something specific comes up later, reply to any of these emails. It comes straight to me.
 
 -- Axel
+```

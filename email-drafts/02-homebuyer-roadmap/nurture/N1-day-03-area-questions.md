@@ -21,7 +21,8 @@ preview: "Commute, schools, 5-year plan. Get these right before you tour."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Three questions to ask yourself before you tour anything in Orlando. The roadmap doesn't ask them. They're worth more than any individual step.
 
@@ -34,3 +35,4 @@ Three questions to ask yourself before you tour anything in Orlando. The roadmap
 If one of these is the question you're stuck on, reply with where you are and I'll send my quick version of how I'd think about it. No pressure on what you do with it.
 
 -- Axel
+```

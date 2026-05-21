@@ -1,4 +1,3 @@
-
 Every email here is final copy. Drop into Pipedrive Campaigns as-is. Curly braces `{{like_this}}` are Pipedrive merge fields that resolve against the Person record Make.com has just written.
 
 The agent's email voice = the same as the result-page voice: direct, useful, no sales-y wind-up. Short subject lines. No exclamation points unless genuinely warranted.
@@ -8,7 +7,7 @@ The agent's email voice = the same as the result-page voice: direct, useful, no 
 ## Email infrastructure choices baked into this sequence
 
 - **From name:** `{{agent_first_name}} from Orlando Homes` (or whatever the agent's working brand name is, locked in Phase 1)
-- **From email:** A real address the agent monitors. Replies are responded to within 24 hours. *No no-reply addresses.*
+- **From email:** A real address the agent monitors. Replies are responded to within 24 hours. _No no-reply addresses._
 - **Sending tool:** **Pipedrive Campaigns** (the Campaigns addon on Pipedrive). All transactional + nurture email lives here as named campaigns; **Pipedrive Workflow Automations** enroll, unenroll, and pause contacts based on custom-field values (`fthb_lm1_tier`, `fthb_received_lm1`, `fthb_received_lm2`, etc.).
 - **Make.com's role:** Receive the webhook, write the Google Sheet audit row, and create/update the Pipedrive Person with the right field values. Make.com does **not** send a single email itself — Pipedrive owns email entirely. This is the boundary; keep it clean.
 - **Merge tags:** `{{like_this}}` in this doc maps to Pipedrive Campaigns merge fields. The agent will need to wire each one (`first_name`, `tier_label`, `display_score`, `fthb_result_page_link`, `book_bss_link`, `fthb_lm2_optin_link`, `fthb_retake_link`, `agent_first_name`, `agent_license_no`, `brokerage`) to the corresponding Pipedrive Person/Deal field before scheduling each campaign.
@@ -28,7 +27,7 @@ The agent's email voice = the same as the result-page voice: direct, useful, no 
 **Preview text:** Score, timeline, and the 2 mistakes to avoid. All inside.
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 You came back as {{tier_label}}, {{display_score}}/100.
 
@@ -71,7 +70,7 @@ Goal: Get the Buyer Strategy Session booked. They're already qualified; this seq
 **Subject:** One thing about your "Ready Now" score
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Quick follow-up on your scorecard result.
 
@@ -100,7 +99,7 @@ Free, video call.
 **Subject:** Seminole County vs. Orange County: a 90-second read
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Most "Ready Now" buyers in Orlando default to one of two
 paths:
@@ -136,7 +135,7 @@ your target areas qualify.
 **Subject:** The pre-approval question I always ask first
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 When someone in the "Ready Now" tier reaches out, the very first
 question I ask is:
@@ -169,7 +168,7 @@ can tell you in 5 minutes.
 **Subject:** The one contingency that does the heavy lifting
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Quick one.
 
@@ -208,7 +207,7 @@ should be doing for you.
 **Subject:** Last note from me
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 I'm not going to keep emailing you about the strategy session.
 
@@ -243,7 +242,7 @@ Goal: Get them to consume LM2 (the 9-Step Roadmap), then convert to BSS. This is
 **Subject:** Your 90-day game plan: start here
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 You're in the 90-Day Sprint tier, which means the next 90 days
 are the whole game.
@@ -277,7 +276,7 @@ Read it. Then we can talk.
 **Subject:** Before you look at a single house
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 If you skipped the roadmap from yesterday, here's the single
 biggest mistake I see Sprint-tier buyers make:
@@ -313,7 +312,7 @@ the roadmap:
 **Subject:** When to use the builder's lender
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 If new construction is on your radar at all (Apopka, Lake Mary,
 Sanford), here is a question most first-time buyers do not run
@@ -363,7 +362,7 @@ new-construction and resale paths:
 **Subject:** Quick question for you
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Where are you actually getting stuck right now?
 
@@ -391,7 +390,7 @@ P.S. This isn't a scripted auto-thing. You reply, I read it.
 **Subject:** When the Sprint becomes Ready Now
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Here's how you know you've crossed from Sprint to Ready Now,
 which usually happens at the 60-day mark for buyers in your
@@ -419,7 +418,7 @@ If you're not there yet, that's totally normal. Keep going.
 **Subject:** Last note (then I back off)
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 I'm not going to keep emailing about the BSS. Either you're
 making progress on the 90-day work or you're not, and either
@@ -443,14 +442,14 @@ After B6, the contact moves to the **monthly market-update list**.
 ## Tier C: "Foundation Phase" sequence (long-form nurture, every 2 weeks)
 
 Cadence: Bi-weekly, indefinite. They unsubscribe or graduate up a tier when they retake.
-Goal: Stay useful, stay top-of-mind, do not pitch the BSS until they cross into Tier B/A. The bar for every email is *"is this useful to someone 6–12 months out from buying?"*
+Goal: Stay useful, stay top-of-mind, do not pitch the BSS until they cross into Tier B/A. The bar for every email is _"is this useful to someone 6–12 months out from buying?"_
 
 ### Email C0 - Day 0 (welcome)
 
 **Subject:** What "Foundation Phase" actually means
 
 ```
-Hey {{first_name}},
+Hey *|FIRST_NAME|*,
 
 Foundation Phase doesn't mean "no." It means "not yet, and here
 is what to do with the time."
@@ -477,7 +476,7 @@ First real email comes in about 2 weeks.
 **Subject:** The one place to actually pull your credit (and why)
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 There are three credit-related things every Foundation Phase
 buyer should do this month. They cost nothing and they take
@@ -508,7 +507,7 @@ That's it for this week.
 **Subject:** Where to actually park your home fund
 
 ```
-{{first_name}},
+*|FIRST_NAME|*,
 
 If you're saving for a down payment, the worst place that money
 can be is in a regular checking account. Two reasons: it earns
@@ -554,6 +553,6 @@ After topic 10, loop back to topic 1 with refreshed examples and market data.
 
 Every email has the standard Pipedrive Campaigns unsubscribe footer (required for CAN-SPAM compliance and provided by the Pipedrive Campaigns template). Additionally:
 
-> *Don't want these every other week? Reply "monthly" and I'll switch you to once a month. Reply "stop" and I'll take you off entirely.*
+> _Don't want these every other week? Reply "monthly" and I'll switch you to once a month. Reply "stop" and I'll take you off entirely._
 
 The standard unsubscribe link removes them from all Pipedrive Campaigns. The "monthly" reply is handled manually by the agent (move the contact's `nurture_cadence` field to `monthly`; a Pipedrive Workflow Automation routes them to the slower cadence). The "stop" reply triggers the standard unsubscribe in Pipedrive. Both work without code on the static site.

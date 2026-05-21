@@ -22,7 +22,8 @@ preview: "Not Credit Karma. Not your bank app. The free government-mandated site
 
 ---
 
-{{first_name}},
+```
+*|FIRST_NAME|*,
 
 There are three credit-related things every Foundation Phase buyer should do this month. They cost nothing and they take under an hour.
 
@@ -35,3 +36,4 @@ That's it for this week.
 If anything on your report surprises you and you want a second pair of eyes, reply with a redacted screenshot and I'll tell you what's worth fixing first.
 
 -- Axel
+```

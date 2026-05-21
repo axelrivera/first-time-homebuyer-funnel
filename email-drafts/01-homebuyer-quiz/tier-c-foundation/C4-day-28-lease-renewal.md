@@ -22,7 +22,8 @@ preview: "When to lock in, when to go month-to-month, when to walk."
 
 ---
 
-{{first_name}},
+```
+*|FIRST_NAME|*,
 
 Many Foundation Phase buyers I talk to are renters. Sooner or later, your landlord asks: "Do you want to renew for 12 months?" Here's how to decide.
 
@@ -50,3 +51,4 @@ The trap to avoid: signing a 12-month renewal one month before you would have be
 Already mid-renewal? Most Florida leases have a buyout clause, usually 2 months' rent. Annoying but not blocking.
 
 -- Axel
+```

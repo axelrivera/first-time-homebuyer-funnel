@@ -22,7 +22,8 @@ preview: "4 Orlando paths a Ready Now buyer should weigh. 90 seconds, end to end
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 Many "Ready Now" buyers in Orlando default to one of two paths:
 
@@ -35,3 +36,4 @@ There's a third path most people miss: the **Seminole/Orange border zone**, wher
 If your budget can stretch to $575-600K, there's a fourth path worth a look: Lake Nona in the southeast. Newer construction, master-planned, totally different feel from anything on the north end. Not for everyone, but it should be on the table before you rule it out.
 
 -- Axel
+```

@@ -22,7 +22,8 @@ preview: "Score gets you in the door. DTI decides how much house you can buy."
 
 ---
 
-{{first_name}},
+```
+*|FIRST_NAME|*,
 
 Most first-time buyers obsess over their credit score and ignore their debt-to-income ratio (DTI). Lenders do the opposite. Score gets you in the door; DTI gets you the loan amount.
 
@@ -58,3 +59,4 @@ Roughly +$400/month for each +$50K in home price.
 If that number is above 43%, your highest-leverage move is not saving more. It's paying off the debt with the smallest balance and highest minimum. One paid-off car loan can shift your DTI by 5–8 points, which can be the difference between qualifying for an Orlando home in your price band and not.
 
 -- Axel
+```

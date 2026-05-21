@@ -22,7 +22,8 @@ preview: "30 minutes, free, video or in person. Last chance to talk it through."
 
 ---
 
-Hey {{first_name}},
+```
+Hey *|FIRST_NAME|*,
 
 This is the last email in the Ready Now series.
 
@@ -41,3 +42,4 @@ Either way, thanks for taking the readiness quiz. Best of luck out there.
 -- Axel
 
 P.S. If something specific comes up later, reply to any of these emails. It comes straight to me.
+```
