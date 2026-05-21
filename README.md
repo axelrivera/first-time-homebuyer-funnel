@@ -1,6 +1,6 @@
-# Two-Step Funnel: Source of Truth
+# First-Time Buyer Funnel
 
-This repository is the single source of truth for **Option A: The Two-Step Funnel**, the lead-generation system for a newly licensed Orlando real estate agent targeting first-time buyers.
+Specs, build tasks, and email copy for a two-step lead-generation funnel: a newly licensed Orlando real estate agent's system for moving first-time buyers from initial signal to a 30-minute strategy call.
 
 The strategy is built strictly on Alex Hormozi's frameworks from *$100M Offers* and *$100M Leads*. No paid ads, no cold lists. Every piece of this funnel is a mini Grand Slam Offer delivered through organic warm outreach and free content.
 
