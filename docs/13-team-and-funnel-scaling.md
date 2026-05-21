@@ -83,6 +83,8 @@ Sub-linear scaling because additional agents share content production and have o
 
 This is months 1–12 (roughly). One person, no TC, no second agent. The funnel is designed for this configuration: a single Pipedrive owner, a single Google Calendar for BSS bookings, no lead routing logic.
 
+The funnel also lives on the agent's personal website at this stage (axelrivera.me). The personal brand carries the content, the credibility, and the daily DMs. Content authorship is unambiguous because there is one agent. The team-brand transition is a Stage 3 problem, not a Stage 1 problem.
+
 ### Realistic monthly cadence
 
 - **5–10 warm DMs per day** to your sphere and recent acquaintances (per [CLAUDE.md](../CLAUDE.md) "Working voice and the Grand Slam Offer test"). 25–50 DMs/week.
@@ -151,11 +153,12 @@ You hit capacity in year 2 momentum. The funnel is now producing 30–60% more d
 
 **Funnel modifications required** before the second agent starts:
 
-1. **Lead-owner routing in Make.com.** Add a round-robin rule that sets `owner_id` on the created Deal/Lead. Round-robin is simplest. Sphere-based (route by zip code, language preference, or quiz signal) is sharper but takes longer to spec.
-2. **Two BSS Calendar slugs** (or a Calendly team page with round-robin). Result page passes through to whichever agent was assigned.
-3. **Owner field on the LM2 webhook** so standalone-roadmap path also distributes new Deals.
-4. **Email transactional copy parameterized** with the owning agent's name, signature, reply-to.
-5. **Pipedrive automation routing.** All four automations stay shared; enrollment runs in the context of the owning agent so replies route correctly.
+1. **Funnel pages moved to a team-brand domain.** The funnel stops living on the agent's personal site. Quiz, roadmap, result pages, and blog migrate to a team-brand domain that names both agents with parity; the personal site 301-redirects funnel routes to preserve SEO. Without this the second agent has no credible surface to share with their own sphere, leads still feel rerouted away from the agent they trusted, and the funnel can't carry consistent messaging across team growth. See "Brand and website transition" below.
+2. **Lead-owner routing in Make.com.** Add a round-robin rule that sets `owner_id` on the created Deal/Lead. Round-robin is simplest. Sphere-based (route by zip code, language preference, or quiz signal) is sharper but takes longer to spec.
+3. **Two BSS Calendar slugs** (or a Calendly team page with round-robin). Result page passes through to whichever agent was assigned.
+4. **Owner field on the LM2 webhook** so standalone-roadmap path also distributes new Deals.
+5. **Email transactional copy parameterized** with the owning agent's name, signature, reply-to.
+6. **Pipedrive automation routing.** All four automations stay shared; enrollment runs in the context of the owning agent so replies route correctly.
 
 Without these, the second agent has nothing to own and you end up doing all the funnel work anyway.
 
@@ -167,6 +170,23 @@ Without these, the second agent has nothing to own and you end up doing all the 
 | Year 2 momentum | 70–130 | 50–94 | 50–60 | 50–60 (capped) | $563K–$675K | $225K–$270K each |
 
 Per-agent net is best at this stage. Two agents share the TC cost and the funnel's lead volume neatly. Adding the 3rd agent only makes sense once volume saturates this configuration.
+
+### Brand and website transition
+
+Stage 1 and 2 run on the agent's personal website. The personal brand carries the content, the credibility, and the DMs because there is one agent and the funnel reflects that reality.
+
+Stage 3 needs the funnel to live on a team-brand domain instead. A site that says one agent's name at the top while routing leads to two different agents creates dissonance: the second agent feels like an apprentice, leads feel rerouted away from the agent they trusted, and the second agent has no surface to share with their own sphere. The migration is part of the Stage 3 move, not an optional polish.
+
+Two patterns work.
+
+- **Single team brand.** One domain carries both the team identity and the content. Header names the team, both agents on the about page with parity. Simpler operationally; most Stage 3 teams take this path.
+- **Team brand plus content brand.** Two domains. The team brand is the operating identity (BBAs, listings, signage, paperwork). The content brand is the funnel and lead-gen surface (blog, quiz, roadmap, YouTube channel name). The Pozek Group ([pozek.com](https://www.pozek.com)) running The Orlando Real ([theorlandoreal.com](https://www.theorlandoreal.com)) is the canonical local example: Pozek signs paperwork, The Orlando Real is where content lives and leads come in. More setup, but the content brand can outlive any single agent and a future sale of either brand is cleaner.
+
+**What moves to the team domain:** all funnel pages (quiz, result, roadmap landing, roadmap content), all blog posts, the BSS calendar slug, the newsletter sender domain, and social profile links in headers and email signatures.
+
+**What stays on the personal site:** the agent's own bio, story, and personal content. Funnel routes 301-redirect to their team-domain equivalents to preserve SEO equity earned during Stage 1 and 2.
+
+**Timing.** A 301 migration costs 5–15% of organic traffic for 4–8 weeks before recovering. Schedule the migration ~30 days before the second agent's start so the domain settles before lead volume actually matters. Migrating during a Stage 2 momentum window where every LM1 counts is painful; migrating into a calmer lull and then ramping is not.
 
 ### Stage 3+: 3 agents + TC (still FTHB only)
 
@@ -498,7 +518,7 @@ Pipedrive's Funnel report ([09-deal-pipeline-stages.md:319](09-deal-pipeline-sta
 - **Specific commission split negotiations** with brokerage, team agents, or the TC. Assumed 20% to brokerage and 60–80% to agent gross. Your actuals will differ.
 - **Tax treatment** of agent earnings (1099 vs W-2, S-corp distributions, etc.). Talk to a CPA.
 - **Hiring and management practices.** This doc says "add a 3rd agent at Stage 4"; it doesn't tell you how to find and onboard one.
-- **Branding, brokerage selection, or franchise model decisions.** All assumed stable.
+- **Team-brand naming, specific domain choice, brokerage selection, or franchise model.** The doc names *when* the funnel moves from the agent's personal site to a team brand (Stage 3) and *which two patterns* are viable (single team brand vs. team brand plus content brand). The actual team name, domain, and brokerage choice are out of scope. Franchise model assumed stable.
 - **Geographic expansion.** Numbers are calibrated to Orlando metro per [CLAUDE.md](../CLAUDE.md) market context. Tampa, Jacksonville, or out-of-metro expansion would need re-derivation.
 
 Build sequence for the FTHB funnel itself lives in [08-implementation-roadmap.md](08-implementation-roadmap.md). Pipedrive stage definitions live in [09-deal-pipeline-stages.md](09-deal-pipeline-stages.md). The funnel namespace convention for adding Sellers / Reloc / Move-Up later is in [CLAUDE.md](../CLAUDE.md) "Funnel namespace convention."
