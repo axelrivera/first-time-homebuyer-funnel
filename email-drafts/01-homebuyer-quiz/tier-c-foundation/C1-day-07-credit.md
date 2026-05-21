@@ -1,6 +1,24 @@
-# Email C1 — Day 7: Credit
+---
+crm_name: "FTHB Quiz - Tier C - Day 07 - Credit"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 2 of 9"
+day: 7
+delay_from_previous: "7 days"
+subject: "The one place to actually pull your credit (and why)"
+preview: "Not Credit Karma. Not your bank app. The free government-mandated site."
+---
+
+# FTHB Quiz - Tier C - Day 07 - Credit
 
 **Subject:** The one place to actually pull your credit (and why)
+
+**Preview:** Not Credit Karma. Not your bank app. The free government-mandated site.
+
+**Send:** Day 7 (7 days after C0)
 
 ---
 

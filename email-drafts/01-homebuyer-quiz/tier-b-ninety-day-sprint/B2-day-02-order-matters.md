@@ -1,6 +1,24 @@
-# Email B2 — Day 2
+---
+crm_name: "FTHB Quiz - Tier B - Day 02 - Order Matters"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: B
+automation: "FTHB LM1 - Tier B"
+sequence_position: "Email 2 of 3"
+day: 2
+delay_from_previous: "2 days"
+subject: "Why open houses are wasting your Sundays"
+preview: "Pre-approval first. Then you can fall in love with a house you can actually buy."
+---
 
-**Subject:** The order matters more than most people think
+# FTHB Quiz - Tier B - Day 02 - Order Matters
+
+**Subject:** Why open houses are wasting your Sundays
+
+**Preview:** Pre-approval first. Then you can fall in love with a house you can actually buy.
+
+**Send:** Day 2 (2 days after B1)
 
 ---
 

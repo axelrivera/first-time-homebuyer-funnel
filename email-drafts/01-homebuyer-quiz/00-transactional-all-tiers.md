@@ -1,11 +1,25 @@
-# Email 0 (all tiers): Transactional delivery
+---
+crm_name: "FTHB Quiz - Transactional - Day 00 - Score Delivery"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: all
+automation: "Email 0 - LM1 Transactional"
+sequence_position: "Standalone one-step automation (fires for every LM1 submission, before tier automation)"
+day: 0
+delay_from_previous: "Immediate (within 60 seconds of form submit)"
+subject: "Your Orlando readiness score: {{tier_label}} ({{display_score}}/100)"
+preview: "Your tier guide, the 2 mistakes to avoid, and your next step. All inside."
+goal: "Confirm receipt, deliver the result link, set the tone."
+---
 
-**Trigger:** Immediately on form submit (within 60 seconds), via Make.com calling a one-step Pipedrive automation.
-**Goal:** Confirm receipt, deliver the result link, set the tone.
-**Surface:** A standalone one-step Pipedrive automation that sends a single campaign email. Not part of the Tier A/B/C automations — fires for every LM1 submission regardless of tier.
+# FTHB Quiz - Transactional - Day 00 - Score Delivery
 
-**Subject:** Your Orlando readiness score: {{tier_label}}
-**Preview text:** Score, timeline, and the 2 mistakes to avoid. All inside.
+**Subject:** Your Orlando readiness score: {{tier_label}} ({{display_score}}/100)
+
+**Preview:** Your tier guide, the 2 mistakes to avoid, and your next step. All inside.
+
+**Send:** Immediately on form submit (within 60 seconds), via Make.com calling a one-step Pipedrive automation. Fires for every LM1 submission regardless of tier.
 
 ---
 

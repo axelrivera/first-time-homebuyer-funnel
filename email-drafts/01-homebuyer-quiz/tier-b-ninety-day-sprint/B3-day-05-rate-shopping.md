@@ -1,6 +1,24 @@
-# Email B3 — Day 5
+---
+crm_name: "FTHB Quiz - Tier B - Day 05 - Rate Shopping"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: B
+automation: "FTHB LM1 - Tier B"
+sequence_position: "Email 3 of 5 (drafted; v2 spec calls for 3 emails / 5 days — drafts extend the sequence to 14 days)"
+day: 5
+delay_from_previous: "3 days"
+subject: "The credit-score fear that costs Orlando buyers $27,000"
+preview: "Shopping 3 lenders in 14 days moves your score the same as shopping 1."
+---
 
-**Subject:** The lender fear that costs you real money
+# FTHB Quiz - Tier B - Day 05 - Rate Shopping
+
+**Subject:** The credit-score fear that costs Orlando buyers $27,000
+
+**Preview:** Shopping 3 lenders in 14 days moves your score the same as shopping 1.
+
+**Send:** Day 5 (3 days after B2)
 
 ---
 

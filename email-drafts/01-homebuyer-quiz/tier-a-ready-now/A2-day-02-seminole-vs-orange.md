@@ -1,6 +1,24 @@
-# Email A2 — Day 2
+---
+crm_name: "FTHB Quiz - Tier A - Day 02 - Seminole vs Orange"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: A
+automation: "FTHB LM1 - Tier A"
+sequence_position: "Email 2 of 5"
+day: 2
+delay_from_previous: "2 days"
+subject: "Seminole vs. Orange: where your Orlando budget goes furthest"
+preview: "4 Orlando paths a Ready Now buyer should weigh. 90 seconds, end to end."
+---
 
-**Subject:** Seminole County vs. Orange County: a 90-second read
+# FTHB Quiz - Tier A - Day 02 - Seminole vs Orange
+
+**Subject:** Seminole vs. Orange: where your Orlando budget goes furthest
+
+**Preview:** 4 Orlando paths a Ready Now buyer should weigh. 90 seconds, end to end.
+
+**Send:** Day 2 (2 days after A1)
 
 ---
 

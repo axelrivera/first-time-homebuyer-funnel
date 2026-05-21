@@ -1,6 +1,23 @@
-# Email N2 — Day 7
+---
+crm_name: "FTHB Roadmap - Day 07 - Ready For The Call"
+project: FTHB
+feature: Roadmap
+magnet: LM2
+automation: "FTHB LM2 - Roadmap"
+sequence_position: "Email 3 of 5 (nurture 2 of 4)"
+day: 7
+delay_from_previous: "4 days"
+subject: "What you actually need to book the call (it isn't a spreadsheet)"
+preview: "3 things you actually need. None of them are a pre-approval letter."
+---
 
-**Subject:** You're more ready than you think
+# FTHB Roadmap - Day 07 - Ready For The Call
+
+**Subject:** What you actually need to book the call (it isn't a spreadsheet)
+
+**Preview:** 3 things you actually need. None of them are a pre-approval letter.
+
+**Send:** Day 7 (4 days after N1)
 
 ---
 

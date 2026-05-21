@@ -1,6 +1,24 @@
-# Email C6 — Day 42: FHA vs. Conventional
+---
+crm_name: "FTHB Quiz - Tier C - Day 42 - FHA vs Conventional"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 7 of 9"
+day: 42
+delay_from_previous: "7 days"
+subject: "FHA or Conventional? Two rules of thumb"
+preview: "Credit score, DTI, down payment. 3 inputs, one clear answer."
+---
 
-**Subject:** FHA or Conventional? Two rules of thumb.
+# FTHB Quiz - Tier C - Day 42 - FHA vs Conventional
+
+**Subject:** FHA or Conventional? Two rules of thumb
+
+**Preview:** Credit score, DTI, down payment. 3 inputs, one clear answer.
+
+**Send:** Day 42 (7 days after C5)
 
 ---
 

@@ -1,6 +1,23 @@
-# Email N3 — Day 10
+---
+crm_name: "FTHB Roadmap - Day 10 - Altamonte Story"
+project: FTHB
+feature: Roadmap
+magnet: LM2
+automation: "FTHB LM2 - Roadmap"
+sequence_position: "Email 4 of 5 (nurture 3 of 4)"
+day: 10
+delay_from_previous: "3 days"
+subject: "Why I almost missed Altamonte Springs"
+preview: "How a cycling habit changed where I bought my first home."
+---
+
+# FTHB Roadmap - Day 10 - Altamonte Story
 
 **Subject:** Why I almost missed Altamonte Springs
+
+**Preview:** How a cycling habit changed where I bought my first home.
+
+**Send:** Day 10 (3 days after N2)
 
 ---
 

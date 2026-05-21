@@ -1,6 +1,24 @@
-# Email A4 — Day 9
+---
+crm_name: "FTHB Quiz - Tier A - Day 09 - Inspection Contingency"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: A
+automation: "FTHB LM1 - Tier A"
+sequence_position: "Email 4 of 5"
+day: 9
+delay_from_previous: "4 days"
+subject: "The Florida contingency that lets you walk and keep your deposit"
+preview: "The inspection period isn't about the inspector. It's your escape hatch."
+---
 
-**Subject:** The one contingency that does the heavy lifting
+# FTHB Quiz - Tier A - Day 09 - Inspection Contingency
+
+**Subject:** The Florida contingency that lets you walk and keep your deposit
+
+**Preview:** The inspection period isn't about the inspector. It's your escape hatch.
+
+**Send:** Day 9 (4 days after A3)
 
 ---
 

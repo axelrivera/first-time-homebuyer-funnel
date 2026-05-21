@@ -1,6 +1,23 @@
-# Email N1 — Day 3
+---
+crm_name: "FTHB Roadmap - Day 03 - Pre-Tour Questions"
+project: FTHB
+feature: Roadmap
+magnet: LM2
+automation: "FTHB LM2 - Roadmap"
+sequence_position: "Email 2 of 5 (nurture 1 of 4)"
+day: 3
+delay_from_previous: "3 days (from automation enrollment, after transactional)"
+subject: "3 questions the roadmap doesn't ask (worth more than any step)"
+preview: "Commute, schools, 5-year plan. Get these right before you tour."
+---
 
-**Subject:** The questions the roadmap doesn't ask
+# FTHB Roadmap - Day 03 - Pre-Tour Questions
+
+**Subject:** 3 questions the roadmap doesn't ask (worth more than any step)
+
+**Preview:** Commute, schools, 5-year plan. Get these right before you tour.
+
+**Send:** Day 3 (3 days after Transactional)
 
 ---
 

@@ -1,6 +1,24 @@
-# Email C4 — Day 28: Lease renewal timing
+---
+crm_name: "FTHB Quiz - Tier C - Day 28 - Lease Renewal Timing"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 5 of 9"
+day: 28
+delay_from_previous: "7 days"
+subject: "Before you sign that 12-month renewal"
+preview: "When to lock in, when to go month-to-month, when to walk."
+---
+
+# FTHB Quiz - Tier C - Day 28 - Lease Renewal Timing
 
 **Subject:** Before you sign that 12-month renewal
+
+**Preview:** When to lock in, when to go month-to-month, when to walk.
+
+**Send:** Day 28 (7 days after C3)
 
 ---
 

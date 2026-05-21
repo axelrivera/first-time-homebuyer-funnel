@@ -1,6 +1,24 @@
-# Email A1 — Day 0 (sent ~10 minutes after transactional)
+---
+crm_name: "FTHB Quiz - Tier A - Day 00 - Ready Now Meaning"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: A
+automation: "FTHB LM1 - Tier A"
+sequence_position: "Email 1 of 5"
+day: 0
+delay_from_previous: "10 minutes (from automation enrollment)"
+subject: "Ready Now: 3 rules between pre-approval and keys"
+preview: "The 30 days before closing are where deals fall apart. Don't be that buyer."
+---
 
-**Subject:** One thing about your "Ready Now" score
+# FTHB Quiz - Tier A - Day 00 - Ready Now Meaning
+
+**Subject:** Ready Now: 3 rules between pre-approval and keys
+
+**Preview:** The 30 days before closing are where deals fall apart. Don't be that buyer.
+
+**Send:** Day 0, ~10 minutes after Email 0 (Transactional)
 
 ---
 

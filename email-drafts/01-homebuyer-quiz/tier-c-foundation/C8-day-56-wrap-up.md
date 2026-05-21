@@ -1,6 +1,24 @@
-# Email C8 — Day 56: Wrap-up
+---
+crm_name: "FTHB Quiz - Tier C - Day 56 - Wrap-Up"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 9 of 9 (final)"
+day: 56
+delay_from_previous: "7 days"
+subject: "Last email in the Foundation series"
+preview: "8 weeks of playbook. Your move from here."
+---
 
-**Subject:** Closing out the Foundation series
+# FTHB Quiz - Tier C - Day 56 - Wrap-Up
+
+**Subject:** Last email in the Foundation series
+
+**Preview:** 8 weeks of playbook. Your move from here.
+
+**Send:** Day 56 (7 days after C7)
 
 ---
 

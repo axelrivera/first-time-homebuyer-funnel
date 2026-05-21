@@ -1,7 +1,24 @@
-# Email 0 — Day 0: Transactional delivery
+---
+crm_name: "FTHB Roadmap - Transactional - Day 00 - Delivery"
+project: FTHB
+feature: Roadmap
+magnet: LM2
+automation: "FTHB LM2 - Roadmap (first step) or LM2-specific transactional step"
+sequence_position: "Email 1 (transactional delivery)"
+day: 0
+delay_from_previous: "Immediate (on form submit)"
+subject: "Your 9-Step Orlando Home Roadmap (link + PDF inside)"
+preview: "The full roadmap, plus where to start reading depending on where you are."
+goal: "Deliver the roadmap, set expectations for the follow-up series."
+---
+
+# FTHB Roadmap - Transactional - Day 00 - Delivery
 
 **Subject:** Your 9-Step Orlando Home Roadmap (link + PDF inside)
-**Preview text:** The full roadmap, plus where to start reading depending on where you are.
+
+**Preview:** The full roadmap, plus where to start reading depending on where you are.
+
+**Send:** Immediately on LM2 form submit (via Make.com)
 
 ---
 

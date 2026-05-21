@@ -1,6 +1,24 @@
-# Email B4 — Day 9
+---
+crm_name: "FTHB Quiz - Tier B - Day 09 - HOA and CDD"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: B
+automation: "FTHB LM1 - Tier B"
+sequence_position: "Email 4 of 5 (extends Tier B beyond 3-email v2 minimum)"
+day: 9
+delay_from_previous: "4 days"
+subject: "The $250/month surprise hiding in Florida property taxes"
+preview: "HOA dues and CDD assessments can rewrite your real monthly payment."
+---
 
-**Subject:** The line on the Florida listing nobody warns you about
+# FTHB Quiz - Tier B - Day 09 - HOA and CDD
+
+**Subject:** The $250/month surprise hiding in Florida property taxes
+
+**Preview:** HOA dues and CDD assessments can rewrite your real monthly payment.
+
+**Send:** Day 9 (4 days after B3)
 
 ---
 

@@ -1,6 +1,24 @@
-# Email B1 — Day 0 (sent ~10 minutes after transactional)
+---
+crm_name: "FTHB Quiz - Tier B - Day 00 - 90-Day Game Plan"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: B
+automation: "FTHB LM1 - Tier B"
+sequence_position: "Email 1 of 3"
+day: 0
+delay_from_previous: "10 minutes (from automation enrollment)"
+subject: "What 90 days to keys actually looks like, week by week"
+preview: "Miss the order and 90 days becomes 180 every time."
+---
 
-**Subject:** What 90 days actually looks like
+# FTHB Quiz - Tier B - Day 00 - 90-Day Game Plan
+
+**Subject:** What 90 days to keys actually looks like, week by week
+
+**Preview:** Miss the order and 90 days becomes 180 every time.
+
+**Send:** Day 0, ~10 minutes after Email 0 (Transactional)
 
 ---
 

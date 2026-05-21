@@ -1,6 +1,24 @@
-# Email C2 — Day 14: Savings
+---
+crm_name: "FTHB Quiz - Tier C - Day 14 - Savings"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 3 of 9"
+day: 14
+delay_from_previous: "7 days"
+subject: "Your Orlando home fund is leaking money in checking"
+preview: "High-yield savings plus one naming trick. 10 minutes to set up."
+---
 
-**Subject:** Where to actually park your home fund
+# FTHB Quiz - Tier C - Day 14 - Savings
+
+**Subject:** Your Orlando home fund is leaking money in checking
+
+**Preview:** High-yield savings plus one naming trick. 10 minutes to set up.
+
+**Send:** Day 14 (7 days after C1)
 
 ---
 

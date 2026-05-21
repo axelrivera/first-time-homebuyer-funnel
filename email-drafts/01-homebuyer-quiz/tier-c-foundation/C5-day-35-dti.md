@@ -1,6 +1,24 @@
-# Email C5 — Day 35: DTI
+---
+crm_name: "FTHB Quiz - Tier C - Day 35 - DTI"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 6 of 9"
+day: 35
+delay_from_previous: "7 days"
+subject: "The number lenders actually care about (it isn't your score)"
+preview: "Score gets you in the door. DTI decides how much house you can buy."
+---
 
-**Subject:** The number lenders actually care about
+# FTHB Quiz - Tier C - Day 35 - DTI
+
+**Subject:** The number lenders actually care about (it isn't your score)
+
+**Preview:** Score gets you in the door. DTI decides how much house you can buy.
+
+**Send:** Day 35 (7 days after C4)
 
 ---
 

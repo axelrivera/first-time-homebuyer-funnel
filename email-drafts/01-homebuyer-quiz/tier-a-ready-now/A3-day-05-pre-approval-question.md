@@ -1,6 +1,24 @@
-# Email A3 — Day 5
+---
+crm_name: "FTHB Quiz - Tier A - Day 05 - Pre-Approval Question"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: A
+automation: "FTHB LM1 - Tier A"
+sequence_position: "Email 3 of 5"
+day: 5
+delay_from_previous: "3 days"
+subject: "Pre-qualified or pre-approved? One word costs you the house"
+preview: "Most letters say one. Sellers know the difference."
+---
 
-**Subject:** The pre-approval question I always ask first
+# FTHB Quiz - Tier A - Day 05 - Pre-Approval Question
+
+**Subject:** Pre-qualified or pre-approved? One word costs you the house
+
+**Preview:** Most letters say one. Sellers know the difference.
+
+**Send:** Day 5 (3 days after A2)
 
 ---
 

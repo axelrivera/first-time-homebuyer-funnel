@@ -1,6 +1,24 @@
-# Email C0 — Day 0 (welcome)
+---
+crm_name: "FTHB Quiz - Tier C - Day 00 - Foundation Welcome"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 1 of 9"
+day: 0
+delay_from_previous: "10 minutes (from automation enrollment)"
+subject: "Foundation Phase isn't a no, it's a not yet"
+preview: "8 short emails. 0% sales pitch. Here's what to expect."
+---
 
-**Subject:** What "Foundation Phase" actually means
+# FTHB Quiz - Tier C - Day 00 - Foundation Welcome
+
+**Subject:** Foundation Phase isn't a no, it's a not yet
+
+**Preview:** 8 short emails. 0% sales pitch. Here's what to expect.
+
+**Send:** Day 0, ~10 minutes after Email 0 (Transactional)
 
 ---
 

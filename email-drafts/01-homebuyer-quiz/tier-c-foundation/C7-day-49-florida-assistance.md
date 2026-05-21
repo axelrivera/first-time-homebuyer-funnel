@@ -1,6 +1,24 @@
-# Email C7 — Day 49: Florida down-payment assistance
+---
+crm_name: "FTHB Quiz - Tier C - Day 49 - Florida Assistance"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 8 of 9"
+day: 49
+delay_from_previous: "7 days"
+subject: "The Florida money most first-time buyers never claim"
+preview: "Up to $35,000 in down-payment help. Most Florida buyers don't know it exists."
+---
 
-**Subject:** The Florida money most buyers never claim
+# FTHB Quiz - Tier C - Day 49 - Florida Assistance
+
+**Subject:** The Florida money most first-time buyers never claim
+
+**Preview:** Up to $35,000 in down-payment help. Most Florida buyers don't know it exists.
+
+**Send:** Day 49 (7 days after C6)
 
 ---
 

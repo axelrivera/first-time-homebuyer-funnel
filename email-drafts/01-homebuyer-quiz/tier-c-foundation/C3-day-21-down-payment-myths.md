@@ -1,6 +1,24 @@
-# Email C3 — Day 21: Down payment myths
+---
+crm_name: "FTHB Quiz - Tier C - Day 21 - Down Payment Myths"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: C
+automation: "FTHB LM1 - Tier C"
+sequence_position: "Email 4 of 9"
+day: 21
+delay_from_previous: "7 days"
+subject: "Drop the 20% down payment number from your head"
+preview: "FHA, Conventional 97, VA. Real Orlando minimums on a $450K home."
+---
 
-**Subject:** Drop the 20% number from your head
+# FTHB Quiz - Tier C - Day 21 - Down Payment Myths
+
+**Subject:** Drop the 20% down payment number from your head
+
+**Preview:** FHA, Conventional 97, VA. Real Orlando minimums on a $450K home.
+
+**Send:** Day 21 (7 days after C2)
 
 ---
 

@@ -1,6 +1,24 @@
-# Email A5 — Day 14
+---
+crm_name: "FTHB Quiz - Tier A - Day 14 - Last Note"
+project: FTHB
+feature: Quiz
+magnet: LM1
+tier: A
+automation: "FTHB LM1 - Tier A"
+sequence_position: "Email 5 of 5 (final)"
+day: 14
+delay_from_previous: "5 days"
+subject: "Last email from me (then I'm out of your inbox)"
+preview: "30 minutes, free, video or in person. Last chance to talk it through."
+---
 
-**Subject:** Last note from me
+# FTHB Quiz - Tier A - Day 14 - Last Note
+
+**Subject:** Last email from me (then I'm out of your inbox)
+
+**Preview:** 30 minutes, free, video or in person. Last chance to talk it through.
+
+**Send:** Day 14 (5 days after A4)
 
 ---
 
