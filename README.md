@@ -88,6 +88,7 @@ All specs live in [docs/](./docs/). Read in order. Each document has a single re
 | 10 | [BSS: Content Drafts](./docs/10-bss-content.md) | CTA copy fragments, in-call script (block-by-block), Shortlist PDF template, Lender Comparison Card, Red-Flag Property Filter. |
 | 11 | [BSS: Email Sequence](./docs/11-bss-emails.md) | Optional post-call follow-up template. No automated BSS email sequence by design; Google Calendar handles booking/reminder natively. |
 | 12 | [BSS: Math and Shortlist](./docs/12-bss-math-and-shortlist.md) | Math sheet structure and formulas, payment / tax / insurance / closing-cost math, shortlist decision logic, prospect-has-own-zip handling. |
+| 13 | [Team and Funnel Scaling](./docs/13-team-and-funnel-scaling.md) | Revenue models and growth decisions: how to run the funnel solo, when to add a TC / 2nd agent / 3rd agent, when to expand to Sellers / Relocation / Move-Up funnels, per-stage economics. |
 
 ---
 
