@@ -64,7 +64,7 @@ Produced by [requirements/00-foundations/01-audit-existing-site.md](requirements
 
 The funnel has **one webhook**. Both LM1 and LM2 forms POST the same Make.com endpoint, distinguished by a `magnet` field (`"fthb_lm1"` or `"fthb_lm2"`). The boundary of responsibilities is strict:
 
-- **Astro site (vanilla JS only)** owns: rendering all pages, running the scoring engine client-side, building the result-page URL with plain query params, firing analytics events directly from the browser, and POSTing the form payload to Make.com. There is no backend, no cookies, no `LocalStorage`/`SessionStorage` reliance for cross-page resumption, and no environment variables: the Make.com webhook URL, Pipedrive isn't called directly, and any analytics key are baked into the build.
+- **Astro site (vanilla JS only)** owns: rendering all pages, running the scoring engine client-side, building the result-page URL with plain query params, firing analytics events directly from the browser, and POSTing the form payload to Make.com. There is no backend, no cookies, no `localStorage`, and no environment variables: the Make.com webhook URL is baked into the build; Pipedrive isn't called directly. **`sessionStorage` is used in exactly one place**: on LM1 quiz submit, the contact's `first_name` and `email` are written to `sessionStorage` so the LM2 Roadmap opt-in form can pre-fill safely if the user continues from a Tier B result page to the Roadmap. `sessionStorage` clears when the tab closes; the LM1 quiz state machine itself remains in-memory only, so reloading mid-quiz still restarts.
 - **Make.com** owns: receiving the webhook, writing a Google Sheet fallback row, creating or updating the right Pipedrive entity (Person + Lead or Deal — see below), writing all funnel fields on that Lead or Deal, **and enrolling the contact in the right Pipedrive automation**. All routing logic in this funnel lives in Make.com; Pipedrive automations are pure linear sequences. Make.com does **not** send email itself.
 - **Pipedrive (with the Campaigns addon)** owns: contact storage and email sending. In Pipedrive terminology, a "campaign" is a single email template; an "automation" orchestrates a sequence of those campaigns. Iteration 1 of this funnel uses exactly **four linear automations**:
   - `FTHB LM1 - Tier A` (5 emails / 14 days) — primary entity: **Deal**
@@ -209,7 +209,7 @@ Strict Hormozi-rules (*$100M Offers* / *$100M Leads*). These bind **both** code/
 ## What is intentionally out of scope
 
 - Backend/data-model code (Make.com + Pipedrive are the backend)
-- Cookies, `LocalStorage`/`SessionStorage` for cross-page state, environment variables, or any frontend framework beyond Astro + vanilla JS
+- Cookies, `localStorage`, environment variables, or any frontend framework beyond Astro + vanilla JS. (`sessionStorage` is used only for the narrow LM1 → LM2 prefill bridge described in the architecture section.)
 - Self-hosted CRM, custom calendar tool, buyer portal, or native mobile apps
 - The BSS offer doc itself (next deliverable after this funnel ships)
 

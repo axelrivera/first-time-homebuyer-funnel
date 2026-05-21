@@ -81,7 +81,7 @@ The site is the *only* thing that knows the visitor's answers in real time. Putt
 
 The site owns: rendering all pages; running the scoring engine client-side and computing `scoring.raw_total`, `scoring.display_score`, `scoring.tier`, and `scoring.applied_overrides`; building the result-page URL with plain query params; firing analytics events directly to the analytics provider; and POSTing the form payload to the single Make.com webhook via `fetch`. Network failure on the POST does not block the redirect — the user already earned the result page.
 
-The site does **not** own: anything about email, anything about CRM state, anything that requires the next page load to remember the previous one. There are no cookies, no `LocalStorage`, no `SessionStorage`. The two `magnet` values on the payload (`fthb_lm1`, `fthb_lm2`) are how the rest of the system tells the funnels apart.
+The site does **not** own: anything about email, anything about CRM state, anything that requires the next page load to remember the previous one across tabs or sessions. There are no cookies and no `localStorage`. The only client-side persistence is a narrow `sessionStorage` bridge on the LM1 submit handler (`fthb_prefill_first_name`, `fthb_prefill_email`) so the LM2 Roadmap opt-in form can pre-fill safely if the user continues from a Tier B result page to the Roadmap in the same tab; it clears when the tab closes. The two `magnet` values on the payload (`fthb_lm1`, `fthb_lm2`) are how the rest of the system tells the funnels apart.
 
 ### What lives in Make.com
 

@@ -1,5 +1,5 @@
 
-The opt-in form that turns a roadmap reader into a Pipedrive contact in the LM2 nurture sequence. Pre-fills from URL params (`?n=`, `?e=`, `?src=`) when arriving from Tier B; clean form otherwise.
+The opt-in form that turns a roadmap reader into a Pipedrive contact in the LM2 nurture sequence. Pre-fills from URL params (`?n=`, `?e=`, `?src=`) when present; otherwise falls back to `sessionStorage` (written by the LM1 submit handler) so a user arriving from a Tier B result page in the same tab still sees their name and email pre-filled. Clean form when neither source has data.
 
 ## Prereqs
 
@@ -63,22 +63,29 @@ For `source = "fthb_lm1_tier_b"`: Make.com looks up the contact by email, sets `
 
 For `source = "fthb_lm2_standalone"`: Make.com creates or updates a Person, sets `fthb_received_lm2 = true`, `fthb_lm2_source = "fthb_lm2_standalone"`. A Pipedrive automation enrolls them in the LM2 transactional + nurture campaign with no LM1 pre-context.
 
-## Pre-fill from URL params
+## Pre-fill from URL params and `sessionStorage`
+
+URL params win; `sessionStorage` is the fallback for users who land here in the same tab after completing the LM1 quiz.
 
 ```ts
 const url = new URL(location.href);
 const nParam = url.searchParams.get('n');
 const eParam = url.searchParams.get('e');
 const srcParam = url.searchParams.get('src');
+
+const ssName = sessionStorage.getItem('fthb_prefill_first_name');
+const ssEmail = sessionStorage.getItem('fthb_prefill_email');
 ```
 
-- If `nParam`: set the `first_name` input's `value` to `decodeURIComponent(nParam)`.
-- If `eParam`: set the `email` input's `value` to `decodeURIComponent(eParam)`. (Currently Tier B doesn't include the email in the URL — see [01-09](../01-lm1-readiness-filter/09-result-tier-content.md). The field is forward-compatible; just don't error if it's missing.)
+- `first_name`: use `decodeURIComponent(nParam)` if present, else `ssName`, else leave empty.
+- `email`: use `decodeURIComponent(eParam)` if present, else `ssEmail`, else leave empty. (Tier B doesn't include the email in the URL — see [01-09](../01-lm1-readiness-filter/09-result-tier-content.md) — so this is the path that uses `sessionStorage` in practice.)
 - `source` for the payload: `srcParam === 'fthb_lm1_tier_b' ? 'fthb_lm1_tier_b' : 'fthb_lm2_standalone'`. Whitelist; ignore any other value.
+
+The keys `fthb_prefill_first_name` and `fthb_prefill_email` are the contract with the LM1 submit handler (see [01-06](../01-lm1-readiness-filter/06-quiz-email-gate-and-submit.md)). Don't read any other `sessionStorage` keys here.
 
 ### Visual cue for pre-filled state
 
-If `?src=fthb_lm1_tier_b` is present, show a small note above the form: **"We have your name and email from the scorecard — just confirm and you're in."** The agent's voice; not a banner ad.
+If either the URL params or `sessionStorage` provided a name + email, show a small note above the form: **"We have your name and email from the scorecard — just confirm and you're in."** The agent's voice; not a banner ad. If only one of the two fields pre-filled, don't show the note (the user will still see what was filled).
 
 ## Submit handler (`src/scripts/lm2-optin.ts`)
 
@@ -104,14 +111,15 @@ If `?src=fthb_lm1_tier_b` is present, show a small note above the form: **"We ha
 - Don't add a language field. Bilingual is out for the initial release.
 - Don't add a "phone number" field — LM2's opt-in is intentionally lighter than LM1's email gate.
 - Don't gate the roadmap read on this form. The opt-in enrolls them in nurture; the roadmap at `/view` is open access.
-- Don't try to pre-fill from `localStorage` or a cookie if the URL params are missing. There is no storage. URL params or empty form, those are the two states.
+- Don't try to pre-fill from `localStorage` or a cookie. The only allowed prefill sources are URL params and the two `sessionStorage` keys named above.
 - Don't try to detect "is this contact already in Pipedrive" client-side. Make.com does that lookup; the form doesn't need to know.
 
 ## Definition of Done
 
 - [ ] `/orlando-homebuying-roadmap/get` renders the form
 - [ ] Visiting with `?n=Maria&src=fthb_lm1_tier_b` pre-fills the name and shows the "we have your name and email from the scorecard" note
-- [ ] Visiting with no params shows a clean form
+- [ ] Visiting with no URL params but with `fthb_prefill_first_name` + `fthb_prefill_email` in `sessionStorage` pre-fills both fields and shows the note
+- [ ] Visiting with no URL params and empty `sessionStorage` shows a clean form
 - [ ] Invalid form shows inline errors and prevents submit
 - [ ] Valid form submission fires the Make.com webhook (verify in execution log) and redirects to `/view`
 - [ ] Blocking the webhook URL in DevTools Network doesn't prevent the redirect
@@ -126,5 +134,7 @@ http://localhost:4321/orlando-homebuying-roadmap/get?n=Maria&src=fthb_lm1_tier_b
 ```
 
 Submit each. Confirm:
-- Standalone form → payload has `source: 'fthb_lm2_standalone'`, name from the form input
-- Pre-filled form → payload has `source: 'fthb_lm1_tier_b'`, name from the URL param
+- Clean form (no URL params, `sessionStorage` empty) → payload has `source: 'fthb_lm2_standalone'`, name from the form input
+- Pre-filled from URL → payload has `source: 'fthb_lm1_tier_b'`, name from the URL param
+
+Then end-to-end the LM1 → LM2 bridge: take the LM1 quiz, submit with a Tier B answer set, click through to the Roadmap opt-in from the result page in the same tab. Confirm both name and email are pre-filled from `sessionStorage` and the prefill note is showing.

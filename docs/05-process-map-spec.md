@@ -18,7 +18,7 @@ LM2 has exactly two entry routes. **Do not add more.** Fragmenting LM2 into a ge
 
 | # | Entry point | Behavior |
 |---|---|---|
-| 1 | **From LM1 Tier B result page CTA** | The Tier B result page already has the visitor's first name and email in its URL query params (`?n=…&t=B&s=…`). The CTA is a link to `/orlando-homebuying-roadmap/get?n=Maria&e=maria%40example.com&src=fthb_lm1_tier_b` — the LM2 opt-in form reads those params and pre-fills the fields. No storage; the URL is the carrier. Payload includes `source: "fthb_lm1_tier_b"`. |
+| 1 | **From LM1 Tier B result page CTA** | The Tier B result page already has the visitor's first name and email in its URL query params (`?n=…&t=B&s=…`). The CTA is a link to `/orlando-homebuying-roadmap/get?n=Maria&e=maria%40example.com&src=fthb_lm1_tier_b` — the LM2 opt-in form reads those params and pre-fills the fields. The URL is the primary carrier; a same-tab `sessionStorage` fallback (`fthb_prefill_first_name`, `fthb_prefill_email`, written by the LM1 submit handler) covers the case where the URL params are missing for any reason. Payload includes `source: "fthb_lm1_tier_b"`. |
 | 2 | **Standalone landing page** at `/orlando-homebuying-roadmap` | For prospects who came from a piece of content specifically about *the process* (e.g., an Instagram reel walking through one step). Standard opt-in: name + email + ZIP. |
 
 Pre-filling from URL params is a non-trustworthy hint, not authentication. Make.com still treats the incoming LM2 webhook as the source of truth and looks the contact up in Pipedrive by email.

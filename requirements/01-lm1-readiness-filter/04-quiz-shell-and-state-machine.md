@@ -3,7 +3,7 @@ Build the one-page quiz: a single Astro page with vanilla-JS in-memory state. Th
 
 ## Why this is ONE page (not multiple routes)
 
-The site has no cookies, no `LocalStorage`/`SessionStorage`, no env vars by design. Without storage, separate routes would lose state between Q10 and the email gate. One page, one in-memory state machine. Reloading restarts the quiz — that's intentional. If completion suffers in Phase 4, the iteration is to **shorten the quiz**, not add storage. Storage adds compliance surface area we don't want.
+The site has no cookies, no `localStorage`, no env vars by design, and `sessionStorage` is only used after a successful submit (to carry `first_name` + `email` to the LM2 Roadmap opt-in form — see task [06](./06-quiz-email-gate-and-submit.md)). In-flight quiz state is never persisted anywhere. Without in-flight storage, separate routes would lose state between Q10 and the email gate. One page, one in-memory state machine. Reloading restarts the quiz — that's intentional. If completion suffers in Phase 4, the iteration is to **shorten the quiz**, not add storage. In-flight storage adds compliance surface area we don't want.
 
 ## Goal
 
@@ -46,7 +46,7 @@ Each option is a real `<input type="radio" name="q1_credit_range" value="...">`.
   - On Enter or click of the "Next" button: read the active radio in the current step, write it into `answers`, call `goTo(currentStep + 1)`.
 - **Per-question component (`QuizQuestion.astro`)** props: `{ step: number; qid: 'q1_credit_range' | ...; label: string; helpText?: string; options: Array<{ key: string; label: string }> }`. Renders a `<fieldset><legend>{label}</legend>...radios...</fieldset>` with a "Back" button (hidden on step 1) and a "Next" button.
 - **Progress bar** at the top: `<div aria-live="polite">Question 1 of 10</div>` + a visual bar. Update via state machine.
-- **No storage.** Don't add `localStorage.setItem`, `sessionStorage`, or cookies. If the user reloads, they restart. This is the design.
+- **No in-flight storage.** Don't add `localStorage.setItem`, `sessionStorage.setItem`, or cookies inside the state machine. If the user reloads mid-quiz, they restart. This is the design. (The `sessionStorage` write for the LM2 Roadmap prefill bridge happens only in the submit handler in task [06](./06-quiz-email-gate-and-submit.md), after a successful submit — not inside the state machine.)
 
 ## Mobile-first accessibility non-negotiables (apply to every device)
 
@@ -63,7 +63,7 @@ When mobile vs. desktop trade-offs come up, **mobile wins every time**. Desktop 
 
 ## Things NOT to do
 
-- Don't split the quiz across multiple Astro routes. The `/start` and `/contact` flow is collapsed into one page on purpose (no storage means no cross-route state).
+- Don't split the quiz across multiple Astro routes. The `/start` and `/contact` flow is collapsed into one page on purpose (no in-flight storage means no cross-route state for the quiz answers).
 - Don't use Astro server-side state. Everything is rendered statically; interactivity is client-side JS only.
 - Don't pull in a state-management library. The state is two variables.
 - Don't introduce a framework island (React, Vue, Svelte) for the quiz. Vanilla JS is the policy.

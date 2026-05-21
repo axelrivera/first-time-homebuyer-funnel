@@ -66,7 +66,7 @@ Ship the Readiness Filter end-to-end: landing page, 10-question quiz, email gate
 ### Week 2. Quiz front-end
 
 - [ ] Build `/orlando-homebuying-readiness-quiz` landing page from `02-readiness-filter-spec.md` copy (static Astro page, Tailwind classes)
-- [ ] Build `/orlando-homebuying-readiness-quiz/start` as **one** Astro page with a vanilla-JS state machine that holds all 10 questions + the email gate; question switching is DOM show/hide, not page navigation; state is in-memory only (no `LocalStorage`, no cookies)
+- [ ] Build `/orlando-homebuying-readiness-quiz/start` as **one** Astro page with a vanilla-JS state machine that holds all 10 questions + the email gate; question switching is DOM show/hide, not page navigation; state is in-memory only (no `localStorage`, no cookies, no `sessionStorage` for in-flight answers — `sessionStorage` is written only after a successful submit, and only to carry `first_name` + `email` to the LM2 Roadmap opt-in form)
 - [ ] Create `src/config/readiness.ts` (or `.json`) and put all tweakable parameters there (thresholds, point values, override actions). See "Configuration" section in `02-readiness-filter-spec.md` for the full list.
 - [ ] Implement the scoring engine as a TypeScript pure function (no UI deps) that reads config rather than hardcoded values
 - [ ] Walk the 6 canonical scoring examples (below) through the engine by hand and confirm each lands in the expected tier
@@ -237,7 +237,7 @@ These came up during planning and were deferred. Documenting so they don't get r
 
 - A self-hosted CRM (Rails or otherwise). Pipedrive is enough for Year 1.
 - A backend, even a "tiny" one. The point of Make.com + Pipedrive is to avoid this; if a requirement seems to need a backend, the requirement is wrong.
-- Cookies, `LocalStorage`/`SessionStorage` cross-page state, or environment variables on the static site. These bring compliance and operational complexity that the funnel does not need.
+- Cookies, `localStorage`, or environment variables on the static site. These bring compliance and operational complexity that the funnel does not need. (`sessionStorage` is used only for the narrow LM1 → LM2 prefill bridge: `first_name` + `email` written on quiz submit, read by the Roadmap opt-in form, cleared when the tab closes.)
 - A custom-built calendar tool. Cal.com or Calendly handles BSS booking. Building one is a distraction.
 - A buyer's portal where prospects can log in and "see their progress." This sounds great and adds nothing to conversion in Year 1.
 - Native iOS / Android apps. The funnel is web-only. The agent's iOS skills are _not_ in scope for this project.

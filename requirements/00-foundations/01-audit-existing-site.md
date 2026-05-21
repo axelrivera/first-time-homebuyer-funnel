@@ -7,7 +7,7 @@ None. This is task one.
 
 ## Context
 
-The funnel is two static lead magnets that POST to a Make.com webhook, which creates a Pipedrive Person/Lead; Pipedrive Campaigns sends transactional and nurture email. The Astro side owns: rendering pages, running scoring client-side, building result URLs from query params, firing analytics, and POSTing payloads. **No backend, no cookies, no `LocalStorage`/`SessionStorage`, no env vars.** The Make.com webhook URL is baked into the build.
+The funnel is two static lead magnets that POST to a Make.com webhook, which creates a Pipedrive Person/Lead; Pipedrive Campaigns sends transactional and nurture email. The Astro side owns: rendering pages, running scoring client-side, building result URLs from query params, firing analytics, and POSTing payloads. **No backend, no cookies, no `localStorage`, no env vars.** `sessionStorage` is used in one narrow place only: written on LM1 quiz submit to carry `first_name` + `email` to the LM2 Roadmap opt-in form, cleared when the tab closes. The Make.com webhook URL is baked into the build.
 
 What the funnel will need from the existing site:
 

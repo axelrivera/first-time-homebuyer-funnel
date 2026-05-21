@@ -34,9 +34,11 @@ Hormozi's effort/sacrifice principle: gates are friction. Putting the email last
 
 ### What happens if the user bounces before the email gate
 
-Nothing is persisted. There is **no** cookie, `LocalStorage`, or `SessionStorage` resume — the site is cookie-free and storage-free by design. If the user closes the tab or reloads, they start the quiz over. The agent does not see incomplete submissions, ever.
+The quiz state machine is in-memory only. There is no cookie, no `localStorage`, and no `sessionStorage` resume of in-flight answers. If the user closes the tab or reloads, they start the quiz over. The agent does not see incomplete submissions, ever.
 
-If this turns out to hurt completion meaningfully in Phase 4, the iteration is to **shorten the quiz**, not to add storage. Storage adds compliance surface area we don't want.
+`sessionStorage` is used in exactly one place, and only after a successful submit: the contact's `first_name` and `email` are written so the LM2 Roadmap opt-in form can pre-fill safely if the user continues from a Tier B result page to the Roadmap. `sessionStorage` clears when the tab closes; it never holds quiz answers, only the two prefill fields.
+
+If completion suffers meaningfully in Phase 4, the iteration is to **shorten the quiz**, not to add storage for in-flight resumption.
 
 ---
 

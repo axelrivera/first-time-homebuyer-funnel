@@ -88,9 +88,17 @@ Do **not** validate the ZIP against an Orlando-metro list. Out-of-market ZIPs st
 5. Build the `FthbLm1Payload` per the schema above.
 6. Fire `track('fthb_readiness_email_gate_submit', { tier })` where `tier` is the URL letter (`'A' | 'B' | 'C'`).
 7. Call `postToMake(payload)` — **don't `await`**. Wrap in try/catch and swallow; never block the redirect.
-8. Map tier to URL letter: `READY_NOW → 'A'`, `NINETY_DAY → 'B'`, `FOUNDATION → 'C'`.
-9. Build URL: `/orlando-homebuying-readiness-quiz/result?n=${encodeURIComponent(firstName)}&t=${letter}&s=${displayScore}`.
-10. `window.location.assign(resultUrl)`.
+8. Write the LM2 Roadmap prefill bridge to `sessionStorage`:
+   ```ts
+   try {
+     sessionStorage.setItem('fthb_prefill_first_name', firstName);
+     sessionStorage.setItem('fthb_prefill_email', email);
+   } catch { /* swallow — Safari private mode etc.; never block the redirect */ }
+   ```
+   These two keys are the contract with [02-03 Opt-in form](../02-lm2-process-map/03-opt-in-form.md). Write only `first_name` and `email` — never the quiz answers, the tier, or the score.
+9. Map tier to URL letter: `READY_NOW → 'A'`, `NINETY_DAY → 'B'`, `FOUNDATION → 'C'`.
+10. Build URL: `/orlando-homebuying-readiness-quiz/result?n=${encodeURIComponent(firstName)}&t=${letter}&s=${displayScore}`.
+11. `window.location.assign(resultUrl)`.
 
 ## Analytics events this task wires
 
@@ -110,7 +118,7 @@ Do **not** validate the ZIP against an Orlando-metro list. Out-of-market ZIPs st
 - Don't add a "save and finish later" checkbox — there's nowhere to save it (no storage).
 - Don't add a consent checkbox unless legal requires it. The act of submitting an opt-in form is implicit consent under most US frameworks; the Pipedrive unsubscribe link covers CAN-SPAM. If the agent later wants a checkbox, add it then — don't pre-add friction.
 - Don't try to validate the ZIP against an Orlando-metro list.
-- Don't store the answers in `localStorage` "just in case the webhook fails." Make.com's Google Sheet fallback is the recovery; the client doesn't need state.
+- Don't store the answers in `localStorage` or `sessionStorage` "just in case the webhook fails." Make.com's Google Sheet fallback is the recovery; the client doesn't need state. The only `sessionStorage` write here is the LM2 Roadmap prefill bridge — `first_name` and `email` only, never the quiz answers.
 
 ## Definition of Done
 

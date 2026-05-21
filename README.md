@@ -94,7 +94,7 @@ All specs live in [docs/](./docs/). Read in order. Each document has a single re
 ## Stack reminder (build assumptions baked into specs)
 
 - **Frontend:** Astro + **Tailwind CSS**. Vanilla JavaScript only. Islands where needed for the scorecard interaction. No frontend framework beyond Astro. The funnel adapts to the existing axelrivera.com site's `BaseLayout`, analytics helper, and folder conventions; see [requirements/EXISTING-SITE-NOTES.md](./requirements/EXISTING-SITE-NOTES.md) once it exists (produced by [requirements/00-foundations/01-audit-existing-site.md](./requirements/00-foundations/01-audit-existing-site.md)).
-- **Storage on the client:** None. No cookies. No `LocalStorage` or `SessionStorage` cross-page resumption. The quiz holds state in memory for one session; if the user reloads, they restart. This is by design.
+- **Storage on the client:** No cookies, no `localStorage`. `sessionStorage` is used in exactly one narrow place: on LM1 quiz submit the contact's `first_name` and `email` are written so the LM2 Roadmap opt-in form can pre-fill safely if the user continues from a Tier B result page to the Roadmap. `sessionStorage` clears when the tab closes. The quiz state machine itself is in-memory only; reloading mid-quiz restarts.
 - **Environment variables:** None. The site is purely static. The Make.com webhook URL and any analytics key are baked into the build. There is no shared secret available for HMAC or anything similar, so the result page is driven by plain query params, not signed tokens.
 - **Form handler:** Both LM1 and LM2 forms POST to **one** Make.com webhook URL, distinguished by a `magnet` field (`"fthb_lm1"` or `"fthb_lm2"`). Make.com routes the contact to a Pipedrive Person plus either a Lead (Tier C) or a Deal (Tier A, Tier B, Roadmap), writes all funnel custom fields, and enrolls the contact in the right automation. Make.com also writes a Google Sheet audit row and does **not** send email.
 - **CRM + email delivery:** **Pipedrive** (with the **Campaigns** addon). All routing logic lives in Make.com; Pipedrive runs **four linear automations** of single-email campaigns: `FTHB LM1 - Tier A`, `FTHB LM1 - Tier B`, `FTHB LM1 - Tier C`, `FTHB LM2 - Roadmap`. Plus a one-step `Email 0 - LM1 Transactional` automation and the manually-populated `FTHB Monthly Market Update` newsletter. No branching, no mid-flow checks, no programmatic unenrollment.
@@ -132,7 +132,7 @@ What does **not** get prefixed: conceptual names (`LM1`, `Tier A`, `BSS`), tier 
 ## What's NOT in this repo (intentionally out of scope)
 
 - Backend/data-model engineering specs (Make.com + Pipedrive are the backend; we are not building a Rails app for this)
-- Cookies, `LocalStorage`/`SessionStorage` cross-page state, environment variables, or any frontend framework beyond Astro + vanilla JS
+- Cookies, `localStorage`, environment variables, or any frontend framework beyond Astro + vanilla JS (`sessionStorage` is used only for the narrow LM1 → LM2 prefill bridge — see Stack reminder)
 - The Astro project itself (it lives in the existing axelrivera.com repo, not here)
 - Spanish-language versions of the BSS surfaces (intake form, landing page, in-call script, post-call emails, Shortlist PDF). Deferred to a later iteration per [09-bss-offer-spec.md](./docs/09-bss-offer-spec.md). First launch is English only.
 - The active-client onboarding workflow that begins after a prospect signs the Buyer Brokerage Agreement (BBA) (out of scope of the BSS spec)
