@@ -12,16 +12,16 @@ Everything else in [docs/](.) describes *what the funnel does*. This doc describ
 
 ## Recommended path at a glance
 
-A 30-month build sequence from solo to the efficient endpoint. Each row is a stable stage you can hold for months before triggering the next move.
+A three-year build from solo to the efficient endpoint. Each year ends with more team capacity and (after Year 1) a new funnel. The within-year transitions happen on trigger conditions, not on calendar — the six-stage breakdown lives in Parts 1–3 below.
 
-| Stage | Calendar | Selling agents | Support | Funnels live | Annual transactions | Annual gross GCI |
-|---|---|---|---|---|---|---|
-| 1 | Year 1 H1 (months 1–6) | 1 (solo) | None | FTHB | 4–10 | $45K–$113K |
-| 2 | Year 1 H2 (months 7–12) | 1 | TC | FTHB | 15–25 | $169K–$281K |
-| 3 | Year 2 H1 | 2 | TC | FTHB | 30–50 | $338K–$563K |
-| 4 | Year 2 H2 | 3 | TC | FTHB + Sellers | 55–85 | $646K–$1,019K |
-| 5 | Year 3 H1 | 4 | TC + content lead | FTHB + Sellers + Reloc | 95–135 | $1,163K–$1,675K |
-| 6 | Year 3 H2+ | 5 | TC + content lead + showing assistant | All four | 175–225 | $2,188K–$2,813K |
+| Year | Selling agents | Support | Funnels live | Annual transactions | Annual gross GCI |
+|---|---|---|---|---|---|
+| 1, ramp (months 1–6) | 1 | None (building audience from scratch) | FTHB | 2–5 | $23K–$56K |
+| 1, productive (months 7–12) | 1 | TC trigger fires when ready | FTHB | 13–20 | $146K–$225K |
+| 2 | 2, then 3 mid-year | TC | FTHB, then +Sellers mid-year | 42–68 | $492K–$791K |
+| 3 | 4, then 5 mid-year | TC + content lead, then +showing assistant | +Relocation, then +Move-Up (all four) | 135–180 | $1,675K–$2,244K |
+
+Year 4 and beyond is steady state at the efficient endpoint: ~175–225 transactions and ~$2.2M–$2.8M gross GCI per year, with the same team configuration as end of Year 3.
 
 Going faster than this means burning capital on infrastructure ahead of demand. Going slower means leaving compounding funnel ROI on the table once content matures.
 
