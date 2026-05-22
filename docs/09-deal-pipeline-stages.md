@@ -16,7 +16,7 @@ For the full Person / Lead / Deal entity model and the Make.com conflict-resolut
 | # | Stage | Probability | Rotting | Description |
 |---|---|---|---|---|
 | 1 | **Quiz Taken** | 10% | 14 days | Tier A or B contact who just submitted the LM1 scorecard |
-| 2 | **Received Roadmap** | 20% | 21 days | Downloaded LM2 (the 9-Step Roadmap); deeper engagement |
+| 2 | **Received Roadmap** | 20% | 65 days | Downloaded LM2 (the 9-Step Roadmap); deeper engagement |
 | 3 | **BSS Booked** | 40% | 14 days | Buyer Strategy Session scheduled in Google Calendar |
 | 4 | **Pre-Approved & Searching** | 65% | 30 days | Real lender pre-approval letter in hand; touring properties |
 | 5 | **Under Contract** | 80% | 14 days | Offer accepted; inspection / appraisal / financing contingencies still open |
@@ -49,15 +49,15 @@ A contact has just submitted the LM1 readiness scorecard and scored into Tier A 
 
 ### 2. Received Roadmap
 
-**Probability: 20% · Rotting: 21 days**
+**Probability: 20% · Rotting: 65 days**
 
-The contact has downloaded LM2 (the 9-Step First Home Roadmap). They're enrolled in the `FTHB LM2 - Roadmap` automation (4 emails over 14 days). The Roadmap is the deepest free asset in the funnel; downloading it is a meaningful engagement signal beyond the quiz.
+The contact has downloaded LM2 (the 9-Step First Home Roadmap). They're enrolled in the `FTHB LM2 - Roadmap` automation (9 nurture emails over 58 days, plus the transactional delivery email). The Roadmap is the deepest free asset in the funnel; downloading it is a meaningful engagement signal beyond the quiz.
 
 **Who's at this stage:** A Tier B contact who clicked through and grabbed the Roadmap (most common). A standalone-Roadmap visitor who came in via `/orlando-homebuying-roadmap` without taking the quiz first. A Tier C Lead who downloaded the Roadmap and got promoted to a Deal in the process.
 
 **Why 20%:** Roughly 2× the Quiz Taken rate. Roadmap downloaders show more intent because they've actively pursued a deeper free resource and signaled they want process-level help, not just a score. Industry data on lead-magnet-stacked funnels supports ~15–25% close rates for second-tier engagers.
 
-**Why 21 days rotting:** The Roadmap automation is 14 days end-to-end, plus a 7-day buffer for the contact to respond after the last email. If nothing has happened by day 21 (no BSS booked, no reply, no movement), the funnel has fully run and the agent should review.
+**Why 65 days rotting:** The Roadmap automation is 58 days end-to-end (a Day 2 opener followed by 8 emails on a weekly cadence, finishing with the direct BSS ask on Day 58), plus a 7-day buffer for the contact to respond after the final email. If nothing has happened by day 65 (no BSS booked, no reply, no movement), the funnel has fully run and the agent should review.
 
 **Agent actions:** Watch for replies — the Roadmap N2 email invites replies and is the highest-yield reply email in the funnel. Be ready to send 2–3 lender referrals on request.
 
@@ -198,18 +198,23 @@ Make.com: create Deal → stage = Quiz Taken
    ▼
 Enroll in FTHB LM1 - Tier B automation (3 emails / 5 days, pushes LM2)
    │
-   ▼ (contact downloads LM2)
+   ▼ (contact downloads LM2 — typically mid-sprint)
    ▼
 LM2 webhook
    │
    ▼
-Make.com: update Deal → stage = Received Roadmap
+Make.com: fire transactional (delivers PDF) + advance Deal stage to Received Roadmap
+(long Roadmap nurture enrollment is deferred — Tier B continues to completion)
+   │
+   ▼ (Tier B sprint completes; final step writes fthb_tier_b_completed_at)
+   ▼
+Tier B completion trigger
    │
    ▼
-Enroll in FTHB LM2 - Roadmap automation
+Make.com: if fthb_received_lm2 = true → enroll in FTHB LM2 - Roadmap (58-day nurture)
 ```
 
-Tier B and Roadmap automations may run in parallel briefly (Tier B has 0–2 emails left when Roadmap kicks off). Acceptable per the parallel-run rule documented in [`07-process-map-emails-v2.md`](07-process-map-emails-v2.md).
+Tier B and the long Roadmap nurture run as a **sequential handoff**, not in parallel. The LM2 webhook delivers the Roadmap immediately (via the transactional) and advances the Deal stage so pipeline progress reflects the engagement, but the long Roadmap nurture (`FTHB LM2 - Roadmap`) only enrolls after the Tier B sprint completes. A Tier B contact who never downloads LM2 finishes the sprint and drops out of active nurture. See the Tier B completion trigger in the Make.com stage-setting logic below.
 
 ### Path C — Roadmap standalone (no prior quiz)
 
@@ -267,15 +272,34 @@ Else (existing Deal):
 ```
 If no existing Deal and no existing Lead:
    Create Deal at stage = Received Roadmap
+   Enroll Deal in FTHB LM2 - Roadmap automation (no Tier B in flight)
 Else if existing Lead (and no Deal):
    Convert Lead → Deal (copy custom fields) at stage = Received Roadmap
+   Enroll new Deal in FTHB LM2 - Roadmap automation
 Else (existing Deal):
    If current stage is Quiz Taken:
       Advance stage to Received Roadmap
    Else (BSS Booked or later):
       No-op on stage (forward-only rule)
+   If contact is currently mid-Tier-B (fthb_tier_b_completed_at is null):
+      Do NOT enroll in FTHB LM2 - Roadmap yet — wait for Tier B completion trigger
+   Else:
+      Enroll Deal in FTHB LM2 - Roadmap automation
    In all cases: update fthb_received_lm2 = true, fthb_lm2_received_at, fthb_lm2_source
 ```
+
+### Tier B completion trigger (sequential Roadmap handoff)
+
+Fires when the final step of the `FTHB LM1 - Tier B` automation writes `fthb_tier_b_completed_at`.
+
+```
+If fthb_received_lm2 = true:
+   Enroll Deal in FTHB LM2 - Roadmap automation (the 58-day long nurture)
+Else:
+   No-op (contact never downloaded the Roadmap; let them drop out of active nurture)
+```
+
+This is what makes the Tier B → Roadmap path sequential rather than parallel. The contact's first Roadmap nurture email (the Day 2 real-numbers email) lands 2 days after Tier B completion, not 2 days after the original quiz submission.
 
 All later transitions (Received Roadmap → BSS Booked, BSS Booked → Pre-Approved & Searching, etc.) are **manual** — the agent moves the Deal in Pipedrive based on real-world signals (calendar bookings, lender notifications, contract events).
 

@@ -36,7 +36,7 @@ Every number in this doc is derived from this list. Change one and the rest move
 - **Quiz Taken → Closed Won**: 10% over an 18-month window. This is the headline conversion rate.
 - **Tier A + Tier B share of LM1 submissions**: 60% (the rest are Tier C Leads that contribute marginally in iteration 1).
 - **Quiz Taken → Received Roadmap**: ~50% (derived from the stage probabilities).
-- **Received Roadmap → BSS Booked**: ~50%.
+- **Received Roadmap → BSS Booked**: ~50%. Planning estimate; the redesigned 58-day Roadmap nurture (with three escalating BSS pitches on days 44, 51, 58) may shift this — re-measure after ~30 LM2 downloads.
 - **BSS Booked → Closed Won**: ~40%.
 
 ### Per-agent transaction capacity
@@ -503,6 +503,7 @@ These numbers are starting points. They get tightened against real data.
 | When | What to review | Why |
 |---|---|---|
 | After 25 FTHB closings | Quiz Taken → Won conversion rate | The 10% in [09-deal-pipeline-stages.md](09-deal-pipeline-stages.md) is an industry benchmark; your actual will land within 5–15% |
+| After ~30 LM2 downloads | Received Roadmap → BSS Booked rate | The 50% planning estimate predates the redesigned 58-day Roadmap sequence with three escalating BSS pitches (days 44, 51, 58). The longer sequence may lift conversion; cold-standalone downloaders in the same pool may dilute it. Measure both segments separately if Make.com tags allow |
 | After 6 months of consistent content | LM1 submissions/month at your specific content cadence | Top-of-funnel scaling estimates here assume "25–30 pieces/week of educational content"; calibrate against what you actually produce |
 | After 12 months | Tier mix (A+B vs C) | The 60% Tier A+B assumption depends on your audience targeting; paid traffic or broad social would push it lower |
 | Annually | Per-agent transaction capacity | If your agents sustainably run higher than 30 transactions/year with TC support, the model under-estimates capacity; if lower, the opposite |
