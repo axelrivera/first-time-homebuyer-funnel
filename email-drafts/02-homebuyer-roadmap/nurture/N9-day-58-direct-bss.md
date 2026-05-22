@@ -7,13 +7,13 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 10 of 10 (nurture 9 of 9)"
 day: 58
 delay_from_previous: "7 days"
-subject: "The 30 minutes if you want them"
+subject: "Last email: the Buyer Strategy Session is open"
 preview: "Last email in this sequence. Direct ask, both ways to set it up."
 ---
 
 # FTHB Roadmap - Day 58 - Direct BSS
 
-**Subject:** The 30 minutes if you want them
+**Subject:** Last email: the Buyer Strategy Session is open
 
 **Preview:** Last email in this sequence. Direct ask, both ways to set it up.
 

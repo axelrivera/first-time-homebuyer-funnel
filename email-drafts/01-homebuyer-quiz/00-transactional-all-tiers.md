@@ -39,7 +39,12 @@ Two things to know:
 1. I read every reply. If anything in the guide raises a question (about your score, the market data, the next step, anything), just hit reply.
 2. I'm not going to call you, text you, or pass your info to anyone. Not now, not ever. If we end up talking, it'll be because you booked something on your own.
 
+Open your guide and read it through. What comes next will also be matched to your tier, not generic first-time-buyer advice.
+
 -- Axel
+
+Axel Rivera, REALTOR®
+LPT Realty, LLC
 
 P.S. Save the PDF or print it. The 2-mistakes section gets a lot more useful the day before you actually talk to a lender, so come back to it then.
 ```

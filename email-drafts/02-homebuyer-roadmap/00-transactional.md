@@ -27,11 +27,9 @@ Hey *|FIRST_NAME|*,
 
 Here's the 9-Step First Home Roadmap as promised.
 
-👉 Read it on the web:
-{{fthb_roadmap_view_link}}
+👉 Read the roadmap online
 
-👉 Download the PDF (for offline reading or printing):
-{{fthb_roadmap_pdf_link}}
+👉 Download the PDF for offline reading or printing
 
 Start at the visual roadmap and find the step that looks most like where you are. If you're not sure, **Step 4** (lender pre-approval) is the bottleneck for almost everyone, so it's a safe place to begin.
 
@@ -40,7 +38,12 @@ Two notes before you dive in:
 1. The roadmap is dense. That's intentional. Skim it once end-to-end first, then come back to the step you're in.
 2. If a step raises a question, hit reply. I read every email.
 
+Open it and find your step. The next email breaks down what a $450K Orlando home actually costs.
+
 -- Axel
+
+Axel Rivera, REALTOR®
+LPT Realty, LLC
 
 P.S. The roadmap link is a shareable URL. If you know someone in Orlando who's a few steps behind you on this, send it. I'd rather they get the map than figure it out the expensive way.
 ```
