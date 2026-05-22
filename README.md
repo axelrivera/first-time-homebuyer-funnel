@@ -46,11 +46,11 @@ Visitor completes the 10-question Readiness Score and is sorted into one of thre
 
 **Goal: educate, with a graceful exit ramp.** Contact is six or more months out; pitching the strategy call now would burn the relationship. Weekly emails walk through the actual foundation work: credit, savings, down-payment myths, lease-renewal timing, DTI, FHA vs. conventional, Florida down-payment assistance. The final wrap-up email offers the Roadmap as the next read **for contacts who feel they've crossed into 90-Day Sprint territory** during the 8 weeks; everyone else stays in the relationship without a push. **The strategy call is never pitched to Tier C.**
 
-### LM2 Roadmap (14 days, 5 emails)
+### LM2 Roadmap (58 days, 10 emails)
 
-Entered either from a Tier B graduate or directly from the standalone Roadmap landing page. **Goal: educate on the actual buying process, then pitch the strategy call.** The first email delivers the 9-Step Roadmap; nurture emails answer the questions the Roadmap leaves open (area-specific questions, what to bring to the strategy call, a personal Altamonte story, a final low-pressure note). The strategy-call pitch lands in the last email.
+Entered either as a sequential handoff from a Tier B graduate or directly from the standalone Roadmap landing page. **Goal: educate on the actual buying process, then pitch the strategy call.** The transactional delivers the 9-Step Roadmap; nine nurture emails follow on a weekly cadence covering real numbers at $450K, pre-approval mechanics, a personal Altamonte story, Florida homestead exemption, inspection reality, the wait-for-rates / save-more objections, and three escalating BSS pitches (soft, demystified, direct). The final email is the direct strategy-call ask.
 
-Runs in parallel with whatever tier sequence a contact is already in. Both end on their own; no interaction between them.
+The same sequence serves both audiences without per-email branching: a Tier B graduate experiences it after the Tier B sprint completes (via a Make.com trigger on Tier B completion), and a standalone Roadmap opt-in runs it from the moment of download. Copy is written to be tone-neutral on whether the reader has met the agent before.
 
 ### After the funnel ends
 
@@ -61,11 +61,11 @@ Every sequence has a defined end. After the last email, the contact drops out of
 | Path | Length | Where it converges |
 |---|---|---|
 | LM1 → Tier A → strategy call | ~14 days | Strategy call |
-| LM1 → Tier B → Roadmap → strategy call | ~28 days (Tier B 14d + Roadmap 14d) | Strategy call |
-| LM1 → Tier C → (optional Roadmap → strategy call) | 8 weeks, plus optional 14d Roadmap | Monthly newsletter; strategy call only if Tier C opts into the Roadmap |
-| LM2 standalone → strategy call | ~14 days | Strategy call |
+| LM1 → Tier B → Roadmap → strategy call | ~72 days (Tier B 14d + Roadmap 58d, sequential handoff) | Strategy call |
+| LM1 → Tier C → (optional Roadmap → strategy call) | 8 weeks, plus optional 58d Roadmap | Monthly newsletter; strategy call only if Tier C opts into the Roadmap |
+| LM2 standalone → strategy call | ~58 days | Strategy call |
 
-One funnel, one anchor offer, four entry paths. Warm contacts close in two weeks. Cold contacts get two months of respect and education before they age out into the monthly newsletter.
+One funnel, one anchor offer, four entry paths. The most ready contacts (Tier A) close in two weeks. The rest get eight to ten weeks of respect and education, then age into the monthly newsletter.
 
 ---
 
@@ -81,7 +81,7 @@ All specs live in [docs/](./docs/). Read in order. Each document has a single re
 | 04 | [LM1 Readiness Filter: Email Sequence (v2)](./docs/04-readiness-filter-emails-v2.md) | **Canonical.** Transactional delivery + tier-specific nurture, redesigned around four linear automations. ([v1](./docs/04-readiness-filter-emails.md) retained for reference.) |
 | 05 | [LM2 Process Map: Product Spec](./docs/05-process-map-spec.md) | UX flow for the 9-step roadmap opt-in. Entry points. Screen-by-screen. |
 | 06 | [LM2 Process Map: Content Drafts](./docs/06-process-map-content.md) | Full content: 9-step roadmap, 3 money-loss mistakes, Orlando gotchas, pre-approval cheat sheet. |
-| 07 | [LM2 Process Map: Email Sequence (v2)](./docs/07-process-map-emails-v2.md) | **Canonical.** Roadmap automation (4 emails / 14 days), runs parallel to any Tier automation. ([v1](./docs/07-process-map-emails.md) retained for reference.) |
+| 07 | [LM2 Process Map: Email Sequence (v2)](./docs/07-process-map-emails-v2.md) | Earlier 4-email / 14-day design. **Superseded** by the 9-email / 58-day sequence in [email-drafts/02-homebuyer-roadmap/](./email-drafts/02-homebuyer-roadmap/), which is what actually ships. The shipping sequence also runs as a sequential handoff from Tier B instead of in parallel. ([v1](./docs/07-process-map-emails.md) retained.) |
 | 08 | [Implementation Roadmap](./docs/08-implementation-roadmap.md) | Phased build plan. Milestones. What ships first. Definition of done per phase. Canonical scoring examples. |
 | 09 | [BSS: Offer Spec](./docs/09-bss-offer-spec.md) | The Buyer Strategy Session as a Grand Slam Offer. Run-of-show, eligibility, Pipedrive routing, hard rules. |
 | 09 | [Deal Pipeline Stages](./docs/09-deal-pipeline-stages.md) | The six Pipedrive Deal stages (Quiz Taken → Closing), probability/rotting values, forward-only progression, Make.com stage-setting logic. |

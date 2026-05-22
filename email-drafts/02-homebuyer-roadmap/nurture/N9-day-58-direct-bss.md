@@ -1,0 +1,43 @@
+---
+crm_name: "FTHB Roadmap - Day 58 - Direct BSS"
+project: FTHB
+feature: Roadmap
+magnet: LM2
+automation: "FTHB LM2 - Roadmap"
+sequence_position: "Email 10 of 10 (nurture 9 of 9)"
+day: 58
+delay_from_previous: "7 days"
+subject: "The 30 minutes if you want them"
+preview: "Last email in this sequence. Direct ask, both ways to set it up."
+---
+
+# FTHB Roadmap - Day 58 - Direct BSS
+
+**Subject:** The 30 minutes if you want them
+
+**Preview:** Last email in this sequence. Direct ask, both ways to set it up.
+
+**Send:** Day 58 (7 days after N8)
+
+---
+
+```
+Hey *|FIRST_NAME|*,
+
+This is the last email in this sequence.
+
+You've had the roadmap for about two months. Since then I've sent the math at $450K, the difference between pre-qualification and pre-approval, the Altamonte story, a heads-up on homestead exemption, how to read an inspection report, and the math on whether to wait for rates.
+
+If those have been enough on their own, you're set. Some first-time buyers work through the roadmap end to end and never need a conversation.
+
+If you do want a conversation, book the 30-minute Buyer Strategy Session.
+
+Book a video call:
+{{book_bss_link}}
+
+Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
+
+If you want to ask one question first before booking, hit reply.
+
+-- Axel
+```

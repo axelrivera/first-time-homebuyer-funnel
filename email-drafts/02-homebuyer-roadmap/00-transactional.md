@@ -38,11 +38,9 @@ Start at the visual roadmap and find the step that looks most like where you are
 Two notes before you dive in:
 
 1. The roadmap is dense. That's intentional. Skim it once end-to-end first, then come back to the step you're in.
-2. If a step raises a question, hit reply. I read every email and I usually respond within a day.
+2. If a step raises a question, hit reply. I read every email.
 
-Talk soon,
-
-{{agent_first_name}}
+-- Axel
 
 P.S. The roadmap link is a shareable URL. If you know someone in Orlando who's a few steps behind you on this, send it. I'd rather they get the map than figure it out the expensive way.
 ```
