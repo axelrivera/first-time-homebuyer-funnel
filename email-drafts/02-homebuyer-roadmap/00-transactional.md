@@ -27,10 +27,10 @@ Hey *|FIRST_NAME|*,
 
 Here's the 9-Step First Home Roadmap as promised.
 
-→ Read it on the web:
+👉 Read it on the web:
 {{fthb_roadmap_view_link}}
 
-→ Download the PDF (for offline reading or printing):
+👉 Download the PDF (for offline reading or printing):
 {{fthb_roadmap_pdf_link}}
 
 Start at the visual roadmap and find the step that looks most like where you are. If you're not sure, **Step 4** (lender pre-approval) is the bottleneck for almost everyone, so it's a safe place to begin.

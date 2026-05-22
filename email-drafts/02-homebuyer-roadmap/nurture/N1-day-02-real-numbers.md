@@ -47,9 +47,9 @@ A few notes on the numbers.
 
 The $450K scenario assumes a single-family home somewhere in the Orlando metro. Townhomes can come in lower. New-build can come in different, depending on what incentives the builder is running on the rate and closing costs.
 
-FHA at 3.5% down exists. The lower down payment is real ($15,750), but the FHA mortgage insurance premium runs for the life of the loan, so the total monthly often lands close to conventional 5%. Not always worse, not always better. The right call depends on your credit profile and how long you plan to hold.
+FHA at 3.5% down exists. The lower down payment is real ($15,750), but the FHA mortgage insurance premium runs for the life of the loan, so the total monthly often lands close to conventional 5%. The right call depends on your credit profile and how long you plan to hold.
 
-Insurance is the volatile line. A house with a 5-year-old roof in Altamonte Springs quotes very differently than a similar house with a 16-year-old roof in Apopka. The number above is a middle estimate. Your real quote comes from shopping carriers once you have a specific property.
+Insurance is the number that swings the most. A house with a 5-year-old roof in Altamonte Springs quotes very differently than a similar house with a 16-year-old roof in Apopka. The number above is a middle estimate. Your real quote comes from shopping carriers once you have a specific property.
 
 If you want me to run this math at a different price point or down payment, hit reply with what you want to see.
 
