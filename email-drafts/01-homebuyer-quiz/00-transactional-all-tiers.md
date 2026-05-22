@@ -43,7 +43,5 @@ Talk soon,
 
 -- Axel
 
-License #: SL3646115 | Brokered by LPT Realty, LLC
-
 P.S. Save the PDF or print it. The 2-mistakes section gets a lot more useful the day before you actually talk to a lender, so come back to it then.
 ```

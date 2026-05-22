@@ -33,11 +33,7 @@ Here's the 9-Step First Home Roadmap as promised.
 → Download the PDF (for offline reading or printing):
 {{fthb_roadmap_pdf_link}}
 
-If you took the Readiness Quiz and landed in the 90-Day Sprint tier, **start at Step 4** (lender pre-approval). That's the bottleneck for almost everyone in that tier.
-
-If you came in from the roadmap landing page directly (no quiz yet), start at the visual roadmap and find the step that looks most like where you are. The quiz is a 7-minute way to get a more specific starting point:
-
-{{fthb_readiness_quiz_link}}
+Start at the visual roadmap and find the step that looks most like where you are. If you're not sure, **Step 4** (lender pre-approval) is the bottleneck for almost everyone, so it's a safe place to begin.
 
 Two notes before you dive in:
 
