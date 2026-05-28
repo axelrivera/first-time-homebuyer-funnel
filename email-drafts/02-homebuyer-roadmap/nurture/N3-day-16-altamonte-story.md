@@ -30,7 +30,7 @@ I moved to Orlando from Puerto Rico in 2017, after Hurricane Maria. I rented a s
 
 In May 2020, during COVID, I started cycling. My apartment was right next to the Cady Way Trail, so I could ride straight from my door. That convenience built the habit. By the end of that year, cycling was the thing I planned my week around.
 
-When I started looking at homes in 2024, trail access was at the top of my list. The Downtown Orlando neighborhoods that had it were priced well above what I wanted to spend. Altamonte Springs covered most of my checklist, including the item that mattered most, at a better price. Less than a mile from the Seminole Wekiva Trail.
+When I started looking at homes in 2023, trail access was at the top of my list. The Downtown Orlando neighborhoods that had it were priced well above what I wanted to spend. Altamonte Springs covered most of my checklist, including the item that mattered most, at a better price. Less than a mile from the Seminole Wekiva Trail.
 
 Before cycling, I never would have considered Altamonte. The only thing I knew about it was the Apple Store at the mall.
 
