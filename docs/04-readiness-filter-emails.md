@@ -235,7 +235,7 @@ After A5, the contact moves to the **monthly market-update list** (same as the T
 ## Tier B: "90-Day Sprint" sequence (6 emails)
 
 Cadence: Email 1 ~10 min after transactional. Then days 2, 4, 7, 12, 21.
-Goal: Get them to consume LM2 (the 9-Step Roadmap), then convert to BSS. This is the **highest-volume tier** and where the agent's nurture has the most impact.
+Goal: Get them to consume LM2 (the 10-Step Roadmap), then convert to BSS. This is the **highest-volume tier** and where the agent's nurture has the most impact.
 
 ### Email B1 - Day 0
 
@@ -247,7 +247,7 @@ Hey *|FIRST_NAME|*,
 You're in the 90-Day Sprint tier, which means the next 90 days
 are the whole game.
 
-On the result page, your "what's next" was to grab my 9-Step
+On the result page, your "what's next" was to grab my 10-Step
 First Home Roadmap. If you didn't snag it yet, here it is:
 
     {{fthb_lm2_optin_link}}

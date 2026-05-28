@@ -11,13 +11,13 @@ LM2's nurture is **shorter and more targeted** than LM1's. The reader has alread
 **Trigger:** Immediately on form submit, both `fthb_lm1_tier_b` and `fthb_lm2_standalone` sources.
 **Goal:** Deliver the PDF and the web link. Set expectations for follow-up.
 
-**Subject:** Your 9-Step Orlando Home Roadmap (link + PDF inside)
+**Subject:** Your 10-Step Orlando Home Roadmap (link + PDF inside)
 **Preview text:** The full roadmap, plus where to start reading depending on where you are.
 
 ```
 Hey *|FIRST_NAME|*,
 
-Here's the 9-Step First Home Roadmap as promised.
+Here's the 10-Step First Home Roadmap as promised.
 
   → Read it on the web: {{fthb_roadmap_view_link}}
   → Download the PDF (for offline reading or printing):

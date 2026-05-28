@@ -50,5 +50,7 @@ The trap to avoid: signing a 12-month renewal one month before you would have be
 
 Already mid-renewal? Most Florida leases have a buyout clause, usually 2 months' rent. Annoying but not blocking.
 
+If your timeline got clearer over the last 4 weeks, reply with your target month for buying. I'll tell you whether the math says you're still in Foundation Phase or you've crossed into 90-Day Sprint territory. You make the renewal call from there.
+
 -- Axel
 ```

@@ -41,5 +41,7 @@ The fix is to do those steps in reverse. Pre-approval first. Then walk through h
 
 If you do go to an open house this weekend, two things at the door. First, tell the agent you don't have a letter yet. Second, don't sign anything they put in front of you. Some will try to slide a Buyer Brokerage Agreement (BBA) across the table while you're admiring the kitchen island. That's not how you want to commit to working with an agent.
 
+If you're going to an open house this Saturday anyway, reply with the address and I'll pull what's publicly available on the listing (CDD, HOA dues, permit history, tax breakdown) so you walk in knowing what to ask. Takes me about 15 minutes.
+
 -- Axel
 ```

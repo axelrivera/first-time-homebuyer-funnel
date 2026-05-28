@@ -1,6 +1,6 @@
 # 06 - LM2 The Process Map: Content Drafts
 
-This is the final copy for the 9-Step Roadmap. Block-quoted text is what ships; outside-the-quote is instruction.
+This is the final copy for the 10-Step Roadmap. Block-quoted text is what ships; outside-the-quote is instruction.
 
 The roadmap is dense. That's the point. Most first-time buyer guides are vague. This one is named, specific, and Orlando-flavored on every step.
 
@@ -8,7 +8,7 @@ The roadmap is dense. That's the point. Most first-time buyer guides are vague. 
 
 ## Intro section (above the visual diagram)
 
-> # The 9-Step First Home Roadmap
+> # The 10-Step First Home Roadmap
 > ### Exactly what happens between "I think I'm ready" and keys in your hand in Orlando.
 >
 > This is the map I wish every first-time buyer had before they called an agent.
@@ -32,14 +32,15 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 | # | Short label (for diagram) |
 |---|---|
 | 1 | Check Your Credit |
-| 2 | Calculate What You Can Actually Afford |
-| 3 | Build the Down Payment + Closing + Reserve |
-| 4 | Choose a Lender and Get Pre-Approved |
-| 5 | Pick Your Target Areas |
-| 6 | Choose Your Agent and Tour Homes |
-| 7 | Write the Offer and Negotiate |
-| 8 | Inspection, Appraisal, and Final Underwriting |
-| 9 | Close Day |
+| 2 | Calculate Affordability |
+| 3 | Build Down Payment |
+| 4 | Choose Your Agent |
+| 5 | Lender + Pre-Approval |
+| 6 | Pick Target Areas |
+| 7 | Tour Homes |
+| 8 | Write Offer + Negotiate |
+| 9 | Inspection + Underwriting |
+| 10 | Closing Day |
 
 ---
 
@@ -64,9 +65,9 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 
 ---
 
-## Step 2. Calculate What You Can Actually Afford
+## Step 2. Calculate Affordability
 
-> ## Step 2. Calculate What You Can Actually Afford
+> ## Step 2. Calculate Affordability
 >
 > **What you do:**
 > Forget Zillow's affordability calculator. Use a real one (Bankrate or NerdWallet) that lets you input your debts. The number you want is the **monthly payment you can sustain**, not the maximum home price the calculator spits out.
@@ -87,18 +88,18 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 
 ---
 
-## Step 3. Build the Down Payment + Closing + Reserve
+## Step 3. Build Down Payment
 
-> ## Step 3. Build the Down Payment + Closing + Reserve
+> ## Step 3. Build Down Payment
 >
 > **What you do:**
 > Stop thinking about "down payment" as the only number. You need three buckets:
 >
-> 1. **Down payment.** Anywhere from 3.5% (FHA) to 5% (conventional FTHB programs) to 20% (no PMI). For a $300K home, that's $10,500 to $60,000.
-> 2. **Closing costs.** About **2-4% of the home price** in Florida. On a $300K home, expect $6,000 to $12,000.
+> 1. **Down payment.** Anywhere from 3.5% (FHA) to 5% (conventional FTHB programs) to 20% (no PMI). For a $450K home, that's $15,750 to $90,000.
+> 2. **Closing costs.** About **2-4% of the home price** in Florida. On a $450K home, expect $9,000 to $18,000.
 > 3. **Reserve.** Lenders like to see at least 2-3 months of mortgage payments still in your account *after* closing. This isn't optional for many loan programs.
 >
-> Real total for a $300K home with 5% down: roughly **$24K to $30K** out of pocket plus 3 months of payments in reserve.
+> Real total for a $450K home with 5% down: roughly **$33K to $42K** out of pocket plus 3 months of payments in reserve.
 >
 > Park the money in a **high-yield savings account** at an online bank. They pay meaningfully more than checking for the same FDIC-insured money. Rates move with the Fed, so shop around when you open one. Not checking. Not stocks.
 >
@@ -116,17 +117,56 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 
 ---
 
-## Step 4. Choose a Lender and Get Pre-Approved
+## Step 4. Choose Your Agent
 
-> ## Step 4. Choose a Lender and Get Pre-Approved
+> ## Step 4. Choose Your Agent
 >
 > **What you do:**
-> Get rate quotes from **at least three lenders**: a major bank you have a relationship with, a local Florida credit union, and an independent mortgage broker. Compare on three things: rate, total fees (the "lender credit" minus all the line items), and how fast they get back to you. Slow communicators in Step 4 are slow at closing.
+> Interview at least 2 agents *before* you call lenders. A good agent helps you compare lenders and structure the conversation; the reverse order leaves you stuck with whoever the lender refers you to. The questions that filter for skill are process questions. Ask:
+>
+> - "How do you evaluate whether a specific neighborhood is appreciating, flat, or declining?"
+> - "How do you handle a competitive offer without waiving inspection?" If the answer is "we waive inspection," that's a no.
+> - "How do you decide whether the builder's preferred lender beats an outside lender?"
+>
+> A good answer is specific and walks through reasoning. A vague answer is the no.
+>
+> Once you pick an agent, sign a **Buyer Brokerage Agreement (BBA)**. In 2024 and beyond, this is now standard practice nationwide. It says they work for you and how they're paid. Read it. Ask questions. It's a real contract.
+>
+> **What your agent does:**
+> In the interview itself: walks you through a process for each question, not a soundbite. Names the specific data they pull, the specific contract clauses they use, the specific lender-comparison framework they apply. Once you sign the BBA, lays out the next two or three steps (lender referrals, area research, tour logistics) so you know what's coming.
+>
+> **How long it takes:**
+> 1–2 weeks from first interview to a signed BBA. Faster if you've already shortlisted candidates from referrals or content you've followed.
+>
+> **Common mistake:**
+> Choosing on personality alone. Warmth is not the same as process knowledge. If the answers to the three interview questions wave at the question instead of walking through a process, that's the no even if you like them. Watch especially for an agent who tries to slide a BBA across the table at an open house — that's not how you commit to working with someone.
+>
+> **Orlando note:**
+> In Florida the contract is called the **Buyer Brokerage Agreement (BBA)**, not "Buyer Representation Agreement." Anyone calling it a BRA in writing or speech is using out-of-state vocabulary on a Florida form. Use the right name and you'll catch the rest of the sloppiness earlier.
+
+**Prep note (for the agent, not shipped): what good answers to the three interview questions look like.**
+
+Prospects will read these questions, then test them on you in the BSS call. Have a ready, specific answer for each. The common thread: every good answer walks the listener through a *process*. A vague answer ("I just know the market") is the no.
+
+**"How do you evaluate whether a specific neighborhood is appreciating, flat, or declining?"** Walk through a process, not a feeling. Pull the last 12 to 24 months of sales for the specific neighborhood (not the city). Look at four trend lines: median price per square foot, days on market, list-to-sale price ratio, and months of inventory. Cross-check against the broader Orlando metro so the listener hears the difference between "appreciating with the metro" and "appreciating against a flat metro." For school-zone-sensitive buyers, mention whether zone boundaries have moved or are in play. Name one leading indicator you watch (rising price reductions, new-listing surges).
+
+**"How do you handle a competitive offer without waiving inspection?"** Reframe the question. The goal isn't to win by giving up protection. Never waive inspection (roof, AC, and polybutylene math is too brutal). Instead, shrink the contingency: 5 to 7 day inspection window instead of 10, plus a credit threshold clause ("we'll only ask for credits or repairs above $2,500") so the seller knows you won't nitpick. For homes over 15 years old, recommend a $400 pre-inspection before submitting the offer. Pair with non-price strengths: clean pre-approval, flexible closing date, larger earnest money.
+
+**"How do you decide whether the builder's preferred lender beats an outside lender?"** Reject "one always wins." Run both side by side. Ask each for a full Loan Estimate in writing within 24 hours. Compare rate, total fees, and monthly payment. Then ask explicitly whether the builder's advertised rate is permanent or a temporary buydown. If it's a buydown, get the effective rate for year 1, year 2, year 3, and year 4+, run the post-reset payment, and confirm whether the builder's closing-cost credit holds if the buyer goes outside their lender. Pick the deal that wins year 4, not year 1.
+
+---
+
+## Step 5. Lender + Pre-Approval
+
+> ## Step 5. Lender + Pre-Approval
+>
+> **What you do:**
+> Get rate quotes from **at least three lenders**: a major bank you have a relationship with, a local Florida credit union, and an independent mortgage broker. Compare on three things: rate, total fees (the "lender credit" minus all the line items), and how fast they get back to you. Slow communicators in Step 5 are slow at closing.
 >
 > Then pick one and get a **real pre-approval letter**. Not a pre-qualification. Pre-qualification is unfortunately what most online "5-minute approval" forms produce. Pre-approval requires that the lender pulled credit, verified income with documents, verified assets, and ran the file past an underwriter.
 >
 > **What your agent does:**
-> If you don't have a lender, your agent should have **2-3 lender referrals** ready (not 1; multiple, so you can compare). They should not pressure you toward their "preferred" lender. If they push hard on one, ask why.
+> Your agent (chosen in Step 4) should have **2-3 lender referrals** ready (not 1; multiple, so you can compare). They should not pressure you toward their "preferred" lender. If they push hard on one, ask why.
 >
 > **How long it takes:**
 > 1–3 weeks from first call to letter in hand. Faster if your documents are ready.
@@ -139,9 +179,9 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 
 ---
 
-## Step 5. Pick Your Target Areas
+## Step 6. Pick Target Areas
 
-> ## Step 5. Pick Your Target Areas
+> ## Step 6. Pick Target Areas
 >
 > **What you do:**
 > Pick **2 or 3** target areas. Not 7. Not "all of Orlando." Specific cities and neighborhoods. Drive them at different times of day. Look at the elementary school, the closest grocery store, the commute to where you actually work.
@@ -185,22 +225,12 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 
 ---
 
-## Step 6. Choose Your Agent and Tour Homes
+## Step 7. Tour Homes
 
-> ## Step 6. Choose Your Agent and Tour Homes
+> ## Step 7. Tour Homes
 >
 > **What you do:**
-> Interview at least 2 agents. The questions that filter for skill are process questions. Ask:
->
-> - "How do you evaluate whether a specific neighborhood is appreciating, flat, or declining?"
-> - "How do you handle a competitive offer without waiving inspection?" If the answer is "we waive inspection," that's a no.
-> - "How do you decide whether the builder's preferred lender beats an outside lender?"
->
-> A good answer is specific and walks through reasoning. A vague answer is the no.
->
-> Once you pick an agent, sign a **Buyer Brokerage Agreement (BBA)**. In 2024 and beyond, this is now standard practice nationwide. It says they work for you and how they're paid. Read it. Ask questions. It's a real contract.
->
-> Then start touring. Stick to your target areas. 4–6 homes per Saturday is plenty; more than that, you'll forget which was which.
+> Stick to your target areas from Step 6 and your pre-approval range from Step 5. 4–6 homes per Saturday is plenty; more than that, you'll forget which was which. Take notes the moment you walk out — not at the end of the day. Bring a tape measure and a flashlight.
 >
 > **What your agent does:**
 > Lines up tours, vets listings for obvious problems, walks each home with you while pointing out things you'd miss (water staining, settling cracks, electrical age, roof age). Should be calling out concerns honestly, not selling you on every property.
@@ -214,26 +244,16 @@ Render as a vertical SVG diagram on mobile, horizontal on desktop. Each step is 
 > **Orlando note:**
 > If you're touring in **rainy season (June–October)**, look closely at: roof age (Florida roofs typically have 15–20 year insurance-rated lifespans), drainage around the foundation, and any soft spots in ceilings near roof valleys. Rainy season tours are *better* than dry-season tours. Water problems are easier to spot.
 
-**Prep note (for the agent, not shipped): what good answers to the three interview questions look like.**
-
-Prospects will read these questions, then test them on you in the BSS call. Have a ready, specific answer for each. The common thread: every good answer walks the listener through a *process*. A vague answer ("I just know the market") is the no.
-
-**"How do you evaluate whether a specific neighborhood is appreciating, flat, or declining?"** Walk through a process, not a feeling. Pull the last 12 to 24 months of sales for the specific neighborhood (not the city). Look at four trend lines: median price per square foot, days on market, list-to-sale price ratio, and months of inventory. Cross-check against the broader Orlando metro so the listener hears the difference between "appreciating with the metro" and "appreciating against a flat metro." For school-zone-sensitive buyers, mention whether zone boundaries have moved or are in play. Name one leading indicator you watch (rising price reductions, new-listing surges).
-
-**"How do you handle a competitive offer without waiving inspection?"** Reframe the question. The goal isn't to win by giving up protection. Never waive inspection (roof, AC, and polybutylene math is too brutal). Instead, shrink the contingency: 5 to 7 day inspection window instead of 10, plus a credit threshold clause ("we'll only ask for credits or repairs above $2,500") so the seller knows you won't nitpick. For homes over 15 years old, recommend a $400 pre-inspection before submitting the offer. Pair with non-price strengths: clean pre-approval, flexible closing date, larger earnest money.
-
-**"How do you decide whether the builder's preferred lender beats an outside lender?"** Reject "one always wins." Run both side by side. Ask each for a full Loan Estimate in writing within 24 hours. Compare rate, total fees, and monthly payment. Then ask explicitly whether the builder's advertised rate is permanent or a temporary buydown. If it's a buydown, get the effective rate for year 1, year 2, year 3, and year 4+, run the post-reset payment, and confirm whether the builder's closing-cost credit holds if the buyer goes outside their lender. Pick the deal that wins year 4, not year 1.
-
 ---
 
-## Step 7. Write the Offer and Negotiate
+## Step 8. Write Offer + Negotiate
 
-> ## Step 7. Write the Offer and Negotiate
+> ## Step 8. Write Offer + Negotiate
 >
 > **What you do:**
 > Once you find a home you'd actually buy, write the offer within a day or two. In 2026 Orlando, longer days-on-market mean you don't have to write same-day, and that window gives you room for a second visit or a quick contractor walk if either would help. Don't drag past a few days, though; a serious buyer still acts. Strong offers in Orlando have:
 >
-> - A pre-approval letter from a known lender (Step 4)
+> - A pre-approval letter from a known lender (Step 5)
 > - Proof of funds for the down payment + closing costs (a recent bank statement)
 > - An **earnest money deposit** of 1–3% of the price (this is real money, held in escrow)
 > - A reasonable inspection window (5–10 days)
@@ -265,9 +285,9 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ---
 
-## Step 8. Inspection, Appraisal, and Final Underwriting
+## Step 9. Inspection + Underwriting
 
-> ## Step 8. Inspection, Appraisal, and Final Underwriting
+> ## Step 9. Inspection + Underwriting
 >
 > **What you do:**
 > Hire your own inspector. Not the seller's, not the agent's "preferred" one if you have any hesitation. A good Orlando inspector runs $300–$500 for a typical SFH and is worth every dollar. Add $75–$150 each if your insurer wants a **4-point inspection** (common on homes 25+ years old) or a **wind mitigation report** (Florida-specific; can earn meaningful insurance discounts). Be at the inspection if you can. Walk the home with them. Ask questions.
@@ -293,9 +313,9 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 
 ---
 
-## Step 9. Close Day
+## Step 10. Closing Day
 
-> ## Step 9. Close Day
+> ## Step 10. Closing Day
 >
 > **What you do:**
 > Get a **certified or wire-transferred check** to the title company for the final amount (down payment + closing costs minus your earnest money). The lender will give you the final number 1–2 days before closing. It's the "Closing Disclosure."
@@ -423,7 +443,7 @@ Prospects will read these questions, then test them on you in the BSS call. Have
 >
 > If you've read this and you're still 60–120 days out from buying, perfect. You have the map. Walk it. The whole roadmap is here when you need to reference any specific step.
 >
-> When you're ready for the conversation (usually around the time you finish Step 3 and you're heading into Step 4), the 30-minute call is most useful. Let's talk through where you are on the roadmap, your specific numbers, your target areas, and what to focus on this week.
+> When you're ready for the conversation (usually around the time you finish Step 3 and you're heading into Step 4), the 30-minute call is most useful. The call *is* Step 4 in practice — we'll talk through where you are on the roadmap, your specific numbers, your target areas, and what to focus on this week.
 >
 > [ Book a 30-Minute Call with {{agent_first_name}} → ]
 >

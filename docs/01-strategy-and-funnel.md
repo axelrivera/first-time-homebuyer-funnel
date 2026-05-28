@@ -92,7 +92,7 @@ LM1 is the **top of every CTA the agent puts into the world**. Specifically:
 LM2 is **only promoted in two places**:
 
 - As the next step inside the LM1 90-Day Sprint result
-- As a standalone offer for content that specifically addresses the home-buying *process* (e.g., a post that breaks down a single step of the 9-step roadmap)
+- As a standalone offer for content that specifically addresses the home-buying *process* (e.g., a post that breaks down a single step of the 10-step roadmap)
 
 This keeps LM1 as the single dominant entry point and prevents the agent from fragmenting attention across too many lead magnets.
 

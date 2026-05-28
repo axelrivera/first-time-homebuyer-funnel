@@ -43,7 +43,13 @@ Two patterns show up in almost every "stuck at 180 days" story:
 
 If you start with the lender call this week, you can realistically be in a house roughly 90 days from now.
 
-The full version of that 90-day map is what I built into the 10-Step First Home Roadmap. From "I Think I'm Ready" to keys in hand, every step of buying your first Orlando home. A step-by-step visual map of every milestone, decision, and potential mistake, so you walk in knowing more than most buyers who've done this before.
+The full version of that 90-day map is what I built into The 10-Step First Home Roadmap. From "I think I'm ready" to keys in hand, every step of buying your first Orlando home. Inside:
+
+- The 10 steps in the order they actually happen (most buyers do them out of order)
+- What you do, what your agent does, and how long each takes
+- The 3 places first-time buyers in Orlando lose money (named, specific, avoidable)
+- Orlando-specific gotchas on every step: CDDs, polybutylene, HOA review windows, rainy-season inspections
+- A pre-approval cheat sheet so the lender call is the fast part
 
 [Get the 10-Step First Home Roadmap]
 

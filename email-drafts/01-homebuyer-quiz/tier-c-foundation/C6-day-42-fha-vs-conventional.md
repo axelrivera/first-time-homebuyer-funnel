@@ -55,5 +55,7 @@ My rule of thumb:
 
 Edge cases (recent self-employment, gift funds, manual underwrites, non-traditional credit) shift the calculus. Those are conversations with a lender, not emails.
 
+If you don't have a starting set of Orlando lenders to call, reply and I'll send 2-3 names worth adding to your shortlist. I receive no compensation, gift, or thing of value from any of them. Shop at least three independently.
+
 -- Axel
 ```

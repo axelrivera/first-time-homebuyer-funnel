@@ -36,9 +36,11 @@ These sound the same. They aren't.
 
 If you have a letter, look at it now. If it doesn't say "pre-approved" (and most don't), that's the first thing to fix before you make an offer on anything.
 
-If you're not sure, send me a redacted copy of your letter and I'll tell you in 5 minutes. PDF or photo, either is fine.
+If you're not sure which one you have, or your letter looks weak and you can't tell why, that's the first 5 minutes of a strategy session. 30 minutes, free, video or in person.
 
-Just reply to this email with the letter attached.
+[Book the Buyer Strategy Session]
+
+Prefer to meet in person? Call or text (407) 227-3205.
 
 -- Axel
 ```

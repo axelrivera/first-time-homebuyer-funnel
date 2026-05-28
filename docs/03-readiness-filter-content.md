@@ -66,9 +66,9 @@ The agent's voice: direct, educational, never salesy. First-person ("I"). No rea
 ### CTA
 
 > ## What's next
-> You've got a 90-day game plan ahead of you. Don't fly blind. Grab my **9-Step First Home Roadmap**: it's the exact step-by-step process you'll go through over the next 90 days, including the 3 places first-time buyers in this tier lose money and the Orlando-specific gotchas no out-of-state YouTube video will warn you about.
+> You've got a 90-day game plan ahead of you. Don't fly blind. Grab my **10-Step First Home Roadmap**: it's the exact step-by-step process you'll go through over the next 90 days, including the 3 places first-time buyers in this tier lose money and the Orlando-specific gotchas no out-of-state YouTube video will warn you about.
 >
-> [ Send me the 9-Step Roadmap → ]
+> [ Send me the 10-Step Roadmap → ]
 >
 > *Free. Delivered to your inbox in 60 seconds.*
 >

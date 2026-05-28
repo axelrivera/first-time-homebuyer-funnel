@@ -31,7 +31,7 @@ Quick follow-up on landing in the Ready Now tier.
 
 Here's the thing nobody tells first-time buyers in your spot:
 
-The two months between pre-approval and closing are the months where deals fall apart the most. Not because of the market, but because of avoidable mistakes the buyer makes (new credit, large deposits, job changes). The 30 days before closing are the most fragile.
+The window between pre-approval and closing is where deals fall apart the most. Not because of the market, but because of avoidable mistakes the buyer makes (new credit, large deposits, job changes). The final 30 days are the most fragile.
 
 Three rules that cover 90% of it:
 
@@ -41,11 +41,9 @@ Three rules that cover 90% of it:
 
 Save this email and reread it the week before closing.
 
-Those rules apply to everyone. The pieces that depend on your situation are what I cover in a Buyer Strategy Session: which lender fits your file, which neighborhoods give you the most house for your budget, how to structure your offer in this market. 30 minutes, free, video call or in person.
+Those rules apply to everyone. The pieces that depend on your situation are what I cover in a Buyer Strategy Session: how to pressure-test your lender's terms, which neighborhoods give you the most house for your budget, how to structure your offer in this market. 30 minutes, free, video call or in person.
 
-Book a video call:
-
-{{book_bss_link}}
+[Book the Buyer Strategy Session]
 
 Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
 

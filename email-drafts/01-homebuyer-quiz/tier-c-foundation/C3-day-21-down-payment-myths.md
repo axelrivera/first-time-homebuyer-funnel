@@ -44,7 +44,7 @@ On a $450K home, the math breaks down like this:
 
 The $75,000+ gap between 20% and 3.5% is often the gap between "I'll be ready in 8 years" and "I'll be ready in 18 months."
 
-For most buyers, the right move is not to save 20%. It is to put down the minimum, accept PMI for the few years it takes to build to 20% equity, and cancel PMI then. Two weeks from now I'll send you the FHA-vs-Conventional decision rules, including which kinds of PMI you can cancel and which you can't.
+For most buyers, the right move is not to save 20%. It is to put down the minimum, accept PMI for the few years it takes to build to 20% equity, and cancel PMI then. Three weeks from now I'll send you the FHA-vs-Conventional decision rules, including which kinds of PMI you can cancel and which you can't.
 
 -- Axel
 ```

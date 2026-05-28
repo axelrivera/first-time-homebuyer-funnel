@@ -29,13 +29,13 @@ This is the last email in the 90-Day Sprint series.
 
 If anything in the last two weeks made you think "I should probably actually start moving on this," the roadmap is still the best place to start. The 10 steps in the order they actually happen, no fluff.
 
-[Get the 10-Step Orlando Home Roadmap]
+[Get the 10-Step First Home Roadmap]
 
 After this email, I'm out of your inbox unless you grab it or reply. If you do grab it, the first follow-up will hit within a few minutes and we'll walk through the 10 steps together.
 
-If you decided this isn't your 90 days after all, that's totally fine. You have the result page and the action items from the last few emails. You can do this on your own.
+If you decided this isn't your 90 days after all, that's totally fine. You have the result page and the action items from the last few emails. The map is here when you come back to it.
 
-Thanks for taking the readiness quiz. Best of luck out there.
+Either way: 90 days from now you could be sitting on a back porch you own, drinking coffee out of a mug you didn't have to pack. That's the version worth running at. Hope you go grab it.
 
 -- Axel
 

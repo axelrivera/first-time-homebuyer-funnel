@@ -32,8 +32,7 @@ If those have been enough on their own, you're set. Some first-time buyers work 
 
 If you do want a conversation, book the 30-minute Buyer Strategy Session.
 
-Book a video call:
-{{book_bss_link}}
+[Book the Buyer Strategy Session]
 
 Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
 

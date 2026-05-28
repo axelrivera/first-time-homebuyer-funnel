@@ -33,7 +33,9 @@ Path 2: Push north on the Seminole side (Altamonte Springs, Longwood, Lake Mary,
 
 There's a third path most people miss: the **Seminole/Orange border zone**, where Casselberry and southern Altamonte Springs (Seminole) sit right against Maitland and northern Winter Park (Orange). Specific blocks straddle both counties' services and amenities, with meaningful price-per-square-foot differences between the two sides depending on which line you land on.
 
-If your budget can stretch to $575-600K, there's a fourth path worth a look: Lake Nona in the southeast. Newer construction, master-planned, a different mix of housing stock and amenities than anything on the north end. Worth running the math before you rule it out on geography alone.
+If your budget stretches into the high $500s, there's a fourth path worth a look: Lake Nona in the southeast. Newer construction, master-planned, a different mix of housing stock and amenities than anything on the north end. Worth running the math before you rule it out on geography alone.
+
+If you've narrowed to 1 or 2 areas (or are choosing between two paths above), reply with the names. I'll send a market data snapshot for each: recent sales, price trends, days on market, and what's currently active in your price band. About 15 minutes of work on my end.
 
 -- Axel
 ```

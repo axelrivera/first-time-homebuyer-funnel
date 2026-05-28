@@ -385,7 +385,7 @@ The previous expiry-window scheme is gone — there is no concept of "result tok
 5. **One-page Orlando market snapshot**. Embedded, not a separate file
 6. **The "What's Next" CTA**. Tier-specific:
    - Tier A → **Book a Buyer Strategy Session** (calendar embed)
-   - Tier B → **Get the 9-Step First Home Roadmap** (LM2 opt-in, prefilled with email)
+   - Tier B → **Get the 10-Step First Home Roadmap** (LM2 opt-in, prefilled with email)
    - Tier C → **Get the Foundation Phase nurture sequence** (already enrolled via Make.com; this is a confirmation, not a new opt-in)
 7. **Email confirmation line**: _"We just emailed you a copy of this page. Check your spam if you don't see it in 2 minutes."_
 

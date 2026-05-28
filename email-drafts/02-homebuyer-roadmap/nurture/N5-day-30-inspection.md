@@ -24,7 +24,7 @@ preview: "What inspectors catch, what they miss, and the question to ask on ever
 ```
 Hey *|FIRST_NAME|*,
 
-When you eventually get to Step 7 in the roadmap, the inspection is going to feel scarier than it should. Here is how to read it without panic.
+When you eventually get to Step 9 in the roadmap, the inspection is going to feel scarier than it should. Here is how to read it without panic.
 
 The first reframe: an inspection report is not a pass or fail. It's a list of facts about the house. Your job is to sort the facts, not react to all of them.
 

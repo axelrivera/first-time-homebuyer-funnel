@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Two lead magnets, gated entry, segmented by readiness. Both terminate at the same offer: a 30-minute **Buyer Strategy Session (BSS)**.
 
 - **LM1** — *The Orlando First-Time Buyer Readiness Score* — 10-question scorecard, scored, segments into 3 tiers.
-- **LM2** — *The 9-Step First Home Roadmap* — long-form process map, only promoted to Tier B from LM1 and from one standalone landing page.
+- **LM2** — *The 10-Step First Home Roadmap* — long-form process map, only promoted to Tier B from LM1 and from one standalone landing page.
 
 Tiers (used interchangeably with internal names in code):
 - **Tier A** = `READY_NOW` (display score 75–100) → CTA is the BSS
@@ -146,9 +146,22 @@ Structural constants (e.g., "there are 10 questions") may be inline. The rule of
 These are explicitly locked in the specs. Don't paraphrase them on landing pages, ads, DMs, or in nav copy:
 
 - **"The Orlando First-Time Buyer Readiness Score"** + subhead *"Know in 7 Minutes If You're 30, 90, or 180 Days Away From Your First Home."*
-- **"The 9-Step First Home Roadmap"** + subhead *"Exactly What Happens Between 'I Think I'm Ready' and Keys in Your Hand in Orlando."*
+- **"The 10-Step First Home Roadmap"** + subhead *"Exactly What Happens Between 'I Think I'm Ready' and Keys in Your Hand in Orlando."*
 
 Also locked: the **stable enum keys** for each scorecard answer (e.g., `q1_credit_range: "680_739"`). Make.com routes on these — renaming them breaks the email scenario. Human-readable labels in the UI can be re-copy-edited freely; the underlying enum keys cannot.
+
+## Marketing link placeholders
+
+Any clickable CTA in copy (email body, landing page button, DM, ad, script) that points to a URL the agent has to wire up — a calendar link, a quiz page, a roadmap page, a PDF download, a retake link — must be written as a **plain-English call-to-action in square brackets** on its own line: `[Book the Buyer Strategy Session]`, `[Read the Roadmap]`, `[Take the quiz]`, `[Download the PDF]`. The bracket text serves three jobs at once: it's the visible link label, the placeholder marker (so the agent knows to swap in the real URL before sending), and the CTA copy itself.
+
+Do **not** use Pipedrive merge-tag syntax (`{{book_bss_link}}`, `{{fthb_roadmap_pdf_link}}`, etc.) in draft copy. Those tags only resolve if the matching merge field is configured in Pipedrive; if it isn't, the literal `{{...}}` ships in the email. Bracket placeholders fail visibly during review instead of silently in the inbox.
+
+Two structural rules:
+
+1. **The bracket placeholder takes its own line.** Never inline a `[CTA]` at the end of a sentence — it reads as footnote text, not a button. (This replaces the older "merge tags take a full line" guidance.)
+2. **Don't restate the CTA in the lead-in line.** If the bracket says `[Book the Buyer Strategy Session]`, don't precede it with "Book your Buyer Strategy Session here:" or "Book the session:" — the bracket already names the action. Lead-ins that *add* context are fine and often useful: naming the channel ("Book a video call:") so the reader knows the bracket is the video route, or framing the moment ("If we don't already have a call on the calendar:"). The test: does the lead-in carry information the bracket can't?
+
+Personalization tokens (`*|FIRST_NAME|*`, `{{agent_first_name}}`, etc.) are not marketing links and stay in their native template syntax — the rule above is for *clickable URLs only*.
 
 ## Working voice and the Grand Slam Offer test
 
@@ -164,6 +177,23 @@ Value = (Dream Outcome × Perceived Likelihood of Achievement) / (Time Delay × 
 ```
 
 [01-strategy-and-funnel.md](docs/01-strategy-and-funnel.md) already shows this applied to LM1 and LM2. When editing headlines, subject lines, or CTA copy, optimize for **all four** drivers — don't silently trade one for another. Lead magnets are mini-offers: never propose a vague freebie ("Free Buyer's Guide"); always name the specific result and the time-to-result (the LM1 / LM2 locked titles are the template).
+
+## Regulatory compliance (load-bearing — overrides voice, Hormozi, and convenience)
+
+Every piece of copy generated for this funnel — landing pages, quiz screens, result pages, transactional and nurture emails, CTAs, ads, DMs, scripts, and any advisory-mode output — must be compliant with U.S. and Florida real estate law and industry best practices. When a Hormozi-shaped framing collides with a compliance rule, **compliance wins**; rephrase the offer, don't soften the rule. The agent is a licensed Florida REALTOR; copy that goes out under their name is subject to the same constraints whether it ships on a landing page or in a personal text.
+
+Specific rules that bind every copy decision:
+
+- **Fair Housing Act + Florida Fair Housing Act**: No language, imagery, or filtering that steers, prefers, limits, or discourages by protected class — race, color, religion, sex (including sexual orientation and gender identity per HUD 2021 guidance), national origin, familial status, disability, age, or marital status. This rules out neighborhood descriptions framed around demographics ("family-friendly neighborhood," "good schools" as a demographic proxy, "safe area," "up-and-coming"), persona copy that targets or excludes protected classes, and any quiz logic that routes by anything other than the buyer's own stated financial readiness. Persona references in the funnel (e.g., "families relocating from Puerto Rico") describe *who is researching the topic*, never who *should* live somewhere; do not let that internal framing leak into outward copy that suggests certain buyers belong in certain areas.
+- **RESPA (Real Estate Settlement Procedures Act)**: No kickbacks, referral fees, or fee-splits with settlement-service providers (lenders, title companies, inspectors, insurance agents, attorneys, appraisers). Copy may **name** specific providers as recommendations when there's a genuine basis; it may **not** imply or disclose any compensation arrangement, exclusive-referral relationship, or "preferred lender" deal. "Affiliated business arrangements" (ABAs) require written disclosure at the moment of referral, which this funnel does not provide — so do not write copy that implies one exists. Lender content stays diagnostic ("here's how to evaluate a lender") not transactional ("use my guy").
+- **TILA / Reg Z + MAP Rule (mortgage advertising)**: Any quoted interest rate, APR, payment amount, down-payment percentage, or loan-term claim in copy must be either (a) clearly framed as an illustrative example with disclosed assumptions or (b) sourced and dated. Do not invent rate numbers, payment numbers, or program terms. Do not promise loan approval, specific rates, or specific monthly payments. "You could qualify for..." language without disclosed assumptions is a MAP Rule risk.
+- **NAR Code of Ethics + Florida real-estate-license law (Chapter 475, F.S. and FREC rules)**: Brokerage and license identification on emails is handled by the Pipedrive email template chrome (footer, brokerage name, license number) — copy doesn't need to repeat it. What copy *does* control: no statements that imply the agent is the broker, and no false or misleading claims about services, market conditions, or the agent's qualifications. The existing memory rule on the agent's track record (newly licensed; do not gate copy on deal count or years) is partly a 475.25(1)(b) misleading-advertising guardrail, not just a Hormozi preference. For surfaces *outside* email (landing pages, ads, DMs, scripts), the brokerage identification requirement is back in play and copy must carry it.
+- **CAN-SPAM + Florida Electronic Mail Communications Act**: Every commercial email must have a valid physical mailing address, a working one-click unsubscribe, no deceptive subject lines, and no scraped/purchased lists. The funnel's email infrastructure (Pipedrive Campaigns) handles unsubscribe and address footer mechanically; copy must not write subject lines or body language that misrepresents the email's nature ("Re:" replies to threads that don't exist, fake forwarded headers, false urgency about non-existent transactions).
+- **Florida-specific disclosures**: When discussing the buying process, do not misrepresent statutory rights or invent them. Specifically: the Florida purchase-contract inspection period is what the contract says it is (negotiated, typically 7–15 days); HOA/condo three-day cancellation rights are real but narrowly scoped; the buyer/agent agreement in Florida is the **Buyer Brokerage Agreement (BBA)**, not "Buyer Representation Agreement." If copy describes a Florida statute or contract clause, the description must be accurate to the current Florida Realtors / Florida Bar forms and Florida statutes. When in doubt, name the mechanism in general terms rather than quote a number or clause that might be wrong.
+- **No legal, tax, or specific financial advice**: Copy may explain *what* a contingency, contract clause, tax credit, or loan program *is*; it must not tell a specific buyer what to do with their specific financial, legal, or tax situation. Hand off to "talk to your CPA / attorney / loan officer" when copy edges toward individualized advice.
+- **Verify before you publish**: Any rate, price, statute, program name, deadline, or regulatory claim in copy must be checked against current sources before the copy ships. Memory rule on validating numbers applies here and is partly a compliance guardrail. "Plausible-sounding" is not a compliance standard.
+
+When copy is generated by Claude in this project, treat these rules as a hard pre-flight checklist — not aspirational. If a draft can't be made compliant without losing the offer, flag the conflict to the agent rather than shipping the offer-shaped version.
 
 ## Market context to bake into examples and copy
 

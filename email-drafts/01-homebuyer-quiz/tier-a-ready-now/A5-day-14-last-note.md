@@ -27,13 +27,11 @@ Hey *|FIRST_NAME|*,
 
 This is the last email in the Ready Now series.
 
-If anything in the last two weeks made you think "I should probably talk to someone before I make a move on a house in Orlando," this is the moment to book the call. After this email, I'm out of your inbox.
+If anything in the last two weeks made you think "I should probably talk to someone before I make a move on a house in Orlando," this is the moment to book the Buyer Strategy Session. After this email, I'm out of your inbox.
 
-The session is 30 minutes, free, no obligation. You leave with a clearer picture of where you stand and what to do next. If you'd rather not, no hard feelings. My hope is the last four emails gave you enough to move on your own.
+It's 30 minutes, free, no obligation. We get specific on three things: how to pressure-test your lender's terms, which neighborhoods give you the most house for your budget, and how to structure your offer in this market. If you'd rather not, no hard feelings. My hope is the last four emails gave you enough to move on your own.
 
-If you do want to talk, book a video call here:
-
-Book a video call
+[Book the Buyer Strategy Session]
 
 Or call/text (407) 227-3205 to set up an in-person meeting.
 

@@ -36,8 +36,7 @@ It's free. No obligation to sign anything. Sometimes the session ends with "you'
 
 Two ways to set it up.
 
-Book a video call:
-{{book_bss_link}}
+[Book the Buyer Strategy Session]
 
 Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
 

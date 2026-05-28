@@ -407,12 +407,12 @@ After A5, the campaign ends. The agent reviews the contact in Pipedrive and deci
 **Primary entity:** Deal. Make.com creates (or promotes a Lead to) a Deal on LM1 webhook when tier = NINETY_DAY; the automation enrolls and operates on that Deal.
 **Surface in Pipedrive:** a linear automation orchestrating 3 single-email campaigns. No branching, no checks.
 **Cadence:** Email B1 ~10 minutes after the transactional. Then days 2 and 5.
-**Goal:** Get the contact to download LM2 (the 9-Step First Home Roadmap). That's the whole job. No BSS pitching in this automation — the BSS lives downstream in the `FTHB LM2 - Roadmap` automation (see `07-process-map-emails-v2.md`).
+**Goal:** Get the contact to download LM2 (the 10-Step First Home Roadmap). That's the whole job. No BSS pitching in this automation — the BSS lives downstream in the `FTHB LM2 - Roadmap` automation (see `07-process-map-emails-v2.md`).
 **Design contract:** Short enough that "letting it finish" is harmless. If the contact downloads LM2 partway through, Make.com enrolls them in the Roadmap automation; this Tier B automation continues to its natural end either way — its remaining 0–2 emails are non-harmful since they share the same LM2 link.
 
 ### Email B1 — Day 0 (sent ~10 minutes after transactional)
 
-**Subject:** Your 90-day game plan: the 9 steps
+**Subject:** Your 90-day game plan: the 10 steps
 
 ```
 Hey *|FIRST_NAME|*,
@@ -427,7 +427,7 @@ If you didn't snag it there, here's the direct link:
 
     {{fthb_lm2_optin_link}}
 
-It's called **The 9-Step First Home Roadmap** — exactly what
+It's called **The 10-Step First Home Roadmap** — exactly what
 happens between "I think I'm ready" and keys in your hand in
 Orlando. Every step shows what you do, what your agent does,
 and how long it takes.

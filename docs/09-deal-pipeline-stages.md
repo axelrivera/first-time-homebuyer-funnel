@@ -16,7 +16,7 @@ For the full Person / Lead / Deal entity model and the Make.com conflict-resolut
 | # | Stage | Probability | Rotting | Description |
 |---|---|---|---|---|
 | 1 | **Quiz Taken** | 10% | 14 days | Tier A or B contact who just submitted the LM1 scorecard |
-| 2 | **Received Roadmap** | 20% | 65 days | Downloaded LM2 (the 9-Step Roadmap); deeper engagement |
+| 2 | **Received Roadmap** | 20% | 65 days | Downloaded LM2 (the 10-Step Roadmap); deeper engagement |
 | 3 | **BSS Booked** | 40% | 14 days | Buyer Strategy Session scheduled in Google Calendar |
 | 4 | **Pre-Approved & Searching** | 65% | 30 days | Real lender pre-approval letter in hand; touring properties |
 | 5 | **Under Contract** | 80% | 14 days | Offer accepted; inspection / appraisal / financing contingencies still open |
@@ -51,7 +51,7 @@ A contact has just submitted the LM1 readiness scorecard and scored into Tier A 
 
 **Probability: 20% · Rotting: 65 days**
 
-The contact has downloaded LM2 (the 9-Step First Home Roadmap). They're enrolled in the `FTHB LM2 - Roadmap` automation (9 nurture emails over 58 days, plus the transactional delivery email). The Roadmap is the deepest free asset in the funnel; downloading it is a meaningful engagement signal beyond the quiz.
+The contact has downloaded LM2 (the 10-Step First Home Roadmap). They're enrolled in the `FTHB LM2 - Roadmap` automation (9 nurture emails over 58 days, plus the transactional delivery email). The Roadmap is the deepest free asset in the funnel; downloading it is a meaningful engagement signal beyond the quiz.
 
 **Who's at this stage:** A Tier B contact who clicked through and grabbed the Roadmap (most common). A standalone-Roadmap visitor who came in via `/orlando-homebuying-roadmap` without taking the quiz first. A Tier C Lead who downloaded the Roadmap and got promoted to a Deal in the process.
 

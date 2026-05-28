@@ -29,7 +29,7 @@ Foundation Phase doesn't mean "no." It means "not yet," and here is what to do w
 
 You're on my Foundation list now. Here's what to expect:
 
-- 8 short emails over the next 2 months, one a week
+- 8 more short emails over the next 2 months, one a week
 - 100% useful, 0% sales pitch
 - Topics: credit, savings, down payment math, DTI, FHA vs. conventional, Florida assistance money, lease timing, and how to know when you're ready
 

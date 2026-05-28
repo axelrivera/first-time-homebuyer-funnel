@@ -30,9 +30,11 @@ Objection one: I should wait for rates to drop.
 
 Run the proportions.
 
-A one-point rate drop on a typical Orlando home in your price band saves you roughly 10% of your monthly principal and interest. That sounds like a lot until you measure what waiting costs.
+As an illustration only: on a roughly $450K, 30-year fixed loan, a 1% rate drop works out to roughly $290 a month, or about 10% of your principal-and-interest payment. Your numbers will differ based on actual rate, loan amount, term, and how long you hold the loan; treat this as a sanity-check on the order of magnitude, not as a quote.
 
-If you wait 18 months for rates to move, you spend 18 months of rent in the meantime. At Orlando market rents, that's tens of thousands of dollars paid to a landlord, building zero equity. Even if rates drop exactly when you bet they will (no guarantee), the rent you spent waiting almost always exceeds the rate-drop savings by a wide margin.
+That sounds like a lot until you measure what waiting costs.
+
+If you wait 18 months for rates to move, you spend 18 months of rent in the meantime. At Orlando market rents, that's tens of thousands of dollars paid to a landlord, building zero equity. The rate drop is a bet; the rent is a guarantee.
 
 And refinancing exists. If you buy now and rates drop later, you refinance into the lower rate. You don't lose the house you wanted to wait for the rate on. The house you wanted is still yours.
 

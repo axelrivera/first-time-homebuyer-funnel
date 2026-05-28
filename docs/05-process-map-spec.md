@@ -1,11 +1,11 @@
 
-This is the build spec for the second lead magnet, the 9-Step First Home Roadmap. It's lighter than LM1 (no scorecard, no scoring math), but the spec still locks copy, routes, payload, and delivery.
+This is the build spec for the second lead magnet, the 10-Step First Home Roadmap. It's lighter than LM1 (no scorecard, no scoring math), but the spec still locks copy, routes, payload, and delivery.
 
 ---
 
 ## Public name (final)
 
-**The 9-Step First Home Roadmap**
+**The 10-Step First Home Roadmap**
 *Subhead:* Exactly What Happens Between "I Think I'm Ready" and Keys in Your Hand in Orlando.
 
 Locked phrasing. Don't paraphrase on landing pages or in DMs.
@@ -59,8 +59,8 @@ LM2 is **not** linked from:
 |---|---|---|
 | `/orlando-homebuying-roadmap` | Standalone landing page | Entry point #2. Single hero, single CTA. Static. |
 | `/orlando-homebuying-roadmap/get` | Opt-in form | Name + email + ZIP + language toggle. Reads `?n=`, `?e=`, `?src=` from the URL to pre-fill (when coming from the Tier B result page). Vanilla JS handles form submission via `fetch` to the Make.com webhook, then redirects. |
-| `/orlando-homebuying-roadmap/view` | Inline rendered roadmap | The full 9-step content, rendered as a long-form page. Anchor links per step. Reachable directly without opting in (the roadmap *is* the lead magnet; the opt-in is what enrolls them in the nurture, not what gates the read). |
-| `/assets/orlando-9-step-roadmap.pdf` | Static PDF | Hosted on the Astro site. Linked from the LM2 transactional email. Updates are a redeploy. |
+| `/orlando-homebuying-roadmap/view` | Inline rendered roadmap | The full 10-step content, rendered as a long-form page. Anchor links per step. Reachable directly without opting in (the roadmap *is* the lead magnet; the opt-in is what enrolls them in the nurture, not what gates the read). |
+| `/assets/orlando-10-step-roadmap.pdf` | Static PDF | Hosted on the Astro site. Linked from the LM2 transactional email. Updates are a redeploy. |
 
 ---
 
@@ -68,7 +68,7 @@ LM2 is **not** linked from:
 
 ### Hero copy
 
-> **The 9-Step First Home Roadmap**
+> **The 10-Step First Home Roadmap**
 > Exactly What Happens Between "I Think I'm Ready" and Keys in Your Hand in Orlando.
 >
 > A step-by-step visual map of every milestone, decision, and potential mistake in the Orlando home-buying process, so you walk in knowing more than most buyers who've done this before.
@@ -79,7 +79,7 @@ LM2 is **not** linked from:
 
 ### Sub-hero: "What's in it"
 
-- The 9 Steps from "Check Your Credit" to "Close Day": what *you* do, what *your agent* does, how long each takes
+- The 10 Steps from "Check Your Credit" to "Closing Day": what *you* do, what *your agent* does, how long each takes
 - The 3 places first-time buyers in Orlando lose money (named, specific, avoidable)
 - Orlando-metro gotchas: HOA timelines, rainy-season inspection issues, Seminole-vs.-Orange school-zone resale math, the Sanford-to-Downtown-Orlando commute-and-price trade-off, the Lake Nona stretch math at $575–600K
 - The Pre-Approval Cheat Sheet: documents to gather + the one credit number that matters more than your score
@@ -155,7 +155,7 @@ The roadmap renders as a long-form web page. It is the *same content* as the PDF
 
 ```
 [Header bar]
-  - "The 9-Step First Home Roadmap" + jump-to-step nav
+  - "The 10-Step First Home Roadmap" + jump-to-step nav
 
 [Intro paragraph + how to use this document]
 
@@ -200,7 +200,7 @@ The roadmap renders as a long-form web page. It is the *same content* as the PDF
 
 ## PDF version (download link, not attachment)
 
-The LM2 transactional email links to a **statically hosted PDF** on the Astro site at `/assets/orlando-9-step-roadmap.pdf`.
+The LM2 transactional email links to a **statically hosted PDF** on the Astro site at `/assets/orlando-10-step-roadmap.pdf`.
 
 The agent designs the PDF in Canva (or similar) and drops it into the Astro repo's `/public/assets/` directory. Updates are a redeploy.
 
@@ -233,9 +233,9 @@ LM2 ships when all of the following are true:
 
 - [ ] `/orlando-homebuying-roadmap` standalone landing page is live
 - [ ] `/orlando-homebuying-roadmap/get` opt-in form posts to the Make.com webhook with the correct payload for both source types (`fthb_lm1_tier_b` with URL-prefill, and `fthb_lm2_standalone`)
-- [ ] `/orlando-homebuying-roadmap/view` renders all 9 steps + 3 mistakes + gotchas + cheat sheet
+- [ ] `/orlando-homebuying-roadmap/view` renders all 10 steps + 3 mistakes + gotchas + cheat sheet
 - [ ] Tier B result page CTA links to `/orlando-homebuying-roadmap/get` with `?n=&e=&src=fthb_lm1_tier_b` URL params
-- [ ] `/assets/orlando-9-step-roadmap.pdf` is in the repo and reachable at the public URL after deploy
+- [ ] `/assets/orlando-10-step-roadmap.pdf` is in the repo and reachable at the public URL after deploy
 - [ ] Make.com correctly handles the "existing LM1 contact" path (Pipedrive lookup by email, update not create)
 - [ ] Pipedrive Workflow Automation unenrolls the contact from LM1 Tier B and enrolls them in LM2 when `fthb_received_lm2` flips to `true`
 - [ ] LM2 transactional email delivers within 60 seconds of submit, with a working PDF download link

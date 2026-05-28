@@ -26,7 +26,7 @@ Hey *|FIRST_NAME|*,
 
 Last week's email mentioned the Buyer Strategy Session. Here is the big picture of what those 30 minutes look like.
 
-You fill out a short intake form ahead of time so I come in with research already done. The call itself covers three things: your situation in your own words, my diagnosis of where you actually are on the 9-step roadmap and what's specifically in your way, and a three-step action plan you can start on this week.
+You fill out a short intake form ahead of time so I come in with research already done. The call itself covers three things: your situation in your own words, my diagnosis of where you actually are on the 10-step roadmap and what's specifically in your way, and a three-step action plan you can start on this week.
 
 Specific names where useful (lender, neighborhood). Specific numbers where useful (target rate, target monthly, cash to close).
 
@@ -42,8 +42,7 @@ Free. No obligation.
 
 Two ways to set it up.
 
-Book a video call:
-{{book_bss_link}}
+[Book the Buyer Strategy Session]
 
 Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
 

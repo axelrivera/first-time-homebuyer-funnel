@@ -57,13 +57,13 @@ The Roadmap automation sends these four emails in order. Day 0 immediately, then
 
 ### Email 0 — Day 0: Transactional delivery
 
-**Subject:** Your 9-Step Orlando Home Roadmap (link + PDF inside)
+**Subject:** Your 10-Step Orlando Home Roadmap (link + PDF inside)
 **Preview text:** The full roadmap, plus where to start reading depending on where you are.
 
 ```
 Hey *|FIRST_NAME|*,
 
-Here's the 9-Step First Home Roadmap as promised.
+Here's the 10-Step First Home Roadmap as promised.
 
   → Read it on the web: {{fthb_roadmap_view_link}}
   → Download the PDF (for offline reading or printing):

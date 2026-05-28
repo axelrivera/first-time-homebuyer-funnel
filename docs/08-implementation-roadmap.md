@@ -135,7 +135,7 @@ Two parallel workstreams: build out the LM1 email nurture sequences for all 3 ti
 - [ ] Build `/orlando-homebuying-roadmap` standalone landing page from `05-process-map-spec.md`
 - [ ] Build `/orlando-homebuying-roadmap/get` opt-in form (read `?n=`, `?e=`, `?src=` URL params for pre-fill)
 - [ ] Build `/orlando-homebuying-roadmap/view` rendered roadmap from `06-process-map-content.md`
-- [ ] Design and produce the static English PDF version (Canva); drop it at `public/assets/orlando-9-step-roadmap.pdf`
+- [ ] Design and produce the static English PDF version (Canva); drop it at `public/assets/orlando-10-step-roadmap.pdf`
 - [ ] Wire Make.com to handle `magnet: "fthb_lm2"` payloads: look up the Pipedrive Person, set `fthb_received_lm2`, `fthb_lm2_received_at`, `fthb_lm2_source`
 - [ ] Build the Pipedrive Workflow Automation: on `fthb_received_lm2 = true` for a contact with `fthb_lm1_tier = NINETY_DAY`, unenroll from `FTHB LM1 - Tier B` and enroll in `FTHB LM2 - Roadmap`
 - [ ] Build the `FTHB LM2 - Roadmap` transactional email (Email 0 in `07-process-map-emails.md`) — links to the rendered roadmap and to the static PDF; no email attachment
@@ -204,7 +204,7 @@ Operational rhythm and measurement. The two pieces that make the funnel keep wor
 
 1. **The 7-minute promise**. Does "5 minutes" convert better? Or worse, because it's less believable?
 2. **The email-gate placement**. What happens if we put it on Q5 instead of Q11? (Hypothesis: way worse, but should be measured.)
-3. **The Tier B CTA copy**. "Send me the 9-Step Roadmap" vs. "Get the 90-Day Game Plan"
+3. **The Tier B CTA copy**. "Send me the 10-Step Roadmap" vs. "Get the 90-Day Game Plan"
 4. **The Tier A CTA copy**. "Book the Buyer Strategy Session" vs. "Show me what's available in my range right now"
 5. **Question order**. Does putting Q9 (timeline) first surface tier earlier and improve completion?
 

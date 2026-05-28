@@ -7,7 +7,7 @@ automation: "FTHB LM2 - Roadmap (first step) or LM2-specific transactional step"
 sequence_position: "Email 1 (transactional delivery)"
 day: 0
 delay_from_previous: "Immediate (on form submit)"
-subject: "Your 9-Step Orlando Home Roadmap is ready"
+subject: "Your 10-Step Orlando Home Roadmap is ready"
 preview: "The full roadmap, plus where to start reading depending on where you are."
 goal: "Deliver the roadmap, set expectations for the follow-up series."
 ---
@@ -27,8 +27,7 @@ Hey *|FIRST_NAME|*,
 
 Here's the 10-Step First Home Roadmap as promised.
 
-👉 Read the roadmap online:
-{{fthb_roadmap_page_link}}
+👉 [Read the roadmap online]
 
 Start at the visual roadmap and find the step that looks most like where you are. If you're not sure, **Step 5** (lender pre-approval) is the bottleneck for almost everyone, so it's a safe place to begin.
 
