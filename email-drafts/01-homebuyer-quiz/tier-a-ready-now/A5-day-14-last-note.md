@@ -33,7 +33,7 @@ The session is 30 minutes, free, no obligation. You leave with a clearer picture
 
 If you do want to talk, book a video call here:
 
-{{book_bss_link}}
+Book a video call
 
 Or call/text (407) 227-3205 to set up an in-person meeting.
 

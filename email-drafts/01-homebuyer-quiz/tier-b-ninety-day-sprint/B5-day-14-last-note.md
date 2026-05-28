@@ -27,11 +27,11 @@ Hey *|FIRST_NAME|*,
 
 This is the last email in the 90-Day Sprint series.
 
-If anything in the last two weeks made you think "I should probably actually start moving on this," the roadmap is still the best place to start. Two pages of orientation, then the 9 steps in the order they need to happen:
+If anything in the last two weeks made you think "I should probably actually start moving on this," the roadmap is still the best place to start. The 10 steps in the order they actually happen, no fluff.
 
-{{fthb_lm2_optin_link}}
+[Get the 10-Step Orlando Home Roadmap]
 
-After this email, I'm out of your inbox unless you grab it or reply. If you do grab it, the first follow-up will hit within a few minutes and we'll walk through the 9 steps together.
+After this email, I'm out of your inbox unless you grab it or reply. If you do grab it, the first follow-up will hit within a few minutes and we'll walk through the 10 steps together.
 
 If you decided this isn't your 90 days after all, that's totally fine. You have the result page and the action items from the last few emails. You can do this on your own.
 

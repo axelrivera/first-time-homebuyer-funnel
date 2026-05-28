@@ -7,15 +7,15 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 2 of 10 (nurture 1 of 9)"
 day: 2
 delay_from_previous: "2 days"
-subject: "What $450K actually costs you per month in Orlando"
-preview: "Cash to close, monthly payment, and the math on a $450K Orlando home."
+subject: "Two numbers to size up before making an Orlando offer"
+preview: "Cash to close, monthly payment, and the cleanest tool to ballpark both."
 ---
 
 # FTHB Roadmap - Day 02 - Real Numbers
 
-**Subject:** What $450K actually costs you per month in Orlando
+**Subject:** Two numbers to size up before making an Orlando offer
 
-**Preview:** Cash to close, monthly payment, and the math on a $450K Orlando home.
+**Preview:** Cash to close, monthly payment, and the cleanest tool to ballpark both.
 
 **Send:** Day 2 (2 days after transactional)
 
@@ -24,34 +24,27 @@ preview: "Cash to close, monthly payment, and the math on a $450K Orlando home."
 ```
 Hey *|FIRST_NAME|*,
 
-You have the roadmap. Here is what an example Orlando home actually costs in dollars.
+You have the roadmap. Here is how to size up what an Orlando home actually costs you, without needing a lender call yet.
 
-Scenario: a $450K single-family home in Orlando metro, 5% down conventional loan at roughly 6.5% on a 30-year fixed. This is a common path for first-time buyers.
+Two numbers matter at this stage: cash to close, and monthly payment.
 
-Cash to close (what you bring on signing day):
+Cash to close (what you bring on signing day) is your down payment plus closing costs plus prepaids. In Orlando, closing costs typically run a low single-digit percent of the home price (lender, title, recording, attorney fees), and prepaids cover your first year of homeowners insurance, escrow funding, and prorated taxes. Add those to your down payment to get the all-in number you bring to the closing table.
 
-• Down payment: $22,500
-• Closing costs: about $11,250 (lender, title, recording, attorney)
-• Prepaids: about $4,500 (first-year insurance, escrow funding, prorated taxes)
-• Total: about $38,000
+Monthly payment is principal, interest, property taxes, homeowners insurance, and (when applicable) PMI. Each piece varies. Interest rates move weekly, property taxes vary by parcel, insurance varies by roof age and carrier. The only honest way to get your real number is to run it on your specific scenario.
 
-Monthly payment (PITI plus PMI):
+For that, Freddie Mac's free affordability calculator is the cleanest tool. It walks you through the inputs and returns a defensible estimate without committing you to a lender conversation.
 
-• Principal and interest: about $2,700
-• Property taxes with homestead exemption: about $375
-• Homeowners insurance: about $300
-• PMI until you hit 20% equity: about $250
-• Total: about $3,625 per month
+[Run the Freddie Mac affordability calculator]
 
-A few notes on the numbers.
+A few notes on what moves the numbers.
 
-The $450K scenario assumes a single-family home somewhere in the Orlando metro. Townhomes can come in lower. New-build can come in different, depending on what incentives the builder is running on the rate and closing costs.
+Townhomes typically come in lower than single-family homes in the same price band. New-build comes in differently depending on what incentives the builder is offering on rate or closing costs. Worth shopping; not worth assuming.
 
-FHA at 3.5% down exists. The lower down payment is real ($15,750), but the FHA mortgage insurance premium runs for the life of the loan, so the total monthly often lands close to conventional 5%. The right call depends on your credit profile and how long you plan to hold.
+FHA's lower down payment is real, but the FHA mortgage insurance premium runs for the life of the loan, so total monthly often lands close to a comparable conventional loan once you factor it in. The right loan type depends on your credit profile and how long you plan to hold.
 
-Insurance is the number that swings the most. A house with a 5-year-old roof in Altamonte Springs quotes very differently than a similar house with a 16-year-old roof in Apopka. The number above is a middle estimate. Your real quote comes from shopping carriers once you have a specific property.
+Insurance is the variable that swings the most in Florida. A house with a 5-year-old roof in Altamonte Springs quotes very differently than a similar house with a 16-year-old roof in Apopka. Build the insurance line into your offer math; don't treat it as a fixed national number.
 
-If you want me to run this math at a different price point or down payment, hit reply with what you want to see.
+If you want help reading what the calculator returns for your specific scenario, hit reply.
 
 -- Axel
 ```

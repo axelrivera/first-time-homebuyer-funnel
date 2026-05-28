@@ -42,8 +42,4 @@ The fix is to do those steps in reverse. Pre-approval first. Then walk through h
 If you do go to an open house this weekend, two things at the door. First, tell the agent you don't have a letter yet. Second, don't sign anything they put in front of you. Some will try to slide a Buyer Brokerage Agreement (BBA) across the table while you're admiring the kitchen island. That's not how you want to commit to working with an agent.
 
 -- Axel
-
-P.S. The roadmap walks the whole sequence (credit prep, lender call, targeted tours, offer mechanics) in the order they actually need to happen.
-
-{{fthb_lm2_optin_link}}
 ```

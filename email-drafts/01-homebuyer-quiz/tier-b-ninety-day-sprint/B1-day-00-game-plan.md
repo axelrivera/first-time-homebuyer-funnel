@@ -25,7 +25,7 @@ preview: "Miss the order and 90 days becomes 180 every time."
 ```
 Hey *|FIRST_NAME|*,
 
-Quick follow-up on your readiness score result.
+Quick follow-up on landing in the 90-Day Sprint tier.
 
 "90-Day Sprint" doesn't mean you have to rush. It means the gap between where you are now and keys in your hand is short enough that the order of events starts to matter. Miss the order and 90 days turns into 180 every time.
 
@@ -43,9 +43,9 @@ Two patterns show up in almost every "stuck at 180 days" story:
 
 If you start with the lender call this week, you can realistically be in a house roughly 90 days from now.
 
-The full version of that 90-day map is what I built into my roadmap. Nine steps, what you do, what your agent does, and how long each one actually takes:
+The full version of that 90-day map is what I built into the 10-Step First Home Roadmap. From "I Think I'm Ready" to keys in hand, every step of buying your first Orlando home. A step-by-step visual map of every milestone, decision, and potential mistake, so you walk in knowing more than most buyers who've done this before.
 
-{{fthb_lm2_optin_link}}
+[Get the 10-Step First Home Roadmap]
 
 Give it twenty minutes and you'll know exactly which week you're on.
 

@@ -48,7 +48,7 @@ Roof age is one of the biggest insurance variables in Florida. A roof past 15 ye
 
 And the thing every report misses: inspectors can't see behind drywall, under slabs, or inside sealed systems. They can flag symptoms (stains, smells, performance issues). They can't open a wall. If a finding makes you want to know more, call in a specialist (plumber, electrician, structural engineer) for a follow-up during your due-diligence period. That's what the period is for.
 
-If you want a short list of Orlando inspectors worth calling when you get to that stage, reply with "inspectors" and I'll send it over.
+If you want a starting point, reply 'inspectors' and I'll send a short list worth calling when you get to that stage. I receive no compensation, gift, or thing of value from any of them. Treat the list as a starting point, not a single recommendation.
 
 -- Axel
 ```

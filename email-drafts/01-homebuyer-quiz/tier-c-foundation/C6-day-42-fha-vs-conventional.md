@@ -45,7 +45,7 @@ The PMI difference is the big one in Florida.
 
 On a new FHA loan, the mortgage insurance is **permanent for the life of the loan**. The only way out is refinancing into a Conventional loan later.
 
-On a Conventional loan, PMI is **cancelable** at 20% equity. Principal paydown and appreciation combine to get you there. Once you're at 20%, you drop PMI and save $150–$280/month from that point on.
+On a Conventional loan, PMI is **cancelable** once you reach 20% equity (subject to lender requirements and the federal Homeowners Protection Act). Principal paydown and appreciation combine to get you there. Dropping PMI removes a monthly cost that varies by loan size, credit, and PMI provider; your lender can quote the exact figure for your loan.
 
 My rule of thumb:
 

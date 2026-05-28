@@ -25,38 +25,19 @@ preview: "Score gets you in the door. DTI decides how much house you can buy."
 ```
 *|FIRST_NAME|*,
 
-Most first-time buyers obsess over their credit score and ignore their debt-to-income ratio (DTI). Lenders do the opposite. Score gets you in the door; DTI gets you the loan amount.
+Most first-time buyers obsess over their credit score and ignore their debt-to-income ratio (DTI). Lenders do the opposite. Score gets you in the door. DTI decides the loan amount.
 
-DTI is a percentage. The math:
+The fastest way to see your number is Freddie Mac's free affordability calculator. Plug in your income, your existing monthly debts, and a target home price, and it returns a price range plus the DTI math behind it.
 
-DTI = (all your monthly debt payments) ÷ (gross monthly income)
+[Run the Freddie Mac affordability calculator]
 
-"All monthly debt payments" includes minimum credit card payments, car loans, student loans, child support, and (most importantly) the proposed mortgage payment (principal + interest + property tax + insurance + HOA + PMI if any).
+Two things to know when you read the output.
 
-Lenders draw two lines:
+First, the calculator's "max affordable price" is conservative. It uses 28% housing / 36% total-debt ratios by default. Real underwriting goes higher: most conventional loans allow back-end DTI up to 43%, FHA up to 50% in many cases. Treat the calculator's price as a floor, not your ceiling. The PITI estimate it produces (principal + interest + taxes + insurance) is what's solid.
 
-- Front-end DTI (housing payment alone, as % of income): most prefer under 28%. FHA accepts up to 31%.
-- Back-end DTI (housing payment + all other debt): most prefer under 43%. FHA accepts up to 50% in many cases.
+Second, for most first-time buyers in Orlando the bottleneck is back-end DTI, not front-end. Housing payment alone usually fits inside 28%. It's housing + car payment + student loans + minimum credit card payments that pushes total debt past 43% and shrinks the loan amount.
 
-The number that matters most in Orlando 2026 is the back-end. Most first-time buyers I see qualify for less than they expected because their car payment + student loans push their back-end DTI past 43%.
-
-A 15-minute exercise this week:
-
-1. List every monthly debt payment (minimums, not balances) on one page.
-2. Add a placeholder mortgage payment of $3,700 (a rough 2026 estimate for a $450K Orlando home with 3.5% down on FHA: principal + interest + taxes + insurance + MIP).
-3. Divide the total by your gross monthly income.
-
-Targeting a different home price? Use one of these to adjust step 2 (2026 Orlando, FHA, 3.5% down, all-in):
-
-- $350K home → $2,900/month
-- $400K home → $3,300/month
-- $450K home → $3,700/month
-- $500K home → $4,100/month
-- $600K home → $4,900/month
-
-Roughly +$400/month for each +$50K in home price.
-
-If that number is above 43%, your highest-leverage move is not saving more. It's paying off the debt with the smallest balance and highest minimum. One paid-off car loan can shift your DTI by 5–8 points, which can be the difference between qualifying for an Orlando home in your price band and not.
+If your back-end DTI lands above 43%, your highest-leverage move is not saving more. It's paying off the debt with the smallest balance and highest minimum. One paid-off car loan can shift back-end DTI by 5–8 points, which can be the difference between qualifying for an Orlando home in your price band and not.
 
 -- Axel
 ```

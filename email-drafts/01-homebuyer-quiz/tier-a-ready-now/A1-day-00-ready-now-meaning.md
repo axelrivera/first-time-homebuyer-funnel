@@ -25,7 +25,7 @@ preview: "The 30 days before closing are where deals fall apart. Don't be that b
 ```
 Hey *|FIRST_NAME|*,
 
-Quick follow-up on your readiness score.
+Quick follow-up on landing in the Ready Now tier.
 
 "Ready Now" doesn't just mean you can technically qualify for a mortgage. It means the gap between you and keys is short enough that timing matters in a way it doesn't for other tiers.
 

@@ -40,11 +40,11 @@ Five questions worth asking before you pick a lender:
 4. From contract to clear-to-close, how many days does your underwriting actually take?
 5. What happens if my credit score dings between pre-approval and closing?
 
-Talk to at least two lenders. A 0.25% rate difference on a $427,500 loan is about $70 a month, or roughly $25,000 over the life of the loan. That gap is enough to be worth a second phone call.
+Talk to at least two lenders. As an illustration only: a 0.25% rate difference on a roughly $425K, 30-year fixed loan works out to about $70 a month, or roughly $25,000 over the full term. Your numbers will differ based on actual rate, loan amount, term, and how long you hold the loan; treat this as a sanity-check on why shopping matters, not as a quote.
 
 A note on builder's preferred lenders. Sometimes they're the best deal in the room because the builder is buying down the rate or covering closing costs. Sometimes they're the worst because the markup gets buried in fees. Don't rule them out automatically. Don't take them automatically either. Compare.
 
-If you want a short list of Orlando lenders worth talking to, reply with "lender list" and I'll send it over.
+If you want a starting point, reply 'lender list' and I'll send a short list of Orlando lenders worth calling. I receive no compensation, gift, or thing of value from any of them. Shop at least three independently.
 
 -- Axel
 ```
