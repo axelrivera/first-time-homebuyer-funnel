@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier A"
 sequence_position: "Email 3 of 5"
 day: 5
 delay_from_previous: "3 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. Deliberate exception to the evening-for-clicks rule: the lead ask is a same-day, business-hours task (find the letter, check the wording, call the lender). Sits in the lower-middle of the 8-11 AM open peak (MailerLite 2026) with headroom so a Pipedrive send delay still lands inside the peak. Optimized for same-workday visibility, not the evening click window."
 subject: "Pre-qualified or pre-approved? One word costs you the house"
 preview: "Most letters say one. Sellers know the difference."
 ---

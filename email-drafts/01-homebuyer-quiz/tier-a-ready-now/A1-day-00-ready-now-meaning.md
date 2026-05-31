@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier A"
 sequence_position: "Email 1 of 5"
 day: 0
 delay_from_previous: "10 minutes (from automation enrollment)"
+send_time: "Trigger-based, not time-of-day scheduled (fires ~10 min after Email 0, whenever the quiz is taken). Strike-while-hot: send immediately, do not hold for a send window. No artificial jitter needed; enrollment times vary by contact, so the ~10-minute trigger already spreads these sends naturally."
 subject: "Ready Now: 3 rules between pre-approval and keys"
 preview: "The 30 days before closing are where deals fall apart. Don't be that buyer."
 ---

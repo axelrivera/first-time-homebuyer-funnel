@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier B"
 sequence_position: "Email 4 of 5 (extends Tier B beyond 3-email v2 minimum)"
 day: 9
 delay_from_previous: "4 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset. Educational read whose CTA is a reply to pull public records on a community (an action); sits just under the 8-9 PM weekday action peak (MailerLite 2026) so a Pipedrive send delay nudges delivery into it. Evening also suits the longer explanatory content."
 subject: "The $250/month surprise hiding in Florida property taxes"
 preview: "HOA dues and CDD assessments can rewrite your real monthly payment."
 ---

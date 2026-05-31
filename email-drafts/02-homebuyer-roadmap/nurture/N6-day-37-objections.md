@@ -7,6 +7,7 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 7 of 10 (nurture 6 of 9)"
 day: 37
 delay_from_previous: "7 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. Exception to this sequence's evening cadence: a no-CTA objection-handler whose only job is to be read and shift the reader's thinking before next week's BSS pitch, so it targets MailerLite's 2026 8-11 AM open peak rather than the evening action window. Sits in the lower-middle of that peak with headroom so a Pipedrive send delay still lands inside it."
 subject: "Wait for rates or buy now: the actual math"
 preview: "The two objections that cost first-time buyers more than the rate itself."
 ---

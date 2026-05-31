@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier C"
 sequence_position: "Email 3 of 9"
 day: 14
 delay_from_previous: "7 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. Nurture tier with no CTA at all, just a savings tip, so it is optimized purely for the open: targets MailerLite's 2026 8-11 AM open peak, not the evening action window. Sits in the lower-middle of that peak with headroom so a Pipedrive send delay still lands inside it."
 subject: "Your Orlando home fund is leaking money in checking"
 preview: "High-yield savings plus one naming trick. 10 minutes to set up."
 ---

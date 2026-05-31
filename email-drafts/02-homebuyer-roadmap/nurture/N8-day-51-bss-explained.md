@@ -7,6 +7,7 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 9 of 10 (nurture 8 of 9)"
 day: 51
 delay_from_previous: "7 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset. BSS pitch with a Book-the-BSS click CTA; sits just under the 8-9 PM weekday click peak (MailerLite 2026) so a Pipedrive send delay nudges delivery into it."
 subject: "What actually happens in a Buyer Strategy Session"
 preview: "30 minutes, line by line. Not a sales pitch."
 ---

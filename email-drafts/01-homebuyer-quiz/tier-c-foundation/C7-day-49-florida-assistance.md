@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier C"
 sequence_position: "Email 8 of 9"
 day: 49
 delay_from_previous: "7 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. Nurture tier: the goal is readership (an educational open), so it targets MailerLite's 2026 8-11 AM open peak, not the evening action window. Sits in the lower-middle of that peak with headroom so a Pipedrive send delay still lands inside it. The soft reply CTA (reply with your occupation to check Hometown Heroes eligibility) is a bonus, not the objective."
 subject: "The Florida money most first-time buyers never claim"
 preview: "Up to $35,000 in down-payment help. Most Florida buyers don't know it exists."
 ---

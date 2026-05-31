@@ -7,6 +7,7 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 3 of 10 (nurture 2 of 9)"
 day: 9
 delay_from_previous: "7 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset. The CTA is a reply (reply 'lender list'), an action; MailerLite's 2026 data puts the weekday action peak at 8-9 PM, so the window sits just under it for a Pipedrive send delay to nudge delivery into the peak."
 subject: "Pre-approval vs prequalification (most first-time buyers get this wrong)"
 preview: "One is a guess. The other is the letter sellers actually take seriously."
 ---

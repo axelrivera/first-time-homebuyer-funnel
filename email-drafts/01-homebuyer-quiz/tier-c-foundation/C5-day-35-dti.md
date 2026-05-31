@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier C"
 sequence_position: "Email 6 of 9"
 day: 35
 delay_from_previous: "7 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. Nurture tier: the goal is readership (an educational open), so it targets MailerLite's 2026 8-11 AM open peak. Sits in the lower-middle of that peak with headroom so a Pipedrive send delay still lands inside it. This is the one Tier C email with a clickable CTA ([Run the Freddie Mac affordability calculator]); if you'd rather optimize that click than the open, the 7:45-8:15 PM ET evening window (8-9 PM click peak) is the alternative, since running a calculator is an at-home, evening/weekend task."
 subject: "The number lenders actually care about (it isn't your score)"
 preview: "Score gets you in the door. DTI decides how much house you can buy."
 ---

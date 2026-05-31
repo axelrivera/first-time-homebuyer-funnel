@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier C"
 sequence_position: "Email 9 of 9 (final)"
 day: 56
 delay_from_previous: "7 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. Nurture-tier finale: for most readers it is a be-read closure, so it follows the rest of the series into MailerLite's 2026 8-11 AM open peak. Sits in the lower-middle of that peak with headroom so a Pipedrive send delay still lands inside it. It also carries a Roadmap (LM2) download CTA aimed at the minority who graduated toward Sprint territory; if you want to optimize that download click instead, the 7:45-8:15 PM ET evening window (8-9 PM click peak), or Friday ~5:40-5:55 PM for the 6 PM opens+clicks sweet spot, is the alternative."
 subject: "Last email in the Foundation series"
 preview: "8 weeks of playbook. Your move from here."
 ---

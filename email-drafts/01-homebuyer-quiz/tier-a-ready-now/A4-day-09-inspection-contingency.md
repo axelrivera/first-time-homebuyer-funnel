@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier A"
 sequence_position: "Email 4 of 5"
 day: 9
 delay_from_previous: "4 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset. Educational read carrying a Book-the-BSS CTA; sits just under the 8-9 PM weekday click peak (MailerLite 2026) so any Pipedrive send delay nudges delivery into it. Evening also suits the longer explanatory content and personal story."
 subject: "The Florida contingency that lets you walk and keep your deposit"
 preview: "The inspection period isn't about the inspector. It's your escape hatch."
 ---

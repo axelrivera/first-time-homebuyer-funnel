@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier C"
 sequence_position: "Email 1 of 9"
 day: 0
 delay_from_previous: "10 minutes (from automation enrollment)"
+send_time: "Trigger-based, not time-of-day scheduled (fires ~10 min after Email 0, whenever the quiz is taken). Strike-while-hot welcome: send immediately, do not hold for a send window. No artificial jitter needed; enrollment times vary by contact, so the ~10-minute trigger already spreads these sends naturally."
 subject: "Foundation Phase isn't a no, it's a not yet"
 preview: "8 short emails. 0% sales pitch. Here's what to expect."
 ---

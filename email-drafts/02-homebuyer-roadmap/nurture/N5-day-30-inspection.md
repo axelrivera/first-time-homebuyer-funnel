@@ -7,6 +7,7 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 6 of 10 (nurture 5 of 9)"
 day: 30
 delay_from_previous: "7 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset. The CTA is a reply (reply 'inspectors'), an action; MailerLite's 2026 data puts the weekday action peak at 8-9 PM, so the window sits just under it for a Pipedrive send delay to nudge delivery into the peak."
 subject: "The inspection report is not a pass or fail"
 preview: "What inspectors catch, what they miss, and the question to ask on every finding."
 ---

@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier A"
 sequence_position: "Email 2 of 5"
 day: 2
 delay_from_previous: "2 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset (avoid a fixed :00 so the batch doesn't look automated). Sits just under the 8-9 PM weekday action peak (MailerLite 2026) so any Pipedrive send delay nudges delivery into the peak rather than past it. Goal is an action (reply naming 1-2 areas); evening also suits the leisurely neighborhood read."
 subject: "Seminole vs. Orange: where your Orlando budget goes furthest"
 preview: "4 Orlando paths a Ready Now buyer should weigh. 90 seconds, end to end."
 ---

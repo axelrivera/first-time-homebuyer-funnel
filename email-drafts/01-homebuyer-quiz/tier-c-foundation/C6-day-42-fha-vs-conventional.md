@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier C"
 sequence_position: "Email 7 of 9"
 day: 42
 delay_from_previous: "7 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. Nurture tier: the goal is readership (an educational open), so it targets MailerLite's 2026 8-11 AM open peak, not the evening action window. Sits in the lower-middle of that peak with headroom so a Pipedrive send delay still lands inside it. The soft reply CTA (reply for a lender shortlist) is a bonus, not the objective."
 subject: "FHA or Conventional? Two rules of thumb"
 preview: "Credit score, DTI, down payment. 3 inputs, one clear answer."
 ---

@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier B"
 sequence_position: "Email 3 of 5 (drafted; v2 spec calls for 3 emails / 5 days — drafts extend the sequence to 14 days)"
 day: 5
 delay_from_previous: "3 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset. CTA is a reply for a lender shortlist (an action); sits just under the 8-9 PM weekday action peak (MailerLite 2026) so a Pipedrive send delay nudges delivery into it. The lender legwork is business-hours, but the email's own action is the reply, so it follows the evening window."
 subject: "The credit-score fear that keeps Orlando buyers from shopping lenders"
 preview: "Shopping 3 lenders in 14 days moves your score the same as shopping 1."
 ---

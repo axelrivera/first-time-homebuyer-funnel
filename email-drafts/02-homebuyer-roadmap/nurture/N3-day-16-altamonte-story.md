@@ -7,6 +7,7 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 4 of 10 (nurture 3 of 9)"
 day: 16
 delay_from_previous: "7 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset. The CTA is a reply (reply with an area for an honest read), an action; MailerLite's 2026 data puts the weekday action peak at 8-9 PM, so the window sits just under it for a Pipedrive send delay to nudge delivery into the peak. A personal story also suits an evening read."
 subject: "Why I almost missed Altamonte Springs"
 preview: "How a cycling habit changed where I bought my first home."
 ---

@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier B"
 sequence_position: "Email 2 of 3"
 day: 2
 delay_from_previous: "2 days"
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset, ideally on a Thursday or Friday. Sits just under the 8-9 PM weekday action peak (MailerLite 2026) so a Pipedrive send delay nudges delivery into it. CTA is a reply about a weekend open house, and the body references this Saturday, so a Thu/Fri evening send keeps that hook live; mid-week still works but the weekend reference weakens."
 subject: "Why open houses are wasting your Sundays"
 preview: "Pre-approval first. Then you can fall in love with a house you can actually buy."
 ---

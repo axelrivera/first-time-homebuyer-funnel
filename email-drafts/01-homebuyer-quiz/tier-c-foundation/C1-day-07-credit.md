@@ -8,6 +8,7 @@ automation: "FTHB LM1 - Tier C"
 sequence_position: "Email 2 of 9"
 day: 7
 delay_from_previous: "7 days"
+send_time: "Schedule window: 9:15-9:45 AM ET with a random per-contact offset. This is a nurture tier, not a conversion sequence: the goal is readership (an educational open), so it targets MailerLite's 2026 8-11 AM open peak rather than the evening action window used in Tier A/B. Sits in the lower-middle of that peak with headroom so a Pipedrive send delay still lands inside it. The soft reply CTA (offer to help dispute a credit-report error) is a bonus, not the objective."
 subject: "The one place to actually pull your credit (and why)"
 preview: "Not Credit Karma. Not your bank app. The free government-mandated site."
 ---
