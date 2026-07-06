@@ -33,7 +33,7 @@ Cash to close (what you bring on signing day) is your down payment plus closing 
 
 Monthly payment is principal, interest, property taxes, homeowners insurance, and (when applicable) PMI. Each piece varies. Interest rates move weekly, property taxes vary by parcel, insurance varies by roof age and carrier. The only honest way to get your real number is to run it on your specific scenario.
 
-For that, my affordability calculator is the cleanest tool. Enter your income and monthly debts and it returns both numbers, cash to close and a full monthly payment breakdown, built on real Central Florida property tax and insurance instead of national averages. No email, no lender call yet.
+For that, my affordability calculator is the cleanest tool. Enter your income and monthly debts and it returns both numbers, cash to close and a full monthly payment breakdown, built on real Central Florida property tax and insurance instead of national averages.
 
 [Run the affordability calculator]
 
