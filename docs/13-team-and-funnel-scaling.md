@@ -16,12 +16,12 @@ A three-year build from solo to the efficient endpoint. Each year ends with more
 
 | Year | Selling agents | Support | Funnels live | Annual transactions | Annual gross GCI |
 |---|---|---|---|---|---|
-| 1, ramp (months 1–6) | 1 | None (building audience from scratch) | FTHB | 2–5 | $23K–$56K |
-| 1, productive (months 7–12) | 1 | TC trigger fires when ready | FTHB | 13–20 | $146K–$225K |
-| 2 | 2, then 3 mid-year | TC | FTHB, then +Sellers mid-year | 42–68 | $492K–$791K |
-| 3 | 4, then 5 mid-year | TC + content lead, then +showing assistant | +Relocation, then +Move-Up (all four) | 135–180 | $1,675K–$2,244K |
+| 1, ramp (months 1–6) | 1 | None (building audience from scratch) | FTHB | 2–5 | $16K–$39K |
+| 1, productive (months 7–12) | 1 | TC trigger fires when ready | FTHB | 13–20 | $101K–$155K |
+| 2 | 2, then 3 mid-year | TC | FTHB, then +Sellers mid-year | 42–68 | $350K–$565K |
+| 3 | 4, then 5 mid-year | TC + content lead, then +showing assistant | +Relocation, then +Move-Up (all four) | 135–180 | $1,490K–$1,980K |
 
-Year 4 and beyond is steady state at the efficient endpoint: ~175–225 transactions and ~$2.2M–$2.8M gross GCI per year, with the same team configuration as end of Year 3.
+Year 4 and beyond is steady state at the efficient endpoint: ~175–225 transactions and ~$2.05M–$2.76M gross GCI per year, with the same team configuration as end of Year 3.
 
 Going faster than this means burning capital on infrastructure ahead of demand. Going slower means leaving compounding funnel ROI on the table once content matures.
 
@@ -50,10 +50,11 @@ Every number in this doc is derived from this list. Change one and the rest move
 
 ### Ticket size and commission
 
-- **FTHB average sale**: $450K. Source: project memory ([feedback_anchor_price_450k](../CLAUDE.md)).
-- **Buyer-side commission**: 2.5% = **$11,250 gross GCI per FTHB transaction**.
-- **Diversified mix average GCI** (when all four funnels are live): ~$12,500 per transaction. Move-Up buy and Relocation push the average up.
-- **Brokerage split**: assume 20% to brokerage. Adjust for your actual split.
+- **FTHB buyer-side average sale (revenue model)**: ~$310K. Calibrated to real Orlando buyer/entry-weighted teams (see "Real-world benchmarks" below). This is the number every revenue table in this doc is built on.
+- **FTHB copy anchor**: $450K stays the illustrative anchor in buyer-facing copy (down-payment / loan / monthly-payment math), per project memory ([feedback_anchor_price_450k](../CLAUDE.md)). The two numbers do different jobs: $450K is a round, aspirational anchor for copy; ~$310K is the realistic blended buyer-side ticket for planning revenue. Do not use $450K in this doc's revenue math.
+- **Buyer-side commission**: 2.5% = **~$7,750 gross GCI per FTHB transaction** (at ~$310K).
+- **Per-funnel GCI when all four are live**: FTHB buyer-side ~$7,750, Sellers ~$11,875, Relocation ~$12,500, Move-Up ~$12,500/side. **Diversified mix average**: ~$11,000 per transaction. FTHB is the thinnest-margin funnel; the higher-ticket listing and move-up funnels pull the blend up.
+- **Brokerage cost**: tables assume a **20%-to-brokerage baseline** (a conventional percentage split). If team members use LPT Realty's flat-fee plan ($500/file capped at $5,000/year, no monthly fees), member take-home runs meaningfully higher; see "Pay structure considerations" for the side-by-side. Adjust for your actual brokerage.
 
 ### Top-of-funnel scaling
 
@@ -76,6 +77,23 @@ Sub-linear scaling because additional agents share content production and have o
 | Transaction Coordinator (TC) | $55K–$65K | ~150 transactions/year before quality erodes |
 | Showing assistant (junior licensed agent) | $40K–$55K base + small commission split | 2–3 senior buyer's agents |
 | Content lead | $55K–$75K | All four funnels' content production |
+
+### Real-world benchmarks (2026 RealTrends Verified)
+
+Three Orlando-area teams calibrate the assumptions above. All figures are 2026 RealTrends Verified.
+
+| Team | Brokerage / category | Focus | Selling agents | Sides | Sides/agent | Avg ticket | Volume |
+|---|---|---|---|---|---|---|---|
+| **The Acevedo Team** | eXp / Small | Buyer / entry | 5 (+1 coordinator) | 166 | ~33 | **$305.5K** | $50.71M |
+| The Dan Grieb Team | KW / Small | Listing | 3–5 | 221 | 44–74 | $428.3K | $94.64M |
+| The Global Team | LPT / Enterprise | Cloud roster | 51+ | 344 | ~7 | $273.6K | $94.11M |
+
+What they tell us:
+
+- **Buyer-side ticket is ~$300–315K, not $450K.** Listing-weighted teams run high tickets (Dan Grieb, $428.3K); buyer/entry-weighted teams run low (Acevedo, $305.5K; Global, $273.6K). First-time buyers buy entry-level homes, so the buyer side of this funnel lives at the bottom of that range. This is why the revenue model uses ~$310K even though copy keeps the $450K anchor.
+- **Per-agent buyer-side capacity (~25–35) is well-calibrated.** Acevedo's ~33 sides/agent (5 agents, one coordinator for support) validates the "Agent + shared TC" and "+ showing assistant" tiers in the capacity table above. No change needed.
+- **The efficiency thesis is real.** A handful of agents match or approach a 51+ agent cloud roster's dollar output. The Stage 6 endpoint volume (~$90M) is genuinely top-tier-Florida territory: Dan Grieb hits $94.6M with ~3–5 agents.
+- **Two caveats keep this honest.** Dan Grieb's high sides/agent reflects listing work (less time per side than buyer work), so it does not transfer to buyer-side capacity. The Global Team's ~7 sides/agent reflects a mostly-inactive cloud roster, not a production team. Acevedo is the clean buyer-side comp.
 
 ---
 
@@ -104,10 +122,10 @@ The funnel also lives on the agent's personal website at this stage (axelrivera.
 
 | Phase | Months | LM1/mo | Closings/year (uncapped) | Capacity | Actual closings | Gross GCI |
 |---|---|---|---|---|---|---|
-| Slow start | 1–3 | 5–15 | 4–11 | 15–20 | 4–10 | $45K–$113K |
-| Steady state | 4–12 | 20–40 | 14–29 | 15–20 | 14–20 | **$158K–$225K** |
+| Slow start | 1–3 | 5–15 | 4–11 | 15–20 | 4–10 | $31K–$78K |
+| Steady state | 4–12 | 20–40 | 14–29 | 15–20 | 14–20 | **$109K–$155K** |
 
-Year 1 annualized: roughly **15–25 closings, $169K–$281K gross GCI**. Net of brokerage split (~20%) and operating costs: ~$125K–$215K to you.
+Year 1 annualized: roughly **15–25 closings, $116K–$194K gross GCI**. Net of brokerage split (~20%) and operating costs: ~$85K–$150K to you.
 
 ### Trigger to move to Stage 2 (add a TC)
 
@@ -115,7 +133,7 @@ Move when **all three** are true:
 
 1. **2+ closings/month sustained for 3+ months**. Not aspirational. Already happening.
 2. **Admin debt is slipping**. Examples: lender follow-up emails sitting 2+ days, inspection scheduling reactive instead of proactive, post-close gift / referral asks falling off because there's no time.
-3. **You have ~$60K of forecastable annual GCI to commit to a TC salary**. At ~2.5 closings/month × 12 = 30 closings × $11,250 = $338K gross → ~$270K after brokerage → covers a TC plus your income.
+3. **You have ~$60K of forecastable annual GCI to commit to a TC salary**. At ~2.5 closings/month × 12 = 30 closings × $7,750 = $233K gross → ~$186K after brokerage → covers a TC plus your income.
 
 Don't add the TC earlier. Below 15 closings/year the TC cost outpaces the admin pain.
 
@@ -137,8 +155,8 @@ Three growth moves on the team side, each gated by specific triggers.
 
 | Phase | LM1/mo | Closings/year | Capacity | Actual | Gross GCI | Net of TC + brokerage |
 |---|---|---|---|---|---|---|
-| Steady state | 30–50 | 22–36 | 25–30 | 22–30 | $248K–$338K | $138K–$210K (your take) |
-| Year 2 momentum | 50–90 | 36–65 | 25–30 | **25–30** (capped) | $281K–$338K | $165K–$210K |
+| Steady state | 30–50 | 22–36 | 25–30 | 22–30 | $171K–$233K | $77K–$126K (your take) |
+| Year 2 momentum | 50–90 | 36–65 | 25–30 | **25–30** (capped) | $194K–$233K | $95K–$126K |
 
 You hit capacity in year 2 momentum. The funnel is now producing 30–60% more demand than you can serve. Time to decide: 2nd agent (Stage 3) or 2nd funnel.
 
@@ -166,10 +184,10 @@ Without these, the second agent has nothing to own and you end up doing all the 
 
 | Phase | LM1/mo | Closings/year | Capacity | Actual | Gross GCI | Per-agent net |
 |---|---|---|---|---|---|---|
-| Steady state | 35–65 | 25–47 | 50–60 | 25–47 | $281K–$529K | $112K–$212K each |
-| Year 2 momentum | 70–130 | 50–94 | 50–60 | 50–60 (capped) | $563K–$675K | $225K–$270K each |
+| Steady state | 35–65 | 25–47 | 50–60 | 25–47 | $194K–$364K | $48K–$116K each |
+| Year 2 momentum | 70–130 | 50–94 | 50–60 | 50–60 (capped) | $388K–$465K | $125K–$156K each |
 
-Per-agent net is best at this stage. Two agents share the TC cost and the funnel's lead volume neatly. Adding the 3rd agent only makes sense once volume saturates this configuration.
+Two agents share the TC cost and the funnel's lead volume neatly. But per-agent net here ($125K–$156K at capacity) still trails the later multi-funnel stages because the pure-FTHB buyer-side margin is thin. Adding the 3rd agent only makes sense once volume saturates this configuration and you're ready to layer in the higher-ticket Sellers funnel (Part 3).
 
 ### Brand and website transition
 
@@ -230,9 +248,9 @@ Build hours are agent-or-contractor time. At an internal time value of $75–$15
 
 | Funnel | LM1/month | Tier A+B | Close rate | Avg GCI | Annual closings | Annual GCI |
 |---|---|---|---|---|---|---|
-| FTHB | 50–90 | 60% | 10% | $11,250 | 36–65 | $405K–$731K |
+| FTHB | 50–90 | 60% | 10% | $7,750 | 36–65 | $279K–$504K |
 | Sellers | 40–80 | 50% | 4% | $11,875 | 10–19 | $119K–$226K |
-| **Total** | **90–170** | | | | **46–84** | **$524K–$957K** |
+| **Total** | **90–170** | | | | **46–84** | **$398K–$730K** |
 
 Sellers close rate is much lower than FTHB (4% vs 10%) because "What's my home worth?" attracts a much wider audience including many tire-kickers. Volume is high; conversion is selective.
 
@@ -240,10 +258,10 @@ Sellers close rate is much lower than FTHB (4% vs 10%) because "What's my home w
 
 | Phase | Combined closings/year | Capacity (3 agents) | Actual | Gross GCI | Total team net |
 |---|---|---|---|---|---|
-| Steady state | 46–84 | 75–90 | 46–84 | $524K–$957K | $379K–$706K |
-| Year 2 momentum | 90–150 | 75–90 | **75–90** (capped) | $880K–$1,055K | $644K–$784K |
+| Steady state | 46–84 | 75–90 | 46–84 | $398K–$730K | $258K–$524K |
+| Year 2 momentum | 90–150 | 75–90 | **75–90** (capped) | $664K–$854K | $471K–$623K |
 
-Per-agent net: ~$215K–$261K at steady, ~$215K–$261K at momentum. The team is leaving demand on the table once capped, but per-agent earnings hold.
+Per-agent net: ~$86K–$174K at steady, ~$157K–$208K at momentum. Adding the higher-ticket Sellers funnel is what starts lifting per-agent net above the thin pure-FTHB stages.
 
 ### When to add Relocation (Stage 5)
 
@@ -259,17 +277,17 @@ Per-agent net: ~$215K–$261K at steady, ~$215K–$261K at momentum. The team is
 
 | Funnel | LM1/month | Annual closings | Annual GCI |
 |---|---|---|---|
-| FTHB | 65–115 | 47–83 | $529K–$934K |
+| FTHB | 65–115 | 47–83 | $364K–$643K |
 | Sellers | 50–100 | 12–24 | $143K–$285K |
 | Relocation | 30–60 | 28–56 | $350K–$700K |
-| **Total** | **145–275** | **87–163** | **$1,022K–$1,919K** |
+| **Total** | **145–275** | **87–163** | **$857K–$1,628K** |
 
 Capacity at 4 agents + TC + content lead: ~100–120 transactions. Hits cap in year 2.
 
 | Phase | Combined closings/year | Capacity | Actual | Gross GCI | Per-agent net |
 |---|---|---|---|---|---|
-| Steady state | 87–163 | 100–120 | 87–120 | $1,022K–$1,425K | $204K–$285K |
-| Year 2 momentum | 160–280 | 100–120 | **100–120** (capped) | $1,250K–$1,500K | $250K–$300K |
+| Steady state | 87–163 | 100–120 | 87–120 | $857K–$1,295K | $140K–$228K |
+| Year 2 momentum | 160–280 | 100–120 | **100–120** (capped) | $1,140K–$1,295K | $197K–$228K |
 
 ### When to add Move-Up (Stage 6)
 
@@ -285,18 +303,18 @@ Capacity at 4 agents + TC + content lead: ~100–120 transactions. Hits cap in y
 
 | Funnel | LM1/month | Annual transactions (uncapped) | Annual GCI |
 |---|---|---|---|
-| FTHB | 80–150 | 60–108 | $675K–$1,215K |
+| FTHB | 80–150 | 60–108 | $465K–$837K |
 | Sellers | 100–200 | 60–120 listings | $713K–$1,425K |
 | Relocation | 40–80 | 37–75 | $463K–$938K |
 | Move-Up | 30–60 | 57–114 (38–76 families × 1.5 sides avg) | $713K–$1,425K |
-| **Total** | **250–490** | **214–417** | **$2.6M–$5.0M** |
+| **Total** | **250–490** | **214–417** | **$2.35M–$4.6M** |
 
 Capacity at 5 agents + TC + showing assistant: 175–225 transactions. So actual capture is roughly 50–80% of uncapped demand.
 
 | Phase | Uncapped transactions | Capacity | Actual | Gross GCI (mix-optimized) |
 |---|---|---|---|---|
-| Steady state | 130–250 | 175–225 | 130–225 | $1,625K–$2,813K |
-| Compounding year 3+ | 300–500 | 175–225 | **175–225** (capped) | $2,188K–$2,813K |
+| Steady state | 130–250 | 175–225 | 130–225 | $1,600K–$2,756K |
+| Compounding year 3+ | 300–500 | 175–225 | **175–225** (capped) | $2,050K–$2,756K |
 
 ---
 
@@ -308,29 +326,29 @@ All numbers gross GCI before brokerage split. Net to team = ~80% of gross (assum
 
 | Stage | Team | Funnels | Avg closings/mo | Avg gross GCI/mo |
 |---|---|---|---|---|
-| 1 | Solo | FTHB | 1–2 | $11K–$23K |
-| 2 | Solo + TC | FTHB | 2–3 | $23K–$34K |
-| 3 | 2 agents + TC | FTHB | 4–5 | $45K–$56K |
-| 4 | 3 agents + TC | FTHB + Sellers | 6–7 | $73K–$84K |
-| 5 | 4 agents + TC + CL | FTHB + Sellers + Reloc | 8–10 | $97K–$125K |
-| 6 | 5 agents + TC + SA + CL | All four | 15–19 | $182K–$234K |
+| 1 | Solo | FTHB | 1–2 | $8K–$16K |
+| 2 | Solo + TC | FTHB | 2–3 | $16K–$23K |
+| 3 | 2 agents + TC | FTHB | 4–5 | $31K–$39K |
+| 4 | 3 agents + TC | FTHB + Sellers | 6–7 | $52K–$61K |
+| 5 | 4 agents + TC + CL | FTHB + Sellers + Reloc | 8–10 | $79K–$99K |
+| 6 | 5 agents + TC + SA + CL | All four | 15–19 | $180K–$228K |
 
 ### Yearly revenue and team economics
 
 | Stage | Closings/yr | Gross GCI | Brokerage split (20%) | Team net | Support costs | Net to agents | Per agent |
 |---|---|---|---|---|---|---|---|
-| 1 | 15–25 | $169K–$281K | -$34K–$56K | $135K–$225K | $0 | $135K–$225K | $135K–$225K |
-| 2 | 22–30 | $248K–$338K | -$50K–$68K | $198K–$270K | $60K (TC) | $138K–$210K | $138K–$210K |
-| 3 | 50–60 | $563K–$675K | -$113K–$135K | $450K–$540K | $60K | $390K–$480K | **$195K–$240K** |
-| 4 | 75–90 | $880K–$1,055K | -$176K–$211K | $704K–$844K | $60K | $644K–$784K | **$215K–$261K** |
-| 5 | 100–120 | $1,250K–$1,500K | -$250K–$300K | $1,000K–$1,200K | $125K (TC + CL) | $875K–$1,075K | **$219K–$269K** |
-| 6 | 175–225 | $2,188K–$2,813K | -$438K–$563K | $1,750K–$2,250K | $180K (TC + CL + SA) | $1,570K–$2,070K | **$314K–$414K** |
+| 1 | 15–25 | $116K–$194K | -$23K–$39K | $93K–$155K | $0 | $93K–$155K | $93K–$155K |
+| 2 | 22–30 | $171K–$233K | -$34K–$47K | $137K–$186K | $60K (TC) | $77K–$126K | $77K–$126K |
+| 3 | 50–60 | $388K–$465K | -$78K–$93K | $310K–$372K | $60K | $250K–$312K | **$125K–$156K** |
+| 4 | 75–90 | $664K–$854K | -$133K–$171K | $531K–$683K | $60K | $471K–$623K | **$157K–$208K** |
+| 5 | 100–120 | $1,140K–$1,295K | -$228K–$259K | $912K–$1,036K | $125K (TC + CL) | $787K–$911K | **$197K–$228K** |
+| 6 | 175–225 | $2,050K–$2,756K | -$410K–$551K | $1,640K–$2,205K | $180K (TC + CL + SA) | $1,460K–$2,025K | **$292K–$405K** |
 
 ### What the comparison reveals
 
-**Per-agent earnings stay roughly flat from Stage 3 through Stage 5** (around $215K–$270K) even as total revenue triples. Each new selling agent captures roughly their own keep, plus marginal gains from funnel diversification.
+**Per-agent earnings climb steadily from Stage 3 to Stage 5** (roughly $125K to $228K at capacity) as higher-ticket Sellers and Relocation volume lifts the blend above the thin FTHB buyer-side margin. The pure-FTHB early stages (1–3) are the lean years; funnel diversification is what makes the per-agent math work.
 
-**Stage 6 jumps per-agent earnings 40%+** because the showing assistant unlocks the high-volume FTHB seats and Move-Up dual-sided commission lifts the per-transaction average.
+**Stage 6 jumps per-agent earnings ~50%+** because the showing assistant unlocks the high-volume FTHB seats and Move-Up dual-sided commission lifts the per-transaction average.
 
 **Stages 4 and 5 are transition stages, not destinations.** They're worth running through deliberately because the operational learning matters (lead routing, multi-funnel content, listing-side workflow), but the economic argument for living in them long-term is weak. Either commit to Stage 6 or retreat to Stage 3 with a tighter FTHB focus.
 
@@ -344,12 +362,14 @@ A team where agents are unhappy is a team that loses agents. Real estate has 100
 
 | Stage | Configuration | Per-agent net | What makes it work |
 |---|---|---|---|
-| 1 | Solo | $135K–$225K | You set your own hours; no team overhead |
-| 2 | Solo + TC | $138K–$210K | TC absorbs admin; you take all transactions |
-| 3 | 2 agents + TC | $195K–$240K | Capacity used well; clear sphere ownership |
-| 4 | 3 agents + TC | $215K–$261K | One agent gravitates to listings; clear specialization |
-| 5 | 4 agents + TC + CL | $219K–$269K | Content lead removes the dreaded content load |
-| 6 | 5 agents + TC + SA + CL | $314K–$414K | Specialization + showing assistant + mix uplift |
+| 1 | Solo | $93K–$155K | You set your own hours; no team overhead |
+| 2 | Solo + TC | $77K–$126K | TC absorbs admin; you take all transactions |
+| 3 | 2 agents + TC | $125K–$156K | Capacity used well; clear sphere ownership |
+| 4 | 3 agents + TC | $157K–$208K | One agent gravitates to listings; clear specialization |
+| 5 | 4 agents + TC + CL | $197K–$228K | Content lead removes the dreaded content load |
+| 6 | 5 agents + TC + SA + CL | $292K–$405K | Specialization + showing assistant + mix uplift |
+
+These figures use the conservative 20%-brokerage baseline. On LPT's flat-fee member plan, team-member take-home runs higher (≈$113K–$151K vs $93K–$124K at 25 FTHB deals); see "Pay structure considerations" for the side-by-side.
 
 ### Agent-satisfaction factors at each stage
 
@@ -383,13 +403,27 @@ Watch for these. Each is solvable but only if caught early.
 
 ### Pay structure considerations
 
-Out of scope for this doc to prescribe a specific split structure, but the model assumes:
+Out of scope for this doc to prescribe a specific split structure, but the model assumes a **percentage-split baseline** (used in all tables above):
 
-- Agent commission split with brokerage: 80% to agent (assumed in this doc; varies by brokerage)
-- Within team: team lead takes 20–40% of agent's portion in exchange for funnel-generated leads and admin support
+- Agent commission split with brokerage: 80% to agent (i.e., 20% to brokerage; varies by brokerage)
+- Within team: team lead takes 20–40% of the agent's post-brokerage portion in exchange for funnel-generated leads and admin support
 - Net to agent: roughly 48–64% of gross commission
 
-For an agent doing 25 FTHB closings/year at $11,250 GCI each = $281K gross → roughly $135K–$180K to the agent. Per-agent net earnings in the tables above are approximations of this number.
+For an agent doing 25 FTHB closings/year at $7,750 GCI each = $194K gross → roughly $93K–$124K to the agent. Per-agent net earnings in the tables above are approximations of this number.
+
+**The LPT flat-fee alternative (changes the math for team members).** LPT Realty lets team *members* sit on the Business Builder plan: a flat **$500 per transaction, capped at $5,000/year**, with no monthly fees, no franchise/royalty fees, and E&O covered. Team *leads* must be on the 80/20 plan (capped at $15,000/year, then $195/file) to lead a team and earn revenue share (LPT published fee schedule, 2025). The flat fee replaces the 20% brokerage skim with a hard $5K annual ceiling, which is what creates the "more room" in the team split:
+
+| | Percentage baseline (20%) | LPT flat-fee member |
+|---|---|---|
+| Gross GCI (25 deals × $7,750) | $193,750 | $193,750 |
+| Brokerage cost | $38,750 (20%) | $5,000 (capped; ~2.6% effective) |
+| Divisible pool (lead + agent) | $155,000 | $188,750 |
+| Team split to lead (20–40% of pool) | $31,000–$62,000 | $37,750–$75,500 |
+| **Net to agent** | **$93,000–$124,000** | **$113,250–$151,000** |
+
+That is ~$20K–$27K more per agent per year at this volume, or equivalently, room for the lead to take a larger split while the agent still out-earns a franchise seat. The effect is **largest for high-volume, low-ticket work**: the $5K cap is a smaller share of GCI the more you produce, and a flat fee ignores ticket size entirely. That is exactly the FTHB buyer-side profile this funnel generates. A listing/luxury team at $700K+ tickets captures far less of this edge.
+
+The trade is not about volume on the cost side (the $5K flat cap beats the $15K split cap at essentially any Orlando-ticket volume); it is that the flat-fee plan forgoes revenue share and the ability to lead a team. For a pure team member who is not recruiting, that is usually an easy trade: lower brokerage cost, more take-home. The team lead carries the 80/20 plan precisely so they *can* lead and recruit.
 
 ---
 
@@ -503,6 +537,7 @@ These numbers are starting points. They get tightened against real data.
 | When | What to review | Why |
 |---|---|---|
 | After 25 FTHB closings | Quiz Taken → Won conversion rate | The 10% in [09-deal-pipeline-stages.md](09-deal-pipeline-stages.md) is an industry benchmark; your actual will land within 5–15% |
+| After 25 FTHB closings | Buyer-side average sale price | The ~$310K in the revenue model is calibrated to comparable Orlando buyer/entry teams (Acevedo $305.5K, Global Team $273.6K); your actual closed-deal average may differ and every GCI figure scales with it |
 | After ~30 LM2 downloads | Received Roadmap → BSS Booked rate | The 50% planning estimate predates the redesigned 58-day Roadmap sequence with three escalating BSS pitches (days 44, 51, 58). The longer sequence may lift conversion; cold-standalone downloaders in the same pool may dilute it. Measure both segments separately if Make.com tags allow |
 | After 6 months of consistent content | LM1 submissions/month at your specific content cadence | Top-of-funnel scaling estimates here assume "25–30 pieces/week of educational content"; calibrate against what you actually produce |
 | After 12 months | Tier mix (A+B vs C) | The 60% Tier A+B assumption depends on your audience targeting; paid traffic or broad social would push it lower |
