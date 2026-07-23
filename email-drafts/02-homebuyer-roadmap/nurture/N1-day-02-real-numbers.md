@@ -7,7 +7,7 @@ automation: "FTHB LM2 - Roadmap"
 sequence_position: "Email 2 of 10 (nurture 1 of 9)"
 day: 2
 delay_from_previous: "2 days"
-send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset (avoid a fixed :00 so the batch doesn't look automated). The CTA is a click ([Run the affordability calculator]); MailerLite's 2026 data puts the weekday click peak at 8-9 PM, so the window sits just under it for a Pipedrive send delay to nudge delivery into the peak. Running a calculator is also an at-home, evening task."
+send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset (avoid a fixed :00 so the batch doesn't look automated). The CTA is a click ([Open the affordability calculator]); MailerLite's 2026 data puts the weekday click peak at 8-9 PM, so the window sits just under it for a Pipedrive send delay to nudge delivery into the peak. Running a calculator is also an at-home, evening task."
 subject: "Two numbers to size up before making an Orlando offer"
 preview: "Cash to close, monthly payment, and the cleanest tool to ballpark both."
 ---
@@ -33,9 +33,9 @@ Cash to close (what you bring on signing day) is your down payment plus closing 
 
 Monthly payment is principal, interest, property taxes, homeowners insurance, and (when applicable) PMI. Each piece varies. Interest rates move weekly, property taxes vary by parcel, insurance varies by roof age and carrier. The only honest way to get your real number is to run it on your specific scenario.
 
-For that, my affordability calculator is the cleanest tool. Enter your income and monthly debts and it returns both numbers, cash to close and a full monthly payment breakdown, built on real Central Florida property tax and insurance instead of national averages.
+For that, my affordability calculator turns these two into your real numbers, built on real Central Florida property tax and insurance instead of national averages. If you ran it on your way in, go back and tighten the inputs now that you have the roadmap. If you haven't yet, enter your income and monthly debts and it returns both, cash to close and a full monthly payment breakdown.
 
-[Run the affordability calculator]
+[Open the affordability calculator]
 
 A few notes on what moves the numbers.
 
