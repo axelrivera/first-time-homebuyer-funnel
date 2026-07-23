@@ -37,9 +37,9 @@ It's free. No obligation to sign anything. Sometimes the session ends with "you'
 
 Two ways to set it up.
 
-[Book the Buyer Strategy Session]
+Book the Buyer Strategy Session
 
 Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
 
--- Axel
+-Axel
 ```

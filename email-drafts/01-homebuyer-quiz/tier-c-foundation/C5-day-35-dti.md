@@ -24,7 +24,7 @@ preview: "Score gets you in the door. DTI decides how much house you can buy."
 ---
 
 ```
-*|FIRST_NAME|*,
+Hey *|FIRST_NAME|*,
 
 Most first-time buyers obsess over their credit score and ignore their debt-to-income ratio (DTI). Lenders do the opposite. Score gets you in the door. DTI decides the loan amount.
 
@@ -40,5 +40,5 @@ Second, for most first-time buyers in Orlando the bottleneck is back-end DTI, no
 
 If your back-end DTI lands above 45%, your highest-leverage move is not saving more. It's paying off the debt with the smallest balance and highest minimum. One paid-off car loan can shift back-end DTI by 5–8 points, which can be the difference between qualifying for an Orlando home in your price band and not.
 
--- Axel
+-Axel
 ```

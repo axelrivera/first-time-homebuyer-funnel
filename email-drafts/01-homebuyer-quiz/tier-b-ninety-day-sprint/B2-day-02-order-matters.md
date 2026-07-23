@@ -44,5 +44,5 @@ If you do go to an open house this weekend, two things at the door. First, tell 
 
 If you're going to an open house this Saturday anyway, reply with the address and I'll pull what's publicly available on the listing (CDD, HOA dues, permit history, tax breakdown) so you walk in knowing what to ask. Takes me about 15 minutes.
 
--- Axel
+-Axel
 ```

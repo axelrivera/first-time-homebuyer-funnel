@@ -38,5 +38,5 @@ When credit, savings, or debt moves meaningfully for you, reply and tell me wher
 
 First real email comes in next week.
 
--- Axel
+-Axel
 ```

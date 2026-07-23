@@ -24,7 +24,7 @@ preview: "High-yield savings plus one naming trick. 10 minutes to set up."
 ---
 
 ```
-*|FIRST_NAME|*,
+Hey *|FIRST_NAME|*,
 
 If you're saving for a down payment, the worst place that money can be is in a regular checking account. Two reasons: it earns nothing, and it gets spent.
 
@@ -34,5 +34,5 @@ Rates move with the Fed, so shop around when you open one and recheck once a yea
 
 Bonus move: name the account "Orlando Home Fund." Sounds dumb, but it works. It's measurably harder to pull money out of an account with a goal name on it.
 
--- Axel
+-Axel
 ```

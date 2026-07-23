@@ -48,5 +48,5 @@ If the listing mentions a CDD, or if the community looks newer than about 2005, 
 
 If you're eyeing a specific community and want me to pull what's publicly available before you write an offer (CDD assessment, full tax breakdown, HOA dues from the MLS listing, anything I can find in public records), reply with the address or community name. Takes me about 15 minutes.
 
--- Axel
+-Axel
 ```

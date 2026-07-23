@@ -24,7 +24,7 @@ preview: "Credit score, DTI, down payment. 3 inputs, one clear answer."
 ---
 
 ```
-*|FIRST_NAME|*,
+Hey *|FIRST_NAME|*,
 
 The biggest loan-choice decision most first-time buyers in Orlando face: FHA or Conventional? Both work. The trade-offs are specific.
 
@@ -58,5 +58,5 @@ Edge cases (recent self-employment, gift funds, manual underwrites, non-traditio
 
 If you don't have a starting set of Orlando lenders to call, reply and I'll send 2-3 names worth adding to your shortlist. I receive no compensation, gift, or thing of value from any of them. Shop at least three independently.
 
--- Axel
+-Axel
 ```

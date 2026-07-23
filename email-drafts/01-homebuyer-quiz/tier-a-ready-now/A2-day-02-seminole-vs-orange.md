@@ -38,5 +38,5 @@ If your budget stretches into the high $500s, there's a fourth path worth a look
 
 If you've narrowed to 1 or 2 areas (or are choosing between two paths above), reply with the names. I'll send a market data snapshot for each: recent sales, price trends, days on market, and what's currently active in your price band. About 15 minutes of work on my end.
 
--- Axel
+- Axel
 ```

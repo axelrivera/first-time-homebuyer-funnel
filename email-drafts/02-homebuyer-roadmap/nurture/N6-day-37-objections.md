@@ -55,5 +55,5 @@ Rates might drop and I need a bigger down payment usually aren't.
 
 If something in your specific situation actually makes waiting the right call, the Buyer Strategy Session is the place to walk through it. More on that next week.
 
--- Axel
+-Axel
 ```

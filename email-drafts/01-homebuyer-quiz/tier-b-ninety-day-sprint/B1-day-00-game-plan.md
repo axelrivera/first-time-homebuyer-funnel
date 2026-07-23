@@ -56,5 +56,5 @@ The full version of that 90-day map is what I built into The 10-Step First Home 
 
 Give it twenty minutes and you'll know exactly which week you're on.
 
--- Axel
+-Axel
 ```

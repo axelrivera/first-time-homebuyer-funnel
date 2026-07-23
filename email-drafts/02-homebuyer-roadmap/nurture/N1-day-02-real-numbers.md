@@ -45,5 +45,5 @@ FHA's lower down payment is real, but the FHA mortgage insurance premium runs fo
 
 Insurance is the variable that swings the most in Florida. A house with a 5-year-old roof in Altamonte Springs quotes very differently than a similar house with a 16-year-old roof in Apopka. Build the insurance line into your offer math; don't treat it as a fixed national number.
 
--- Axel
+-Axel
 ```

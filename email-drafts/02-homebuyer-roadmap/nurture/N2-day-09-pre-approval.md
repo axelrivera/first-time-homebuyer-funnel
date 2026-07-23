@@ -47,5 +47,5 @@ A note on builder's preferred lenders. Sometimes they're the best deal in the ro
 
 If you want a starting point, reply 'lender list' and I'll send a short list of Orlando lenders worth calling. I receive no compensation, gift, or thing of value from any of them. Shop at least three independently.
 
--- Axel
+-Axel
 ```

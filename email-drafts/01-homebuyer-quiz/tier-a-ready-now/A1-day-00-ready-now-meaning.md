@@ -50,5 +50,5 @@ Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up
 
 If we've already got a call on the calendar, bring any questions about your specific timeline and we'll dig in.
 
--- Axel
+-Axel
 ```

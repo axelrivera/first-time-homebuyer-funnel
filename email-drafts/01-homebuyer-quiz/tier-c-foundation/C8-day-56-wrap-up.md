@@ -24,7 +24,7 @@ preview: "8 weeks of playbook. Your move from here."
 ---
 
 ```
-*|FIRST_NAME|*,
+Hey *|FIRST_NAME|*,
 
 This is the last email in the Foundation series.
 
@@ -40,5 +40,5 @@ If you're not there yet, no worries. Foundation Phase is a real tier, not a euph
 
 Foundation Phase is the work that gets you into your first lender conversation already knowing the math. Skip it, and the lender ends up making those decisions instead, which almost always costs more.
 
--- Axel
+-Axel
 ```

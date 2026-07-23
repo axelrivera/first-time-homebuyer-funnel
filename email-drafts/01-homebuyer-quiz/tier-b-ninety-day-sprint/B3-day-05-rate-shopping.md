@@ -47,5 +47,5 @@ One thing to watch. A "Loan Estimate" is a specific federal document the lender 
 
 If you want a starting set of Orlando lenders worth calling, reply and I'll send 3 names worth adding to your shortlist. I receive no compensation, gift, or thing of value from any of them. Shop at least three independently.
 
--- Axel
+-Axel
 ```

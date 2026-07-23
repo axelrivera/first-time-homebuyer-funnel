@@ -51,5 +51,5 @@ And the thing every report misses: inspectors can't see behind drywall, under sl
 
 If you want a starting point, reply 'inspectors' and I'll send a short list worth calling when you get to that stage. I receive no compensation, gift, or thing of value from any of them. Treat the list as a starting point, not a single recommendation.
 
--- Axel
+-Axel
 ```

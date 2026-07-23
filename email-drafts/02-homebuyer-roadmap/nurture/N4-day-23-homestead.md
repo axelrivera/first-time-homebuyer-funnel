@@ -39,5 +39,5 @@ When you eventually close on a place, put it on your calendar. The application i
 
 If you want me to send the application links so you have them saved for when you close, reply with "homestead links" and I'll send them over.
 
--- Axel
+-Axel
 ```
