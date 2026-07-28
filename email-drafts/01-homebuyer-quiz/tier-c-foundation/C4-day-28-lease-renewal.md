@@ -24,7 +24,7 @@ preview: "When to lock in, when to go month-to-month, when to walk."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Many Foundation Phase buyers I talk to are renters. Sooner or later, your landlord asks: "Do you want to renew for 12 months?" Here's how to decide.
 
@@ -53,5 +53,5 @@ Already mid-renewal? Most Florida leases have a buyout clause, usually 2 months'
 
 If your timeline got clearer over the last 4 weeks, reply with your target month for buying. I'll tell you whether the math says you're still in Foundation Phase or you've crossed into 90-Day Sprint territory. You make the renewal call from there.
 
--Axel
+-%agent_first_name%
 ```

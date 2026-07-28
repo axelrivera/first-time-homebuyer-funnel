@@ -23,7 +23,7 @@ preview: "30 minutes. Your numbers, your timeline. No pitch."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 You've had the roadmap for six weeks now.
 
@@ -39,7 +39,7 @@ Two ways to set it up.
 
 Book the Buyer Strategy Session
 
-Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
+Prefer to meet in person? Call or text %agent_mobile_phone% and we'll set something up locally.
 
--Axel
+-%agent_first_name%
 ```

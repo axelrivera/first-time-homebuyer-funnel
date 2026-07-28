@@ -24,7 +24,7 @@ preview: "HOA dues and CDD assessments can rewrite your real monthly payment."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 When you start touring houses, two numbers on the Florida listing can move your real monthly cost by $200-400. Most first-time buyers don't see them until they're already attached to the house.
 
@@ -48,5 +48,5 @@ If the listing mentions a CDD, or if the community looks newer than about 2005, 
 
 If you're eyeing a specific community and want me to pull what's publicly available before you write an offer (CDD assessment, full tax breakdown, HOA dues from the MLS listing, anything I can find in public records), reply with the address or community name. Takes me about 15 minutes.
 
--Axel
+-%agent_first_name%
 ```

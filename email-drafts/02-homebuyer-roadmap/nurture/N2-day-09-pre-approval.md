@@ -23,7 +23,7 @@ preview: "One is a guess. The other is the letter sellers actually take seriousl
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Most first-time buyers use the words "pre-qualification" and "pre-approval" interchangeably. They aren't the same thing, and sellers know the difference.
 
@@ -47,5 +47,5 @@ A note on builder's preferred lenders. Sometimes they're the best deal in the ro
 
 If you want a starting point, reply 'lender list' and I'll send a short list of Orlando lenders worth calling. I receive no compensation, gift, or thing of value from any of them. Shop at least three independently.
 
--Axel
+-%agent_first_name%
 ```

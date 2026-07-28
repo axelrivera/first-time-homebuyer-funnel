@@ -24,7 +24,7 @@ preview: "Most letters say one. Sellers know the difference."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 When someone in the "Ready Now" tier reaches out, the very first question I ask is:
 
@@ -41,7 +41,7 @@ If you're not sure which one you have, or your letter looks weak and you can't t
 
 [Book the Buyer Strategy Session]
 
-Prefer to meet in person? Call or text (407) 227-3205.
+Prefer to meet in person? Call or text %agent_mobile_phone%.
 
-- Axel
+-%agent_first_name%
 ```

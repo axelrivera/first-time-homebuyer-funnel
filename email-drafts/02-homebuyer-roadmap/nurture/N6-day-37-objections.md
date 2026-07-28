@@ -23,7 +23,7 @@ preview: "The two objections that cost first-time buyers more than the rate itse
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Two objections come up more than any others when a first-time buyer stalls. Both feel cautious. Both are usually wrong.
 
@@ -55,5 +55,5 @@ Rates might drop and I need a bigger down payment usually aren't.
 
 If something in your specific situation actually makes waiting the right call, the Buyer Strategy Session is the place to walk through it. More on that next week.
 
--Axel
+-%agent_first_name%
 ```

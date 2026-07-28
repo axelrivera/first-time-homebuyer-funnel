@@ -23,7 +23,7 @@ preview: "Last email in this sequence. Direct ask, both ways to set it up."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 This is the last email in this sequence.
 
@@ -35,9 +35,9 @@ If you do want a conversation, book the 30-minute Buyer Strategy Session.
 
 [Book the Buyer Strategy Session]
 
-Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
+Prefer to meet in person? Call or text %agent_mobile_phone% and we'll set something up locally.
 
 If you want to ask one question first before booking, hit reply.
 
--Axel
+-%agent_first_name%
 ```

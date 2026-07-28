@@ -24,7 +24,7 @@ preview: "Up to $35,000 in down-payment help. Most Florida buyers don't know it 
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 The single most under-claimed money on the table for first-time buyers in Florida is **Florida Housing's** down-payment-assistance programs. Most Foundation Phase buyers have never heard of them.
 
@@ -59,5 +59,5 @@ Your move this week: visit FloridaHousing.org, scan the program list, see whethe
 
 If you want a head start, reply with your occupation. I'll tell you whether Hometown Heroes is likely to land for you and point you toward a Florida-Housing-approved lender to start with.
 
--Axel
+-%agent_first_name%
 ```

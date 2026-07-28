@@ -24,7 +24,7 @@ preview: "Shopping 3 lenders in 14 days moves your score the same as shopping 1.
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Most first-time buyers do not shop lenders.
 
@@ -47,5 +47,5 @@ One thing to watch. A "Loan Estimate" is a specific federal document the lender 
 
 If you want a starting set of Orlando lenders worth calling, reply and I'll send 3 names worth adding to your shortlist. I receive no compensation, gift, or thing of value from any of them. Shop at least three independently.
 
--Axel
+-%agent_first_name%
 ```

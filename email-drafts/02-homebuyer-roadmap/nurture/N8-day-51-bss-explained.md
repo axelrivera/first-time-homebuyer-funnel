@@ -23,7 +23,7 @@ preview: "30 minutes, line by line. Not a sales pitch."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Last week's email mentioned the Buyer Strategy Session. Here is the big picture of what those 30 minutes look like.
 
@@ -45,7 +45,7 @@ Two ways to set it up.
 
 Book the Buyer Strategy Session
 
-Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
+Prefer to meet in person? Call or text %agent_mobile_phone% and we'll set something up locally.
 
--Axel
+-%agent_first_name%
 ```

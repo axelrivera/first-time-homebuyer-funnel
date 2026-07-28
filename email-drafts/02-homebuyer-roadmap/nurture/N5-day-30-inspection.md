@@ -23,7 +23,7 @@ preview: "What inspectors catch, what they miss, and the question to ask on ever
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 When you eventually get to Step 9 in the roadmap, the inspection is going to feel scarier than it should. Here is how to read it without panic.
 
@@ -51,5 +51,5 @@ And the thing every report misses: inspectors can't see behind drywall, under sl
 
 If you want a starting point, reply 'inspectors' and I'll send a short list worth calling when you get to that stage. I receive no compensation, gift, or thing of value from any of them. Treat the list as a starting point, not a single recommendation.
 
--Axel
+-%agent_first_name%
 ```

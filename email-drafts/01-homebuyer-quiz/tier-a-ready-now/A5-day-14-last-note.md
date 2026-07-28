@@ -24,7 +24,7 @@ preview: "30 minutes, free, video or in person. Last chance to talk it through."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 This is the last email in the Ready Now series.
 
@@ -34,11 +34,11 @@ It's 30 minutes, free, no obligation. We get specific on three things: how to pr
 
 [Book the Buyer Strategy Session]
 
-Or call/text (407) 227-3205 to set up an in-person meeting.
+Or call/text %agent_mobile_phone% to set up an in-person meeting.
 
 Either way, thanks for taking the readiness quiz. Best of luck out there.
 
--Axel
+-%agent_first_name%
 
 P.S. If something specific comes up later, reply to any of these emails. It comes straight to me.
 ```

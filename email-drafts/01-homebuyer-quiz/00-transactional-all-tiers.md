@@ -24,7 +24,7 @@ goal: "Confirm receipt, deliver the bonus (web page), set the tone."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Your Orlando First-Time Buyer Readiness tier came back as {{tier_label}}. Here's the bonus that goes with it.
 
@@ -38,11 +38,7 @@ Two things to know:
 1. I read every reply. If anything in the bonus raises a question (about your tier, the market data, the next step, anything), just hit reply.
 2. I'm not going to call you, text you, or pass your info to anyone. Not now, not ever. If we end up talking, it'll be because you booked something on your own.
 
--- Axel
-
-Axel Rivera, REALTOR®
-LPT Realty, LLC
-(407) 227-3205
+-%agent_first_name%
 
 P.S. The 2-mistakes section gets a lot more useful the day before you actually talk to a lender, so bookmark the page and come back to it then.
 ```

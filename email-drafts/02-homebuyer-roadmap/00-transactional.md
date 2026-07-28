@@ -23,7 +23,7 @@ goal: "Deliver the roadmap, set expectations for the follow-up series."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Here's the 10-Step First Home Roadmap as promised.
 
@@ -38,11 +38,7 @@ Two notes before you dive in:
 
 Open it and find your step. The next email breaks down what a $450K Orlando home actually costs.
 
--- Axel
-
-Axel Rivera, REALTOR®
-LPT Realty, LLC
-(407) 227-3205
+-%agent_first_name%
 
 P.S. The roadmap link is a shareable URL. If you know someone in Orlando who's a few steps behind you on this, send it. I'd rather they get the roadmap than figure it out the expensive way.
 ```

@@ -24,7 +24,7 @@ preview: "Miss the order and 90 days becomes 180 every time."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Quick follow-up on landing in the 90-Day Sprint tier.
 
@@ -56,5 +56,5 @@ The full version of that 90-day map is what I built into The 10-Step First Home 
 
 Give it twenty minutes and you'll know exactly which week you're on.
 
--Axel
+-%agent_first_name%
 ```

@@ -23,7 +23,7 @@ preview: "One thing to put on your calendar before March 1 of next year."
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Quick check-in. You're a few weeks into having the roadmap. Hope it's clarifying more than it's complicating.
 
@@ -39,5 +39,5 @@ When you eventually close on a place, put it on your calendar. The application i
 
 If you want me to send the application links so you have them saved for when you close, reply with "homestead links" and I'll send them over.
 
--Axel
+-%agent_first_name%
 ```

@@ -24,7 +24,7 @@ preview: "The inspection period isn't about the inspector. It's your escape hatc
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Quick one.
 
@@ -42,7 +42,7 @@ How to actually use your contingencies is one of the higher-leverage things we c
 
 [Book the Buyer Strategy Session]
 
-Prefer to meet in person? Call or text (407) 227-3205.
+Prefer to meet in person? Call or text %agent_mobile_phone%.
 
--Axel
+-%agent_first_name%
 ```

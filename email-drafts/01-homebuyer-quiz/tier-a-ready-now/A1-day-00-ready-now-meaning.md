@@ -24,7 +24,7 @@ preview: "The 30 days before closing are where deals fall apart. Don't be that b
 ---
 
 ```
-Hey *|FIRST_NAME|*,
+Hi %contact_first_name%,
 
 Quick follow-up on landing in the Ready Now tier.
 
@@ -46,9 +46,9 @@ Those rules apply to everyone. The pieces that depend on your situation are what
 
 [Book the Buyer Strategy Session]
 
-Prefer to meet in person? Call or text (407) 227-3205 and we'll set something up locally.
+Prefer to meet in person? Call or text %agent_mobile_phone% and we'll set something up locally.
 
 If we've already got a call on the calendar, bring any questions about your specific timeline and we'll dig in.
 
--Axel
+-%agent_first_name%
 ```
