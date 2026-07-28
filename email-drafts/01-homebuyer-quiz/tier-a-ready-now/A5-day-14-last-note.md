@@ -9,15 +9,15 @@ sequence_position: "Email 5 of 5 (final)"
 day: 14
 delay_from_previous: "5 days"
 send_time: "Schedule window: 7:45-8:15 PM ET with a random per-contact offset, positioned just under the 8-9 PM weekday click peak (MailerLite 2026) so a Pipedrive send delay lands in it. This is the pure-conversion booking push, so it gets the prime click window. If you day-window to Friday, schedule ~5:40-5:55 PM ET so delay lands near the 6 PM cross-week sweet spot where opens (49.7%) and clicks (8.09%) align."
-subject: "Last email from me (then I'm out of your inbox)"
-preview: "30 minutes, free, video or in person. Last chance to talk it through."
+subject: "The roof question to ask before you write an offer"
+preview: "In Florida, roof age decides insurability, and insurability decides whether you close."
 ---
 
 # FTHB Quiz - Tier A - Day 14 - Last Note
 
-**Subject:** Last email from me (then I'm out of your inbox)
+**Subject:** The roof question to ask before you write an offer
 
-**Preview:** 30 minutes, free, video or in person. Last chance to talk it through.
+**Preview:** In Florida, roof age decides insurability, and insurability decides whether you close.
 
 **Send:** Day 14 (5 days after A4)
 
@@ -26,19 +26,19 @@ preview: "30 minutes, free, video or in person. Last chance to talk it through."
 ```
 Hi %contact_first_name%,
 
-This is the last email in the Ready Now series.
+Before I close out the Ready Now series, one Florida-specific thing worth checking before you write your next offer.
 
-If anything in the last two weeks made you think "I should probably talk to someone before I make a move on a house in Orlando," this is the moment to book the Buyer Strategy Session. After this email, I'm out of your inbox.
+Ask for the roof's age and permit date.
 
-It's 30 minutes, free, no obligation. We get specific on three things: how to pressure-test your lender's terms, which neighborhoods give you the most house for your budget, and how to structure your offer in this market. If you'd rather not, no hard feelings. My hope is the last four emails gave you enough to move on your own.
+Roof age drives whether a house is insurable here, and insurability drives whether you can close. Many carriers get difficult on shingle roofs around the 15-year mark, and a house you cannot bind coverage on is a house you cannot fund. Buyers usually find this out mid-inspection-period, after they are already attached to the place.
 
-[Book the Buyer Strategy Session]
+Two minutes of work: have your agent pull the roof permit history, and get an insurance quote before the inspection period closes, not after.
 
-Or call/text %agent_mobile_phone% to set up an in-person meeting.
+That is the last email in the Ready Now series. Pricing that risk into an offer, and what else to pressure-test before you sign, is what we work through on the Buyer Strategy Session. 30 minutes, no charge, video or in person.
 
-Either way, thanks for taking the readiness quiz. Best of luck out there.
+👉 [Book the Buyer Strategy Session]
+
+Prefer to meet in person? Call or text %agent_mobile_phone%.
 
 -%agent_first_name%
-
-P.S. If something specific comes up later, reply to any of these emails. It comes straight to me.
 ```
