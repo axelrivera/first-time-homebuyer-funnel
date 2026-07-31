@@ -36,7 +36,8 @@ It walks through your tier explanation, the 2 mistakes buyers in your tier most 
 I read every reply myself. If anything in there raises a question, about your tier, the market data, or what to do next, hit reply and ask me.
 
 Best,
-%agent_first_name%
+
+-%agent_first_name%
 
 P.S. The 2-mistakes section gets a lot more useful the day before you actually talk to a lender, so bookmark the page and come back to it then.
 ```
