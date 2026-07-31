@@ -34,7 +34,7 @@ Roof age drives whether a house is insurable here, and insurability drives wheth
 
 Two minutes of work: have your agent pull the roof permit history, and get an insurance quote before the inspection period closes, not after.
 
-That is the last email in the Ready Now series. Pricing that risk into an offer, and what else to pressure-test before you sign, is what we work through on the Buyer Strategy Session. 30 minutes, no charge, video or in person.
+That is the last email in the Ready Now series. Pricing that risk into an offer, and what else to pressure-test before you sign, is what we work through on the Buyer Strategy Session. 30 minutes, free, video or in person.
 
 👉 [Book the Buyer Strategy Session]
 

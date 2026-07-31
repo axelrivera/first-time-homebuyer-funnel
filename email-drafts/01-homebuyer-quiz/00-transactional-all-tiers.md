@@ -33,12 +33,10 @@ It walks through your tier explanation, the 2 mistakes buyers in your tier most 
 👉 Read it on the web:
 {{fthb_tier_bonus_page_link}}
 
-Two things to know:
+I read every reply myself. If anything in there raises a question, about your tier, the market data, or what to do next, hit reply and ask me.
 
-1. I read every reply. If anything in the bonus raises a question (about your tier, the market data, the next step, anything), just hit reply.
-2. I'm not going to call you, text you, or pass your info to anyone. Not now, not ever. If we end up talking, it'll be because you booked something on your own.
-
--%agent_first_name%
+Best,
+%agent_first_name%
 
 P.S. The 2-mistakes section gets a lot more useful the day before you actually talk to a lender, so bookmark the page and come back to it then.
 ```

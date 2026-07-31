@@ -35,7 +35,7 @@ By the time you are under contract, most of that is set. The conversation still 
 
 You do not need a pre-approval or a target neighborhood to book. Questions are enough.
 
-That is the last email in this sequence. 30 minutes, no charge, video or in person.
+That is the last email in this sequence. 30 minutes, free, video or in person.
 
 👉 [Book the Buyer Strategy Session]
 
