@@ -29,7 +29,7 @@ Two objections come up more than any others when a first-time buyer stalls. Both
 
 Objection one: I should wait for rates to drop.
 
-Run the proportions.
+Start with what a rate drop is actually worth.
 
 As an illustration only: on a roughly $450K, 30-year fixed loan, a 1% rate drop works out to roughly $290 a month, or about 10% of your principal-and-interest payment. Your numbers will differ based on actual rate, loan amount, term, and how long you hold the loan; treat this as a sanity-check on the order of magnitude, not as a quote.
 
